@@ -1,8 +1,6 @@
 import React from 'react';
 import Logo from './Logo';
 import { 
-  Mail, 
-  Phone, 
   MapPin, 
   Linkedin, 
   Facebook, 
@@ -36,14 +34,6 @@ const Footer = () => {
               
               {/* Contact Info */}
               <div className="space-y-3">
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <Mail className="h-4 w-4 text-primary" />
-                  <span>info@sulalabs.io</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <Phone className="h-4 w-4 text-primary" />
-                  <span>+371 28 600 401</span>
-                </div>
                 <div className="flex items-center gap-3 text-sm text-muted-foreground">
                   <MapPin className="h-4 w-4 text-primary" />
                   <span>Rīga, Latvija</span>
