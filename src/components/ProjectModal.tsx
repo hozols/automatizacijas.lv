@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { X, ExternalLink, Calendar, User, Tag } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -28,6 +29,7 @@ interface ProjectModalProps {
 }
 
 const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
+  const navigate = useNavigate();
   if (!project) return null;
 
   // Default tech stack based on category if not provided
@@ -146,7 +148,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
           <div className="flex gap-3 pt-4">
             <Button 
               className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90"
-              onClick={() => window.location.href = '/contact'}
+              onClick={() => navigate('/contact')}
             >
               <span className="mr-2">Pieteikties konsultācijai</span>
               <ExternalLink className="h-4 w-4" />

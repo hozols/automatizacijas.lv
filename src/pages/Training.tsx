@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
@@ -99,7 +100,7 @@ const TrainingPage = () => {
     ]
   };
 
-  const handleTrainingClick = (training: any) => {
+  const handleTrainingClick = (training: Training) => {
     setSelectedTraining(training);
     setIsModalOpen(true);
   };
@@ -111,6 +112,10 @@ const TrainingPage = () => {
 
   return (
     <PageTransition>
+      <Helmet>
+        <title>Apmācības | automatizacijas.lv</title>
+        <meta name="description" content="Mēs piedāvājam AI apmācības un seminārus, lai palīdzētu jūsu komandai apgūt nepieciešamās prasmes un zināšanas."/>
+      </Helmet>
       <div className="min-h-screen flex flex-col bg-background text-foreground">
         <Header />
         

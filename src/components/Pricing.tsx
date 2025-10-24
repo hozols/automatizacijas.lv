@@ -10,9 +10,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Slider } from '@/components/ui/slider';
 import { Calculator, Zap, Clock, Users, TrendingUp, MessageSquare, Bot, FileText, BarChart3, Lightbulb, Code, Globe, Smartphone } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { usePricing } from '@/contexts/PricingContext';
 
 const Pricing = () => {
   const navigate = useNavigate();
+  const { setPricingData } = usePricing();
   
   // Project calculator state
   const [projectType, setProjectType] = useState('ai-automation');
@@ -20,32 +22,32 @@ const Pricing = () => {
   const [timeline, setTimeline] = useState([4]);
   const [integrations, setIntegrations] = useState<string[]>([]);
   const [customFeatures, setCustomFeatures] = useState<string[]>([]);
-  const [teamSize, setTeamSize] = useState([5]);
+
   
-  // Service types with base pricing
+  // Service types with base pricing - Latvian Market Rate 2024 (rounded to hundreds)
   const serviceTypes = {
     'ai-automation': {
       name: 'AI Automatizācija',
       icon: <Bot className="h-6 w-6" />,
-      basePrice: 800,
+      basePrice: 4200,
       description: 'Automatizēti AI darbinieki un procesi'
     },
     'chatbots': {
       name: 'AI Čatboti',
       icon: <MessageSquare className="h-6 w-6" />,
-      basePrice: 500,
+      basePrice: 2800,
       description: 'Inteliģenti sarunu aģenti'
     },
     'web-development': {
       name: 'Web Izstrāde',
       icon: <Code className="h-6 w-6" />,
-      basePrice: 1200,
+      basePrice: 3800,
       description: 'Mājaslapas un web aplikācijas'
     },
     'custom-solution': {
       name: 'Pielāgots Risinājums',
       icon: <Lightbulb className="h-6 w-6" />,
-      basePrice: 1500,
+      basePrice: 6500,
       description: 'Unikāli AI risinājumi'
     }
   };
@@ -54,35 +56,56 @@ const Pricing = () => {
   const calculateCost = () => {
     let baseCost = serviceTypes[projectType as keyof typeof serviceTypes].basePrice;
     
-    // Complexity multiplier (1-5 scale)
+    // Complexity multiplier (1-5 scale) - more realistic scaling
     const complexityMultiplier = 1 + (complexity[0] - 1) * 0.3;
     
-    // Timeline multiplier (1-8 weeks)
-    const timelineMultiplier = 1 + (timeline[0] - 1) * 0.1;
+    // Timeline multiplier (1-8 weeks) - more realistic scaling
+    const timelineMultiplier = 1 + (timeline[0] - 1) * 0.15;
     
-    // Integrations cost
-    const integrationCost = integrations.length * 150;
+    // Integrations cost - Actual subscription + service fee
+    const integrationCost = integrations.reduce((total, integrationName) => {
+      const integration = availableIntegrations.find(i => i.name === integrationName);
+      return total + (integration ? integration.cost + integration.serviceFee : 0);
+    }, 0);
     
-    // Custom features cost
-    const featureCost = customFeatures.length * 200;
+    // Custom features cost - Latvian Market Rate 2024 (rounded to hundreds)
+    const featureCost = customFeatures.length * 1000;
     
-    // Team size impact
-    const teamMultiplier = 1 + (teamSize[0] - 1) * 0.05;
+    // Calculate base cost with multipliers
+    const adjustedBaseCost = Math.round(baseCost * complexityMultiplier * timelineMultiplier);
     
-    const totalCost = Math.round(
-      (baseCost * complexityMultiplier * timelineMultiplier * teamMultiplier) + 
-      integrationCost + featureCost
-    );
+    // Add all costs together
+    const totalCost = adjustedBaseCost + integrationCost + featureCost;
     
-    return totalCost;
+    // Add service fee
+    const serviceFee = 200;
+    
+    const finalCost = totalCost + serviceFee;
+    
+    // Apply psychological pricing technique (e.g., 8999 instead of 9000)
+    if (finalCost >= 1000) {
+      const thousands = Math.floor(finalCost / 1000);
+      const remainder = finalCost % 1000;
+      if (remainder === 0) {
+        return (thousands * 1000) - 1; // 8999 instead of 9000
+      }
+    }
+    
+    return finalCost;
   };
   
-  const estimatedCost = calculateCost();
-  
-  // Available integrations and features
+  // Available integrations with actual subscription costs + service fee (rounded to hundreds)
   const availableIntegrations = [
-    'Google Workspace', 'Slack', 'Zapier', 'Airtable', 'Notion', 
-    'Salesforce', 'HubSpot', 'Shopify', 'WordPress', 'Custom API'
+    { name: 'Google Workspace', cost: 100, serviceFee: 200 }, // €6/month × 12 months (rounded)
+    { name: 'Slack', cost: 100, serviceFee: 200 }, // €8/month × 12 months (rounded)
+    { name: 'Zapier', cost: 200, serviceFee: 200 }, // €20/month × 12 months (rounded)
+    { name: 'Airtable', cost: 100, serviceFee: 200 }, // €10/month × 12 months (rounded)
+    { name: 'Notion', cost: 100, serviceFee: 200 }, // €8/month × 12 months (rounded)
+    { name: 'Salesforce', cost: 300, serviceFee: 200 }, // €25/month × 12 months (rounded)
+    { name: 'HubSpot', cost: 400, serviceFee: 200 }, // €30/month × 12 months (rounded)
+    { name: 'Shopify', cost: 300, serviceFee: 200 }, // €29/month × 12 months (rounded)
+    { name: 'WordPress', cost: 100, serviceFee: 200 }, // €5/month × 12 months (rounded)
+    { name: 'Custom API', cost: 0, serviceFee: 400 } // No subscription, higher service fee
   ];
   
   const availableFeatures = [
@@ -90,6 +113,24 @@ const Pricing = () => {
     'Mērogojama arhitektūra', 'Mobilā aplikācija', 'API dokumentācija',
     'Apmācības materiāli', '24/7 atbalsts', 'Backup sistēma', 'SSL drošība'
   ];
+
+  const estimatedCost = calculateCost();
+
+  const handleContactNavigation = () => {
+    // Save pricing data to context before navigating
+    const pricingData = {
+      projectType,
+      complexity: complexity[0],
+      timeline: timeline[0],
+      integrations,
+      customFeatures,
+      estimatedCost,
+      serviceType: serviceTypes[projectType as keyof typeof serviceTypes]
+    };
+    
+    setPricingData(pricingData);
+    navigate('/contact');
+  };
 
   return (
     <section id="pricing" className="w-full py-20 pb-24 px-6 md:px-12 bg-background">
@@ -178,37 +219,28 @@ const Pricing = () => {
                   </div>
                 </div>
 
-                {/* Team Size Slider */}
-                <div className="space-y-2 sm:space-y-3">
-                  <Label className="text-sm sm:text-base">Komandas lielums: {teamSize[0]} cilvēki</Label>
-                  <Slider
-                    value={teamSize}
-                    onValueChange={setTeamSize}
-                    max={10}
-                    min={1}
-                    step={1}
-                    className="w-full"
-                  />
-                </div>
+
 
                 {/* Integrations */}
                 <div className="space-y-3">
                   <Label className="text-sm sm:text-base">Integrācijas</Label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {availableIntegrations.map((integration) => (
-                      <div key={integration} className="flex items-center space-x-2">
+                      <div key={integration.name} className="flex items-center space-x-2">
                         <Checkbox
-                          id={integration}
-                          checked={integrations.includes(integration)}
+                          id={integration.name}
+                          checked={integrations.includes(integration.name)}
                           onCheckedChange={(checked) => {
                             if (checked) {
-                              setIntegrations([...integrations, integration]);
+                              setIntegrations([...integrations, integration.name]);
                             } else {
-                              setIntegrations(integrations.filter(i => i !== integration));
+                              setIntegrations(integrations.filter(i => i !== integration.name));
                             }
                           }}
                         />
-                        <Label htmlFor={integration} className="text-xs sm:text-sm leading-tight">{integration}</Label>
+                        <Label htmlFor={integration.name} className="text-xs sm:text-sm leading-tight">
+                          {integration.name}
+                        </Label>
                       </div>
                     ))}
                   </div>
@@ -266,22 +298,29 @@ const Pricing = () => {
                   </div>
                   <div className="flex justify-between text-xs sm:text-sm">
                     <span>Laika ietvars:</span>
-                    <span>+{Math.round((timeline[0] - 1) * 10)}%</span>
+                    <span>+{Math.round((timeline[0] - 1) * 15)}%</span>
                   </div>
                   <div className="flex justify-between text-xs sm:text-sm">
                     <span>Integrācijas:</span>
-                    <span>€{integrations.length * 150}</span>
+                    <span>€{integrations.reduce((total, integrationName) => {
+                      const integration = availableIntegrations.find(i => i.name === integrationName);
+                      return total + (integration ? integration.cost + integration.serviceFee : 0);
+                    }, 0)}</span>
                   </div>
                   <div className="flex justify-between text-xs sm:text-sm">
                     <span>Funkcijas:</span>
-                    <span>€{customFeatures.length * 200}</span>
+                    <span>€{customFeatures.length * 1000}</span>
+                  </div>
+                  <div className="flex justify-between text-xs sm:text-sm">
+                    <span>Pakalpojuma maksa:</span>
+                    <span>€200</span>
                   </div>
                 </div>
 
                 <div className="pt-4 border-t">
                   <Button 
                     className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-                    onClick={() => navigate('/contact')}
+                    onClick={handleContactNavigation}
                   >
                     <span className="mr-2">Pieteikties konsultācijai</span>
                     <Zap className="h-4 w-4" />
@@ -289,6 +328,9 @@ const Pricing = () => {
                   <p className="text-xs text-muted-foreground text-center mt-2">
                     *Cenas ir orientējošas un var mainīties atkarībā no projekta specifikas
                   </p>
+                  <div className="mt-3 p-2 bg-primary/5 border border-primary/20 rounded text-xs text-primary text-center">
+                    📋 Projekta informācija tiks automātiski iekļauta kontaktformā
+                  </div>
                 </div>
               </CardContent>
             </Card>

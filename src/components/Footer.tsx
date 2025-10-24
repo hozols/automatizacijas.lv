@@ -1,8 +1,6 @@
 import React from 'react';
 import Logo from './Logo';
 import { 
-  Mail, 
-  Phone, 
   MapPin, 
   Linkedin, 
   Facebook, 
@@ -75,7 +73,37 @@ const Footer = () => {
                 </a>
                 <a href="/services" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
                   <span className="flex items-center gap-2">
-                    Apmācības
+                    Dokumentu apstrāde
+                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
+                  </span>
+                </a>
+                <a href="/services" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
+                  <span className="flex items-center gap-2">
+                    Biznesa inteliģence
+                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
+                  </span>
+                </a>
+                <a href="/services" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
+                  <span className="flex items-center gap-2">
+                    Individuāli risinājumi
+                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
+                  </span>
+                </a>
+                <a href="/services" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
+                  <span className="flex items-center gap-2">
+                    Web izstrāde
+                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
+                  </span>
+                </a>
+                <a href="/services" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
+                  <span className="flex items-center gap-2">
+                    E-komercija
+                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
+                  </span>
+                </a>
+                <a href="/services" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
+                  <span className="flex items-center gap-2">
+                    Mobilās aplikācijas
                     <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
                   </span>
                 </a>

@@ -80,7 +80,7 @@ const HeroSection = () => {
     }
   ];
 
-  const handleServiceClick = (service: any) => {
+  const handleServiceClick = (service: Service) => {
     setSelectedService(service);
     setIsModalOpen(true);
   };

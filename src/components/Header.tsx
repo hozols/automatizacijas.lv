@@ -21,7 +21,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const saved = localStorage.getItem('theme');
-    return saved ? saved === 'dark' : true; // Default to dark mode
+    return saved ? saved === 'dark' : false; // Default to light mode
   });
   const { t } = useLanguage();
 
@@ -36,6 +36,14 @@ const Header = () => {
       localStorage.setItem('theme', 'light');
     }
   }, [isDarkMode]);
+
+  // Apply light theme by default on mount if no theme is saved
+  useEffect(() => {
+    const saved = localStorage.getItem('theme');
+    if (!saved) {
+      document.documentElement.classList.add('light-mode');
+    }
+  }, []);
 
   const activePage = location.pathname;
 
@@ -52,8 +60,8 @@ const Header = () => {
   };
 
   return (
-    <div className="sticky top-0 z-50 pt-2 sm:pt-4 md:pt-6 lg:pt-8 px-2 sm:px-3 md:px-4">
-      <header className="w-full max-w-7xl mx-auto py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-6 lg:px-8 flex items-center justify-between">
+    <header className="sticky top-0 z-50 pt-2 sm:pt-4 md:pt-6 lg:pt-8 px-2 sm:px-3 md:px-4">
+      <div className="w-full max-w-7xl mx-auto py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-6 lg:px-8 flex items-center justify-between">
         <div className="p-2 sm:p-3">
           <Logo />
         </div>
@@ -158,8 +166,8 @@ const Header = () => {
             <Sun size={16} className={cn(!isDarkMode ? 'text-primary' : 'text-muted-foreground')} />
           </div>
         </div>
-      </header>
-    </div>
+      </div>
+    </header>
   );
 };
 

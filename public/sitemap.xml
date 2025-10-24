@@ -60,7 +60,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://automatizacijas.lv/pricing-image.jpg</image:loc>
-      <image:title>AI Pakalpojumu Cenas</image:title>
+      <image:title>Pakalpojumi</image:title>
     </image:image>
   </url>
   
@@ -74,38 +74,6 @@
       <image:loc>https://automatizacijas.lv/contact-image.jpg</image:loc>
       <image:title>Sazinieties ar Mums</image:title>
     </image:image>
-  </url>
-  
-  <!-- About Page (if exists) -->
-  <url>
-    <loc>https://automatizacijas.lv/about</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <!-- Blog/News Page (if exists) -->
-  <url>
-    <loc>https://automatizacijas.lv/blog</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Privacy Policy (if exists) -->
-  <url>
-    <loc>https://automatizacijas.lv/privacy</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <!-- Terms of Service (if exists) -->
-  <url>
-    <loc>https://automatizacijas.lv/terms</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
   
 </urlset>

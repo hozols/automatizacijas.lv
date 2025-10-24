@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { TrendingUp, Users, Clock, ExternalLink } from 'lucide-react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
@@ -22,6 +23,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  const navigate = useNavigate();
   const IconComponent = project.metrics[0]?.icon || TrendingUp;
 
   return (
@@ -93,7 +95,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         {/* Consultation Button */}
         <div className="pt-2">
           <button 
-            onClick={() => window.location.href = '/contact'}
+            onClick={() => navigate('/contact')}
             className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-primary/10 text-primary hover:bg-primary/20 border border-primary/20 rounded-lg transition-all duration-200 group-hover:scale-105"
           >
             <span className="text-sm font-medium">Pieteikties konsultācijai</span>
