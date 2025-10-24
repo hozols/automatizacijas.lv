@@ -429,10 +429,10 @@ const Contact = () => {
                           </h3>
                           <p className="text-muted-foreground">
                             <a
-                              href="tel:+37128600401"
+                              href="tel:+37120015830"
                               className="hover:text-primary transition-colors"
                             >
-                              +371 28 600 401
+                              +371 20 015 830
                             </a>
                           </p>
                         </div>
@@ -448,10 +448,10 @@ const Contact = () => {
                           </h3>
                           <p className="text-muted-foreground">
                             <a
-                              href="mailto:info@sulalabs.io"
+                              href="mailto:info@automatizacijas.lv"
                               className="hover:text-primary transition-colors"
                             >
-                              info@sulalabs.io
+                              info@automatizacijas.lv
                             </a>
                           </p>
                         </div>
