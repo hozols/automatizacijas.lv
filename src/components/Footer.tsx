@@ -1,15 +1,17 @@
 import React from 'react';
 import Logo from './Logo';
-import { 
-  MapPin, 
-  Linkedin, 
-  Facebook, 
-  Twitter, 
+import {
+  MapPin,
+  Linkedin,
+  Facebook,
+  Twitter,
   Github,
   ArrowRight,
   Shield,
   FileText,
-  Settings
+  Settings,
+  Mail,
+  Phone
 } from 'lucide-react';
 import { useCookies } from '@/contexts/CookieContext';
 
