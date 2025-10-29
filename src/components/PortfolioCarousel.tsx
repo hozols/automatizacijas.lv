@@ -97,19 +97,35 @@ const PortfolioShowcase = () => {
       ],
       gradient: "from-blue-300 to-blue-400"
     },
+    // {
+    //   id: 6,
+    //   title: "Dalībnieku menedžmenta sistēma",
+    //   description: "Izstrādāta automatizācija reģistrēto dalībnieku organizēšanai, apziņošanai pirms realitātes šova veidošanas.",
+    //   category: "AI Automatizācija",
+    //   image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop&q=80",
+    //   client: "Sula Studios",
+    //   year: "2024",
+    //   tags: ["Automatizācija", "Dalībnieku menedžmenta sistēma"],
+    //   metrics: [
+    //     { icon: Clock, value: "70%", label: "Laika ietaupījums" },
+    //     { icon: Users, value: "100+", label: "Dalībnieki" },
+    //     { icon: TrendingUp, value: "24/7", label: "Pieejamība" }
+    //   ],
+    //   gradient: "from-blue-300 to-blue-400"
+    // },
     {
-      id: 6,
-      title: "Dalībnieku menedžmenta sistēma",
-      description: "Izstrādāta automatizācija reģistrēto dalībnieku organizēšanai, apziņošanai pirms realitātes šova veidošanas.",
-      category: "AI Automatizācija",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop&q=80",
-      client: "Sula Studios",
-      year: "2024",
-      tags: ["Automatizācija", "Dalībnieku menedžmenta sistēma"],
+      id: 7,
+      title: "Autoremonts.com - Autoservisa vizītkartes mājaslapa",
+      description: "Moderna vizītkartes mājaslapa autoservisa uzņēmumam ar SEO optimizāciju. Lapa palīdz klientiem atrast servisu, uzzināt par pakalpojumiem un sazināties ar uzņēmumu.",
+      category: "Web izstrāde",
+      image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=600&fit=crop&q=80",
+      client: "Autoremonts.com",
+      year: "2025",
+      tags: ["Autoserviss", "SEO", "Vizītkarte"],
       metrics: [
-        { icon: Clock, value: "70%", label: "Laika ietaupījums" },
-        { icon: Users, value: "100+", label: "Dalībnieki" },
-        { icon: TrendingUp, value: "24/7", label: "Pieejamība" }
+        { icon: TrendingUp, value: "SEO", label: "Optimizēts" },
+        { icon: Users, value: "Lead", label: "Ģenerēšana" },
+        { icon: Clock, value: "24/7", label: "Pieejamība" }
       ],
       gradient: "from-blue-300 to-blue-400"
     }
