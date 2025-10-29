@@ -142,10 +142,10 @@ const PortfolioShowcase = () => {
             Mūsu Pieredze
           </div>
           <h3 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
-            Veiksmīgie AI Projekti
+            Veiksmīgie Projekti
           </h3>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
-            Aplūkojiet, kā mūsu AI risinājumi ir transformējuši dažādu nozaru uzņēmumus un radījuši mērāmu vērtību
+            Aplūkojiet, kā mūsu  risinājumi ir transformējuši dažādu nozaru uzņēmumus un radījuši mērāmu vērtību
           </p>
         </div>
 
