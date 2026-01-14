@@ -206,7 +206,7 @@ const Contact = () => {
               >
                 <button
                   onClick={() => {
-                    const phoneNumber = '+37128600401';
+                    const phoneNumber = '+37120015830';
                     const message = 'Sveiki! Es vēlos uzzināt vairāk par jūsu pakalpojumiem.';
                     const whatsappUrl = `https://wa.me/${phoneNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
                     window.open(whatsappUrl, '_blank');
@@ -622,7 +622,7 @@ const Contact = () => {
                           </h3>
                           <p className="text-muted-foreground">
                             <a
-                              href="tel:+37128600401"
+                              href="tel:+37120015830"
                               className="hover:text-primary transition-colors"
                             >
                               +371 28 600 401
@@ -642,7 +642,7 @@ const Contact = () => {
                           <p className="text-muted-foreground">
                             <button
                               onClick={() => {
-                                const phoneNumber = '+37128600401';
+                                const phoneNumber = '+37120015830';
                                 const message = 'Sveiki! Es vēlos uzzināt vairāk par jūsu pakalpojumiem.';
                                 const whatsappUrl = `https://wa.me/${phoneNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
                                 window.open(whatsappUrl, '_blank');
