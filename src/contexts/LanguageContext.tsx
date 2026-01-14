@@ -139,7 +139,7 @@ const translations = {
     'contact.form.company': 'Uzņēmums',
     'contact.form.company.placeholder': 'Jūsu uzņēmuma nosaukums',
     'contact.form.phone': 'Telefons',
-    'contact.form.phone.placeholder': '+371 20 000 000',
+    'contact.form.phone.placeholder': '+371 20 015 830',
     'contact.form.service': 'Interesējošais pakalpojums',
     'contact.form.service.placeholder': 'Izvēlieties pakalpojumu',
     'contact.form.service.workers': 'AI Darbinieki',

@@ -163,7 +163,7 @@ const Services = () => {
       title: t('services.automation.title'),
       subtitle: t('services.automation.subtitle'),
       description: t('services.automation.description'),
-      relatedProjects: [portfolioProjects[1]], // LinkedIn
+      // relatedProjects: [portfolioProjects[1]], // LinkedIn
       learnMoreLink: "/services#automation"
     },
     {
@@ -171,7 +171,7 @@ const Services = () => {
       title: t('services.documents.title'),
       subtitle: t('services.documents.subtitle'),
       description: t('services.documents.description'),
-      relatedProjects: [portfolioProjects[5]], // Sula Studios
+      // relatedProjects: [portfolioProjects[5]], // Sula Studios
       learnMoreLink: "/services#documents"
     },
     {
@@ -179,7 +179,7 @@ const Services = () => {
       title: t('services.intelligence.title'),
       subtitle: t('services.intelligence.subtitle'),
       description: t('services.intelligence.description'),
-      relatedProjects: [], // No unique project available
+      // relatedProjects: [], // No unique project available
       learnMoreLink: "/services#intelligence"
     },
     {
@@ -187,7 +187,7 @@ const Services = () => {
       title: t('services.custom.title'),
       subtitle: t('services.custom.subtitle'),
       description: t('services.custom.description'),
-      relatedProjects: [], // No unique project available
+      // relatedProjects: [], // No unique project available
       learnMoreLink: "/services#custom"
     }
   ];
@@ -198,7 +198,7 @@ const Services = () => {
       title: t('services.webdev.title'),
       subtitle: t('services.webdev.subtitle'),
       description: t('services.webdev.description'),
-      relatedProjects: [portfolioProjects[4], portfolioProjects[3]], // BN Darbi, Rigami
+      // relatedProjects: [portfolioProjects[4], portfolioProjects[3]], // BN Darbi, Rigami
       learnMoreLink: "/services#webdev"
     },
     {
@@ -206,7 +206,7 @@ const Services = () => {
       title: t('services.ecommerce.title'),
       subtitle: t('services.ecommerce.subtitle'),
       description: t('services.ecommerce.description'),
-      relatedProjects: [portfolioProjects[4]], // BN Darbi
+      // relatedProjects: [portfolioProjects[4]], // BN Darbi
       learnMoreLink: "/services#ecommerce"
     },
     {

@@ -1,15 +1,17 @@
 import React from 'react';
 import Logo from './Logo';
-import { 
-  MapPin, 
-  Linkedin, 
-  Facebook, 
-  Twitter, 
+import {
+  MapPin,
+  Linkedin,
+  Facebook,
+  Twitter,
   Github,
   ArrowRight,
   Shield,
   FileText,
-  Settings
+  Settings,
+  Mail,
+  Phone
 } from 'lucide-react';
 import { useCookies } from '@/contexts/CookieContext';
 
@@ -34,6 +36,14 @@ const Footer = () => {
               
               {/* Contact Info */}
               <div className="space-y-3">
+                <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <Mail className="h-4 w-4 text-primary" />
+                  <span>info@automatizacijas.lv</span>
+                </div>
+                <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <Phone className="h-4 w-4 text-primary" />
+                  <span>+371 20 015 830</span>
+                </div>
                 <div className="flex items-center gap-3 text-sm text-muted-foreground">
                   <MapPin className="h-4 w-4 text-primary" />
                   <span>Rīga, Latvija</span>

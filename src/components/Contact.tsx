@@ -57,7 +57,7 @@ const Contact = () => {
       
       // Prepare email parameters
       const emailParams = {
-        to_email: 'h11ozols@gmail.com',
+        to_email: 'info@automatizacijas.lv',
         from_name: data.name,
         from_email: data.email,
         company: data.company || 'Not provided',
@@ -312,8 +312,8 @@ const Contact = () => {
                   <div>
                     <h3 className="font-medium text-foreground mb-1">{t('contact.info.email')}</h3>
                     <p className="text-muted-foreground">
-                      <a href="mailto:info@sulalabs.io" className="hover:text-primary transition-all duration-300 hover-scale">
-                        info@sulalabs.io
+                      <a href="mailto:info@automatizacijas.lv" className="hover:text-primary transition-all duration-300 hover-scale">
+                        info@automatizacijas.lv
                       </a>
                     </p>
                   </div>

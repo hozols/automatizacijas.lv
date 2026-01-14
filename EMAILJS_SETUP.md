@@ -1,6 +1,6 @@
 # EmailJS Setup Instructions
 
-To enable email sending from the contact form to h11ozols@gmail.com, follow these steps:
+To enable email sending from the contact form to info@automatizacijas.lv, follow these steps:
 
 ## 1. Create EmailJS Account
 
@@ -13,7 +13,7 @@ To enable email sending from the contact form to h11ozols@gmail.com, follow thes
 1. In EmailJS dashboard, go to "Email Services"
 2. Click "Add New Service"
 3. Choose your email provider (Gmail recommended)
-4. Connect your Gmail account (h11ozols@gmail.com)
+4. Connect your Gmail account (info@automatizacijas.lv)
 5. Note down the **Service ID** (e.g., `service_abc123`)
 
 ## 3. Create Email Template
@@ -62,7 +62,7 @@ VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
 1. Start the development server: `npm run dev`
 2. Go to the contact page
 3. Fill out and submit the form
-4. Check h11ozols@gmail.com for the email
+4. Check info@automatizacijas.lv for the email
 
 ## Email Template Variables
 
