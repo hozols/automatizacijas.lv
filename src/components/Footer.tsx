@@ -119,6 +119,7 @@ const Footer = () => {
                 <a href="/about" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Par mums</a>
                 <a href="/portfolio" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Projekti</a>
                 <a href="/training" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Apmācības</a>
+                <a href="/blog" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Blogs</a>
                 <a href="/contact" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Kontakti</a>
               </div>
             </div>

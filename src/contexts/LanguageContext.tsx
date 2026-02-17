@@ -20,6 +20,9 @@ const translations = {
     'nav.training': 'Apmācības',
     'nav.pricing': 'Cenas',
     'nav.contact': 'Kontakti',
+    'nav.blog': 'Blogs',
+    'nav.ai_solutions': 'AI Risinājumi',
+    'nav.webdev': 'Web un Mobilo Izstrāde',
     'nav.theme': 'Kontrasts',
     
     // Hero Section
@@ -203,6 +206,20 @@ const translations = {
     'training.cta.description': 'Sazinieties ar mums, lai uzzinātu vairāk par mūsu kursiem un semināriiem',
     'training.cta.courses': 'Apskatīt kursus',
     'training.cta.contact': 'Pieteikt semināru',
+
+    // Blog
+    'blog.meta.title': 'Blogs | AI Automatizācija',
+    'blog.meta.description': 'Jaunākās ziņas un raksti par AI automatizāciju, mašīnmācīšanos un digitālo transformāciju.',
+    'blog.badge': 'Blogs',
+    'blog.title': 'Jaunākais no AI Pasaules',
+    'blog.subtitle': 'Raksti, padomi un ieskati par AI tehnoloģijām, automatizāciju un digitālo transformāciju',
+    'blog.read_more': 'Lasīt vairāk',
+    'blog.post1.title': 'Kā AI Transformē Biznesa Procesus 2026. Gadā',
+    'blog.post1.excerpt': 'Uzziniet, kā mākslīgais intelekts maina uzņēmumu darba veidus un kādi ir galvenie ieguvumi no AI integrācijas jūsu biznesa procesos.',
+    'blog.post2.title': 'Automatizācijas Labākās Prakses Maziem Uzņēmumiem',
+    'blog.post2.excerpt': 'Praktiski padomi un stratēģijas, kā mazie uzņēmumi var izmantot automatizāciju, lai ietaupītu laiku un resursus bez lieliem sākotnējiem ieguldījumiem.',
+    'blog.post3.title': 'Modernās Web Izstrādes Tendences un AI Integrācija',
+    'blog.post3.excerpt': 'Izpētiet jaunākās web izstrādes tendences un uzziniet, kā AI rīki var uzlabot izstrādes procesu un gala produkta kvalitāti.',
   }
 };
 
