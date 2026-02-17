@@ -22,6 +22,14 @@ const PricingPage = () => {
         <meta name="twitter:title" content="AI Pakalpojumu Cenas | automatizacijas.lv" />
         <meta name="twitter:description" content="AI automatizācijas pakalpojumu cenas un elastīgi plāni." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Sākums", "item": "https://automatizacijas.lv/" },
+            { "@type": "ListItem", "position": 2, "name": "Cenas", "item": "https://automatizacijas.lv/pricing" }
+          ]
+        })}</script>
       </Helmet>
       <div className="min-h-screen flex flex-col bg-background text-foreground">
         <Header />

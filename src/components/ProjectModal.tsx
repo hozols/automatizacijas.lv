@@ -61,8 +61,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
             size="sm"
             className="absolute right-4 top-4 h-8 w-8 p-0"
             onClick={onClose}
+            aria-label="Aizvērt projekta detaļas"
           >
-            <X className="h-4 w-4" />
+            <X className="h-4 w-4" aria-hidden="true" />
           </Button>
         </DialogHeader>
 

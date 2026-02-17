@@ -126,6 +126,14 @@ const TrainingPage = () => {
         <meta name="twitter:title" content="AI Apmācības un Semināri | automatizacijas.lv" />
         <meta name="twitter:description" content="AI apmācības un semināri uzņēmumiem Latvijā." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Sākums", "item": "https://automatizacijas.lv/" },
+            { "@type": "ListItem", "position": 2, "name": "Apmācības", "item": "https://automatizacijas.lv/training" }
+          ]
+        })}</script>
       </Helmet>
       <div className="min-h-screen flex flex-col bg-background text-foreground">
         <Header />

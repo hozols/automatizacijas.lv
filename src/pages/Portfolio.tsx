@@ -22,6 +22,14 @@ const PortfolioPage = () => {
         <meta name="twitter:title" content="AI Projektu Portfolio | automatizacijas.lv" />
         <meta name="twitter:description" content="Apskatiet mūsu AI automatizācijas projektus un paveiktos darbus." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Sākums", "item": "https://automatizacijas.lv/" },
+            { "@type": "ListItem", "position": 2, "name": "Projekti", "item": "https://automatizacijas.lv/portfolio" }
+          ]
+        })}</script>
       </Helmet>
       <div className="min-h-screen flex flex-col bg-background text-foreground">
         <Header />

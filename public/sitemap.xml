@@ -90,31 +90,50 @@
   <!-- Blog Index -->
   <url>
     <loc>https://automatizacijas.lv/blog</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog Post 1 -->
+  <!-- Blog Posts -->
   <url>
-    <loc>https://automatizacijas.lv/blog/1</loc>
+    <loc>https://automatizacijas.lv/blog/ka-ai-transforme-biznesa-procesus</loc>
     <lastmod>2026-02-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog Post 2 -->
   <url>
-    <loc>https://automatizacijas.lv/blog/2</loc>
+    <loc>https://automatizacijas.lv/blog/automatizacijas-labas-prakses-maziem-uznemumiem</loc>
     <lastmod>2026-02-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog Post 3 -->
   <url>
-    <loc>https://automatizacijas.lv/blog/3</loc>
+    <loc>https://automatizacijas.lv/blog/web-izstrades-tendences-ai-integracija</loc>
     <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://automatizacijas.lv/blog/ai-chatbots-biznesam-ka-izvelities</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://automatizacijas.lv/blog/ka-automatizet-e-pastu-apstradi-ar-ai</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://automatizacijas.lv/blog/labakie-ai-riki-uznemumiem-2026</loc>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -8,25 +8,49 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Clock, ArrowLeft, ArrowRight } from 'lucide-react';
 
 const relatedLinks: Record<string, { label: string; path: string }[]> = {
-  '1': [
+  'ka-ai-transforme-biznesa-procesus': [
     { label: 'Kas ir mākslīgais intelekts?', path: '/kas-ir-maksligais-intelekts' },
     { label: 'AI Čatbotu Izstrāde', path: '/chatbotu-izstrade' },
     { label: 'Procesu Automatizācija', path: '/procesu-automatizacija' },
   ],
-  '2': [
+  'automatizacijas-labas-prakses-maziem-uznemumiem': [
     { label: 'Procesu Automatizācija ar AI', path: '/procesu-automatizacija' },
     { label: 'AI Čatbotu Izstrāde', path: '/chatbotu-izstrade' },
     { label: 'Visi AI Pakalpojumi', path: '/services' },
   ],
-  '3': [
+  'web-izstrades-tendences-ai-integracija': [
     { label: 'Mājaslapu Izstrāde ar AI', path: '/majaslapu-izstrade' },
     { label: 'Kas ir mākslīgais intelekts?', path: '/kas-ir-maksligais-intelekts' },
     { label: 'Visi AI Pakalpojumi', path: '/services' },
   ],
+  'ai-chatbots-biznesam-ka-izvelities': [
+    { label: 'AI Čatbotu Izstrāde', path: '/chatbotu-izstrade' },
+    { label: 'Kas ir mākslīgais intelekts?', path: '/kas-ir-maksligais-intelekts' },
+    { label: 'Visi AI Pakalpojumi', path: '/services' },
+  ],
+  'ka-automatizet-e-pastu-apstradi-ar-ai': [
+    { label: 'Procesu Automatizācija ar AI', path: '/procesu-automatizacija' },
+    { label: 'AI Čatbotu Izstrāde', path: '/chatbotu-izstrade' },
+    { label: 'Kas ir mākslīgais intelekts?', path: '/kas-ir-maksligais-intelekts' },
+  ],
+  'labakie-ai-riki-uznemumiem-2026': [
+    { label: 'Kas ir mākslīgais intelekts?', path: '/kas-ir-maksligais-intelekts' },
+    { label: 'Procesu Automatizācija', path: '/procesu-automatizacija' },
+    { label: 'AI Čatbotu Izstrāde', path: '/chatbotu-izstrade' },
+  ],
 };
 
-const blogPostData: Record<string, { titleKey: string; contentKey: string; excerptKey: string; date: string; readTime: string; category: string }> = {
-  '1': {
+interface PostData {
+  titleKey: string;
+  contentKey: string;
+  excerptKey: string;
+  date: string;
+  readTime: string;
+  category: string;
+}
+
+const blogPostData: Record<string, PostData> = {
+  'ka-ai-transforme-biznesa-procesus': {
     titleKey: 'blog.post1.title',
     contentKey: 'blog.post1.content',
     excerptKey: 'blog.post1.excerpt',
@@ -34,7 +58,7 @@ const blogPostData: Record<string, { titleKey: string; contentKey: string; excer
     readTime: '5 min',
     category: 'AI',
   },
-  '2': {
+  'automatizacijas-labas-prakses-maziem-uznemumiem': {
     titleKey: 'blog.post2.title',
     contentKey: 'blog.post2.content',
     excerptKey: 'blog.post2.excerpt',
@@ -42,7 +66,7 @@ const blogPostData: Record<string, { titleKey: string; contentKey: string; excer
     readTime: '7 min',
     category: 'Automatizācija',
   },
-  '3': {
+  'web-izstrades-tendences-ai-integracija': {
     titleKey: 'blog.post3.title',
     contentKey: 'blog.post3.content',
     excerptKey: 'blog.post3.excerpt',
@@ -50,12 +74,36 @@ const blogPostData: Record<string, { titleKey: string; contentKey: string; excer
     readTime: '4 min',
     category: 'Web izstrāde',
   },
+  'ai-chatbots-biznesam-ka-izvelities': {
+    titleKey: 'blog.post4.title',
+    contentKey: 'blog.post4.content',
+    excerptKey: 'blog.post4.excerpt',
+    date: '2026-02-14',
+    readTime: '6 min',
+    category: 'AI Čatboti',
+  },
+  'ka-automatizet-e-pastu-apstradi-ar-ai': {
+    titleKey: 'blog.post5.title',
+    contentKey: 'blog.post5.content',
+    excerptKey: 'blog.post5.excerpt',
+    date: '2026-02-07',
+    readTime: '5 min',
+    category: 'Automatizācija',
+  },
+  'labakie-ai-riki-uznemumiem-2026': {
+    titleKey: 'blog.post6.title',
+    contentKey: 'blog.post6.content',
+    excerptKey: 'blog.post6.excerpt',
+    date: '2026-01-30',
+    readTime: '8 min',
+    category: 'AI',
+  },
 };
 
 const BlogPost = () => {
-  const { id } = useParams<{ id: string }>();
+  const { slug } = useParams<{ slug: string }>();
   const { t } = useLanguage();
-  const post = id ? blogPostData[id] : null;
+  const post = slug ? blogPostData[slug] : null;
 
   if (!post) {
     return (
@@ -81,9 +129,9 @@ const BlogPost = () => {
       <Helmet>
         <title>{t(post.titleKey)} | automatizacijas.lv</title>
         <meta name="description" content={t(post.excerptKey)} />
-        <link rel="canonical" href={`https://automatizacijas.lv/blog/${id}`} />
+        <link rel="canonical" href={`https://automatizacijas.lv/blog/${slug}`} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://automatizacijas.lv/blog/${id}`} />
+        <meta property="og:url" content={`https://automatizacijas.lv/blog/${slug}`} />
         <meta property="og:title" content={t(post.titleKey)} />
         <meta property="og:description" content={t(post.excerptKey)} />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
@@ -117,7 +165,7 @@ const BlogPost = () => {
           },
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://automatizacijas.lv/blog/${id}`
+            "@id": `https://automatizacijas.lv/blog/${slug}`
           },
           "articleSection": post.category,
           "inLanguage": "lv",
@@ -128,24 +176,9 @@ const BlogPost = () => {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Sākums",
-              "item": "https://automatizacijas.lv/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Blogs",
-              "item": "https://automatizacijas.lv/blog"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": t(post.titleKey),
-              "item": `https://automatizacijas.lv/blog/${id}`
-            }
+            { "@type": "ListItem", "position": 1, "name": "Sākums", "item": "https://automatizacijas.lv/" },
+            { "@type": "ListItem", "position": 2, "name": "Blogs", "item": "https://automatizacijas.lv/blog" },
+            { "@type": "ListItem", "position": 3, "name": t(post.titleKey), "item": `https://automatizacijas.lv/blog/${slug}` }
           ]
         })}</script>
       </Helmet>
@@ -178,7 +211,6 @@ const BlogPost = () => {
 
             <div className="prose prose-lg max-w-none">
               {contentParagraphs.map((paragraph, index) => {
-                // Handle bold markdown-style text
                 const parts = paragraph.split(/(\*\*[^*]+\*\*)/g);
                 return (
                   <p key={index} className="text-muted-foreground leading-relaxed mb-4">
@@ -198,11 +230,11 @@ const BlogPost = () => {
             </div>
 
             {/* Related Links */}
-            {id && relatedLinks[id] && (
+            {slug && relatedLinks[slug] && (
               <div className="mt-12 pt-8 border-t border-border">
                 <h2 className="text-lg font-semibold text-foreground mb-4">Saistītie pakalpojumi</h2>
                 <div className="flex flex-wrap gap-3">
-                  {relatedLinks[id].map((link, i) => (
+                  {relatedLinks[slug].map((link, i) => (
                     <Link
                       key={i}
                       to={link.path}

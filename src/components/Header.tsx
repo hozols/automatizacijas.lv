@@ -88,6 +88,10 @@ const Header = () => {
   };
 
   return (
+    <>
+    <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-lg focus:text-sm focus:font-medium">
+      Pāriet uz saturu
+    </a>
     <header className="sticky top-0 z-50 pt-2 sm:pt-4 md:pt-6 lg:pt-8 px-2 sm:px-3 md:px-4">
       <div className="w-full max-w-7xl mx-auto py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-6 lg:px-8 flex items-center justify-between">
         <div className="p-2 sm:p-3">
@@ -181,7 +185,8 @@ const Header = () => {
                           ? 'text-accent-foreground bg-accent'
                           : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                       )}
-                      title={t(labelKey)}
+                      aria-label={t(labelKey)}
+                      aria-expanded={solutionsOpen}
                     >
                       <Icon size={14} className="group-hover:animate-pulse flex-shrink-0" />
                       <ChevronDown size={10} className={cn("ml-0.5 transition-transform duration-200", solutionsOpen && "rotate-180")} />
@@ -221,9 +226,9 @@ const Header = () => {
                       ? 'text-accent-foreground bg-accent'
                       : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                   )}
-                  title={t(labelKey)}
+                  aria-label={t(labelKey)}
                 >
-                  <Icon size={14} className="group-hover:animate-pulse flex-shrink-0" />
+                  <Icon size={14} className="group-hover:animate-pulse flex-shrink-0" aria-hidden="true" />
                 </Link>
               );
             })}
@@ -327,6 +332,8 @@ const Header = () => {
         </div>
       </div>
     </header>
+    <div id="main-content" />
+    </>
   );
 };
 

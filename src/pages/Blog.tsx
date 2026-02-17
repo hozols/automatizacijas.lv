@@ -10,7 +10,7 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const blogPosts = [
   {
-    id: 1,
+    slug: 'ka-ai-transforme-biznesa-procesus',
     titleKey: 'blog.post1.title',
     excerptKey: 'blog.post1.excerpt',
     date: '2026-02-10',
@@ -18,7 +18,7 @@ const blogPosts = [
     category: 'AI',
   },
   {
-    id: 2,
+    slug: 'automatizacijas-labas-prakses-maziem-uznemumiem',
     titleKey: 'blog.post2.title',
     excerptKey: 'blog.post2.excerpt',
     date: '2026-02-03',
@@ -26,12 +26,36 @@ const blogPosts = [
     category: 'Automatizācija',
   },
   {
-    id: 3,
+    slug: 'web-izstrades-tendences-ai-integracija',
     titleKey: 'blog.post3.title',
     excerptKey: 'blog.post3.excerpt',
     date: '2026-01-25',
     readTime: '4 min',
     category: 'Web izstrāde',
+  },
+  {
+    slug: 'ai-chatbots-biznesam-ka-izvelities',
+    titleKey: 'blog.post4.title',
+    excerptKey: 'blog.post4.excerpt',
+    date: '2026-02-14',
+    readTime: '6 min',
+    category: 'AI Čatboti',
+  },
+  {
+    slug: 'ka-automatizet-e-pastu-apstradi-ar-ai',
+    titleKey: 'blog.post5.title',
+    excerptKey: 'blog.post5.excerpt',
+    date: '2026-02-07',
+    readTime: '5 min',
+    category: 'Automatizācija',
+  },
+  {
+    slug: 'labakie-ai-riki-uznemumiem-2026',
+    titleKey: 'blog.post6.title',
+    excerptKey: 'blog.post6.excerpt',
+    date: '2026-01-30',
+    readTime: '8 min',
+    category: 'AI',
   },
 ];
 
@@ -66,6 +90,14 @@ const Blog = () => {
             "url": "https://automatizacijas.lv"
           },
           "inLanguage": "lv"
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Sākums", "item": "https://automatizacijas.lv/" },
+            { "@type": "ListItem", "position": 2, "name": "Blogs", "item": "https://automatizacijas.lv/blog" }
+          ]
         })}</script>
       </Helmet>
       <Header />
@@ -103,7 +135,7 @@ const Blog = () => {
           <div className="max-w-4xl mx-auto">
             <div className="flex flex-col gap-6">
               {blogPosts.map((post) => (
-                <Link key={post.id} to={`/blog/${post.id}`} className="block">
+                <Link key={post.slug} to={`/blog/${post.slug}`} className="block">
                   <Card className="group hover:shadow-lg transition-all duration-300 border-border/50 hover:border-primary/30 cursor-pointer">
                     <CardContent className="p-6 sm:p-8">
                       <div className="flex items-center gap-3 mb-3">
