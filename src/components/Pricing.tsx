@@ -140,9 +140,9 @@ const Pricing = () => {
             <Calculator className="h-4 w-4" />
             Projektu Kalkulators
           </div>
-          <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-foreground">
+          <h1 className="text-3xl md:text-4xl font-medium tracking-tighter text-foreground">
             Cenas atkarībā no projekta
-          </h2>
+          </h1>
           <p className="text-muted-foreground text-lg">
             Aprēķiniet savas idejas izmaksas, izmantojot mūsu interaktīvo kalkulatoru
           </p>

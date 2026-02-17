@@ -225,9 +225,9 @@ const Services = () => {
     <section id="services" className="w-full py-20 px-6 md:px-12 bg-background">
       <div className="max-w-7xl mx-auto space-y-16">
         <div ref={titleRef} className={`text-center space-y-4 max-w-3xl mx-auto scroll-fade-in ${titleVisible ? 'animate-in' : ''}`}>
-          <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-foreground">
+          <h1 className="text-3xl md:text-4xl font-medium tracking-tighter text-foreground">
             {t('services.title')}
-          </h2>
+          </h1>
           <p className="text-muted-foreground text-lg">
             {t('services.description')}
           </p>
@@ -296,6 +296,8 @@ const Services = () => {
                             src={project.image}
                             alt={`${project.title} - saistītais projekts`}
                             loading="lazy"
+                            width={48}
+                            height={48}
                             className="w-12 h-12 rounded-md object-cover"
                           />
                           <div className="flex-1 min-w-0">

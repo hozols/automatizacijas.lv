@@ -141,9 +141,9 @@ const PortfolioShowcase = () => {
           <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
             Mūsu Pieredze
           </div>
-          <h3 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
             Veiksmīgie Projekti
-          </h3>
+          </h1>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
             Aplūkojiet, kā mūsu  risinājumi ir transformējuši dažādu nozaru uzņēmumus un radījuši mērāmu vērtību
           </p>
@@ -165,6 +165,8 @@ const PortfolioShowcase = () => {
                   src={item.image}
                   alt={`${item.title} - ${item.client} projekts`}
                   loading="lazy"
+                  width={800}
+                  height={224}
                   className="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className={`absolute inset-0 bg-gradient-to-t ${item.gradient} opacity-20 group-hover:opacity-30 transition-opacity duration-300`} />

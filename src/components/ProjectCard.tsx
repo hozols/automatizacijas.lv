@@ -34,6 +34,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           src={project.image}
           alt={`${project.title} - ${project.client} projekts`}
           loading="lazy"
+          width={800}
+          height={192}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

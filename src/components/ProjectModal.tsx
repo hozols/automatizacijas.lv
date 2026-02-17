@@ -73,6 +73,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
               src={project.image}
               alt={`${project.title} - ${project.client} projekta detaļas`}
               loading="lazy"
+              width={800}
+              height={256}
               className="w-full h-64 object-cover"
             />
             <div className={`absolute inset-0 bg-gradient-to-t ${project.gradient} opacity-20`} />
