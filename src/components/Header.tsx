@@ -2,20 +2,23 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from './Logo';
-import { Menu, X, DollarSign, Sun, Moon, MessageCircle, Home, Briefcase, LayoutDashboard, ChevronDown, Bot, Globe, GraduationCap, BookOpen } from 'lucide-react';
+import { Menu, X, DollarSign, Sun, Moon, MessageCircle, Home, Briefcase, LayoutDashboard, ChevronDown, Bot, Globe, GraduationCap, BookOpen, MessageSquare, Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Switch } from '@/components/ui/switch';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const SOLUTIONS_ITEMS = [
   { id: 'services', icon: Bot, labelKey: 'nav.ai_solutions', path: '/services' },
-  { id: 'webdev', icon: Globe, labelKey: 'nav.webdev', path: '/portfolio' },
+  { id: 'chatbots', icon: MessageSquare, labelKey: 'nav.chatbots', path: '/chatbotu-izstrade' },
+  { id: 'automation', icon: Zap, labelKey: 'nav.automation', path: '/procesu-automatizacija' },
+  { id: 'webdev', icon: Globe, labelKey: 'nav.webdev', path: '/majaslapu-izstrade' },
   { id: 'training', icon: GraduationCap, labelKey: 'nav.training', path: '/training' },
 ];
 
 const NAV_SECTIONS = [
   { id: '/', icon: Home, labelKey: 'nav.home', path: '/' },
   { id: 'solutions', icon: LayoutDashboard, labelKey: 'nav.solutions', path: null, hasDropdown: true },
+  { id: 'portfolio', icon: Briefcase, labelKey: 'nav.portfolio', path: '/portfolio' },
   { id: 'pricing', icon: DollarSign, labelKey: 'nav.pricing', path: '/pricing' },
   { id: 'blog', icon: BookOpen, labelKey: 'nav.blog', path: '/blog' },
   { id: 'contact', icon: MessageCircle, labelKey: 'nav.contact', path: '/contact' },
@@ -68,7 +71,7 @@ const Header = () => {
   }, []);
 
   const activePage = location.pathname;
-  const isSolutionsActive = ['/services', '/portfolio', '/training'].includes(activePage);
+  const isSolutionsActive = ['/services', '/chatbotu-izstrade', '/procesu-automatizacija', '/majaslapu-izstrade', '/training'].includes(activePage);
 
   const handleMobileNavClick = () => {
     setMobileMenuOpen(false);

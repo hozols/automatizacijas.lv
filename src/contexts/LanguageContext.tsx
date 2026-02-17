@@ -22,7 +22,9 @@ const translations = {
     'nav.contact': 'Kontakti',
     'nav.blog': 'Blogs',
     'nav.ai_solutions': 'AI Risinājumi',
-    'nav.webdev': 'Web un Mobilo Izstrāde',
+    'nav.chatbots': 'AI Čatboti',
+    'nav.automation': 'Automatizācija',
+    'nav.webdev': 'Mājaslapu Izstrāde',
     'nav.theme': 'Kontrasts',
     
     // Hero Section

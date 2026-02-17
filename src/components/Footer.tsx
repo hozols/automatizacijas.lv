@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import {
   MapPin,
@@ -55,60 +56,42 @@ const Footer = () => {
             <div className="space-y-6">
               <h3 className="text-lg font-semibold text-foreground">Pakalpojumi</h3>
               <div className="space-y-3">
-                <a href="/services" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
+                <Link to="/services" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
                   <span className="flex items-center gap-2">
-                    AI Darbinieki
+                    AI Risinājumi
                     <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
                   </span>
-                </a>
-                <a href="/services" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
+                </Link>
+                <Link to="/chatbotu-izstrade" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
                   <span className="flex items-center gap-2">
-                    Čatboti
+                    AI Čatboti
                     <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
                   </span>
-                </a>
-                <a href="/services" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
+                </Link>
+                <Link to="/procesu-automatizacija" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
                   <span className="flex items-center gap-2">
-                    Automatizācija
+                    Procesu Automatizācija
                     <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
                   </span>
-                </a>
-                <a href="/services" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
+                </Link>
+                <Link to="/majaslapu-izstrade" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
                   <span className="flex items-center gap-2">
-                    Dokumentu apstrāde
+                    Mājaslapu Izstrāde
                     <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
                   </span>
-                </a>
-                <a href="/services" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
+                </Link>
+                <Link to="/training" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
                   <span className="flex items-center gap-2">
-                    Biznesa inteliģence
+                    AI Apmācības
                     <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
                   </span>
-                </a>
-                <a href="/services" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
+                </Link>
+                <Link to="/kas-ir-maksligais-intelekts" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
                   <span className="flex items-center gap-2">
-                    Individuāli risinājumi
+                    Kas ir mākslīgais intelekts?
                     <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
                   </span>
-                </a>
-                <a href="/services" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
-                  <span className="flex items-center gap-2">
-                    Web izstrāde
-                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
-                  </span>
-                </a>
-                <a href="/services" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
-                  <span className="flex items-center gap-2">
-                    E-komercija
-                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
-                  </span>
-                </a>
-                <a href="/services" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
-                  <span className="flex items-center gap-2">
-                    Mobilās aplikācijas
-                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
-                  </span>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -116,11 +99,10 @@ const Footer = () => {
             <div className="space-y-6">
               <h3 className="text-lg font-semibold text-foreground">Uzņēmums</h3>
               <div className="space-y-3">
-                <a href="/about" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Par mums</a>
-                <a href="/portfolio" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Projekti</a>
-                <a href="/training" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Apmācības</a>
-                <a href="/blog" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Blogs</a>
-                <a href="/contact" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Kontakti</a>
+                <Link to="/portfolio" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Projekti</Link>
+                <Link to="/pricing" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Cenas</Link>
+                <Link to="/blog" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Blogs</Link>
+                <Link to="/contact" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Kontakti</Link>
               </div>
             </div>
           </div>

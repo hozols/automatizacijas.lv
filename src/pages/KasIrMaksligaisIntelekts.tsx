@@ -259,8 +259,8 @@ const KasIrMaksligaisIntelekts = () => {
 
                 <div className="space-y-4 mb-6">
                   {[
-                    { icon: Bot, title: 'AI čatboti klientu apkalpošanai', desc: 'Čatbots uz jūsu mājaslapas var atbildēt uz klientu jautājumiem 24/7 latviešu valodā. Tas samazina atbildes laiku no stundām uz sekundēm un atbrīvo darbinieku laiku sarežģītākiem uzdevumiem. Mūsu klienti ar čatbotiem apkalpo līdz 85% standarta pieprasījumu automātiski.' },
-                    { icon: Zap, title: 'Procesu automatizācija', desc: 'No rēķinu izrakstīšanas līdz e-pastu apstrādei — MI var automatizēt desmitiem ikdienas procesu. Piemēram, sistēma var automātiski ģenerēt līgumus pēc sapulces, kategorizēt ienākošos e-pastus vai atgādināt par neapmaksātiem rēķiniem.' },
+                    { icon: Bot, title: 'AI čatboti klientu apkalpošanai', desc: 'Čatbots uz jūsu mājaslapas var atbildēt uz klientu jautājumiem 24/7 latviešu valodā. Tas samazina atbildes laiku no stundām uz sekundēm un atbrīvo darbinieku laiku sarežģītākiem uzdevumiem. Mūsu klienti ar čatbotiem apkalpo līdz 85% standarta pieprasījumu automātiski.', link: '/chatbotu-izstrade' },
+                    { icon: Zap, title: 'Procesu automatizācija', desc: 'No rēķinu izrakstīšanas līdz e-pastu apstrādei — MI var automatizēt desmitiem ikdienas procesu. Piemēram, sistēma var automātiski ģenerēt līgumus pēc sapulces, kategorizēt ienākošos e-pastus vai atgādināt par neapmaksātiem rēķiniem.', link: '/procesu-automatizacija' },
                     { icon: BarChart3, title: 'Datu analīze un prognozes', desc: 'MI analizē pārdošanas datus, klientu uzvedību un tirgus tendences, lai prognozētu pieprasījumu un optimizētu krājumus. Tas palīdz pieņemt labākus biznesa lēmumus, balstoties uz faktiem, nevis intuīciju.' },
                     { icon: FileText, title: 'Dokumentu apstrāde', desc: 'MI var automātiski lasīt un kategorizēt dokumentus, izvilkt svarīgu informāciju no līgumiem, rēķiniem vai pieteikumiem. Tas ietaupa desmitiem stundu mēnesī un samazina cilvēciskās kļūdas.' },
                     { icon: Lightbulb, title: 'Satura ģenerēšana un mārketings', desc: 'MI palīdz radīt mārketinga saturu — no sociālo mediju ierakstiem līdz epastu kampaņām. Tas var pielāgot ziņojumus katram klientu segmentam, palielinot konversijas un iesaisti.' },
@@ -272,6 +272,11 @@ const KasIrMaksligaisIntelekts = () => {
                       <div>
                         <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                        {'link' in item && item.link && (
+                          <Link to={item.link} className="inline-flex items-center gap-1 text-sm text-primary hover:text-primary/80 mt-2 font-medium">
+                            Uzzināt vairāk <ArrowRight className="h-3.5 w-3.5" />
+                          </Link>
+                        )}
                       </div>
                     </div>
                   ))}

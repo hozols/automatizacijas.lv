@@ -5,7 +5,25 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Clock, ArrowLeft } from 'lucide-react';
+import { Clock, ArrowLeft, ArrowRight } from 'lucide-react';
+
+const relatedLinks: Record<string, { label: string; path: string }[]> = {
+  '1': [
+    { label: 'Kas ir mākslīgais intelekts?', path: '/kas-ir-maksligais-intelekts' },
+    { label: 'AI Čatbotu Izstrāde', path: '/chatbotu-izstrade' },
+    { label: 'Procesu Automatizācija', path: '/procesu-automatizacija' },
+  ],
+  '2': [
+    { label: 'Procesu Automatizācija ar AI', path: '/procesu-automatizacija' },
+    { label: 'AI Čatbotu Izstrāde', path: '/chatbotu-izstrade' },
+    { label: 'Visi AI Pakalpojumi', path: '/services' },
+  ],
+  '3': [
+    { label: 'Mājaslapu Izstrāde ar AI', path: '/majaslapu-izstrade' },
+    { label: 'Kas ir mākslīgais intelekts?', path: '/kas-ir-maksligais-intelekts' },
+    { label: 'Visi AI Pakalpojumi', path: '/services' },
+  ],
+};
 
 const blogPostData: Record<string, { titleKey: string; contentKey: string; excerptKey: string; date: string; readTime: string; category: string }> = {
   '1': {
@@ -178,6 +196,25 @@ const BlogPost = () => {
                 );
               })}
             </div>
+
+            {/* Related Links */}
+            {id && relatedLinks[id] && (
+              <div className="mt-12 pt-8 border-t border-border">
+                <h2 className="text-lg font-semibold text-foreground mb-4">Saistītie pakalpojumi</h2>
+                <div className="flex flex-wrap gap-3">
+                  {relatedLinks[id].map((link, i) => (
+                    <Link
+                      key={i}
+                      to={link.path}
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-border bg-card/60 text-sm text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
+                    >
+                      {link.label}
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </article>
       </main>

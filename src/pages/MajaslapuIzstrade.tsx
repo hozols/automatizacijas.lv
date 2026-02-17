@@ -195,6 +195,25 @@ const MajaslapuIzstrade = () => {
                 </div>
               </section>
 
+              {/* Related Pages */}
+              <section>
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Saistītie resursi</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <Link to="/kas-ir-maksligais-intelekts" className="p-4 rounded-lg border border-border bg-card/60 hover:border-primary/30 transition-colors group">
+                    <h3 className="font-medium text-foreground text-sm mb-1">Kas ir mākslīgais intelekts?</h3>
+                    <p className="text-xs text-muted-foreground">Pilns ceļvedis par MI tehnoloģijām</p>
+                  </Link>
+                  <Link to="/chatbotu-izstrade" className="p-4 rounded-lg border border-border bg-card/60 hover:border-primary/30 transition-colors group">
+                    <h3 className="font-medium text-foreground text-sm mb-1">AI Čatbotu Izstrāde</h3>
+                    <p className="text-xs text-muted-foreground">Inteliģenti čatboti klientu apkalpošanai</p>
+                  </Link>
+                  <Link to="/procesu-automatizacija" className="p-4 rounded-lg border border-border bg-card/60 hover:border-primary/30 transition-colors group">
+                    <h3 className="font-medium text-foreground text-sm mb-1">Procesu Automatizācija</h3>
+                    <p className="text-xs text-muted-foreground">Automatizējiet biznesa procesus ar AI</p>
+                  </Link>
+                </div>
+              </section>
+
               <section className="p-8 rounded-xl bg-gradient-to-br from-primary/5 via-card to-primary/5 border border-primary/20 text-center">
                 <h2 className="text-2xl font-bold text-foreground mb-3">Izveidosim jūsu nākamo mājas lapu</h2>
                 <p className="text-muted-foreground mb-6 max-w-xl mx-auto">

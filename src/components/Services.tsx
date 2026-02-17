@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Bot, MessageSquare, Zap, FileText, BarChart3, Lightbulb, Settings, GraduationCap, Wrench, Code, Globe, Smartphone, ArrowRight, ExternalLink, TrendingUp, Users, Clock } from 'lucide-react';
@@ -156,7 +156,7 @@ const Services = () => {
       subtitle: t('services.chatbots.subtitle'),
       description: t('services.chatbots.description'),
       relatedProjects: [portfolioProjects[2]], // Artisan Agency
-      learnMoreLink: "/services#chatbots"
+      learnMoreLink: "/chatbotu-izstrade"
     },
     {
       icon: <Zap className="h-8 w-8 text-primary" />,
@@ -164,7 +164,7 @@ const Services = () => {
       subtitle: t('services.automation.subtitle'),
       description: t('services.automation.description'),
       // relatedProjects: [portfolioProjects[1]], // LinkedIn
-      learnMoreLink: "/services#automation"
+      learnMoreLink: "/procesu-automatizacija"
     },
     {
       icon: <FileText className="h-8 w-8 text-primary" />,
@@ -199,7 +199,7 @@ const Services = () => {
       subtitle: t('services.webdev.subtitle'),
       description: t('services.webdev.description'),
       // relatedProjects: [portfolioProjects[4], portfolioProjects[3]], // BN Darbi, Rigami
-      learnMoreLink: "/services#webdev"
+      learnMoreLink: "/majaslapu-izstrade"
     },
     {
       icon: <Globe className="h-8 w-8 text-primary" />,
@@ -286,8 +286,8 @@ const Services = () => {
                       <span className="text-xs text-primary">(klikšķis atvērs detaļas)</span>
                     </p>
                     {service.relatedProjects.slice(0, 1).map((project) => (
-                                              <div 
-                          key={project.id} 
+                                              <div
+                          key={project.id}
                           className="bg-muted/50 rounded-lg p-3 border border-border hover:bg-muted/70 hover:border-primary/30 cursor-pointer transition-all duration-200"
                           onClick={() => handleProjectClick(project)}
                         >
@@ -311,6 +311,19 @@ const Services = () => {
                         </div>
                       </div>
                     ))}
+                  </div>
+                )}
+
+                {/* Learn More Link */}
+                {service.learnMoreLink && !service.learnMoreLink.includes('#') && (
+                  <div className="mt-4 pt-3 border-t border-border/50">
+                    <Link
+                      to={service.learnMoreLink}
+                      className="text-sm text-primary hover:text-primary/80 font-medium flex items-center gap-1.5 group/link transition-colors"
+                    >
+                      Uzzināt vairāk
+                      <ArrowRight className="h-3.5 w-3.5 group-hover/link:translate-x-1 transition-transform" />
+                    </Link>
                   </div>
                 )}
               </CardContent>
