@@ -61,8 +61,75 @@ const BlogPost = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>{t(post.titleKey)} | AI Automatizācija</title>
+        <title>{t(post.titleKey)} | automatizacijas.lv</title>
         <meta name="description" content={t(post.excerptKey)} />
+        <link rel="canonical" href={`https://automatizacijas.lv/blog/${id}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://automatizacijas.lv/blog/${id}`} />
+        <meta property="og:title" content={t(post.titleKey)} />
+        <meta property="og:description" content={t(post.excerptKey)} />
+        <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
+        <meta property="og:locale" content="lv_LV" />
+        <meta property="article:published_time" content={post.date} />
+        <meta property="article:section" content={post.category} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={t(post.titleKey)} />
+        <meta name="twitter:description" content={t(post.excerptKey)} />
+        <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": t(post.titleKey),
+          "description": t(post.excerptKey),
+          "datePublished": post.date,
+          "dateModified": post.date,
+          "author": {
+            "@type": "Organization",
+            "name": "automatizacijas.lv",
+            "url": "https://automatizacijas.lv"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "automatizacijas.lv",
+            "url": "https://automatizacijas.lv",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://automatizacijas.lv/favicon.svg"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://automatizacijas.lv/blog/${id}`
+          },
+          "articleSection": post.category,
+          "inLanguage": "lv",
+          "wordCount": t(post.contentKey).split(/\s+/).length,
+          "timeRequired": `PT${post.readTime.replace(' min', 'M')}`
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Sākums",
+              "item": "https://automatizacijas.lv/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Blogs",
+              "item": "https://automatizacijas.lv/blog"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": t(post.titleKey),
+              "item": `https://automatizacijas.lv/blog/${id}`
+            }
+          ]
+        })}</script>
       </Helmet>
       <Header />
       <main className="min-h-screen">

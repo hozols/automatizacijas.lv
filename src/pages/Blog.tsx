@@ -43,6 +43,30 @@ const Blog = () => {
       <Helmet>
         <title>{t('blog.meta.title')}</title>
         <meta name="description" content={t('blog.meta.description')} />
+        <link rel="canonical" href="https://automatizacijas.lv/blog" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://automatizacijas.lv/blog" />
+        <meta property="og:title" content={t('blog.meta.title')} />
+        <meta property="og:description" content={t('blog.meta.description')} />
+        <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
+        <meta property="og:locale" content="lv_LV" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={t('blog.meta.title')} />
+        <meta name="twitter:description" content={t('blog.meta.description')} />
+        <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "name": "AI Automatizācija Blog",
+          "url": "https://automatizacijas.lv/blog",
+          "description": t('blog.meta.description'),
+          "publisher": {
+            "@type": "Organization",
+            "name": "automatizacijas.lv",
+            "url": "https://automatizacijas.lv"
+          },
+          "inLanguage": "lv"
+        })}</script>
       </Helmet>
       <Header />
       <main className="min-h-screen">
@@ -58,6 +82,18 @@ const Blog = () => {
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {t('blog.subtitle')}
+            </p>
+          </div>
+        </section>
+
+        {/* Intro text for SEO content depth */}
+        <section className="px-4 sm:px-6 md:px-8 pb-8">
+          <div className="max-w-4xl mx-auto">
+            <p className="text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto">
+              Mūsu blogā dalāmies ar praktiskiem padomiem par mākslīgā intelekta izmantošanu biznesā,
+              automatizācijas labākajām praksēm un jaunākajām tehnoloģiju tendencēm Latvijā.
+              Neatkarīgi no tā, vai esat tikai sācis interesēties par AI vai jau izmantojat automatizāciju savā uzņēmumā —
+              šeit atradīsiet noderīgus resursus un idejas, kā uzlabot biznesa procesus ar mūsdienu tehnoloģijām.
             </p>
           </div>
         </section>

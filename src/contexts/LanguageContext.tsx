@@ -73,7 +73,7 @@ const translations = {
     'services.integration.description': 'Integrējam AI risinājumus ar jūsu esoša\u0161ajām biznesa sistēmām un darba procesiem.',
     'services.training.title': 'AI Apmācības',
     'services.training.subtitle': 'Personāla apmācība AI lietošanā',
-    'services.training.description': 'Comprehensive AI training programs for your team to maximize technology adoption.',
+    'services.training.description': 'Profesionālas AI apmācību programmas jūsu komandai, lai maksimāli izmantotu tehnoloģiju potenciālu.',
     'services.maintenance.title': 'Tehniskais Atbalsts',
     'services.maintenance.subtitle': 'Nepārtraukts AI sistēmu uzturēšana',
     'services.maintenance.description': 'Profesionāls tehniskais atbalsts un sistēmu uzturēšana 24/7 režīmā.',
@@ -208,8 +208,8 @@ const translations = {
     'training.cta.contact': 'Pieteikt semināru',
 
     // Blog
-    'blog.meta.title': 'Blogs | AI Automatizācija',
-    'blog.meta.description': 'Jaunākās ziņas un raksti par AI automatizāciju, mašīnmācīšanos un digitālo transformāciju.',
+    'blog.meta.title': 'AI Automatizācijas Blogs | automatizacijas.lv',
+    'blog.meta.description': 'Raksti un padomi par mākslīgo intelektu, biznesa automatizāciju un digitālo transformāciju Latvijā. Uzziniet jaunākās AI tendences.',
     'blog.badge': 'Blogs',
     'blog.title': 'Jaunākais no AI Pasaules',
     'blog.subtitle': 'Raksti, padomi un ieskati par AI tehnoloģijām, automatizāciju un digitālo transformāciju',

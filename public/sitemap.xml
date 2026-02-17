@@ -1,79 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-  
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
   <!-- Homepage -->
   <url>
     <loc>https://automatizacijas.lv/</loc>
-    <lastmod>2025-01-08</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://automatizacijas.lv/og-image.jpg</image:loc>
-      <image:title>AI Automatizācijas Pakalpojumi Latvijā</image:title>
-      <image:caption>Profesionāli AI risinājumi uzņēmumiem</image:caption>
+      <image:title>AI Automatizacijas Pakalpojumi Latvija</image:title>
+      <image:caption>Profesionali AI risinajumi uznemumiem</image:caption>
     </image:image>
   </url>
-  
+
   <!-- Services Page -->
   <url>
     <loc>https://automatizacijas.lv/services</loc>
-    <lastmod>2025-01-08</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://automatizacijas.lv/services-image.jpg</image:loc>
-      <image:title>AI Pakalpojumi un Risinājumi</image:title>
-    </image:image>
   </url>
-  
+
   <!-- Portfolio Page -->
   <url>
     <loc>https://automatizacijas.lv/portfolio</loc>
-    <lastmod>2025-01-08</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://automatizacijas.lv/portfolio-image.jpg</image:loc>
-      <image:title>AI Projekti un Portfelis</image:title>
-    </image:image>
   </url>
-  
+
   <!-- Training Page -->
   <url>
     <loc>https://automatizacijas.lv/training</loc>
-    <lastmod>2025-01-08</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://automatizacijas.lv/training-image.jpg</image:loc>
-      <image:title>AI Apmācības un Konsultācijas</image:title>
-    </image:image>
   </url>
-  
+
   <!-- Pricing Page -->
   <url>
     <loc>https://automatizacijas.lv/pricing</loc>
-    <lastmod>2025-01-08</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://automatizacijas.lv/pricing-image.jpg</image:loc>
-      <image:title>Pakalpojumi</image:title>
-    </image:image>
   </url>
-  
+
   <!-- Contact Page -->
   <url>
     <loc>https://automatizacijas.lv/contact</loc>
-    <lastmod>2025-01-08</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://automatizacijas.lv/contact-image.jpg</image:loc>
-      <image:title>Sazinieties ar Mums</image:title>
-    </image:image>
   </url>
-  
+
+  <!-- Pillar Page: Kas ir mākslīgais intelekts -->
+  <url>
+    <loc>https://automatizacijas.lv/kas-ir-maksligais-intelekts</loc>
+    <lastmod>2026-02-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Service: AI Čatbotu Izstrāde -->
+  <url>
+    <loc>https://automatizacijas.lv/chatbotu-izstrade</loc>
+    <lastmod>2026-02-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Service: Procesu Automatizācija -->
+  <url>
+    <loc>https://automatizacijas.lv/procesu-automatizacija</loc>
+    <lastmod>2026-02-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Service: Mājaslapu Izstrāde -->
+  <url>
+    <loc>https://automatizacijas.lv/majaslapu-izstrade</loc>
+    <lastmod>2026-02-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Blog Index -->
+  <url>
+    <loc>https://automatizacijas.lv/blog</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Post 1 -->
+  <url>
+    <loc>https://automatizacijas.lv/blog/1</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog Post 2 -->
+  <url>
+    <loc>https://automatizacijas.lv/blog/2</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog Post 3 -->
+  <url>
+    <loc>https://automatizacijas.lv/blog/3</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

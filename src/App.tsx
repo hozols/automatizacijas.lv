@@ -21,6 +21,10 @@ const Training = lazy(() => import("./pages/Training"));
 const Pricing = lazy(() => import("./pages/Pricing"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
+const KasIrMaksligaisIntelekts = lazy(() => import("./pages/KasIrMaksligaisIntelekts"));
+const ChatbotuIzstrade = lazy(() => import("./pages/ChatbotuIzstrade"));
+const ProcesuAutomatizacija = lazy(() => import("./pages/ProcesuAutomatizacija"));
+const MajaslapuIzstrade = lazy(() => import("./pages/MajaslapuIzstrade"));
 
 const queryClient = new QueryClient();
 
@@ -44,6 +48,10 @@ const App = () => (
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/blog/:id" element={<BlogPost />} />
                   <Route path="/contact" element={<Contact />} />
+                  <Route path="/kas-ir-maksligais-intelekts" element={<KasIrMaksligaisIntelekts />} />
+                  <Route path="/chatbotu-izstrade" element={<ChatbotuIzstrade />} />
+                  <Route path="/procesu-automatizacija" element={<ProcesuAutomatizacija />} />
+                  <Route path="/majaslapu-izstrade" element={<MajaslapuIzstrade />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Suspense>

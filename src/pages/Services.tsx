@@ -9,9 +9,19 @@ const ServicesPage = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>Pakalpojumi | automatizacijas.lv</title>
-        <meta name="description" content="Mēs piedāvājam plašu AI pakalpojumu klāstu, ieskaitot čatbotus, procesu automatizāciju, datu analīzi un citus risinājumus."/>
+        <title>AI Pakalpojumi Uzņēmumiem | automatizacijas.lv</title>
+        <meta name="description" content="AI čatboti, procesu automatizācija, datu analīze un AI darbinieki uzņēmumiem Latvijā. Uzlabojiet biznesa efektivitāti ar mākslīgo intelektu. Bezmaksas konsultācija."/>
         <link rel="canonical" href="https://automatizacijas.lv/services" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://automatizacijas.lv/services" />
+        <meta property="og:title" content="AI Pakalpojumi | automatizacijas.lv" />
+        <meta property="og:description" content="Profesionāli AI pakalpojumi uzņēmumiem Latvijā: AI čatboti, procesu automatizācija, datu analīze un pielāgoti risinājumi." />
+        <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
+        <meta property="og:locale" content="lv_LV" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Pakalpojumi | automatizacijas.lv" />
+        <meta name="twitter:description" content="Profesionāli AI pakalpojumi uzņēmumiem Latvijā: čatboti, automatizācija, datu analīze." />
+        <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
       </Helmet>
       <div className="min-h-screen flex flex-col bg-background text-foreground">
         <Header />

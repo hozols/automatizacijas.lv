@@ -113,9 +113,19 @@ const TrainingPage = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>Apmācības | automatizacijas.lv</title>
-        <meta name="description" content="Mēs piedāvājam AI apmācības un seminārus, lai palīdzētu jūsu komandai apgūt nepieciešamās prasmes un zināšanas."/>
+        <title>AI Apmācības un Kursi Latvijā | automatizacijas.lv</title>
+        <meta name="description" content="Mākslīgā intelekta apmācības un korporatīvie semināri Latvijā. Apgūstiet AI automatizāciju, čatbotus un datu analīzi ar profesionāliem kursiem. Sertifikāti."/>
         <link rel="canonical" href="https://automatizacijas.lv/training" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://automatizacijas.lv/training" />
+        <meta property="og:title" content="AI Apmācības un Semināri | automatizacijas.lv" />
+        <meta property="og:description" content="AI apmācības un semināri uzņēmumiem Latvijā. Apgūstiet mākslīgo intelektu ar profesionāliem kursiem." />
+        <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
+        <meta property="og:locale" content="lv_LV" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Apmācības un Semināri | automatizacijas.lv" />
+        <meta name="twitter:description" content="AI apmācības un semināri uzņēmumiem Latvijā." />
+        <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
       </Helmet>
       <div className="min-h-screen flex flex-col bg-background text-foreground">
         <Header />

@@ -1,71 +1,9 @@
 User-agent: *
 Allow: /
 
+# Disallow non-public areas
+Disallow: /admin/
+Disallow: /api/
+
 # Sitemap
 Sitemap: https://automatizacijas.lv/sitemap.xml
-
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
-
-# Disallow admin and private areas (if any)
-Disallow: /admin/
-Disallow: /private/
-Disallow: /api/
-Disallow: /_next/
-Disallow: /static/
-Disallow: /temp/
-Disallow: /cache/
-Disallow: /logs/
-Disallow: /backup/
-Disallow: /old/
-Disallow: /test/
-Disallow: /dev/
-Disallow: /staging/
-
-# Allow important pages and assets
-Allow: /services
-Allow: /portfolio
-Allow: /training
-Allow: /pricing
-Allow: /contact
-Allow: /about
-Allow: /blog
-Allow: /news
-Allow: /assets/
-Allow: /images/
-Allow: /css/
-Allow: /js/
-Allow: /fonts/
-
-# Specific rules for different bots
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Slurp
-Allow: /
-Crawl-delay: 2
-
-User-agent: DuckDuckBot
-Allow: /
-Crawl-delay: 1
-
-# Block bad bots
-User-agent: AhrefsBot
-Disallow: /
-
-User-agent: SemrushBot
-Disallow: /
-
-User-agent: MJ12bot
-Disallow: /
-
-User-agent: DotBot
-Disallow: /
-
-# Host
-Host: https://automatizacijas.lv

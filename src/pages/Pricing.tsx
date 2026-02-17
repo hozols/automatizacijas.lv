@@ -9,9 +9,19 @@ const PricingPage = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>Cenas | automatizacijas.lv</title>
-        <meta name="description" content="Apskatiet mūsu pakalpojumu cenas un izvēlieties sev piemērotāko risinājumu. Piedāvājam elastīgus cenu plānus."/>
+        <title>AI Automatizācijas Cenas un Plāni | automatizacijas.lv</title>
+        <meta name="description" content="AI automatizācijas cenas sākot no €299/mēn. Elastīgi plāni čatbotiem, procesu automatizācijai un datu analīzei. Bezmaksas konsultācija un individuāla tāme."/>
         <link rel="canonical" href="https://automatizacijas.lv/pricing" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://automatizacijas.lv/pricing" />
+        <meta property="og:title" content="AI Pakalpojumu Cenas | automatizacijas.lv" />
+        <meta property="og:description" content="AI automatizācijas pakalpojumu cenas un elastīgi plāni uzņēmumiem Latvijā." />
+        <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
+        <meta property="og:locale" content="lv_LV" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Pakalpojumu Cenas | automatizacijas.lv" />
+        <meta name="twitter:description" content="AI automatizācijas pakalpojumu cenas un elastīgi plāni." />
+        <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
       </Helmet>
       <div className="min-h-screen flex flex-col bg-background text-foreground">
         <Header />

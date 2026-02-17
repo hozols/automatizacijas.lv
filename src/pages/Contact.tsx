@@ -154,9 +154,19 @@ const Contact = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>Sazinies ar mums | automatizacijas.lv</title>
-        <meta name="description" content="Sazinieties ar mums, lai uzzinātu vairāk par mūsu AI risinājumiem un pakalpojumiem. Mēs esam šeit, lai atbildētu uz jūsu jautājumiem."/>
+        <title>Bezmaksas AI Konsultācija | automatizacijas.lv</title>
+        <meta name="description" content="Sazinieties ar mums bezmaksas AI konsultācijai. Palīdzēsim izvēlēties piemērotāko AI risinājumu jūsu biznesam. Zvani +371 20 015 830 vai raksti info@automatizacijas.lv."/>
         <link rel="canonical" href="https://automatizacijas.lv/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://automatizacijas.lv/contact" />
+        <meta property="og:title" content="Sazinies ar Mums | automatizacijas.lv" />
+        <meta property="og:description" content="Sazinieties ar mums bezmaksas AI konsultācijai. Zvani +371 20 015 830 vai raksti." />
+        <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
+        <meta property="og:locale" content="lv_LV" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Sazinies ar Mums | automatizacijas.lv" />
+        <meta name="twitter:description" content="Sazinieties ar mums bezmaksas AI konsultācijai." />
+        <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
       </Helmet>
       <div className="min-h-screen flex flex-col bg-background text-foreground">
         <Header />
