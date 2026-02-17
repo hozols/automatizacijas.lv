@@ -38,7 +38,7 @@ const PortfolioShowcase = () => {
       title: "LinkedIn satura ģenerēšanas automatizācija",
       description: "Tika izveidota sistēma, kura veido unikālu saturu balstoties uz dažādām personalitātēm / emocijām un profesionālajiem parametriem, saturs ir balstīts no 50+ veidnēm, MI pats izvēlas veidni balstoties no teksta formāta un ģenerē atbilstošu Linkedin rakstu.",
       category: "AI Automatizācija",
-      image: "/linkedin.png",
+      image: "/linkedin.webp",
       client: "Signingclients.com",
       year: "2024",
       tags: ["Mārketings", "Personīgais brendings", "Automatizācija"],
@@ -70,7 +70,7 @@ const PortfolioShowcase = () => {
       title: "Portfolio lapa komercīpašumu aģentūrai",
       description: "Portfolio lapa aģentūrai, ko izmanto lead ģenerēšanai un brenda reklāmai.",
       category: "Portfolio",
-      image: "/rigami.png",
+      image: "/rigami.webp",
       client: "Rigami",
       year: "2024",
       tags: ["Real Estate", "Commercial"],
@@ -86,7 +86,7 @@ const PortfolioShowcase = () => {
       title: "BN Darbi - Saules paneļu uzstādīšanas mājaslapa",
       description: "Informatīva mājaslapa saules paneļu uzstādīšanas uzņēmumam ar e-komercijas risinājumu, kas ļauj klientiem ērti uzzināt par pakalpojumiem un veikt pasūtījumus tiešsaistē.",
       category: "Web izstrāde",
-      image: "/bndarbi.png",
+      image: "/bndarbi.webp",
       client: "BN Darbi",
       year: "2024",
       tags: ["Saules paneļi", "E-komercija", "Informatīvā lapa"],
@@ -141,9 +141,9 @@ const PortfolioShowcase = () => {
           <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
             Mūsu Pieredze
           </div>
-          <h3 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
             Veiksmīgie Projekti
-          </h3>
+          </h1>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
             Aplūkojiet, kā mūsu  risinājumi ir transformējuši dažādu nozaru uzņēmumus un radījuši mērāmu vērtību
           </p>
@@ -163,7 +163,10 @@ const PortfolioShowcase = () => {
               <div className="relative overflow-hidden">
                 <img
                   src={item.image}
-                  alt={item.title}
+                  alt={`${item.title} - ${item.client} projekts`}
+                  loading="lazy"
+                  width={800}
+                  height={224}
                   className="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className={`absolute inset-0 bg-gradient-to-t ${item.gradient} opacity-20 group-hover:opacity-30 transition-opacity duration-300`} />

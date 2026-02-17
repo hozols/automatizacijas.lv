@@ -70,6 +70,7 @@ const CookieBanner = () => {
             </div>
             <button
               onClick={handleClose}
+              aria-label="Aizvērt sīkdatņu paziņojumu"
               className="p-2 rounded-lg hover:bg-muted/50 transition-colors text-muted-foreground hover:text-foreground"
             >
               <X className="h-4 w-4" />

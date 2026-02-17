@@ -11,6 +11,7 @@ const PricingPage = () => {
       <Helmet>
         <title>Cenas | automatizacijas.lv</title>
         <meta name="description" content="Apskatiet mūsu pakalpojumu cenas un izvēlieties sev piemērotāko risinājumu. Piedāvājam elastīgus cenu plānus."/>
+        <link rel="canonical" href="https://automatizacijas.lv/pricing" />
       </Helmet>
       <div className="min-h-screen flex flex-col bg-background text-foreground">
         <Header />

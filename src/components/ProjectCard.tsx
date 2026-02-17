@@ -30,9 +30,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     <Card className="group relative overflow-hidden border border-border/30 bg-card/60 backdrop-blur-sm hover:border-primary/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl">
       {/* Background Image */}
       <div className="relative h-48 overflow-hidden">
-        <img 
-          src={project.image} 
-          alt={project.title}
+        <img
+          src={project.image}
+          alt={`${project.title} - ${project.client} projekts`}
+          loading="lazy"
+          width={800}
+          height={192}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

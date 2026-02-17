@@ -119,6 +119,7 @@ const Footer = () => {
                 <a href="/about" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Par mums</a>
                 <a href="/portfolio" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Projekti</a>
                 <a href="/training" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Apmācības</a>
+                <a href="/blog" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Blogs</a>
                 <a href="/contact" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Kontakti</a>
               </div>
             </div>
@@ -131,7 +132,7 @@ const Footer = () => {
               <div className="flex items-center gap-4">
                 <span className="text-sm text-muted-foreground">Sekojiet mums:</span>
                 <div className="flex gap-3">
-                  <a href="https://www.linkedin.com/company/sula-labs-io/" className="p-2 rounded-lg bg-muted/50 hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-200 hover:scale-110">
+                  <a href="https://www.linkedin.com/company/sula-labs-io/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 rounded-lg bg-muted/50 hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-200 hover:scale-110">
                     <Linkedin className="h-4 w-4" />
                   </a>
                 </div>

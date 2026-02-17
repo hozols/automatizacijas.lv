@@ -64,6 +64,7 @@ const TrainingModal: React.FC<TrainingModalProps> = ({ isOpen, onClose, training
           </div>
           <button
             onClick={onClose}
+            aria-label="Aizvērt logu"
             className="p-2 rounded-lg hover:bg-muted/50 transition-colors"
           >
             <X className="h-5 w-5 text-muted-foreground" />

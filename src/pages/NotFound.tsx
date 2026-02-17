@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { ArrowRight, Search, Menu, Home } from "lucide-react";
@@ -20,6 +21,12 @@ const NotFound = () => {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>404 - Lapa nav atrasta | automatizacijas.lv</title>
+        <meta name="description" content="Diemžēl šī lapa nav atrasta. Atgriezieties uz sākumlapu vai izmantojiet navigāciju." />
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-blue-50 relative overflow-hidden">
       {/* Header */}
       <header className="absolute top-0 left-0 right-0 p-6 flex items-center justify-between">
@@ -101,6 +108,7 @@ const NotFound = () => {
         <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-purple-500/5 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
     </div>
+    </>
   );
 };
 

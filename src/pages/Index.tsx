@@ -14,6 +14,7 @@ const Index = () => {
       <Helmet>
         <title>automatizacijas.lv | AI Risinājumi Jūsu Biznesam | Mākslīgā Intelekta Automatizācija Latvijā</title>
         <meta name="description" content="Profesionāli AI automatizācijas risinājumi uzņēmumiem Latvijā. Mākslīgā intelekta čatboti, datu analīze, procesu automatizācija un AI darbinieki. Palīdzam jūsu biznesam augt ar modernām AI tehnoloģijām." />
+        <link rel="canonical" href="https://automatizacijas.lv/" />
       </Helmet>
       <div className="min-h-screen flex flex-col bg-background text-foreground">
         <Header />

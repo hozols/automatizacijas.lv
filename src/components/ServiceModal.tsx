@@ -51,6 +51,7 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ isOpen, onClose, service })
           </div>
           <button
             onClick={onClose}
+            aria-label="Aizvērt logu"
             className="p-2 rounded-lg hover:bg-muted transition-colors"
           >
             <X className="h-5 w-5 text-muted-foreground" />

@@ -55,7 +55,7 @@ const Services = () => {
       description: "Tika izveidota sistēma, kura veido unikālu saturu balstoties uz dažādām personalitātēm / emocijām un profesionālajiem parametriem, saturs ir balstīts no 50+ veidnēm, MI pats izvēlas veidni balstoties no teksta formāta un ģenerē atbilstošu Linkedin rakstu.",
       longDescription: "Inteliģenta sistēma, kas automātiski ģenerē personalizētu LinkedIn saturu. Izmantojot 50+ veidnes un AI algoritmus, sistēma izvēlas piemērotāko satura formātu un ģenerē unikālus rakstus, kas atbilst klienta profesionālajam profilam un mērķiem.",
       category: "AI Automatizācija",
-      image: "/linkedin.png",
+      image: "/linkedin.webp",
       client: "Signingclients.com",
       year: "2024",
       tags: ["Mārketings", "Personīgais brendings", "Automatizācija", "AI", "LinkedIn"],
@@ -91,7 +91,7 @@ const Services = () => {
       description: "Portfolio lapa aģentūrai, ko izmanto lead ģenerēšanai un brenda reklāmai.",
       longDescription: "Modernā un responsīva portfolio lapa komercīpašumu aģentūrai, kas efektīvi prezentē nekustamā īpašuma piedāvājumus un ģenerē kvalitatīvus leadus. Lapa ir optimizēta SEO un lietotāju pieredzei.",
       category: "Portfolio",
-      image: "/rigami.png",
+      image: "/rigami.webp",
       client: "Rigami",
       year: "2024",
       tags: ["Real Estate", "Commercial", "Portfolio", "Lead Generation"],
@@ -109,7 +109,7 @@ const Services = () => {
       description: "Informatīva mājaslapa saules paneļu uzstādīšanas uzņēmumam ar e-komercijas risinājumu, kas ļauj klientiem ērti uzzināt par pakalpojumiem un veikt pasūtījumus tiešsaistē.",
       longDescription: "Pilnībā funkcionāla e-komercijas platforma saules paneļu uzstādīšanas uzņēmumam. Lapa ietver produktu katalogu, cenu kalkulatoru, online rezervācijas sistēmu un integrētu maksājumu apstrādi.",
       category: "Web izstrāde",
-      image: "/bndarbi.png",
+      image: "/bndarbi.webp",
       client: "BN Darbi",
       year: "2024",
       tags: ["Saules paneļi", "E-komercija", "Informatīvā lapa", "Online Rezervācijas"],
@@ -225,9 +225,9 @@ const Services = () => {
     <section id="services" className="w-full py-20 px-6 md:px-12 bg-background">
       <div className="max-w-7xl mx-auto space-y-16">
         <div ref={titleRef} className={`text-center space-y-4 max-w-3xl mx-auto scroll-fade-in ${titleVisible ? 'animate-in' : ''}`}>
-          <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-foreground">
+          <h1 className="text-3xl md:text-4xl font-medium tracking-tighter text-foreground">
             {t('services.title')}
-          </h2>
+          </h1>
           <p className="text-muted-foreground text-lg">
             {t('services.description')}
           </p>
@@ -292,9 +292,12 @@ const Services = () => {
                           onClick={() => handleProjectClick(project)}
                         >
                         <div className="flex items-center gap-3">
-                          <img 
-                            src={project.image} 
-                            alt={project.title}
+                          <img
+                            src={project.image}
+                            alt={`${project.title} - saistītais projekts`}
+                            loading="lazy"
+                            width={48}
+                            height={48}
                             className="w-12 h-12 rounded-md object-cover"
                           />
                           <div className="flex-1 min-w-0">
