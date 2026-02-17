@@ -26,7 +26,8 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const desktopDropdownRef = useRef<HTMLDivElement>(null);
+  const tabletDropdownRef = useRef<HTMLDivElement>(null);
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const saved = localStorage.getItem('theme');
     return saved ? saved === 'dark' : false;
@@ -55,7 +56,10 @@ const Header = () => {
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      const target = event.target as Node;
+      const isInsideDesktop = desktopDropdownRef.current?.contains(target);
+      const isInsideTablet = tabletDropdownRef.current?.contains(target);
+      if (!isInsideDesktop && !isInsideTablet) {
         setSolutionsOpen(false);
       }
     };
@@ -101,7 +105,7 @@ const Header = () => {
             {NAV_SECTIONS.map(({ id, icon: Icon, labelKey, path, hasDropdown }) => {
               if (hasDropdown) {
                 return (
-                  <div key={id} className="relative" ref={dropdownRef}>
+                  <div key={id} className="relative" ref={desktopDropdownRef}>
                     <button
                       onClick={() => setSolutionsOpen(!solutionsOpen)}
                       className={cn(
@@ -165,7 +169,7 @@ const Header = () => {
             {NAV_SECTIONS.map(({ id, icon: Icon, labelKey, path, hasDropdown }) => {
               if (hasDropdown) {
                 return (
-                  <div key={id} className="relative" ref={dropdownRef}>
+                  <div key={id} className="relative" ref={tabletDropdownRef}>
                     <button
                       onClick={() => setSolutionsOpen(!solutionsOpen)}
                       className={cn(

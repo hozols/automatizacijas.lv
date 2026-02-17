@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { BookOpen, Clock, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -66,30 +67,32 @@ const Blog = () => {
           <div className="max-w-4xl mx-auto">
             <div className="flex flex-col gap-6">
               {blogPosts.map((post) => (
-                <Card key={post.id} className="group hover:shadow-lg transition-all duration-300 border-border/50 hover:border-primary/30">
-                  <CardContent className="p-6 sm:p-8">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                        {post.category}
+                <Link key={post.id} to={`/blog/${post.id}`} className="block">
+                  <Card className="group hover:shadow-lg transition-all duration-300 border-border/50 hover:border-primary/30 cursor-pointer">
+                    <CardContent className="p-6 sm:p-8">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
+                          {post.category}
+                        </span>
+                        <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                          <Clock size={12} />
+                          {post.readTime}
+                        </span>
+                        <span className="text-xs text-muted-foreground">{post.date}</span>
+                      </div>
+                      <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                        {t(post.titleKey)}
+                      </h2>
+                      <p className="text-muted-foreground mb-4 leading-relaxed">
+                        {t(post.excerptKey)}
+                      </p>
+                      <span className="inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:gap-3 transition-all">
+                        {t('blog.read_more')}
+                        <ArrowRight size={14} />
                       </span>
-                      <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                        <Clock size={12} />
-                        {post.readTime}
-                      </span>
-                      <span className="text-xs text-muted-foreground">{post.date}</span>
-                    </div>
-                    <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
-                      {t(post.titleKey)}
-                    </h2>
-                    <p className="text-muted-foreground mb-4 leading-relaxed">
-                      {t(post.excerptKey)}
-                    </p>
-                    <span className="inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:gap-3 transition-all">
-                      {t('blog.read_more')}
-                      <ArrowRight size={14} />
-                    </span>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>
