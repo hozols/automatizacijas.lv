@@ -71,7 +71,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
           <div className="relative rounded-lg overflow-hidden">
             <img
               src={project.image}
-              alt={project.title}
+              alt={`${project.title} - ${project.client} projekta detaļas`}
+              loading="lazy"
               className="w-full h-64 object-cover"
             />
             <div className={`absolute inset-0 bg-gradient-to-t ${project.gradient} opacity-20`} />

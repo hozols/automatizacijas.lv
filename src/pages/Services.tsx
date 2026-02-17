@@ -11,6 +11,7 @@ const ServicesPage = () => {
       <Helmet>
         <title>Pakalpojumi | automatizacijas.lv</title>
         <meta name="description" content="Mēs piedāvājam plašu AI pakalpojumu klāstu, ieskaitot čatbotus, procesu automatizāciju, datu analīzi un citus risinājumus."/>
+        <link rel="canonical" href="https://automatizacijas.lv/services" />
       </Helmet>
       <div className="min-h-screen flex flex-col bg-background text-foreground">
         <Header />

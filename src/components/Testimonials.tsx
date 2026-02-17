@@ -89,9 +89,10 @@ const Testimonials = () => {
               <div className="relative z-10 flex items-center gap-4">
                 <div className="flex-shrink-0">
                   {testimonial.avatar.startsWith('/') ? (
-                    <img 
-                      src={testimonial.avatar} 
-                      alt={testimonial.author}
+                    <img
+                      src={testimonial.avatar}
+                      alt={`${testimonial.author} - ${testimonial.position}`}
+                      loading="lazy"
                       className="h-12 w-12 rounded-full object-cover ring-2 ring-primary/20 group-hover:ring-primary/40 transition-all duration-300"
                     />
                   ) : (

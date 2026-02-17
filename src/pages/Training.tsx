@@ -115,6 +115,7 @@ const TrainingPage = () => {
       <Helmet>
         <title>Apmācības | automatizacijas.lv</title>
         <meta name="description" content="Mēs piedāvājam AI apmācības un seminārus, lai palīdzētu jūsu komandai apgūt nepieciešamās prasmes un zināšanas."/>
+        <link rel="canonical" href="https://automatizacijas.lv/training" />
       </Helmet>
       <div className="min-h-screen flex flex-col bg-background text-foreground">
         <Header />

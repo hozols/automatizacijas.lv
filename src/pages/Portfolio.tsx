@@ -11,6 +11,7 @@ const PortfolioPage = () => {
       <Helmet>
         <title>Mūsu Portfolio | automatizacijas.lv</title>
         <meta name="description" content="Apskatiet mūsu paveiktos darbus un projektus AI jomā. Uzziniet, kā mēs esam palīdzējuši citiem uzņēmumiem sasniegt savus mērķus."/>
+        <link rel="canonical" href="https://automatizacijas.lv/portfolio" />
       </Helmet>
       <div className="min-h-screen flex flex-col bg-background text-foreground">
         <Header />

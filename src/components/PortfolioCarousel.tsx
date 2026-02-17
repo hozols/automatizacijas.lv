@@ -38,7 +38,7 @@ const PortfolioShowcase = () => {
       title: "LinkedIn satura ģenerēšanas automatizācija",
       description: "Tika izveidota sistēma, kura veido unikālu saturu balstoties uz dažādām personalitātēm / emocijām un profesionālajiem parametriem, saturs ir balstīts no 50+ veidnēm, MI pats izvēlas veidni balstoties no teksta formāta un ģenerē atbilstošu Linkedin rakstu.",
       category: "AI Automatizācija",
-      image: "/linkedin.png",
+      image: "/linkedin.webp",
       client: "Signingclients.com",
       year: "2024",
       tags: ["Mārketings", "Personīgais brendings", "Automatizācija"],
@@ -70,7 +70,7 @@ const PortfolioShowcase = () => {
       title: "Portfolio lapa komercīpašumu aģentūrai",
       description: "Portfolio lapa aģentūrai, ko izmanto lead ģenerēšanai un brenda reklāmai.",
       category: "Portfolio",
-      image: "/rigami.png",
+      image: "/rigami.webp",
       client: "Rigami",
       year: "2024",
       tags: ["Real Estate", "Commercial"],
@@ -86,7 +86,7 @@ const PortfolioShowcase = () => {
       title: "BN Darbi - Saules paneļu uzstādīšanas mājaslapa",
       description: "Informatīva mājaslapa saules paneļu uzstādīšanas uzņēmumam ar e-komercijas risinājumu, kas ļauj klientiem ērti uzzināt par pakalpojumiem un veikt pasūtījumus tiešsaistē.",
       category: "Web izstrāde",
-      image: "/bndarbi.png",
+      image: "/bndarbi.webp",
       client: "BN Darbi",
       year: "2024",
       tags: ["Saules paneļi", "E-komercija", "Informatīvā lapa"],
@@ -163,7 +163,8 @@ const PortfolioShowcase = () => {
               <div className="relative overflow-hidden">
                 <img
                   src={item.image}
-                  alt={item.title}
+                  alt={`${item.title} - ${item.client} projekts`}
+                  loading="lazy"
                   className="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className={`absolute inset-0 bg-gradient-to-t ${item.gradient} opacity-20 group-hover:opacity-30 transition-opacity duration-300`} />
