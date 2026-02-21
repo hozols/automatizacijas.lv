@@ -129,14 +129,20 @@ const BlogPost = () => {
       <Helmet>
         <title>{t(post.titleKey)} | automatizacijas.lv</title>
         <meta name="description" content={t(post.excerptKey)} />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`https://automatizacijas.lv/blog/${slug}`} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://automatizacijas.lv/blog/${slug}`} />
         <meta property="og:title" content={t(post.titleKey)} />
         <meta property="og:description" content={t(post.excerptKey)} />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta property="article:published_time" content={post.date} />
+        <meta property="article:modified_time" content={post.date} />
+        <meta property="article:author" content="https://automatizacijas.lv" />
         <meta property="article:section" content={post.category} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={t(post.titleKey)} />
@@ -147,6 +153,12 @@ const BlogPost = () => {
           "@type": "BlogPosting",
           "headline": t(post.titleKey),
           "description": t(post.excerptKey),
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://automatizacijas.lv/og-image.jpg",
+            "width": 1200,
+            "height": 630
+          },
           "datePublished": post.date,
           "dateModified": post.date,
           "author": {

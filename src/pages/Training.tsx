@@ -115,12 +115,16 @@ const TrainingPage = () => {
       <Helmet>
         <title>AI Apmācības un Kursi Latvijā | automatizacijas.lv</title>
         <meta name="description" content="Mākslīgā intelekta apmācības un korporatīvie semināri Latvijā. Apgūstiet AI automatizāciju, čatbotus un datu analīzi ar profesionāliem kursiem. Sertifikāti."/>
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/training" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/training" />
         <meta property="og:title" content="AI Apmācības un Semināri | automatizacijas.lv" />
         <meta property="og:description" content="AI apmācības un semināri uzņēmumiem Latvijā. Apgūstiet mākslīgo intelektu ar profesionāliem kursiem." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="AI Apmācības un Semināri | automatizacijas.lv" />
@@ -132,6 +136,78 @@ const TrainingPage = () => {
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Sākums", "item": "https://automatizacijas.lv/" },
             { "@type": "ListItem", "position": 2, "name": "Apmācības", "item": "https://automatizacijas.lv/training" }
+          ]
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "AI Apmācību Kursi",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "Course",
+                "name": "AI Pamati un Automatizācija",
+                "description": "Iemācieties izmantot mākslīgo intelektu biznesa procesu automatizācijai. Praktisks kurss ar reāliem piemēriem.",
+                "provider": { "@type": "Organization", "name": "automatizacijas.lv", "url": "https://automatizacijas.lv" },
+                "inLanguage": "lv",
+                "courseMode": "blended",
+                "offers": { "@type": "Offer", "category": "Paid", "priceCurrency": "EUR" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "Course",
+                "name": "AI Čatbotu Izveide un Pārvaldība",
+                "description": "Apgūstiet AI čatbotu izveidi, konfigurēšanu un integrēšanu ar biznesa sistēmām.",
+                "provider": { "@type": "Organization", "name": "automatizacijas.lv", "url": "https://automatizacijas.lv" },
+                "inLanguage": "lv",
+                "courseMode": "blended",
+                "offers": { "@type": "Offer", "category": "Paid", "priceCurrency": "EUR" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "Course",
+                "name": "Datu Analīze ar MI",
+                "description": "Iemācieties analizēt biznesa datus ar mākslīgā intelekta rīkiem un pieņemt labākus lēmumus.",
+                "provider": { "@type": "Organization", "name": "automatizacijas.lv", "url": "https://automatizacijas.lv" },
+                "inLanguage": "lv",
+                "courseMode": "blended",
+                "offers": { "@type": "Offer", "category": "Paid", "priceCurrency": "EUR" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "Course",
+                "name": "Mašīnmācīšanās Pamati",
+                "description": "Ievads mašīnmācīšanās tehnoloģijās un to praktiskajā pielietojumā uzņēmumiem.",
+                "provider": { "@type": "Organization", "name": "automatizacijas.lv", "url": "https://automatizacijas.lv" },
+                "inLanguage": "lv",
+                "courseMode": "blended",
+                "offers": { "@type": "Offer", "category": "Paid", "priceCurrency": "EUR" }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": "Course",
+                "name": "AI Ētika un Atbildīga Izmantošana",
+                "description": "Izprotiet AI ētikas principus, datu privātumu un atbildīgu mākslīgā intelekta izmantošanu biznesā.",
+                "provider": { "@type": "Organization", "name": "automatizacijas.lv", "url": "https://automatizacijas.lv" },
+                "inLanguage": "lv",
+                "courseMode": "blended",
+                "offers": { "@type": "Offer", "category": "Paid", "priceCurrency": "EUR" }
+              }
+            }
           ]
         })}</script>
       </Helmet>

@@ -64,12 +64,16 @@ const ChatbotuIzstrade = () => {
       <Helmet>
         <title>AI Čatbotu Izstrāde Latvijā | automatizacijas.lv</title>
         <meta name="description" content="AI čatbotu izstrāde uzņēmumiem Latvijā. Inteliģenti čatboti latviešu valodā 24/7 klientu apkalpošanai. Integrācija ar CRM, e-veikalu un citām sistēmām. No €299/mēn." />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/chatbotu-izstrade" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/chatbotu-izstrade" />
         <meta property="og:title" content="AI Čatbotu Izstrāde Latvijā | automatizacijas.lv" />
         <meta property="og:description" content="Inteliģenti AI čatboti klientu apkalpošanai latviešu valodā. 24/7 atbalsts, CRM integrācija." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="AI Čatbotu Izstrāde Latvijā" />

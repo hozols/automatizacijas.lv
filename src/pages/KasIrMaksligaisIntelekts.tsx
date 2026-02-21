@@ -92,6 +92,9 @@ const KasIrMaksligaisIntelekts = () => {
         <meta property="og:title" content="Kas ir Mākslīgais Intelekts? Pilnīgs Ceļvedis" />
         <meta property="og:description" content="Uzziniet, kas ir mākslīgais intelekts, kā tas darbojas un kā to izmantot biznesā Latvijā." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Kas ir Mākslīgais Intelekts? Pilnīgs Ceļvedis" />

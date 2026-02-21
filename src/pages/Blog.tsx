@@ -67,12 +67,16 @@ const Blog = () => {
       <Helmet>
         <title>{t('blog.meta.title')}</title>
         <meta name="description" content={t('blog.meta.description')} />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/blog" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/blog" />
         <meta property="og:title" content={t('blog.meta.title')} />
         <meta property="og:description" content={t('blog.meta.description')} />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={t('blog.meta.title')} />

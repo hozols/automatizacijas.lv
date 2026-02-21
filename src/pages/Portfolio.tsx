@@ -11,12 +11,16 @@ const PortfolioPage = () => {
       <Helmet>
         <title>AI Projekti un Paveiktie Darbi | automatizacijas.lv</title>
         <meta name="description" content="AI automatizācijas projekti un paveiktie darbi Latvijas uzņēmumiem. Čatboti, procesu automatizācija un datu analīzes risinājumi. Reāli rezultāti."/>
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/portfolio" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/portfolio" />
         <meta property="og:title" content="AI Projektu Portfolio | automatizacijas.lv" />
         <meta property="og:description" content="Apskatiet mūsu AI automatizācijas projektus un paveiktos darbus Latvijas uzņēmumiem." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="AI Projektu Portfolio | automatizacijas.lv" />

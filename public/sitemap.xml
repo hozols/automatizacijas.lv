@@ -5,7 +5,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://automatizacijas.lv/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -18,7 +18,7 @@
   <!-- Services Page -->
   <url>
     <loc>https://automatizacijas.lv/services</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -26,7 +26,7 @@
   <!-- Portfolio Page -->
   <url>
     <loc>https://automatizacijas.lv/portfolio</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -34,7 +34,7 @@
   <!-- Training Page -->
   <url>
     <loc>https://automatizacijas.lv/training</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -42,7 +42,7 @@
   <!-- Pricing Page -->
   <url>
     <loc>https://automatizacijas.lv/pricing</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -50,39 +50,47 @@
   <!-- Contact Page -->
   <url>
     <loc>https://automatizacijas.lv/contact</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Pillar Page: Kas ir mākslīgais intelekts -->
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://automatizacijas.lv/privacy</loc>
+    <lastmod>2026-02-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Pillar Page: Kas ir makslīgais intelekts -->
   <url>
     <loc>https://automatizacijas.lv/kas-ir-maksligais-intelekts</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Service: AI Čatbotu Izstrāde -->
+  <!-- Service: AI Catbotu Izstrade -->
   <url>
     <loc>https://automatizacijas.lv/chatbotu-izstrade</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Service: Procesu Automatizācija -->
+  <!-- Service: Procesu Automatizacija -->
   <url>
     <loc>https://automatizacijas.lv/procesu-automatizacija</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Service: Mājaslapu Izstrāde -->
+  <!-- Service: Majaslapu Izstrade -->
   <url>
     <loc>https://automatizacijas.lv/majaslapu-izstrade</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>

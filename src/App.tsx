@@ -25,6 +25,7 @@ const KasIrMaksligaisIntelekts = lazy(() => import("./pages/KasIrMaksligaisIntel
 const ChatbotuIzstrade = lazy(() => import("./pages/ChatbotuIzstrade"));
 const ProcesuAutomatizacija = lazy(() => import("./pages/ProcesuAutomatizacija"));
 const MajaslapuIzstrade = lazy(() => import("./pages/MajaslapuIzstrade"));
+const Privacy = lazy(() => import("./pages/Privacy"));
 
 const queryClient = new QueryClient();
 
@@ -52,6 +53,7 @@ const App = () => (
                   <Route path="/chatbotu-izstrade" element={<ChatbotuIzstrade />} />
                   <Route path="/procesu-automatizacija" element={<ProcesuAutomatizacija />} />
                   <Route path="/majaslapu-izstrade" element={<MajaslapuIzstrade />} />
+                  <Route path="/privacy" element={<Privacy />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Suspense>

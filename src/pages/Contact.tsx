@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -156,12 +157,16 @@ const Contact = () => {
       <Helmet>
         <title>Bezmaksas AI Konsultācija | automatizacijas.lv</title>
         <meta name="description" content="Sazinieties ar mums bezmaksas AI konsultācijai. Palīdzēsim izvēlēties piemērotāko AI risinājumu jūsu biznesam. Zvani +371 20 015 830 vai raksti info@automatizacijas.lv."/>
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/contact" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/contact" />
         <meta property="og:title" content="Sazinies ar Mums | automatizacijas.lv" />
         <meta property="og:description" content="Sazinieties ar mums bezmaksas AI konsultācijai. Zvani +371 20 015 830 vai raksti." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Sazinies ar Mums | automatizacijas.lv" />
@@ -551,9 +556,9 @@ const Contact = () => {
                               />
                               <Label htmlFor="gdprConsent" className="text-sm text-muted-foreground leading-relaxed">
                                 Es piekrītu, ka mana informācija tiks izmantota, lai sazinātos ar mani par šo pieprasījumu. 
-                                <a href="/privacy" className="text-primary hover:underline ml-1">
+                                <Link to="/privacy" className="text-primary hover:underline ml-1">
                                   Lasīt vairāk par privātuma politiku
-                                </a>
+                                </Link>
                               </Label>
                             </div>
                             {errors.gdprConsent && (

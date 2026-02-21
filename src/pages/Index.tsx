@@ -64,8 +64,6 @@ const Index = () => {
         <meta name="description" content="Profesionāli AI automatizācijas risinājumi uzņēmumiem Latvijā. Čatboti, procesu automatizācija, datu analīze un AI darbinieki. Bezmaksas konsultācija." />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href="https://automatizacijas.lv/" />
-        <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/" />
-        <link rel="alternate" hreflang="x-default" href="https://automatizacijas.lv/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/" />
         <meta property="og:title" content="AI Automatizācija Latvijā | automatizacijas.lv" />
