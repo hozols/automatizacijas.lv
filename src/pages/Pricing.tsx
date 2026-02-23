@@ -9,8 +9,8 @@ const PricingPage = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>AI Automatizācijas Cenas un Plāni | automatizacijas.lv</title>
-        <meta name="description" content="AI automatizācijas cenas sākot no €299/mēn. Elastīgi plāni čatbotiem, procesu automatizācijai un datu analīzei. Bezmaksas konsultācija un individuāla tāme."/>
+        <title>AI Pakalpojumu Konfigurācija | automatizacijas.lv</title>
+        <meta name="description" content="Konfigurējiet savu AI projektu un saņemiet individuālu piedāvājumu. Čatboti, procesu automatizācija, web izstrāde un pielāgoti risinājumi. Bezmaksas konsultācija."/>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/pricing" />
         <meta property="og:type" content="website" />

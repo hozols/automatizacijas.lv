@@ -100,9 +100,7 @@ const Contact = () => {
         formData.append("pricing_timeline", pricingData.timeline.toString());
         formData.append("pricing_integrations", pricingData.integrations.join(", ") || "Nav izvēlēts");
         formData.append("pricing_custom_features", pricingData.customFeatures.join(", ") || "Nav izvēlēts");
-        formData.append("pricing_estimated_cost", `€${pricingData.estimatedCost.toLocaleString()}`);
         formData.append("pricing_service_name", pricingData.serviceType.name);
-        formData.append("pricing_base_price", `€${pricingData.serviceType.basePrice.toLocaleString()}`);
         formData.append("pricing_source", "Pricing Calculator");
       }
 
@@ -277,7 +275,6 @@ const Contact = () => {
                             <div><span className="font-medium">Projekta veids:</span> {pricingData.serviceType.name}</div>
                             <div><span className="font-medium">Sarežģītība:</span> {pricingData.complexity}/5</div>
                             <div><span className="font-medium">Laika ietvars:</span> {pricingData.timeline} nedēļas</div>
-                            <div><span className="font-medium">Aptuvenās izmaksas:</span> €{pricingData.estimatedCost.toLocaleString()}</div>
                           </div>
                           {pricingData.integrations.length > 0 && (
                             <div className="mt-2 text-xs">

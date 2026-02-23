@@ -9,7 +9,6 @@ export interface PricingData {
   estimatedCost: number;
   serviceType: {
     name: string;
-    basePrice: number;
     description: string;
   };
 }
