@@ -8,8 +8,16 @@
       "Bash(pkill:*)",
       "Bash(true)",
       "mcp__ide__getDiagnostics",
-      "Bash(ffprobe -v quiet -print_format json -show_streams \"/Users/monds/remotion/packages/automatizacijas-ad/out/AutomatizacijasAd.mp4\" 2>/dev/null | head -40)",
-      "Bash(ffmpeg -i \"/Users/monds/remotion/packages/automatizacijas-ad/out/AutomatizacijasAd.mp4\" -c:v libvpx-vp9 -b:v 0 -crf 24 -an -deadline good -cpu-used 2 -row-mt 1 \"/Users/monds/baltai/public/videos/hero-ad.webm\" 2>&1 | tail -5)"
+      "Bash(find:*)",
+      "mcp__dfs-mcp__dataforseo_labs_google_ranked_keywords",
+      "mcp__dfs-mcp__dataforseo_labs_google_competitors_domain",
+      "mcp__dfs-mcp__dataforseo_labs_google_keywords_for_site",
+      "mcp__dfs-mcp__dataforseo_labs_google_keyword_overview",
+      "mcp__dfs-mcp__kw_data_google_ads_search_volume",
+      "mcp__dfs-mcp__dataforseo_labs_google_keyword_ideas",
+      "mcp__dfs-mcp__dataforseo_labs_google_keyword_suggestions",
+      "mcp__dfs-mcp__serp_organic_live_advanced",
+      "mcp__dfs-mcp__on_page_instant_pages"
     ],
     "deny": []
   }
