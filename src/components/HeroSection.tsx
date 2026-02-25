@@ -139,7 +139,30 @@ const HeroSection = () => {
         
         <div className="pt-4 sm:pt-6 text-xs sm:text-sm text-muted-foreground animate-fade-in-up animate-delay-800">{t("hero.trial")}</div>
       </div>
-      
+
+      {/* Hero Video */}
+      <div
+        className="w-full max-w-5xl mt-8 sm:mt-12 z-10 animate-fade-in-up animate-delay-1000 cursor-pointer group"
+        onClick={() => navigate('/contact')}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') navigate('/contact'); }}
+      >
+        <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border border-border/50 group-hover:shadow-primary/20 group-hover:border-primary/30 transition-all duration-300">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="w-full h-auto block"
+          >
+            <source src="/videos/hero-ad.webm" type="video/webm" />
+            <source src="/videos/hero-ad.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
       {/* Service Showcase integrated in hero section with glassmorphic effect */}
       <div className="w-full max-w-7xl mt-8 sm:mt-12 z-10 animate-fade-in-up animate-delay-1000">
         <div className="cosmic-glow relative rounded-lg sm:rounded-xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg hover-lift">

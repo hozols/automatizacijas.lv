@@ -7,7 +7,9 @@
       "Bash(npm run dev:*)",
       "Bash(pkill:*)",
       "Bash(true)",
-      "mcp__ide__getDiagnostics"
+      "mcp__ide__getDiagnostics",
+      "Bash(ffprobe -v quiet -print_format json -show_streams \"/Users/monds/remotion/packages/automatizacijas-ad/out/AutomatizacijasAd.mp4\" 2>/dev/null | head -40)",
+      "Bash(ffmpeg -i \"/Users/monds/remotion/packages/automatizacijas-ad/out/AutomatizacijasAd.mp4\" -c:v libvpx-vp9 -b:v 0 -crf 24 -an -deadline good -cpu-used 2 -row-mt 1 \"/Users/monds/baltai/public/videos/hero-ad.webm\" 2>&1 | tail -5)"
     ],
     "deny": []
   }
