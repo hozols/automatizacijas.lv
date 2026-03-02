@@ -232,7 +232,23 @@ const Services = () => {
             {t('services.description')}
           </p>
         </div>
-        
+
+        {/* SEO intro content */}
+        <div className="max-w-4xl mx-auto space-y-4 text-muted-foreground leading-relaxed">
+          <p>
+            Piedāvājam plašu <strong className="text-foreground">AI automatizācijas pakalpojumu</strong> klāstu, kas pielāgots
+            Latvijas uzņēmumu vajadzībām. No inteliģentiem čatbotiem, kas apkalpo klientus latviešu valodā 24/7,
+            līdz pilnīgi automatizētiem biznesa procesiem — mūsu mākslīgā intelekta risinājumi palīdz ietaupīt laiku,
+            samazināt izmaksas un uzlabot efektivitāti.
+          </p>
+          <p>
+            Katrs pakalpojums tiek pielāgots individuāli jūsu biznesa specifikai. Izmantojam jaunākās AI tehnoloģijas —
+            OpenAI, Google AI, pielāgotas mašīnmācīšanās sistēmas — lai nodrošinātu maksimālu rezultātu.
+            Mūsu klienti vidēji <strong className="text-foreground">ietaupa 15-25 stundas nedēļā</strong> katram darbiniekam
+            un sasniedz pozitīvu ROI <strong className="text-foreground">3-6 mēnešu laikā</strong>.
+          </p>
+        </div>
+
         {/* Tabs */}
         <div className="flex justify-center">
           <div className="flex bg-muted/70 rounded-lg p-1 border border-border">

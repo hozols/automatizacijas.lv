@@ -3,11 +3,14 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
+import HomeAIIntro from '@/components/HomeAIIntro';
 import Features from '@/components/Features';
+import HomeProcess from '@/components/HomeProcess';
 import Testimonials from '@/components/Testimonials';
 import HomeFAQ from '@/components/HomeFAQ';
 import Footer from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
+import { useScrollDepthTracking } from '@/hooks/useScrollDepthTracking';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -57,6 +60,8 @@ const faqSchema = {
 };
 
 const Index = () => {
+  useScrollDepthTracking();
+
   return (
     <PageTransition>
       <Helmet>
@@ -85,7 +90,9 @@ const Index = () => {
         <main className="flex-1">
           <div className="space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-20">
             <HeroSection />
+            <HomeAIIntro />
             <Features />
+            <HomeProcess />
             <HomeFAQ />
             <Testimonials />
           </div>

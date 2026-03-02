@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Loader, Sparkles, Zap } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useNavigate } from 'react-router-dom';
+import { trackCTAClick } from '@/lib/analytics';
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -48,7 +49,7 @@ const HeroSection = () => {
           <Button
             variant="default"
             className="btn-magnetic hover-glow bg-primary text-primary-foreground text-sm sm:text-base h-10 sm:h-12 px-6 sm:px-8 transition-all duration-200 min-h-[40px] sm:min-h-[48px] group w-full sm:w-auto"
-            onClick={() => navigate('/contact')}
+            onClick={() => { trackCTAClick('bezmaksas_konsultacija', 'hero'); navigate('/contact'); }}
           >
             <Zap className="h-3.5 sm:h-4 w-3.5 sm:h-4 mr-1.5 sm:mr-2 group-hover:animate-pulse" />
             {t('hero.cta.demo')}
@@ -61,10 +62,10 @@ const HeroSection = () => {
       {/* Hero Video */}
       <div
         className="w-full max-w-5xl mt-8 sm:mt-12 z-10 animate-fade-in-up animate-delay-1000 cursor-pointer group"
-        onClick={() => navigate('/contact')}
+        onClick={() => { trackCTAClick('hero_video', 'hero'); navigate('/contact'); }}
         role="button"
         tabIndex={0}
-        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') navigate('/contact'); }}
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { trackCTAClick('hero_video', 'hero'); navigate('/contact'); } }}
       >
         <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border border-border/50 group-hover:shadow-primary/20 group-hover:border-primary/30 transition-all duration-300">
           <video

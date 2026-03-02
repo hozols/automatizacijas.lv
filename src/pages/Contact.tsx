@@ -19,6 +19,7 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { usePricing } from "@/contexts/PricingContext";
+import { trackFormSubmission } from "@/lib/analytics";
 import {
   Mail,
   Phone,
@@ -114,6 +115,7 @@ const Contact = () => {
 
       if (response.ok) {
         console.log("Form submitted successfully:", data);
+        trackFormSubmission('contact_form');
         setIsSubmitted(true);
         reset();
         clearPricingData(); // Clear pricing data after successful submission
