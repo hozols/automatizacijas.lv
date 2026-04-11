@@ -64,7 +64,7 @@ const Nozares = () => {
     <PageTransition>
       <Helmet>
         <title>AI Automatizācija pa Nozarēm | automatizacijas.lv</title>
-        <meta name="description" content="AI automatizācijas risinājumi dažādām nozarēm Latvijā — grāmatvedība, e-komercija, ražošana, loģistika, juridiskās firmas. Noskaidrojiet, kā AI var palīdzēt tieši jūsu nozarē." />
+        <meta name="description" content="AI automatizācija dažādām nozarēm Latvijā — grāmatvedība, e-komercija, ražošana, loģistika, juridiskās firmas. Pielāgoti risinājumi." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/nozares" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/nozares" />

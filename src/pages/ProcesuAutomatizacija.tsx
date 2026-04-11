@@ -63,7 +63,7 @@ const ProcesuAutomatizacija = () => {
     <PageTransition>
       <Helmet>
         <title>Procesu Automatizācija ar AI | automatizacijas.lv</title>
-        <meta name="description" content="Biznesa procesu automatizācija ar mākslīgo intelektu Latvijā. Samaziniet manuālo darbu līdz 80%, ietaupiet laiku un naudu. E-pastu, dokumentu, rēķinu automatizācija." />
+        <meta name="description" content="Biznesa procesu automatizācija ar AI Latvijā. Samaziniet manuālo darbu līdz 80%, ietaupiet laiku un naudu. E-pastu, dokumentu automatizācija." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/procesu-automatizacija" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/procesu-automatizacija" />

@@ -10,7 +10,7 @@ const PricingPage = () => {
     <PageTransition>
       <Helmet>
         <title>AI Pakalpojumu Konfigurācija | automatizacijas.lv</title>
-        <meta name="description" content="Konfigurējiet savu AI projektu un saņemiet individuālu piedāvājumu. Čatboti, procesu automatizācija, web izstrāde un pielāgoti risinājumi. Bezmaksas konsultācija."/>
+        <meta name="description" content="AI automatizācijas cenas un pakalpojumu konfigurācija. Čatboti, procesu automatizācija, web izstrāde. Bezmaksas konsultācija."/>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/pricing" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/pricing" />

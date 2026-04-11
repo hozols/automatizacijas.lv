@@ -156,7 +156,7 @@ const Contact = () => {
     <PageTransition>
       <Helmet>
         <title>Bezmaksas AI Konsultācija | automatizacijas.lv</title>
-        <meta name="description" content="Sazinieties ar mums bezmaksas AI konsultācijai. Palīdzēsim izvēlēties piemērotāko AI risinājumu jūsu biznesam. Zvani +371 20 015 830 vai raksti info@automatizacijas.lv."/>
+        <meta name="description" content="Sazinieties ar mums bezmaksas AI konsultācijai. Palīdzēsim izvēlēties piemērotāko AI risinājumu jūsu biznesam. Zvani +371 20 015 830."/>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/contact" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/contact" />

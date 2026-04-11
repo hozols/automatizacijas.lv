@@ -63,7 +63,7 @@ const ChatbotuIzstrade = () => {
     <PageTransition>
       <Helmet>
         <title>AI Čatbotu Izstrāde Latvijā | automatizacijas.lv</title>
-        <meta name="description" content="AI čatbotu izstrāde uzņēmumiem Latvijā. Inteliģenti čatboti latviešu valodā 24/7 klientu apkalpošanai. Integrācija ar CRM, e-veikalu un citām sistēmām. No €299/mēn." />
+        <meta name="description" content="AI čatbotu izstrāde uzņēmumiem Latvijā. Inteliģenti čatboti latviešu valodā 24/7 klientu apkalpošanai. CRM integrācija. No €299/mēn." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/chatbotu-izstrade" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/chatbotu-izstrade" />

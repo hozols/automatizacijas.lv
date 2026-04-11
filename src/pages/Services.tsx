@@ -10,7 +10,7 @@ const ServicesPage = () => {
     <PageTransition>
       <Helmet>
         <title>AI Pakalpojumi Uzņēmumiem | automatizacijas.lv</title>
-        <meta name="description" content="AI čatboti, procesu automatizācija, datu analīze un AI darbinieki uzņēmumiem Latvijā. Uzlabojiet biznesa efektivitāti ar mākslīgo intelektu. Bezmaksas konsultācija."/>
+        <meta name="description" content="AI čatboti, procesu automatizācija, datu analīze un AI darbinieki uzņēmumiem Latvijā. Uzlabojiet efektivitāti ar AI. Bezmaksas konsultācija."/>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/services" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/services" />

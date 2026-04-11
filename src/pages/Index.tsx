@@ -92,7 +92,7 @@ const Index = () => {
     <PageTransition>
       <Helmet>
         <title>AI Automatizācija Latvijā | automatizacijas.lv</title>
-        <meta name="description" content="Profesionāli AI automatizācijas risinājumi uzņēmumiem Latvijā. Grāmatvedības automatizācija, dokumentu apstrāde, AI čatboti, datu analīze. Bezmaksas konsultācija." />
+        <meta name="description" content="AI automatizācijas risinājumi uzņēmumiem Latvijā. Grāmatvedības automatizācija, dokumentu apstrāde, AI čatboti, datu analīze. Bezmaksas konsultācija." />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href="https://automatizacijas.lv/" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/" />

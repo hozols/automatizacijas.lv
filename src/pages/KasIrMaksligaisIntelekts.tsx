@@ -84,7 +84,7 @@ const KasIrMaksligaisIntelekts = () => {
     <PageTransition>
       <Helmet>
         <title>Kas ir Mākslīgais Intelekts? Ceļvedis 2026 | automatizacijas.lv</title>
-        <meta name="description" content="Kas ir mākslīgais intelekts (MI) un kā to izmantot biznesā? Uzziniet par AI veidiem, praktiskiem pielietojumiem Latvijā, populārākajiem rīkiem un MI nākotni. Pilnīgs ceļvedis." />
+        <meta name="description" content="Kas ir mākslīgais intelekts (MI) un kā to izmantot biznesā? AI veidi, praktiski pielietojumi Latvijā un populārākie rīki. Ceļvedis." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/kas-ir-maksligais-intelekts" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/kas-ir-maksligais-intelekts" />
