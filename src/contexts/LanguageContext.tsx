@@ -1,6 +1,5 @@
 import React, { createContext, useContext, ReactNode } from 'react';
 import { blogTranslations } from './blogTranslations';
-import { blogTranslationsPart2 } from './blogTranslationsPart2';
 
 export type Language = 'lv';
 
@@ -232,7 +231,7 @@ interface LanguageProviderProps {
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   const t = (key: string): string => {
-    return translations.lv[key] || blogTranslations[key] || blogTranslationsPart2[key] || key;
+    return translations.lv[key] || blogTranslations[key] || key;
   };
 
   return (
