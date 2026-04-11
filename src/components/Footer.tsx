@@ -74,21 +74,33 @@ const Footer = () => {
                     <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
                   </span>
                 </Link>
+                <Link to="/dokumentu-automatizacija" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
+                  <span className="flex items-center gap-2">
+                    Dokumentu Automatizācija
+                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
+                  </span>
+                </Link>
+                <Link to="/gramatvedibas-automatizacija" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
+                  <span className="flex items-center gap-2">
+                    Grāmatvedības Automatizācija
+                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
+                  </span>
+                </Link>
+                <Link to="/ai-platformu-izstrade" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
+                  <span className="flex items-center gap-2">
+                    AI Platformu Izstrāde
+                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
+                  </span>
+                </Link>
                 <Link to="/majaslapu-izstrade" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
                   <span className="flex items-center gap-2">
                     Mājaslapu Izstrāde
                     <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
                   </span>
                 </Link>
-                <Link to="/training" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
+                <Link to="/nozares" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
                   <span className="flex items-center gap-2">
-                    AI Apmācības
-                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
-                  </span>
-                </Link>
-                <Link to="/kas-ir-maksligais-intelekts" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
-                  <span className="flex items-center gap-2">
-                    Kas ir mākslīgais intelekts?
+                    Nozares
                     <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
                   </span>
                 </Link>

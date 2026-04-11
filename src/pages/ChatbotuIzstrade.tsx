@@ -66,6 +66,7 @@ const ChatbotuIzstrade = () => {
         <meta name="description" content="AI čatbotu izstrāde uzņēmumiem Latvijā. Inteliģenti čatboti latviešu valodā 24/7 klientu apkalpošanai. Integrācija ar CRM, e-veikalu un citām sistēmām. No €299/mēn." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/chatbotu-izstrade" />
+        <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/chatbotu-izstrade" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/chatbotu-izstrade" />
         <meta property="og:title" content="AI Čatbotu Izstrāde Latvijā | automatizacijas.lv" />

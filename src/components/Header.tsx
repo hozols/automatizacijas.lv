@@ -11,8 +11,10 @@ const SOLUTIONS_ITEMS = [
   { id: 'services', icon: Bot, labelKey: 'nav.ai_solutions', path: '/services' },
   { id: 'chatbots', icon: MessageSquare, labelKey: 'nav.chatbots', path: '/chatbotu-izstrade' },
   { id: 'automation', icon: Zap, labelKey: 'nav.automation', path: '/procesu-automatizacija' },
+  { id: 'documents', icon: BookOpen, labelKey: 'nav.documents', path: '/dokumentu-automatizacija' },
+  { id: 'accounting', icon: BookOpen, labelKey: 'nav.accounting', path: '/gramatvedibas-automatizacija' },
   { id: 'webdev', icon: Globe, labelKey: 'nav.webdev', path: '/majaslapu-izstrade' },
-  { id: 'training', icon: GraduationCap, labelKey: 'nav.training', path: '/training' },
+  { id: 'nozares', icon: GraduationCap, labelKey: 'nav.industries', path: '/nozares' },
 ];
 
 const NAV_SECTIONS = [
@@ -71,7 +73,7 @@ const Header = () => {
   }, []);
 
   const activePage = location.pathname;
-  const isSolutionsActive = ['/services', '/chatbotu-izstrade', '/procesu-automatizacija', '/majaslapu-izstrade', '/training'].includes(activePage);
+  const isSolutionsActive = ['/services', '/chatbotu-izstrade', '/procesu-automatizacija', '/majaslapu-izstrade', '/training', '/dokumentu-automatizacija', '/gramatvedibas-automatizacija', '/ai-platformu-izstrade', '/datu-analize', '/ai-darbinieki', '/nozares'].includes(activePage) || activePage.startsWith('/nozares/');
 
   const handleMobileNavClick = () => {
     setMobileMenuOpen(false);

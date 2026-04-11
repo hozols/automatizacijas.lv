@@ -13,6 +13,7 @@ const ServicesPage = () => {
         <meta name="description" content="AI čatboti, procesu automatizācija, datu analīze un AI darbinieki uzņēmumiem Latvijā. Uzlabojiet biznesa efektivitāti ar mākslīgo intelektu. Bezmaksas konsultācija."/>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/services" />
+        <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/services" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/services" />
         <meta property="og:title" content="AI Pakalpojumi | automatizacijas.lv" />

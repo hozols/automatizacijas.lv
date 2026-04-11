@@ -71,19 +71,19 @@ const HomeAIIntro = () => {
                 icon: <BarChart3 className="h-6 w-6 text-primary" />,
                 title: 'Datu analīze un BI',
                 description: 'AI vadīta biznesa inteliģence — automātiskas atskaites, tendenču analīze, prognozēšana un datu vizualizācija lēmumu pieņemšanai.',
-                link: '/services',
+                link: '/datu-analize',
               },
               {
                 icon: <FileText className="h-6 w-6 text-primary" />,
-                title: 'Dokumentu apstrāde',
+                title: 'Dokumentu automatizācija',
                 description: 'Automātiska dokumentu digitalizācija, rēķinu apstrāde, līgumu analīze un datu izvilkšana no jebkura formāta dokumentiem ar AI.',
-                link: '/services',
+                link: '/dokumentu-automatizacija',
               },
               {
                 icon: <Users className="h-6 w-6 text-primary" />,
                 title: 'AI darbinieki',
                 description: 'Gatavi izmantošanai AI darbinieki, kas veic specifiskus uzdevumus — no satura veidošanas līdz klientu apkalpošanai un datu apstrādei.',
-                link: '/services',
+                link: '/ai-darbinieki',
               },
               {
                 icon: <TrendingUp className="h-6 w-6 text-primary" />,

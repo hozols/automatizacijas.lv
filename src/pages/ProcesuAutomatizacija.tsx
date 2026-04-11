@@ -66,6 +66,7 @@ const ProcesuAutomatizacija = () => {
         <meta name="description" content="Biznesa procesu automatizācija ar mākslīgo intelektu Latvijā. Samaziniet manuālo darbu līdz 80%, ietaupiet laiku un naudu. E-pastu, dokumentu, rēķinu automatizācija." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/procesu-automatizacija" />
+        <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/procesu-automatizacija" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/procesu-automatizacija" />
         <meta property="og:title" content="Procesu Automatizācija ar AI | automatizacijas.lv" />

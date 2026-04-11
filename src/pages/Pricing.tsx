@@ -13,6 +13,7 @@ const PricingPage = () => {
         <meta name="description" content="Konfigurējiet savu AI projektu un saņemiet individuālu piedāvājumu. Čatboti, procesu automatizācija, web izstrāde un pielāgoti risinājumi. Bezmaksas konsultācija."/>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/pricing" />
+        <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/pricing" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/pricing" />
         <meta property="og:title" content="AI Pakalpojumu Cenas | automatizacijas.lv" />

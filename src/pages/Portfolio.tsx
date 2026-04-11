@@ -13,6 +13,7 @@ const PortfolioPage = () => {
         <meta name="description" content="AI automatizācijas projekti un paveiktie darbi Latvijas uzņēmumiem. Čatboti, procesu automatizācija un datu analīzes risinājumi. Reāli rezultāti."/>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/portfolio" />
+        <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/portfolio" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/portfolio" />
         <meta property="og:title" content="AI Projektu Portfolio | automatizacijas.lv" />

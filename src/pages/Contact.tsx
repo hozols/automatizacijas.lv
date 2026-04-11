@@ -159,6 +159,7 @@ const Contact = () => {
         <meta name="description" content="Sazinieties ar mums bezmaksas AI konsultācijai. Palīdzēsim izvēlēties piemērotāko AI risinājumu jūsu biznesam. Zvani +371 20 015 830 vai raksti info@automatizacijas.lv."/>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/contact" />
+        <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/contact" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/contact" />
         <meta property="og:title" content="Sazinies ar Mums | automatizacijas.lv" />

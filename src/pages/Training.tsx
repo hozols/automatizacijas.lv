@@ -117,6 +117,7 @@ const TrainingPage = () => {
         <meta name="description" content="Mākslīgā intelekta apmācības un korporatīvie semināri Latvijā. Apgūstiet AI automatizāciju, čatbotus un datu analīzi ar profesionāliem kursiem. Sertifikāti."/>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/training" />
+        <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/training" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/training" />
         <meta property="og:title" content="AI Apmācības un Semināri | automatizacijas.lv" />

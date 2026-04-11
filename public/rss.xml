@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI Automatizācijas Blogs | automatizacijas.lv</title>
+    <link>https://automatizacijas.lv/blog</link>
+    <description>Raksti un padomi par mākslīgo intelektu, biznesa automatizāciju un digitālo transformāciju Latvijā.</description>
+    <language>lv</language>
+    <lastBuildDate>Fri, 11 Apr 2026 00:00:00 +0300</lastBuildDate>
+    <atom:link href="https://automatizacijas.lv/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Labākie AI Rīki Latvijas Uzņēmumiem 2026: Atjaunots Saraksts</title>
+      <link>https://automatizacijas.lv/blog/labakie-ai-riki-latvijas-uznemumiem-2026-atjaunots</link>
+      <description>Atjaunots un paplašināts apskats par labākajiem AI rīkiem Latvijas uzņēmumiem 2026. gadā.</description>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 +0300</pubDate>
+      <guid>https://automatizacijas.lv/blog/labakie-ai-riki-latvijas-uznemumiem-2026-atjaunots</guid>
+      <category>AI</category>
+    </item>
+
+    <item>
+      <title>Kā Automatizēt Rēķinu Apstrādi ar AI: Soli pa Solim</title>
+      <link>https://automatizacijas.lv/blog/ka-automatizet-rekinu-apstradi-ar-ai</link>
+      <description>Detalizēts soli pa solim ceļvedis rēķinu apstrādes automatizācijai ar AI.</description>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 +0300</pubDate>
+      <guid>https://automatizacijas.lv/blog/ka-automatizet-rekinu-apstradi-ar-ai</guid>
+      <category>Grāmatvedība</category>
+    </item>
+
+    <item>
+      <title>AI vs. Tradicionālā Klientu Apkalpošana: Salīdzinājums ar Skaitļiem</title>
+      <link>https://automatizacijas.lv/blog/ai-vs-tradicionala-klientu-apkalposana</link>
+      <description>Detalizēts salīdzinājums starp AI čatbotu un tradicionālo klientu apkalpošanu.</description>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0300</pubDate>
+      <guid>https://automatizacijas.lv/blog/ai-vs-tradicionala-klientu-apkalposana</guid>
+      <category>AI Čatboti</category>
+    </item>
+
+    <item>
+      <title>Kā Grāmatvedības Birojs Ietaupīja 25 Stundas Nedēļā ar Dokumentu Automatizāciju</title>
+      <link>https://automatizacijas.lv/blog/gramatvedibas-birojs-ietaupija-25-stundas</link>
+      <description>Gadījuma izpēte par grāmatvedības biroja dokumentu automatizāciju.</description>
+      <pubDate>Sun, 29 Mar 2026 00:00:00 +0300</pubDate>
+      <guid>https://automatizacijas.lv/blog/gramatvedibas-birojs-ietaupija-25-stundas</guid>
+      <category>Gadījuma izpēte</category>
+    </item>
+
+    <item>
+      <title>5 Kļūdas, Ko Uzņēmumi Pieļauj AI Ieviešanā</title>
+      <link>https://automatizacijas.lv/blog/5-kludas-ai-ieviesana</link>
+      <description>Biežākās kļūdas AI ieviešanā un kā no tām izvairīties.</description>
+      <pubDate>Wed, 25 Mar 2026 00:00:00 +0300</pubDate>
+      <guid>https://automatizacijas.lv/blog/5-kludas-ai-ieviesana</guid>
+      <category>AI</category>
+    </item>
+
+    <item>
+      <title>AI Terminu Vārdnīca Latviešu Valodā</title>
+      <link>https://automatizacijas.lv/blog/ai-terminu-vardnica</link>
+      <description>Visaptveroša mākslīgā intelekta terminu vārdnīca latviešu valodā — 50+ termini.</description>
+      <pubDate>Sun, 22 Mar 2026 00:00:00 +0300</pubDate>
+      <guid>https://automatizacijas.lv/blog/ai-terminu-vardnica</guid>
+      <category>Izglītība</category>
+    </item>
+
+    <item>
+      <title>E-komercijas Automatizācija: 7 Veidi, Kā AI Palielina Pārdošanu</title>
+      <link>https://automatizacijas.lv/blog/e-komercijas-automatizacija-7-veidi</link>
+      <description>7 praktiski veidi, kā e-komercijas uzņēmumi var izmantot AI.</description>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 +0300</pubDate>
+      <guid>https://automatizacijas.lv/blog/e-komercijas-automatizacija-7-veidi</guid>
+      <category>E-komercija</category>
+    </item>
+
+    <item>
+      <title>Kā AI Maina Grāmatvedības Biroju Darbu Latvijā</title>
+      <link>https://automatizacijas.lv/blog/ka-ai-maina-gramatvedibas-biroju-darbu</link>
+      <description>Kā mākslīgais intelekts transformē grāmatvedības biroju ikdienu Latvijā.</description>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0300</pubDate>
+      <guid>https://automatizacijas.lv/blog/ka-ai-maina-gramatvedibas-biroju-darbu</guid>
+      <category>Grāmatvedība</category>
+    </item>
+
+    <item>
+      <title>AI Čatbots Latviešu Valodā: Kā Tas Strādā un Ko Var Sasniegt</title>
+      <link>https://automatizacijas.lv/blog/ai-chatbots-latviesu-valoda</link>
+      <description>Kā darbojas AI čatboti latviešu valodā — tehnoloģija, iespējas un piemēri.</description>
+      <pubDate>Wed, 11 Mar 2026 00:00:00 +0300</pubDate>
+      <guid>https://automatizacijas.lv/blog/ai-chatbots-latviesu-valoda</guid>
+      <category>AI Čatboti</category>
+    </item>
+
+    <item>
+      <title>Kā Izvēlēties AI Platformu Savam Uzņēmumam</title>
+      <link>https://automatizacijas.lv/blog/ka-izvelities-ai-platformu-uznemumam</link>
+      <description>Gatavs risinājums vs. pielāgota izstrāde — kā izvēlēties pareizi.</description>
+      <pubDate>Sun, 08 Mar 2026 00:00:00 +0300</pubDate>
+      <guid>https://automatizacijas.lv/blog/ka-izvelities-ai-platformu-uznemumam</guid>
+      <category>AI Platformas</category>
+    </item>
+
+    <item>
+      <title>10 Dokumentu Apstrādes Procesi, Ko AI Var Automatizēt</title>
+      <link>https://automatizacijas.lv/blog/10-dokumentu-apstrades-procesi-ko-ai-var-automatizet</link>
+      <description>10 konkrēti dokumentu apstrādes procesi, kurus AI var automatizēt.</description>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 +0300</pubDate>
+      <guid>https://automatizacijas.lv/blog/10-dokumentu-apstrades-procesi-ko-ai-var-automatizet</guid>
+      <category>Dokumenti</category>
+    </item>
+
+    <item>
+      <title>Grāmatvedības Automatizācija 2026: Pilns Ceļvedis Latvijas Uzņēmumiem</title>
+      <link>https://automatizacijas.lv/blog/gramatvedibas-automatizacija-celvedis</link>
+      <description>Detalizēts ceļvedis par grāmatvedības automatizāciju ar AI Latvijā.</description>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0300</pubDate>
+      <guid>https://automatizacijas.lv/blog/gramatvedibas-automatizacija-celvedis</guid>
+      <category>Grāmatvedība</category>
+    </item>
+
+    <item>
+      <title>AI Čatbots Biznesam: Kā Izvēlēties Pareizo Risinājumu</title>
+      <link>https://automatizacijas.lv/blog/ai-chatbots-biznesam-ka-izvelities</link>
+      <description>Praktisks ceļvedis AI čatbota izvēlei jūsu uzņēmumam.</description>
+      <pubDate>Sat, 14 Feb 2026 00:00:00 +0200</pubDate>
+      <guid>https://automatizacijas.lv/blog/ai-chatbots-biznesam-ka-izvelities</guid>
+      <category>AI Čatboti</category>
+    </item>
+
+    <item>
+      <title>Kā AI Transformē Biznesa Procesus 2026. Gadā</title>
+      <link>https://automatizacijas.lv/blog/ka-ai-transforme-biznesa-procesus</link>
+      <description>Kā mākslīgais intelekts maina uzņēmumu darba veidus Latvijā.</description>
+      <pubDate>Tue, 10 Feb 2026 00:00:00 +0200</pubDate>
+      <guid>https://automatizacijas.lv/blog/ka-ai-transforme-biznesa-procesus</guid>
+      <category>AI</category>
+    </item>
+
+    <item>
+      <title>Kā Automatizēt E-pastu Apstrādi ar Mākslīgo Intelektu</title>
+      <link>https://automatizacijas.lv/blog/ka-automatizet-e-pastu-apstradi-ar-ai</link>
+      <description>Kā AI var automatizēt e-pastu apstrādi un ietaupīt stundas katru dienu.</description>
+      <pubDate>Sat, 07 Feb 2026 00:00:00 +0200</pubDate>
+      <guid>https://automatizacijas.lv/blog/ka-automatizet-e-pastu-apstradi-ar-ai</guid>
+      <category>Automatizācija</category>
+    </item>
+
+    <item>
+      <title>Automatizācijas Labākās Prakses Maziem Uzņēmumiem</title>
+      <link>https://automatizacijas.lv/blog/automatizacijas-labas-prakses-maziem-uznemumiem</link>
+      <description>Praktiski padomi un stratēģijas maziem un vidējiem uzņēmumiem.</description>
+      <pubDate>Tue, 03 Feb 2026 00:00:00 +0200</pubDate>
+      <guid>https://automatizacijas.lv/blog/automatizacijas-labas-prakses-maziem-uznemumiem</guid>
+      <category>Automatizācija</category>
+    </item>
+
+    <item>
+      <title>Labākie AI Rīki Uzņēmumiem 2026. Gadā</title>
+      <link>https://automatizacijas.lv/blog/labakie-ai-riki-uznemumiem-2026</link>
+      <description>Apskats par labākajiem mākslīgā intelekta rīkiem uzņēmumiem.</description>
+      <pubDate>Fri, 30 Jan 2026 00:00:00 +0200</pubDate>
+      <guid>https://automatizacijas.lv/blog/labakie-ai-riki-uznemumiem-2026</guid>
+      <category>AI</category>
+    </item>
+
+    <item>
+      <title>Modernās Web Izstrādes Tendences un AI Integrācija</title>
+      <link>https://automatizacijas.lv/blog/web-izstrades-tendences-ai-integracija</link>
+      <description>Jaunākās web izstrādes tendences un AI rīku integrācija.</description>
+      <pubDate>Sun, 25 Jan 2026 00:00:00 +0200</pubDate>
+      <guid>https://automatizacijas.lv/blog/web-izstrades-tendences-ai-integracija</guid>
+      <category>Web izstrāde</category>
+    </item>
+
+  </channel>
+</rss>

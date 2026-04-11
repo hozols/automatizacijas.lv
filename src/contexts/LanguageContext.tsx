@@ -1,4 +1,6 @@
 import React, { createContext, useContext, ReactNode } from 'react';
+import { blogTranslations } from './blogTranslations';
+import { blogTranslationsPart2 } from './blogTranslationsPart2';
 
 export type Language = 'lv';
 
@@ -25,15 +27,18 @@ const translations = {
     'nav.chatbots': 'AI Čatboti',
     'nav.automation': 'Automatizācija',
     'nav.webdev': 'Mājaslapu Izstrāde',
+    'nav.documents': 'Dokumentu Automatizācija',
+    'nav.accounting': 'Grāmatvedības Automatizācija',
+    'nav.industries': 'Nozares',
     'nav.theme': 'Kontrasts',
     
     // Hero Section
     'hero.badge': 'Jauni AI risinājumi',
     'hero.title': 'AI automatizācija augošiem uzņēmumiem',
     'hero.title.highlight': 'augošiem',
-    'hero.description': 'Optimizējiet savus biznesa procesus ar mūsu visaptverošajiem AI risinājumiem. Radīts moderniem uzņēmumiem, kas novērtē efektivitāti, precizitāti un mērogojamu izaugsmi.',
+    'hero.description': 'No grāmatvedības automatizācijas līdz AI čatbotiem — pielāgoti risinājumi, kas ietaupa laiku un naudu. Bezmaksas konsultācija.',
     'hero.cta.demo': 'Rezervēt bezmaksas konsultāciju',
-    'hero.trial': 'Bezmaksas 14 dienu izmēģinājums',
+    'hero.trial': 'Bezmaksas konsultācija · Bez saistībām',
     'hero.showcase.title': 'Mūsu AI Risinājumi',
     'hero.showcase.view_all': 'Skatīt visus',
     'hero.showcase.nav.workers': 'AI Darbinieki',
@@ -217,30 +222,7 @@ const translations = {
     'blog.subtitle': 'Raksti, padomi un ieskati par AI tehnoloģijām, automatizāciju un digitālo transformāciju',
     'blog.read_more': 'Lasīt vairāk',
     'blog.back': '← Atpakaļ uz blogu',
-    'blog.post1.title': 'Kā AI Transformē Biznesa Procesus 2026. Gadā',
-    'blog.post1.excerpt': 'Uzziniet, kā mākslīgais intelekts maina uzņēmumu darba veidus un kādi ir galvenie ieguvumi no AI integrācijas jūsu biznesa procesos.',
-    'blog.post1.content': 'Mākslīgais intelekts (AI) turpina strauji mainīt veidu, kā uzņēmumi darbojas un konkurē tirgū. 2026. gadā mēs redzam vēl nebijušu AI tehnoloģiju integrāciju biznesa procesos.\n\nGalvenie virzieni, kuros AI transformē uzņēmumus:\n\n**1. Automatizēta klientu apkalpošana**\nAI čatboti un virtuālie asistenti tagad spēj risināt līdz 85% klientu pieprasījumu bez cilvēka iesaistes. Tas nozīmē ātrāku apkalpošanu un zemākas izmaksas.\n\n**2. Datu analīze un prognozēšana**\nAI algoritmi analizē miljoniem datu punktu reāllaikā, palīdzot uzņēmumiem pieņemt labākus lēmumus un prognozēt tirgus tendences.\n\n**3. Procesu optimizācija**\nNo dokumentu apstrādes līdz piegādes ķēžu pārvaldībai — AI automatizē sarežģītus procesus, samazinot kļūdas un palielinot ātrumu.\n\n**4. Personalizēta mārketinga stratēģija**\nAI ļauj radīt individuāli pielāgotus piedāvājumus katram klientam, palielinot konversijas un klientu apmierinātību.\n\nUzņēmumi, kas pieņem AI tagad, iegūst būtisku konkurences priekšrocību. Svarīgi ir sākt ar skaidriem mērķiem un pakāpeniski paplašināt AI lietojumu.',
-    'blog.post2.title': 'Automatizācijas Labākās Prakses Maziem Uzņēmumiem',
-    'blog.post2.excerpt': 'Praktiski padomi un stratēģijas, kā mazie uzņēmumi var izmantot automatizāciju, lai ietaupītu laiku un resursus bez lieliem sākotnējiem ieguldījumiem.',
-    'blog.post2.content': 'Automatizācija vairs nav tikai lielu korporāciju privilēģija. Mazie un vidējie uzņēmumi arvien vairāk izmanto automatizācijas rīkus, lai konkurētu ar lielākiem tirgus dalībniekiem.\n\n**Kur sākt automatizāciju?**\n\n**1. E-pasta mārketings**\nAutomatizētas e-pasta kampaņas var ietaupīt desmitiem stundu mēnesī. Iestatiet trigeru bāzētas ziņas jauniem klientiem, pamestiem groziem un regulāriem jaunumiem.\n\n**2. Rēķinu un grāmatvedības procesi**\nAutomatizēta rēķinu izrakstīšana, atgādinājumi par maksājumiem un finanšu atskaites — tas viss var darboties bez manuālas iejaukšanās.\n\n**3. Sociālo mediju pārvaldība**\nPlānojiet un publicējiet saturu automātiski, analizējiet auditorijas iesaisti un ģenerējiet atskaites.\n\n**4. Klientu atbalsts**\nVienkārši čatboti var atbildēt uz biežāk uzdotajiem jautājumiem 24/7, atstājot sarežģītākus pieprasījumus cilvēkiem.\n\n**Padomi veiksmīgai ieviešanai:**\n- Sāciet ar vienu procesu un pilnveidojiet to\n- Mēriet rezultātus pirms un pēc automatizācijas\n- Izvēlieties rīkus, kas integrējas ar esošajām sistēmām\n- Apmāciet komandu darbam ar jaunajiem rīkiem',
-    'blog.post3.title': 'Modernās Web Izstrādes Tendences un AI Integrācija',
-    'blog.post3.excerpt': 'Izpētiet jaunākās web izstrādes tendences un uzziniet, kā AI rīki var uzlabot izstrādes procesu un gala produkta kvalitāti.',
-    'blog.post3.content': 'Web izstrādes ainava 2026. gadā ir būtiski mainījusies, pateicoties AI rīku integrācijai izstrādes procesā un jaunām tehnoloģiskām pieejām.\n\n**Galvenās tendences:**\n\n**1. AI asistēta koda rakstīšana**\nIzstrādātāji arvien vairāk izmanto AI rīkus koda ģenerēšanai, pārskatīšanai un testēšanai. Tas paātrina izstrādes procesu par 30-50%.\n\n**2. Serverless un Edge Computing**\nAplikācijas arvien biežāk tiek izvietotas tuvāk lietotājiem, nodrošinot ātrāku ielādes laiku un labāku lietotāja pieredzi.\n\n**3. Komponentu bāzēta arhitektūra**\nModulāra pieeja ļauj atkārtoti izmantot komponentus starp projektiem, samazinot izstrādes laiku un uzlabojot koda kvalitāti.\n\n**4. AI personalizācija**\nMājaslapas tagad var dinamiski pielāgot saturu katram apmeklētājam, balstoties uz viņu uzvedību un preferencēm.\n\n**5. Progresīvās web aplikācijas (PWA)**\nPWA turpina iegūt popularitāti, piedāvājot natīvai lietotnei līdzīgu pieredzi tieši pārlūkā.\n\nŠīs tendences kopā veido nākotnes web izstrādes ainavu, kur kvalitāte un ātrums iet roku rokā ar inovācijām.',
-
-    // Blog Post 4
-    'blog.post4.title': 'AI Čatbots Biznesam: Kā Izvēlēties Pareizo Risinājumu',
-    'blog.post4.excerpt': 'Praktisks ceļvedis AI čatbota izvēlei jūsu uzņēmumam. Uzziniet, kādi čatbotu veidi pastāv, ko tie spēj un kā izvēlēties atbilstošāko.',
-    'blog.post4.content': 'AI čatboti ir kļuvuši par vienu no populārākajiem mākslīgā intelekta pielietojumiem biznesā. Tomēr ne visi čatboti ir vienādi, un pareizā risinājuma izvēle var būtiski ietekmēt jūsu ieguldījuma atdevi.\n\n**Čatbotu veidi un to atšķirības**\n\n**1. Noteikumu bāzēti čatboti**\nVienkāršākie čatboti, kas seko iepriekš definētiem scenārijiem. Piemēroti biežāk uzdoto jautājumu atbildēšanai, bet nespēj risināt neparedzētas situācijas. Cena: no €50/mēnesī.\n\n**2. AI čatboti ar dabīgās valodas apstrādi**\nModerni čatboti, kas saprot brīvu tekstu un kontekstu. Var atbildēt uz jautājumiem, ko iepriekš nav redzējuši. Izmanto GPT vai līdzīgus valodas modeļus. Cena: no €299/mēnesī.\n\n**3. Pielāgoti AI asistenti**\nPilnībā pielāgoti risinājumi, kas integrējas ar jūsu CRM, e-veikalu vai iekšējām sistēmām. Var veikt darbības — ne tikai atbildēt, bet arī izveidot pasūtījumus, pārbaudīt statusu vai ieplānot tikšanos. Cena: no €699/mēnesī.\n\n**Ko ņemt vērā izvēloties čatbotu?**\n\n- **Valodas atbalsts** — vai čatbots strādā latviešu valodā? Ne visi risinājumi to nodrošina kvalitatīvi\n- **Integrācijas** — vai čatbots var pieslēgties jūsu esošajām sistēmām?\n- **Analītika** — vai varat redzēt sarunu statistiku, populārākos jautājumus un klientu apmierinātību?\n- **Mērogojamība** — vai čatbots tiks galā ar augstu pieprasījumu?\n- **Datu drošība** — vai risinājums atbilst GDPR prasībām?\n\n**Kā sākt?**\n\nIeteicam sākt ar pamata AI čatbotu, kas atbild uz 10-20 biežāk uzdotajiem jautājumiem. Pēc 2-4 nedēļu testēšanas varēsiet redzēt reālus datus par to, ko klienti jautā visvairāk, un pakāpeniski paplašināt čatbota iespējas.',
-
-    // Blog Post 5
-    'blog.post5.title': 'Kā Automatizēt E-pastu Apstrādi ar Mākslīgo Intelektu',
-    'blog.post5.excerpt': 'Uzziniet, kā AI var automatizēt e-pastu apstrādi, kategorizēšanu un atbildēšanu, ietaupot stundas katru dienu.',
-    'blog.post5.content': 'E-pasts joprojām ir galvenais biznesa komunikācijas kanāls, bet tā apstrāde aizņem nesamērīgi daudz laika. Vidēji darbinieks pavada 2-3 stundas dienā lasot un atbildot uz e-pastiem. AI var šo laiku samazināt par 60-80%.\n\n**Ko AI var darīt ar jūsu e-pastiem?**\n\n**1. Automātiska kategorizēšana**\nAI analizē ienākošo e-pastu saturu un automātiski to sadala kategorijās — steidzami pieprasījumi, rēķini, klientu jautājumi, mārketings. Svarīgākie e-pasti nonāk prioritārajā mapē.\n\n**2. Atbilžu melnrakstu ģenerēšana**\nAI sagatavo atbilžu melnrakstus balstoties uz e-pasta saturu un jūsu iepriekšējām atbildēm. Jums atliek tikai pārskatīt un nosūtīt — vai pat ļaut sistēmai atbildēt automātiski uz standarta pieprasījumiem.\n\n**3. Datu izvilkšana**\nAI automātiski izvelk svarīgus datus no e-pastiem — kontaktinformāciju, datevumus, summas, pasūtījumu numurus — un ievieto tos jūsu CRM vai projektu vadības sistēmā.\n\n**4. Follow-up atgādinājumi**\nSistēma seko līdzi neatbildētiem e-pastiem un automātiski atgādina par tiem vai nosūta follow-up ziņojumu pēc noteikta laika.\n\n**Praktiski soļi ieviešanai:**\n\n- Sāciet ar vienu e-pasta kategoriju (piemēram, klientu pieprasījumi)\n- Iestatiet AI klasifikāciju un pārbaudiet precizitāti 1-2 nedēļas\n- Pakāpeniski pievienojiet automātiskās atbildes standarta jautājumiem\n- Integrējiet ar CRM, lai dati plūst automātiski\n\nMūsu klienti ar e-pastu automatizāciju ietaupa vidēji 10-15 stundas nedēļā un samazina atbildes laiku no stundām uz minūtēm.',
-
-    // Blog Post 6
-    'blog.post6.title': 'Labākie AI Rīki Uzņēmumiem 2026. Gadā',
-    'blog.post6.excerpt': 'Apskats par labākajiem mākslīgā intelekta rīkiem, ko Latvijas uzņēmumi var sākt lietot jau šodien — no teksta ģenerēšanas līdz procesu automatizācijai.',
-    'blog.post6.content': 'Mākslīgā intelekta rīku klāsts 2026. gadā ir plašāks nekā jebkad. Šeit ir praktiski ieteikumi par labākajiem AI rīkiem dažādām biznesa vajadzībām.\n\n**Teksta ģenerēšana un analīze**\n\n**ChatGPT (OpenAI)** — joprojām populārākais AI asistents. Lieliski piemērots tekstu rakstīšanai, datu analīzei, koda ģenerēšanai un ideju ģenerēšanai. Labi darbojas latviešu valodā. Cena: bezmaksas vai $20/mēnesī par Plus versiju.\n\n**Claude (Anthropic)** — alternatīva ChatGPT ar stiprāku analītisko domāšanu un garāku konteksta logu. Piemērots sarežģītu dokumentu analīzei. Cena: bezmaksas vai $20/mēnesī.\n\n**E-pastu un komunikācijas automatizācija**\n\n**Microsoft Copilot** — integrējas ar Outlook, Word, Excel un Teams. Automātiski sagatavo e-pastu atbildes, veido prezentācijas un analizē datus tabulās. Cena: $30/lietotājs/mēnesī.\n\n**Superhuman AI** — specializēts e-pastu pārvaldībai. Automātiski raksta atbildes, kategorizē e-pastus un palīdz sasniegt inbox zero. Cena: $30/mēnesī.\n\n**Procesu automatizācija**\n\n**Zapier + AI** — savieno tūkstošiem aplikāciju un automatizē darba plūsmas ar AI palīdzību. Piemēram: jauns klients CRM → automātiski izveido uzdevumu → nosūta sveiciena e-pastu. Cena: no $20/mēnesī.\n\n**Make (Integromat)** — vizuāla automatizācijas platforma ar plašām integrāciju iespējām. Sarežģītākas plūsmas par zemāku cenu nekā Zapier. Cena: no $9/mēnesī.\n\n**Attēlu un video ģenerēšana**\n\n**Midjourney** — viskvalitatīvākais AI attēlu ģenerators mārketinga materiāliem un sociālo mediju saturam. Cena: no $10/mēnesī.\n\n**Canva AI** — integrēti AI rīki dizaina platformā. Ģenerē attēlus, noņem fonus, raksta tekstus — viss vienā vietā. Cena: bezmaksas vai $13/mēnesī.\n\n**Ieteikumi sākumam:**\n\n- Sāciet ar ChatGPT vai Claude bezmaksas versiju, lai izprastu AI iespējas\n- Pievienojiet Microsoft Copilot, ja izmantojat Office 365\n- Automatizējiet pirmo procesu ar Zapier vai Make\n- Paplašiniet pakāpeniski, balstoties uz reāliem rezultātiem',
+    // Blog post content is in blogTranslations.ts and blogTranslationsPart2.ts
   }
 };
 
@@ -250,7 +232,7 @@ interface LanguageProviderProps {
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   const t = (key: string): string => {
-    return translations.lv[key] || key;
+    return translations.lv[key] || blogTranslations[key] || blogTranslationsPart2[key] || key;
   };
 
   return (

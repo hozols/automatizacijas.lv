@@ -3,10 +3,12 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
+import HomeTrustBar from '@/components/HomeTrustBar';
 import HomeAIIntro from '@/components/HomeAIIntro';
 import Features from '@/components/Features';
 import HomeProcess from '@/components/HomeProcess';
-import Testimonials from '@/components/Testimonials';
+import HomeIndustries from '@/components/HomeIndustries';
+import HomeLeadForm from '@/components/HomeLeadForm';
 import HomeFAQ from '@/components/HomeFAQ';
 import Footer from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
@@ -59,6 +61,30 @@ const faqSchema = {
   ]
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "automatizacijas.lv",
+  "url": "https://automatizacijas.lv",
+  "logo": "https://automatizacijas.lv/favicon.svg",
+  "description": "Profesionāli AI automatizācijas risinājumi uzņēmumiem Latvijā",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rīga",
+    "addressCountry": "LV"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+371-20-015-830",
+    "contactType": "sales",
+    "email": "info@automatizacijas.lv",
+    "availableLanguage": ["lv", "en"]
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/sula-labs-io/"
+  ]
+};
+
 const Index = () => {
   useScrollDepthTracking();
 
@@ -66,13 +92,14 @@ const Index = () => {
     <PageTransition>
       <Helmet>
         <title>AI Automatizācija Latvijā | automatizacijas.lv</title>
-        <meta name="description" content="Profesionāli AI automatizācijas risinājumi uzņēmumiem Latvijā. Čatboti, procesu automatizācija, datu analīze un AI darbinieki. Bezmaksas konsultācija." />
+        <meta name="description" content="Profesionāli AI automatizācijas risinājumi uzņēmumiem Latvijā. Grāmatvedības automatizācija, dokumentu apstrāde, AI čatboti, datu analīze. Bezmaksas konsultācija." />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href="https://automatizacijas.lv/" />
+        <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/" />
         <meta property="og:title" content="AI Automatizācija Latvijā | automatizacijas.lv" />
-        <meta property="og:description" content="Profesionāli AI automatizācijas risinājumi uzņēmumiem Latvijā. Čatboti, procesu automatizācija, datu analīze un AI darbinieki." />
+        <meta property="og:description" content="Profesionāli AI automatizācijas risinājumi uzņēmumiem Latvijā. Grāmatvedības automatizācija, dokumentu apstrāde, AI čatboti un datu analīze." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -81,20 +108,23 @@ const Index = () => {
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="AI Automatizācija Latvijā | automatizacijas.lv" />
-        <meta name="twitter:description" content="Profesionāli AI automatizācijas risinājumi uzņēmumiem Latvijā. Čatboti, procesu automatizācija un AI darbinieki." />
+        <meta name="twitter:description" content="Profesionāli AI automatizācijas risinājumi uzņēmumiem Latvijā. Grāmatvedības automatizācija, dokumentu apstrāde un AI čatboti." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
       </Helmet>
       <div className="min-h-screen flex flex-col bg-background text-foreground">
         <Header />
         <main className="flex-1">
           <div className="space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-20">
             <HeroSection />
+            <HomeTrustBar />
             <HomeAIIntro />
             <Features />
+            <HomeIndustries />
             <HomeProcess />
+            <HomeLeadForm />
             <HomeFAQ />
-            <Testimonials />
           </div>
         </main>
         <Footer />

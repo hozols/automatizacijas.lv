@@ -172,23 +172,23 @@ const Services = () => {
       subtitle: t('services.documents.subtitle'),
       description: t('services.documents.description'),
       // relatedProjects: [portfolioProjects[5]], // Sula Studios
-      learnMoreLink: "/services#documents"
+      learnMoreLink: "/dokumentu-automatizacija"
     },
     {
       icon: <BarChart3 className="h-8 w-8 text-primary" />,
       title: t('services.intelligence.title'),
       subtitle: t('services.intelligence.subtitle'),
       description: t('services.intelligence.description'),
-      // relatedProjects: [], // No unique project available
-      learnMoreLink: "/services#intelligence"
+      // relatedProjects: [],
+      learnMoreLink: "/datu-analize"
     },
     {
       icon: <Lightbulb className="h-8 w-8 text-primary" />,
       title: t('services.custom.title'),
       subtitle: t('services.custom.subtitle'),
       description: t('services.custom.description'),
-      // relatedProjects: [], // No unique project available
-      learnMoreLink: "/services#custom"
+      // relatedProjects: [],
+      learnMoreLink: "/ai-platformu-izstrade"
     }
   ];
 

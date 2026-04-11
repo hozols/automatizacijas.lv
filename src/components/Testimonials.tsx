@@ -4,30 +4,30 @@ import { Star, Quote, ArrowRight } from 'lucide-react';
 
 const Testimonials = () => {
   const testimonials = [
-    // {
-    //   quote: "Pasūtījām datu analīzes risinājumu publiskajiem iepirkumiem saules paneļu nozarē, un šis risinājums mums ļoti palīdzēja tāmejot dažādus objektus un prognozējot konkurentu cenu piedāvājumus.",
-    //   author: "Dāvids Krastiņš",
-    //   position: "Direktors, BN Darbi",
-    //   avatar: "/bndarbi.png",
-    //   rating: 5,
-    //   company: "BN Darbi"
-    // },
-    // {
-    //   quote: "Working with Maris from automatizacijas.lv was a pleasure. He's not only a knowledgable professional, but more importantly great to communicate with, so I felt part of the project and knew what was happening at each stage. Enjoyed the creativity of coming up with solutions and drive to make them work. Top automtion specialist I can wholeheartedly recommend",
-    //   author: "Filip Łysikowski",
-    //   position: "signingclients.com",
-    //   avatar: "/filip.png",
-    //   rating: 5,
-    //   company: "Signing Clients"
-    // },
-    // {
-    //   quote: "Dokumentu apstrāde, kas agrāk aizņēma stundas, tagad tiek pabeigti ievērojami ātrāk.",
-    //   author: "Juris Ozols",
-    //   position: "Vadītājs, Dalton Nekustamie Īpašumi",
-    //   avatar: "bg-primary/40",
-    //   rating: 5,
-    //   company: "Dalton Nekustamie Īpašumi"
-    // }
+    {
+      quote: "Pasūtījām datu analīzes risinājumu publiskajiem iepirkumiem saules paneļu nozarē, un šis risinājums mums ļoti palīdzēja tāmejot dažādus objektus un prognozējot konkurentu cenu piedāvājumus.",
+      author: "Dāvids Krastiņš",
+      position: "Direktors, BN Darbi",
+      avatar: "/bndarbi.png",
+      rating: 5,
+      company: "BN Darbi"
+    },
+    {
+      quote: "Working with Maris from automatizacijas.lv was a pleasure. He's not only a knowledgable professional, but more importantly great to communicate with, so I felt part of the project and knew what was happening at each stage. Enjoyed the creativity of coming up with solutions and drive to make them work. Top automation specialist I can wholeheartedly recommend.",
+      author: "Filip Łysikowski",
+      position: "signingclients.com",
+      avatar: "/filip.png",
+      rating: 5,
+      company: "Signing Clients"
+    },
+    {
+      quote: "Dokumentu apstrāde, kas agrāk aizņēma stundas, tagad tiek pabeigti ievērojami ātrāk. AI automatizācija ir ievērojami uzlabojusi mūsu darba efektivitāti.",
+      author: "Juris Ozols",
+      position: "Vadītājs, Dalton Nekustamie Īpašumi",
+      avatar: "bg-primary/40",
+      rating: 5,
+      company: "Dalton Nekustamie Īpašumi"
+    }
   ];
   
   return (

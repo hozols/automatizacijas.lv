@@ -5,7 +5,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://automatizacijas.lv/</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -18,63 +18,15 @@
   <!-- Services Page -->
   <url>
     <loc>https://automatizacijas.lv/services</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Portfolio Page -->
-  <url>
-    <loc>https://automatizacijas.lv/portfolio</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Training Page -->
-  <url>
-    <loc>https://automatizacijas.lv/training</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Pricing Page -->
-  <url>
-    <loc>https://automatizacijas.lv/pricing</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Contact Page -->
-  <url>
-    <loc>https://automatizacijas.lv/contact</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Privacy Policy -->
-  <url>
-    <loc>https://automatizacijas.lv/privacy</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <!-- Pillar Page: Kas ir makslīgais intelekts -->
-  <url>
-    <loc>https://automatizacijas.lv/kas-ir-maksligais-intelekts</loc>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Service: AI Catbotu Izstrade -->
+  <!-- Service: AI Chatbotu Izstrade -->
   <url>
     <loc>https://automatizacijas.lv/chatbotu-izstrade</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -82,7 +34,7 @@
   <!-- Service: Procesu Automatizacija -->
   <url>
     <loc>https://automatizacijas.lv/procesu-automatizacija</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -90,58 +42,274 @@
   <!-- Service: Majaslapu Izstrade -->
   <url>
     <loc>https://automatizacijas.lv/majaslapu-izstrade</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- Service: Dokumentu Automatizacija (NEW) -->
+  <url>
+    <loc>https://automatizacijas.lv/dokumentu-automatizacija</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Service: Gramatvedibas Automatizacija (NEW) -->
+  <url>
+    <loc>https://automatizacijas.lv/gramatvedibas-automatizacija</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Service: AI Platformu Izstrade (NEW) -->
+  <url>
+    <loc>https://automatizacijas.lv/ai-platformu-izstrade</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Service: Datu Analize (NEW) -->
+  <url>
+    <loc>https://automatizacijas.lv/datu-analize</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Service: AI Darbinieki (NEW) -->
+  <url>
+    <loc>https://automatizacijas.lv/ai-darbinieki</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Pillar Page: Kas ir maksligais intelekts -->
+  <url>
+    <loc>https://automatizacijas.lv/kas-ir-maksligais-intelekts</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Industry Pages (NEW) -->
+  <url>
+    <loc>https://automatizacijas.lv/nozares</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://automatizacijas.lv/nozares/gramatvediba-un-finanses</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://automatizacijas.lv/nozares/e-komercija</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://automatizacijas.lv/nozares/razosana</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://automatizacijas.lv/nozares/logistika</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://automatizacijas.lv/nozares/juridiskas-firmas</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Portfolio Page -->
+  <url>
+    <loc>https://automatizacijas.lv/portfolio</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Training Page -->
+  <url>
+    <loc>https://automatizacijas.lv/training</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Pricing Page -->
+  <url>
+    <loc>https://automatizacijas.lv/pricing</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://automatizacijas.lv/contact</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://automatizacijas.lv/privacy</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
   <!-- Blog Index -->
   <url>
     <loc>https://automatizacijas.lv/blog</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog Posts -->
+  <!-- Blog Posts - Existing (expanded) -->
   <url>
     <loc>https://automatizacijas.lv/blog/ka-ai-transforme-biznesa-procesus</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://automatizacijas.lv/blog/automatizacijas-labas-prakses-maziem-uznemumiem</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://automatizacijas.lv/blog/web-izstrades-tendences-ai-integracija</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://automatizacijas.lv/blog/ai-chatbots-biznesam-ka-izvelities</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://automatizacijas.lv/blog/ka-automatizet-e-pastu-apstradi-ar-ai</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://automatizacijas.lv/blog/labakie-ai-riki-uznemumiem-2026</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog Posts - New -->
+  <url>
+    <loc>https://automatizacijas.lv/blog/gramatvedibas-automatizacija-celvedis</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://automatizacijas.lv/blog/10-dokumentu-apstrades-procesi-ko-ai-var-automatizet</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://automatizacijas.lv/blog/ka-izvelities-ai-platformu-uznemumam</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://automatizacijas.lv/blog/ai-chatbots-latviesu-valoda</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://automatizacijas.lv/blog/ka-ai-maina-gramatvedibas-biroju-darbu</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://automatizacijas.lv/blog/e-komercijas-automatizacija-7-veidi</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://automatizacijas.lv/blog/ai-terminu-vardnica</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://automatizacijas.lv/blog/5-kludas-ai-ieviesana</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://automatizacijas.lv/blog/gramatvedibas-birojs-ietaupija-25-stundas</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://automatizacijas.lv/blog/ai-vs-tradicionala-klientu-apkalposana</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://automatizacijas.lv/blog/ka-automatizet-rekinu-apstradi-ar-ai</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://automatizacijas.lv/blog/labakie-ai-riki-latvijas-uznemumiem-2026-atjaunots</loc>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

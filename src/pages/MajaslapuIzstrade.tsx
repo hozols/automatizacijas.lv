@@ -66,6 +66,7 @@ const MajaslapuIzstrade = () => {
         <meta name="description" content="Profesionāla mājaslapu izstrāde ar AI integrāciju Latvijā. Modernas mājas lapas, e-veikali un web aplikācijas. SEO optimizācija, čatboti un analītika. No €800." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/majaslapu-izstrade" />
+        <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/majaslapu-izstrade" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/majaslapu-izstrade" />
         <meta property="og:title" content="Mājaslapu Izstrāde ar AI | automatizacijas.lv" />

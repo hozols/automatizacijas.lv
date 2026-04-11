@@ -87,6 +87,7 @@ const KasIrMaksligaisIntelekts = () => {
         <meta name="description" content="Kas ir mākslīgais intelekts (MI) un kā to izmantot biznesā? Uzziniet par AI veidiem, praktiskiem pielietojumiem Latvijā, populārākajiem rīkiem un MI nākotni. Pilnīgs ceļvedis." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/kas-ir-maksligais-intelekts" />
+        <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/kas-ir-maksligais-intelekts" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://automatizacijas.lv/kas-ir-maksligais-intelekts" />
         <meta property="og:title" content="Kas ir Mākslīgais Intelekts? Pilnīgs Ceļvedis" />

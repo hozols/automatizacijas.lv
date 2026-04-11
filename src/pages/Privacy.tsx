@@ -13,6 +13,7 @@ const Privacy = () => {
         <meta name="description" content="automatizacijas.lv privātuma politika. Uzziniet, kā mēs apstrādājam jūsu personas datus saskaņā ar GDPR prasībām." />
         <meta name="robots" content="noindex, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/privacy" />
+        <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/privacy" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/privacy" />
         <meta property="og:title" content="Privātuma Politika | automatizacijas.lv" />
