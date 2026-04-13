@@ -1,8 +1,20 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+
+const interestLabels: Record<string, string> = {
+  accounting: 'Grāmatvedības automatizācija',
+  documents: 'Dokumentu apstrāde',
+  chatbot: 'AI čatbots',
+  platform: 'AI platforma',
+  data: 'Datu analīze',
+  other: 'Cits',
+};
 
 const HomeLeadForm = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -10,11 +22,41 @@ const HomeLeadForm = () => {
     interest: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_baltai';
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_contact';
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_EMAILJS_PUBLIC_KEY';
+
+      const emailParams = {
+        to_email: 'info@automatizacijas.lv',
+        from_name: formData.name,
+        from_email: formData.email,
+        company: formData.company || 'Not provided',
+        phone: 'Not provided',
+        service: interestLabels[formData.interest] || formData.interest,
+        message: `Pieteikums no galvenās lapas formas.\nInterese: ${interestLabels[formData.interest] || formData.interest}`,
+        reply_to: formData.email,
+      };
+
+      await emailjs.send(serviceId, templateId, emailParams, publicKey);
+
+      setSubmitted(true);
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      toast({
+        title: 'Kļūda',
+        description: 'Neizdevās nosūtīt pieteikumu. Lūdzu, mēģiniet vēlreiz vai sazinieties ar mums pa e-pastu info@automatizacijas.lv',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -111,9 +153,10 @@ const HomeLeadForm = () => {
             <div className="sm:col-span-2 pt-2">
               <Button
                 type="submit"
+                disabled={isSubmitting}
                 className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 group px-8 py-3"
               >
-                Pieteikties bezmaksas konsultācijai
+                {isSubmitting ? 'Sūta...' : 'Pieteikties bezmaksas konsultācijai'}
                 <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
