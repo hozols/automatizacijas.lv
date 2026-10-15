@@ -93,6 +93,13 @@ const Index = () => {
     <PageTransition>
       <Helmet>
         <title>AI automatizācija uzņēmumiem Latvijā | automatizacijas.lv</title>
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero-typewriter.webp"
+          imageSrcSet="/images/hero-typewriter-600.webp 600w, /images/hero-typewriter.webp 1200w"
+          imageSizes="(min-width: 1024px) 50vw, 100vw"
+        />
         <meta name="description" content="Rēķinu ievade, dokumentu apstrāde, atbildes klientiem: uzbūvējam AI sistēmu, kas šos darbus dara pati, un pieslēdzam to jūsu programmām." />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href="https://automatizacijas.lv/" />

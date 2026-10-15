@@ -6,6 +6,7 @@ import { useHeroMode } from './useHeroMode';
 const TypewriterScene = lazy(() => import('./TypewriterScene'));
 
 const IMAGE_SRC = '/images/hero-typewriter.webp';
+const IMAGE_SRC_600 = '/images/hero-typewriter-600.webp';
 const IMAGE_ALT = 'Rakstāmmašīna, kas raksta: rēķini apstrādāti';
 
 /* A failed chunk or GLB load must not take the page down: report and show the image. */
@@ -35,11 +36,13 @@ function HeroVisual() {
     <div className="relative aspect-[4/3] w-full" data-hero-mode={show3d ? '3d' : 'image'} data-hero-ready={ready ? '1' : '0'}>
       <img
         src={IMAGE_SRC}
+        srcSet={`${IMAGE_SRC_600} 600w, ${IMAGE_SRC} 1200w`}
+        sizes="(min-width: 1024px) 50vw, 100vw"
         alt={IMAGE_ALT}
         width={1200}
         height={900}
         decoding="async"
-        {...{ fetchpriority: 'low' }}
+        {...{ fetchpriority: 'high' }}
         className="absolute inset-0 h-full w-full object-contain transition-opacity duration-300"
         style={{ opacity: show3d && ready ? 0 : 1 }}
       />

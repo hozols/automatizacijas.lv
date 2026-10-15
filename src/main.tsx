@@ -1,17 +1,12 @@
-import { createRoot, hydrateRoot } from 'react-dom/client';
-import { HelmetProvider } from 'react-helmet-async';
-import App, { preloadRoute } from './App.tsx';
-import './index.css';
+/*
+  Every route ships as prerendered HTML, so the page must paint before any of
+  the app's JavaScript is evaluated. The entry stays tiny and loads the real
+  app after the first paint; hydration follows a moment later.
+*/
+const start = () => import('./bootstrap');
 
-const container = document.getElementById('root')!;
-const app = (
-  <HelmetProvider>
-    <App />
-  </HelmetProvider>
-);
-
-if (container.hasChildNodes()) {
-  preloadRoute(window.location.pathname).then(() => hydrateRoot(container, app));
+if (document.readyState === 'complete') {
+  requestAnimationFrame(() => requestAnimationFrame(start));
 } else {
-  createRoot(container).render(app);
+  window.addEventListener('load', () => requestAnimationFrame(start), { once: true });
 }

@@ -1,4 +1,4 @@
-@import '@fontsource-variable/newsreader/opsz.css';
+@import '@fontsource/newsreader/500.css';
 @import '@fontsource-variable/manrope/wght.css';
 
 @tailwind base;
@@ -108,7 +108,7 @@
   /* h1 and h2 carry the serif display face; smaller headings stay in the text face. */
   h1,
   h2 {
-    font-family: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
+    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
     font-weight: 500;
     letter-spacing: -0.01em;
     text-wrap: balance;
@@ -153,9 +153,8 @@
   }
 
   .display {
-    font-family: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
+    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
     font-weight: 500;
-    font-variation-settings: 'opsz' 72;
     line-height: 1.06;
     letter-spacing: -0.01em;
     text-wrap: balance;

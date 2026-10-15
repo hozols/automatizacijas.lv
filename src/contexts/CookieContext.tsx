@@ -1,4 +1,10 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+
+declare global {
+  interface Window {
+    loadAnalytics?: () => void;
+  }
+}
 import Cookies from 'js-cookie';
 
 interface CookiePreferences {
@@ -68,6 +74,8 @@ export const CookieProvider: React.FC<CookieProviderProps> = ({ children }) => {
   useEffect(() => {
     if (hasAcceptedCookies) {
       Cookies.set('cookie-preferences', JSON.stringify(preferences), { expires: 365 });
+      // index.html defers the analytics scripts until there is consent
+      if (preferences.analytics) window.loadAnalytics?.();
     }
   }, [preferences, hasAcceptedCookies]);
 

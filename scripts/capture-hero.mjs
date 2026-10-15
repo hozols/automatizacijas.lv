@@ -17,4 +17,6 @@ const png = await page.locator('[data-hero-mode="capture"] canvas').screenshot({
 await browser.close();
 await sharp(png).resize(1200, 900, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
   .webp({ quality: 82, alphaQuality: 90 }).toFile('public/images/hero-typewriter.webp');
-console.log('wrote public/images/hero-typewriter.webp');
+await sharp(png).resize(600, 450, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
+  .webp({ quality: 80, alphaQuality: 90 }).toFile('public/images/hero-typewriter-600.webp');
+console.log('wrote public/images/hero-typewriter.webp and hero-typewriter-600.webp');

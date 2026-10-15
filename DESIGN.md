@@ -20,7 +20,7 @@ Dark mode is the `.dark-mode` class on `<html>`: the same system inverted
 (off-white on near-black). Every token has a value in both, so use tokens and
 never hard-coded colours (`blue-500`, `#fff`, `gray-400`).
 
-Type: Newsreader (serif, weight 500, optical size 72) for `h1`/`h2` (classes
+Type: Newsreader (serif, static weight 500 so the font stays small) for `h1`/`h2` (classes
 `display-1`, `display-2`, `display-3`), Manrope for everything else. `h3` and
 smaller are the text face at 600. Sentence case in new copy. No letter-spacing
 tweaks beyond the -0.01em the display face carries.

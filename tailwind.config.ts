@@ -111,7 +111,7 @@ export default {
 			},
 			fontFamily: {
 				sans: ['"Manrope Variable"', 'system-ui', 'sans-serif'],
-				display: ['"Newsreader Variable"', 'Georgia', '"Times New Roman"', 'serif'],
+				display: ['Newsreader', 'Georgia', '"Times New Roman"', 'serif'],
 				inter: ['"Manrope Variable"', 'system-ui', 'sans-serif']
 			},
 			letterSpacing: {

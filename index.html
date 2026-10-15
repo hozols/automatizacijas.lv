@@ -15,23 +15,44 @@
     <meta name="author" content="automatizacijas.lv" />
     <meta name="robots" content="index, follow" />
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1D9GFNDNFG"></script>
+    <!-- Analytics load after the page is idle so they never compete with content. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-1D9GFNDNFG');
-    </script>
-
-    <!-- Microsoft Clarity - User Behavior Analytics -->
-    <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "vpmenzgdsw");
+      (function () {
+        var loaded = false;
+        function load() {
+          if (loaded) return;
+          loaded = true;
+          var g = document.createElement('script');
+          g.async = true;
+          g.src = 'https://www.googletagmanager.com/gtag/js?id=G-1D9GFNDNFG';
+          document.head.appendChild(g);
+          (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "vpmenzgdsw");
+        }
+        function idle() {
+          if ('requestIdleCallback' in window) requestIdleCallback(load, { timeout: 6000 });
+          else setTimeout(load, 3000);
+        }
+        function afterLoad(fn) {
+          if (document.readyState === 'complete') fn();
+          else window.addEventListener('load', fn, { once: true });
+        }
+        // Loads only with analytics consent: either stored from an earlier visit, or granted now
+        // (CookieContext calls window.loadAnalytics when the visitor accepts).
+        window.loadAnalytics = function () { afterLoad(idle); };
+        try {
+          var m = document.cookie.match(/(?:^|; )cookie-preferences=([^;]*)/);
+          var prefs = m ? JSON.parse(decodeURIComponent(m[1])) : null;
+          if (prefs && prefs.analytics) window.loadAnalytics();
+        } catch (e) {}
+      })();
     </script>
 
     <!-- Additional SEO Meta Tags -->
