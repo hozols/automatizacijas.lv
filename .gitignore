@@ -33,3 +33,4 @@ GOOGLE_CONSOLE_SETUP.md
 # tooling
 .vercel
 test-results/
+.env*
