@@ -259,7 +259,7 @@ const GramatvedibadAutomatizacija = () => {
           <Section title="Piemērs: Kā grāmatvedības birojs ietaupīja 25 stundas nedēļā">
             <div className="space-y-10">
               <div>
-                <h3 className="m-0 mb-3 text-xl font-bold leading-snug">Izaicinājums</h3>
+                <h3 className="m-0 mb-3 text-xl font-medium leading-snug">Izaicinājums</h3>
                 <Prose>
                   <p>
                     Grāmatvedības birojs ar 6 darbiniekiem apkalpoja 85 klientus, mazos un vidējos uzņēmumus Rīgā un Pierīgā. Katru mēnesi
@@ -270,7 +270,7 @@ const GramatvedibadAutomatizacija = () => {
                 </Prose>
               </div>
               <div>
-                <h3 className="m-0 mb-3 text-xl font-bold leading-snug">Risinājums</h3>
+                <h3 className="m-0 mb-3 text-xl font-medium leading-snug">Risinājums</h3>
                 <Prose>
                   <p>
                     Ieviesām trīs automatizācijas moduļus: AI rēķinu apstrādi ar automātisku grāmatošanu, bankas izrakstu saskaņošanu un
@@ -280,7 +280,7 @@ const GramatvedibadAutomatizacija = () => {
                 </Prose>
               </div>
               <div>
-                <h3 className="m-0 mb-3 text-xl font-bold leading-snug">Rezultāti</h3>
+                <h3 className="m-0 mb-3 text-xl font-medium leading-snug">Rezultāti</h3>
                 <CheckList
                   items={[
                     'Rēķinu apstrādes laiks samazinājās par 85%, no 4 minūtēm uz 35 sekundēm vidēji',
@@ -293,7 +293,7 @@ const GramatvedibadAutomatizacija = () => {
                 />
               </div>
               <div>
-                <h3 className="m-0 mb-3 text-xl font-bold leading-snug">Investīcijas atdeve</h3>
+                <h3 className="m-0 mb-3 text-xl font-medium leading-snug">Investīcijas atdeve</h3>
                 <Prose>
                   <p>
                     Automatizācijas mēneša maksa bija €489. Ietaupītais darbinieku laiks (100+ stundas) vērtībā pārsniedza €2500 mēnesī.

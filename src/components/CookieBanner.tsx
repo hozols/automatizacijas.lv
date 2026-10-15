@@ -55,7 +55,7 @@ const CookieBanner = () => {
       )}
     >
       <div className="flex items-start justify-between gap-4">
-        <h2 id="cookie-banner-title" className="m-0 font-sans text-lg font-bold leading-snug">
+        <h2 id="cookie-banner-title" className="m-0 font-sans text-lg font-medium leading-snug">
           Sīkdatņu politika
         </h2>
         <button
@@ -83,7 +83,7 @@ const CookieBanner = () => {
         <button
           type="button"
           onClick={handleCustomize}
-          className="link px-0 py-2 bg-transparent border-0 cursor-pointer font-semibold"
+          className="link px-0 py-2 bg-transparent border-0 cursor-pointer font-medium"
         >
           Pielāgot
         </button>

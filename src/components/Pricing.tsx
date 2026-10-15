@@ -4,7 +4,7 @@ import { usePricing } from '@/contexts/PricingContext';
 import { PageHero, Section, RuledList, CtaBand } from '@/components/page';
 import { cn } from '@/lib/utils';
 
-const legendClass = 'p-0 mb-3 text-lg font-bold leading-snug';
+const legendClass = 'p-0 mb-3 text-lg font-medium leading-snug';
 const optionClass = 'flex items-start gap-3 py-3 border-b border-border cursor-pointer';
 const boxClass = 'mt-[0.2em] h-5 w-5 shrink-0 accent-primary cursor-pointer';
 
@@ -88,7 +88,7 @@ const Pricing = () => {
         >
           {/* Project configuration */}
           <div className="sheet p-6 sm:p-8 lg:col-span-7 min-w-0">
-            <h2 className="m-0 pb-4 border-b-2 border-foreground font-sans text-xl font-bold leading-tight">
+            <h2 className="m-0 pb-4 border-b-2 border-foreground font-sans text-xl font-medium leading-tight">
               Projektu Konfigurācija
             </h2>
 
@@ -106,7 +106,7 @@ const Pricing = () => {
                       className={boxClass}
                     />
                     <span className="min-w-0">
-                      <span className="block font-bold leading-snug">
+                      <span className="block font-medium leading-snug">
                         <span className={cn(projectType === key && 'mark')}>{service.name}</span>
                       </span>
                       <span className="block text-muted-foreground leading-snug">{service.description}</span>
@@ -207,29 +207,29 @@ const Pricing = () => {
 
           {/* Summary, laid out like a quote document */}
           <div className="sheet p-6 sm:p-8 lg:col-span-5 lg:sticky lg:top-24 min-w-0">
-            <h2 className="m-0 pb-4 border-b-2 border-foreground font-sans text-xl font-bold leading-tight">
+            <h2 className="m-0 pb-4 border-b-2 border-foreground font-sans text-xl font-medium leading-tight">
               Jūsu projekts
             </h2>
 
             <dl className="m-0" aria-live="polite">
               <div className={summaryRow}>
                 <dt className="text-muted-foreground">Pakalpojums:</dt>
-                <dd className="m-0 font-bold text-right">{serviceTypes[projectType as keyof typeof serviceTypes].name}</dd>
+                <dd className="m-0 font-medium text-right">{serviceTypes[projectType as keyof typeof serviceTypes].name}</dd>
               </div>
               <div className={summaryRow}>
                 <dt className="text-muted-foreground">Sarežģītība:</dt>
-                <dd className="m-0 font-bold tabular-nums">{complexity[0]}/5</dd>
+                <dd className="m-0 font-medium tabular-nums">{complexity[0]}/5</dd>
               </div>
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 py-3 border-b border-border">
                 <dt className="text-muted-foreground">Integrācijas:</dt>
-                <dd className="m-0 font-bold tabular-nums">{integrations.length}</dd>
+                <dd className="m-0 font-medium tabular-nums">{integrations.length}</dd>
                 {integrations.length > 0 && (
                   <dd className="m-0 mt-1 basis-full text-[0.9375rem] text-muted-foreground leading-snug">{integrations.join(', ')}</dd>
                 )}
               </div>
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 py-3 border-b-2 border-foreground">
                 <dt className="text-muted-foreground">Papildu funkcijas:</dt>
-                <dd className="m-0 font-bold tabular-nums">{customFeatures.length}</dd>
+                <dd className="m-0 font-medium tabular-nums">{customFeatures.length}</dd>
                 {customFeatures.length > 0 && (
                   <dd className="m-0 mt-1 basis-full text-[0.9375rem] text-muted-foreground leading-snug">{customFeatures.join(', ')}</dd>
                 )}

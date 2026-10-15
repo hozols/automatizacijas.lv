@@ -69,14 +69,14 @@ const TrainingModal: React.FC<TrainingModalProps> = ({ isOpen, onClose, training
 
             {training.features && (
               <div>
-                <h3 className="m-0 mb-3 text-lg font-bold">Galvenās iezīmes</h3>
+                <h3 className="m-0 mb-3 text-lg font-medium">Galvenās iezīmes</h3>
                 <CheckList items={training.features} />
               </div>
             )}
 
             {/* Additional Info */}
             <div>
-              <h3 className="m-0 text-lg font-bold">Kā sākt?</h3>
+              <h3 className="m-0 text-lg font-medium">Kā sākt?</h3>
               <p className="mt-1.5 mb-0 text-muted-foreground">
                 Sazinieties ar mums, lai uzzinātu vairāk par mūsu apmācību programmām un izvēlētos sev piemēroto variantu.
               </p>

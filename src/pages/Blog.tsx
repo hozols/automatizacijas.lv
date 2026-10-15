@@ -255,7 +255,7 @@ const Blog = () => {
                 >
                   <p className="m-0 lg:col-span-3 text-muted-foreground">
                     <time dateTime={post.date}>{formatDate(post.date)}</time>, lasīšanas laiks {post.readTime}
-                    <span className="block font-semibold text-foreground">{post.category}</span>
+                    <span className="block font-medium text-foreground">{post.category}</span>
                   </p>
                   <div className="lg:col-span-7">
                     <h2 className="display-3 m-0">
@@ -265,7 +265,7 @@ const Blog = () => {
                       {t(post.excerptKey)}
                     </p>
                   </div>
-                  <span className="lg:col-span-2 lg:text-right font-semibold text-primary underline underline-offset-4 decoration-[1.5px]">
+                  <span className="lg:col-span-2 lg:text-right font-medium text-primary underline underline-offset-4 decoration-[1.5px]">
                     {t('blog.read_more')}
                   </span>
                 </Link>

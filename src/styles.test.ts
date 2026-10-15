@@ -75,3 +75,14 @@ describe('rooms', () => {
     expect(css()).toMatch(/\.band-ink \.sheet \.btn-solid/);
   });
 });
+
+describe('weights', () => {
+  it('never sets 600+ outside ui/', () => {
+    const walk = (d: string): string[] =>
+      readdirSync(d, { withFileTypes: true }).flatMap((e) =>
+        e.isDirectory() ? (e.name === 'ui' ? [] : walk(path.join(d, e.name))) : e.name.endsWith('.tsx') ? [path.join(d, e.name)] : [],
+      );
+    const offenders = [...walk('src/pages'), ...walk('src/components')].filter((f) => /font-(bold|semibold|extrabold|black)\b/.test(read(f)));
+    expect(offenders).toEqual([]);
+  });
+});

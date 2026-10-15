@@ -359,7 +359,7 @@ const renderContent = (content: string) => {
       if (!part) return null;
       if (part.startsWith('**') && part.endsWith('**')) {
         return (
-          <strong key={i} className="font-bold">
+          <strong key={i} className="font-medium">
             {part.slice(2, -2)}
           </strong>
         );
@@ -410,7 +410,7 @@ const renderContent = (content: string) => {
     if (line.startsWith('### ')) {
       flush();
       elements.push(
-        <h3 key={key++} className="text-xl sm:text-2xl font-bold leading-snug mt-10 mb-3">
+        <h3 key={key++} className="text-xl sm:text-2xl font-medium leading-snug mt-10 mb-3">
           {line.slice(4)}
         </h3>
       );
@@ -591,7 +591,7 @@ const BlogPost = () => {
           <header className="wrap pt-8 pb-10 lg:pt-12 lg:pb-14">
             <h1 className="display-1 m-0 max-w-[16em]">{t(post.titleKey)}</h1>
             <p className="mt-6 lg:mt-8 mb-0 max-w-[42em] text-muted-foreground">
-              <span className="font-semibold text-foreground">{author}</span>, {authorRole}.{' '}
+              <span className="font-medium text-foreground">{author}</span>, {authorRole}.{' '}
               <time dateTime={post.date}>{formatDate(post.date)}</time>, lasīšanas laiks {post.readTime}.
               Kategorija: {post.category}.
             </p>
@@ -602,7 +602,7 @@ const BlogPost = () => {
               {/* Table of contents */}
               {toc.length > 2 && (
                 <nav aria-label="Satura rādītājs" className="lg:col-span-4 lg:sticky lg:top-24 lg:self-start">
-                  <h2 className="m-0 font-sans text-lg font-bold leading-snug">Satura rādītājs</h2>
+                  <h2 className="m-0 font-sans text-lg font-medium leading-snug">Satura rādītājs</h2>
                   <ol className="list-none p-0 m-0 mt-4 border-t border-border">
                     {toc.map((item, i) => (
                       <li key={i} className="border-b border-border">

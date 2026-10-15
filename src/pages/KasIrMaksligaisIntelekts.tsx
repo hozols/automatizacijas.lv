@@ -314,7 +314,7 @@ const KasIrMaksligaisIntelekts = () => {
                   ].map((row) => (
                     <tr key={row[0]} className="border-b border-border">
                       {row.map((cell, j) => (
-                        <td key={j} className={j === 0 ? 'py-3 pr-6 align-top font-semibold' : 'py-3 pr-6 align-top text-muted-foreground'}>
+                        <td key={j} className={j === 0 ? 'py-3 pr-6 align-top font-medium' : 'py-3 pr-6 align-top text-muted-foreground'}>
                           {cell}
                         </td>
                       ))}

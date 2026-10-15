@@ -131,7 +131,7 @@ const Contact = () => {
     'Sveiki! Es vēlos uzzināt vairāk par jūsu pakalpojumiem.'
   )}`;
 
-  const errorClass = "mt-1.5 mb-0 text-[0.9375rem] font-semibold text-destructive";
+  const errorClass = "mt-1.5 mb-0 text-[0.9375rem] font-medium text-destructive";
   const rowClass = "grid gap-x-6 gap-y-1 py-4 border-b border-border sm:grid-cols-[8rem_1fr]";
 
   return (
@@ -182,7 +182,7 @@ const Contact = () => {
                 <div className={rowClass}>
                   <dt className="text-muted-foreground">{t("contact.info.phone")}</dt>
                   <dd className="m-0">
-                    <a href="tel:+37120015830" className="link text-xl font-bold">
+                    <a href="tel:+37120015830" className="link text-xl font-medium">
                       +371 20 015 830
                     </a>
                   </dd>
@@ -190,7 +190,7 @@ const Contact = () => {
                 <div className={rowClass}>
                   <dt className="text-muted-foreground">{t("contact.info.email")}</dt>
                   <dd className="m-0">
-                    <a href="mailto:info@automatizacijas.lv" className="link text-xl font-bold break-words">
+                    <a href="mailto:info@automatizacijas.lv" className="link text-xl font-medium break-words">
                       info@automatizacijas.lv
                     </a>
                   </dd>
@@ -198,7 +198,7 @@ const Contact = () => {
                 <div className={rowClass}>
                   <dt className="text-muted-foreground">WhatsApp</dt>
                   <dd className="m-0">
-                    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="link font-semibold">
+                    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="link font-medium">
                       Sāciet sarunu WhatsApp
                     </a>
                   </dd>
@@ -257,25 +257,25 @@ const Contact = () => {
                   {/* Data carried over from the pricing calculator */}
                   {pricingData && (
                     <div className="mt-6">
-                      <h3 className="m-0 text-base font-bold">Projekta informācija no kalkulatora</h3>
+                      <h3 className="m-0 text-base font-medium">Projekta informācija no kalkulatora</h3>
                       <ul className="list-none p-0 m-0 mt-3 border-t-2 border-foreground text-[0.9375rem]">
                         <li className="py-2 border-b border-border">
-                          <span className="font-semibold">Projekta veids:</span> {pricingData.serviceType.name}
+                          <span className="font-medium">Projekta veids:</span> {pricingData.serviceType.name}
                         </li>
                         <li className="py-2 border-b border-border">
-                          <span className="font-semibold">Sarežģītība:</span> {pricingData.complexity}/5
+                          <span className="font-medium">Sarežģītība:</span> {pricingData.complexity}/5
                         </li>
                         <li className="py-2 border-b border-border">
-                          <span className="font-semibold">Laika ietvars:</span> {pricingData.timeline} nedēļas
+                          <span className="font-medium">Laika ietvars:</span> {pricingData.timeline} nedēļas
                         </li>
                         {pricingData.integrations.length > 0 && (
                           <li className="py-2 border-b border-border">
-                            <span className="font-semibold">Integrācijas:</span> {pricingData.integrations.join(", ")}
+                            <span className="font-medium">Integrācijas:</span> {pricingData.integrations.join(", ")}
                           </li>
                         )}
                         {pricingData.customFeatures.length > 0 && (
                           <li className="py-2 border-b border-border">
-                            <span className="font-semibold">Papildu funkcijas:</span> {pricingData.customFeatures.join(", ")}
+                            <span className="font-medium">Papildu funkcijas:</span> {pricingData.customFeatures.join(", ")}
                           </li>
                         )}
                       </ul>

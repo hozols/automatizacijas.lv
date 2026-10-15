@@ -66,7 +66,7 @@ interface PageHeroProps {
   lede?: React.ReactNode;
   /* Short plain facts shown as one ruled row under the lede. */
   facts?: string[];
-  /* slug of a painting from docs/paintings.json, shown as a circular vignette */
+  /* slug of a painting from docs/paintings.json, shown as a desaturated 12px square */
   vignette?: string;
   children?: React.ReactNode;
 }
@@ -78,7 +78,7 @@ export const PageHero = ({ title, lede, facts, vignette, children }: PageHeroPro
         <h1 className="display-1 m-0 max-w-[15em]">
           <Heading text={title} />
         </h1>
-        {lede && <p className="lede mb-0 mt-6 max-w-[40em] lg:mt-8">{lede}</p>}
+        {lede && <p className="lede mb-0 mt-6 lg:mt-8">{lede}</p>}
         {children && <div className="mt-8">{children}</div>}
       </div>
       {vignette && (
@@ -103,7 +103,7 @@ export const PageHero = ({ title, lede, facts, vignette, children }: PageHeroPro
         <Hairline />
         <ul className="m-0 grid list-none gap-x-8 p-0 sm:grid-cols-2 lg:grid-cols-4">
           {facts.map((fact) => (
-            <li key={fact} className="border-b border-border py-4 font-medium">
+            <li key={fact} className="border-b border-border py-4 text-[0.9375rem]">
               {fact}
             </li>
           ))}
@@ -126,7 +126,7 @@ export const Section = ({ title, intro, id, tone = 'paper', children }: SectionP
   <section
     id={id}
     className={cn(
-      tone === 'sheet' && 'bg-card border-y border-border',
+      tone === 'sheet' && 'bg-card',
       tone === 'ink' && 'band-ink'
     )}
   >
@@ -187,7 +187,7 @@ export const RuledList = ({ items, columns = 1 }: { items: RuledItem[]; columns?
             <span className="display-3">
               {item.to ? <span className="sweep">{item.title}</span> : item.title}
             </span>
-            {item.aside && <span className="shrink-0 font-semibold text-primary">{item.aside}</span>}
+            {item.aside && <span className="shrink-0 font-medium text-primary">{item.aside}</span>}
           </span>
           {item.desc && <span className="block mt-1.5 text-muted-foreground">{item.desc}</span>}
         </>
@@ -258,7 +258,7 @@ export const CtaBand = ({
         <h2 className="display-2 m-0">
           <Heading text={title} />
         </h2>
-        {text && <p className="mt-4 mb-0 text-lg max-w-[34em] opacity-90">{text}</p>}
+        {text && <p className="mt-4 mb-0 max-w-[34em] text-lg text-ink-muted">{text}</p>}
       </div>
       <div className="lg:col-span-5 flex flex-col sm:flex-row lg:justify-end gap-3">
         <Link to={primary.to} onClick={primary.onClick} className="btn btn-solid">

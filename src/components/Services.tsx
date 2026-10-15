@@ -172,7 +172,7 @@ const ServiceBand = ({ id, title, tone = 'paper', services, onProjectClick }: Se
                     service.title
                   )}
                 </h3>
-                <p className="mt-2 mb-0 font-semibold leading-snug">{service.subtitle}</p>
+                <p className="mt-2 mb-0 font-medium leading-snug">{service.subtitle}</p>
               </div>
 
               <div className="lg:col-span-6">
@@ -183,13 +183,13 @@ const ServiceBand = ({ id, title, tone = 'paper', services, onProjectClick }: Se
                 {project && (
                   <div className="relative z-10 mt-4 text-[0.9375rem]">
                     <p className="m-0">
-                      <span className="font-bold">Saistītais projekts</span>{' '}
+                      <span className="font-medium">Saistītais projekts</span>{' '}
                       <span className="text-muted-foreground">(klikšķis atvērs detaļas)</span>
                     </p>
                     <button
                       type="button"
                       onClick={() => onProjectClick(project)}
-                      className="link mt-1 p-0 bg-transparent border-0 text-left font-semibold cursor-pointer"
+                      className="link mt-1 p-0 bg-transparent border-0 text-left font-medium cursor-pointer"
                     >
                       {project.title}
                     </button>
@@ -203,7 +203,7 @@ const ServiceBand = ({ id, title, tone = 'paper', services, onProjectClick }: Se
               {hasPage && (
                 <span
                   aria-hidden="true"
-                  className="lg:col-span-2 lg:text-right font-semibold text-primary underline underline-offset-4 decoration-[1.5px]"
+                  className="lg:col-span-2 lg:text-right font-medium text-primary underline underline-offset-4 decoration-[1.5px]"
                 >
                   Uzzināt vairāk
                 </span>

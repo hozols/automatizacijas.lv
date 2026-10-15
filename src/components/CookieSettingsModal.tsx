@@ -48,7 +48,7 @@ const CookieSettingsModal: React.FC = () => {
     <Dialog open={isModalOpen} onOpenChange={closeModal}>
       <DialogContent className="sheet bg-card max-w-2xl max-h-[90vh] overflow-y-auto gap-0 p-6 sm:p-10 sm:rounded-md">
         <DialogHeader className="space-y-0 text-left pr-8">
-          <DialogTitle className="m-0 font-display font-extrabold text-[length:clamp(1.9rem,3vw,2.6rem)] leading-[1.02] tracking-normal">Sīkdatņu iestatījumi</DialogTitle>
+          <DialogTitle className="m-0 font-display font-medium text-[length:clamp(1.9rem,3vw,2.6rem)] leading-[1.02] tracking-normal">Sīkdatņu iestatījumi</DialogTitle>
           <DialogDescription asChild className="mt-4 space-y-2 text-base">
             <div>
               <p className="m-0">
@@ -71,7 +71,7 @@ const CookieSettingsModal: React.FC = () => {
               className="flex items-start justify-between gap-6 py-4 border-b border-border"
             >
               <div>
-                <label htmlFor={cookieType.key} className="font-bold cursor-pointer">
+                <label htmlFor={cookieType.key} className="font-medium cursor-pointer">
                   {cookieType.title}
                 </label>
                 {cookieType.disabled && (

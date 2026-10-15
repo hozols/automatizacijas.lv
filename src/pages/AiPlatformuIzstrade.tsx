@@ -216,7 +216,7 @@ const AiPlatformuIzstrade = () => {
             </Prose>
             <div className="mt-8 grid gap-10 md:grid-cols-2">
               <div>
-                <h3 className="m-0 mb-4 text-xl font-bold leading-snug">Pielāgota AI platforma</h3>
+                <h3 className="m-0 mb-4 text-xl font-medium leading-snug">Pielāgota AI platforma</h3>
                 <CheckList
                   items={[
                     'Pilna kontrole pār datiem un funkcionalitāti',
@@ -230,7 +230,7 @@ const AiPlatformuIzstrade = () => {
                 />
               </div>
               <div>
-                <h3 className="m-0 mb-4 text-xl font-bold leading-snug">Gatavs SaaS produkts</h3>
+                <h3 className="m-0 mb-4 text-xl font-medium leading-snug">Gatavs SaaS produkts</h3>
                 <ul className="list-none p-0 m-0 border-t border-border text-muted-foreground">
                   {[
                     'Ierobežotas pielāgošanas iespējas',

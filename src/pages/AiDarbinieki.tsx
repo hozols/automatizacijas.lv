@@ -196,7 +196,7 @@ const AiDarbinieki = () => {
           >
             <div className="grid gap-10 md:grid-cols-2">
               <div>
-                <h3 className="m-0 mb-4 text-xl font-bold leading-snug">Tradicionālā pieeja</h3>
+                <h3 className="m-0 mb-4 text-xl font-medium leading-snug">Tradicionālā pieeja</h3>
                 <ul className="list-none p-0 m-0 border-t border-border">
                   {[
                     'Ierobežots darba laiks (8h dienā)',
@@ -212,7 +212,7 @@ const AiDarbinieki = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="m-0 mb-4 text-xl font-bold leading-snug">AI darbinieki</h3>
+                <h3 className="m-0 mb-4 text-xl font-medium leading-snug">AI darbinieki</h3>
                 <CheckList
                   items={[
                     'Strādā 24/7 bez pārtraukumiem',

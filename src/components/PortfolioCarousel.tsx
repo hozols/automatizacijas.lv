@@ -145,7 +145,7 @@ const PortfolioShowcase = () => {
               className="grid gap-x-14 gap-y-5 py-9 lg:py-12 border-b border-border lg:grid-cols-12 lg:grid-rows-[auto_1fr]"
             >
               <p className="m-0 leading-snug lg:col-span-4">
-                <span className="block text-xl font-bold">{item.client}</span>
+                <span className="block text-xl font-medium">{item.client}</span>
                 <span className="block mt-1 text-muted-foreground">
                   {item.year}, {item.category}
                 </span>
@@ -172,7 +172,7 @@ const PortfolioShowcase = () => {
                 {item.metrics.map((metric) => (
                   <div key={metric.label} className="flex items-baseline gap-3 py-2.5 border-b border-border">
                     <dt className="order-2 text-muted-foreground leading-snug">{metric.label}</dt>
-                    <dd className="order-1 m-0 min-w-[4.5rem] shrink-0 font-bold tabular-nums">{metric.value}</dd>
+                    <dd className="order-1 m-0 min-w-[4.5rem] shrink-0 font-medium tabular-nums">{metric.value}</dd>
                   </div>
                 ))}
               </dl>

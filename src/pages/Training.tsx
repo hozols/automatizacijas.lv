@@ -232,13 +232,13 @@ const TrainingPage = () => {
                   onClick={() => handleTrainingClick(topic)}
                   className="service-row group grid w-full gap-x-8 gap-y-1.5 py-5 sm:grid-cols-[1fr_auto] sm:items-baseline bg-transparent border-0 text-left text-foreground cursor-pointer"
                 >
-                  <span className="text-xl font-bold leading-snug">
+                  <span className="text-xl font-medium leading-snug">
                     <span className="sweep">{topic.title}</span>
                   </span>
                   <span className="text-muted-foreground group-hover:text-foreground transition-colors">
                     {topic.description}
                   </span>
-                  <span className="sm:col-start-2 sm:row-start-1 sm:row-span-2 sm:text-right font-semibold text-primary underline underline-offset-4 decoration-[1.5px]">
+                  <span className="sm:col-start-2 sm:row-start-1 sm:row-span-2 sm:text-right font-medium text-primary underline underline-offset-4 decoration-[1.5px]">
                     Uzzināt vairāk
                   </span>
                 </button>
