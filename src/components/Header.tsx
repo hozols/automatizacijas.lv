@@ -42,13 +42,30 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const [isDarkMode, setIsDarkMode] = useState(() => localStorage.getItem('theme') !== 'light');
+  // Light is the default. Start from it on every render path so prerendered HTML
+  // and the client agree; the stored choice is applied after mount.
+  const storedTheme = useRef<string | null>(null);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    try {
+      storedTheme.current = localStorage.getItem('theme');
+    } catch {
+      storedTheme.current = null;
+    }
+    if (storedTheme.current === 'dark') setIsDarkMode(true);
+  }, []);
 
   useEffect(() => {
     const root = document.documentElement;
     root.classList.toggle('dark-mode', isDarkMode);
     root.classList.toggle('light-mode', !isDarkMode);
-    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    if (!isDarkMode && storedTheme.current === 'dark') return; // first pass, before the stored choice applied
+    try {
+      localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    } catch {
+      /* storage blocked */
+    }
   }, [isDarkMode]);
 
   useEffect(() => {
@@ -72,7 +89,8 @@ const Header = () => {
     };
   }, [solutionsOpen]);
 
-  const activePage = location.pathname;
+  // ignore a trailing slash so /contact/ highlights the same item as /contact
+  const activePage = location.pathname.replace(/\/+$/, '') || '/';
   const isSolutionsActive = SOLUTIONS_PATHS.includes(activePage) || activePage.startsWith('/nozares');
 
   const navLinkClass = (active: boolean) =>

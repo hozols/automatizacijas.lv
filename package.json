@@ -5,14 +5,17 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender.mjs",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
     "shoot": "node scripts/shoot.mjs",
     "hero:capture": "node scripts/capture-hero.mjs",
-    "hero:e2e": "node scripts/hero-e2e.mjs"
+    "hero:e2e": "node scripts/hero-e2e.mjs",
+    "build:spa": "vite build",
+    "prerender": "node scripts/prerender.mjs",
+    "check:hydration": "node scripts/check-hydration.mjs"
   },
   "dependencies": {
     "@fontsource-variable/manrope": "^5.3.0",

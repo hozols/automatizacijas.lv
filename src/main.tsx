@@ -1,10 +1,17 @@
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
+import App, { preloadRoute } from './App.tsx';
+import './index.css';
 
-createRoot(document.getElementById("root")!).render(
-    <HelmetProvider>
-        <App />
-    </HelmetProvider>
+const container = document.getElementById('root')!;
+const app = (
+  <HelmetProvider>
+    <App />
+  </HelmetProvider>
 );
+
+if (container.hasChildNodes()) {
+  preloadRoute(window.location.pathname).then(() => hydrateRoot(container, app));
+} else {
+  createRoot(container).render(app);
+}

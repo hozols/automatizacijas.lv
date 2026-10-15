@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { lazyPage } from "@/lib/lazyPage";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -10,38 +10,71 @@ import { PricingProvider } from "@/contexts/PricingContext";
 import ScrollToTop from "./components/ScrollToTop";
 import CookieBanner from "./components/CookieBanner";
 import CookieSettingsModal from "./components/CookieSettingsModal";
-import Loader from "./components/Loader";
 import MobileStickyBar from "./components/MobileStickyBar";
 
-const Index = lazy(() => import("./pages/Index"));
-const Contact = lazy(() => import("./pages/Contact"));
-const NotFound = lazy(() => import("./pages/NotFound"));
-const Services = lazy(() => import("./pages/Services"));
-const Portfolio = lazy(() => import("./pages/Portfolio"));
-const Training = lazy(() => import("./pages/Training"));
-const Pricing = lazy(() => import("./pages/Pricing"));
-const Blog = lazy(() => import("./pages/Blog"));
-const BlogPost = lazy(() => import("./pages/BlogPost"));
-const KasIrMaksligaisIntelekts = lazy(() => import("./pages/KasIrMaksligaisIntelekts"));
-const ChatbotuIzstrade = lazy(() => import("./pages/ChatbotuIzstrade"));
-const ProcesuAutomatizacija = lazy(() => import("./pages/ProcesuAutomatizacija"));
-const MajaslapuIzstrade = lazy(() => import("./pages/MajaslapuIzstrade"));
-const Privacy = lazy(() => import("./pages/Privacy"));
+const Index = lazyPage(() => import("./pages/Index"));
+const Contact = lazyPage(() => import("./pages/Contact"));
+const NotFound = lazyPage(() => import("./pages/NotFound"));
+const Services = lazyPage(() => import("./pages/Services"));
+const Portfolio = lazyPage(() => import("./pages/Portfolio"));
+const Training = lazyPage(() => import("./pages/Training"));
+const Pricing = lazyPage(() => import("./pages/Pricing"));
+const Blog = lazyPage(() => import("./pages/Blog"));
+const BlogPost = lazyPage(() => import("./pages/BlogPost"));
+const KasIrMaksligaisIntelekts = lazyPage(() => import("./pages/KasIrMaksligaisIntelekts"));
+const ChatbotuIzstrade = lazyPage(() => import("./pages/ChatbotuIzstrade"));
+const ProcesuAutomatizacija = lazyPage(() => import("./pages/ProcesuAutomatizacija"));
+const MajaslapuIzstrade = lazyPage(() => import("./pages/MajaslapuIzstrade"));
+const Privacy = lazyPage(() => import("./pages/Privacy"));
 
 // New service pages
-const DokumentuAutomatizacija = lazy(() => import("./pages/DokumentuAutomatizacija"));
-const GramatvedibadAutomatizacija = lazy(() => import("./pages/GramatvedibadAutomatizacija"));
-const AiPlatformuIzstrade = lazy(() => import("./pages/AiPlatformuIzstrade"));
-const DatuAnalize = lazy(() => import("./pages/DatuAnalize"));
-const AiDarbinieki = lazy(() => import("./pages/AiDarbinieki"));
+const DokumentuAutomatizacija = lazyPage(() => import("./pages/DokumentuAutomatizacija"));
+const GramatvedibadAutomatizacija = lazyPage(() => import("./pages/GramatvedibadAutomatizacija"));
+const AiPlatformuIzstrade = lazyPage(() => import("./pages/AiPlatformuIzstrade"));
+const DatuAnalize = lazyPage(() => import("./pages/DatuAnalize"));
+const AiDarbinieki = lazyPage(() => import("./pages/AiDarbinieki"));
 
 // Industry pages
-const Nozares = lazy(() => import("./pages/Nozares"));
-const NozareGramatvediba = lazy(() => import("./pages/NozareGramatvediba"));
-const NozareEkomercija = lazy(() => import("./pages/NozareEkomercija"));
-const NozareRazosana = lazy(() => import("./pages/NozareRazosana"));
-const NozareLogistika = lazy(() => import("./pages/NozareLogistika"));
-const NozareJuridiskasFirmas = lazy(() => import("./pages/NozareJuridiskasFirmas"));
+const Nozares = lazyPage(() => import("./pages/Nozares"));
+const NozareGramatvediba = lazyPage(() => import("./pages/NozareGramatvediba"));
+const NozareEkomercija = lazyPage(() => import("./pages/NozareEkomercija"));
+const NozareRazosana = lazyPage(() => import("./pages/NozareRazosana"));
+const NozareLogistika = lazyPage(() => import("./pages/NozareLogistika"));
+const NozareJuridiskasFirmas = lazyPage(() => import("./pages/NozareJuridiskasFirmas"));
+
+const routeTable: { pattern: RegExp; page: { preload: () => Promise<void> } }[] = [
+  { pattern: /^\/$/, page: Index },
+  { pattern: /^\/services$/, page: Services },
+  { pattern: /^\/portfolio$/, page: Portfolio },
+  { pattern: /^\/training$/, page: Training },
+  { pattern: /^\/pricing$/, page: Pricing },
+  { pattern: /^\/blog$/, page: Blog },
+  { pattern: /^\/blog\/[^/]+$/, page: BlogPost },
+  { pattern: /^\/contact$/, page: Contact },
+  { pattern: /^\/kas-ir-maksligais-intelekts$/, page: KasIrMaksligaisIntelekts },
+  { pattern: /^\/chatbotu-izstrade$/, page: ChatbotuIzstrade },
+  { pattern: /^\/procesu-automatizacija$/, page: ProcesuAutomatizacija },
+  { pattern: /^\/majaslapu-izstrade$/, page: MajaslapuIzstrade },
+  { pattern: /^\/privacy$/, page: Privacy },
+  { pattern: /^\/dokumentu-automatizacija$/, page: DokumentuAutomatizacija },
+  { pattern: /^\/gramatvedibas-automatizacija$/, page: GramatvedibadAutomatizacija },
+  { pattern: /^\/ai-platformu-izstrade$/, page: AiPlatformuIzstrade },
+  { pattern: /^\/datu-analize$/, page: DatuAnalize },
+  { pattern: /^\/ai-darbinieki$/, page: AiDarbinieki },
+  { pattern: /^\/nozares$/, page: Nozares },
+  { pattern: /^\/nozares\/gramatvediba-un-finanses$/, page: NozareGramatvediba },
+  { pattern: /^\/nozares\/e-komercija$/, page: NozareEkomercija },
+  { pattern: /^\/nozares\/razosana$/, page: NozareRazosana },
+  { pattern: /^\/nozares\/logistika$/, page: NozareLogistika },
+  { pattern: /^\/nozares\/juridiskas-firmas$/, page: NozareJuridiskasFirmas },
+];
+
+/* Loads the page module for a pathname so hydration can render it synchronously. */
+export function preloadRoute(pathname: string): Promise<void> {
+  const clean = pathname !== '/' && pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
+  const hit = routeTable.find((r) => r.pattern.test(clean));
+  return (hit ? hit.page : NotFound).preload();
+}
 
 const queryClient = new QueryClient();
 
@@ -55,7 +88,6 @@ const App = () => (
               <ScrollToTop />
               <Toaster />
               <Sonner />
-              <Suspense fallback={<Loader />}>
                 <Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/services" element={<Services />} />
@@ -85,7 +117,6 @@ const App = () => (
                   <Route path="/nozares/juridiskas-firmas" element={<NozareJuridiskasFirmas />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
-              </Suspense>
               <CookieBanner />
               <CookieSettingsModal />
               <MobileStickyBar />

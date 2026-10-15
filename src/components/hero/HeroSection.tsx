@@ -40,11 +40,11 @@ function HeroVisual() {
         height={900}
         decoding="async"
         {...{ fetchpriority: 'low' }}
-        className="absolute inset-0 h-full w-full object-contain"
-        style={{ opacity: show3d && ready ? 0 : 1, transition: 'opacity 300ms ease' }}
+        className="absolute inset-0 h-full w-full object-contain transition-opacity duration-300"
+        style={{ opacity: show3d && ready ? 0 : 1 }}
       />
       {show3d && (
-        <div className="absolute inset-0" style={{ opacity: ready ? 1 : 0, transition: 'opacity 300ms ease' }} aria-hidden="true">
+        <div className="absolute inset-0 transition-opacity duration-300" style={{ opacity: ready ? 1 : 0 }} aria-hidden="true">
           <SceneErrorBoundary onError={onLost}>
             <Suspense fallback={null}>
               <TypewriterScene onReady={onReady} onContextLost={onLost} />
