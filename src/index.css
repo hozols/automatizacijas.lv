@@ -422,6 +422,23 @@
   background-position: 0 72%;
 }
 
+/* HomeProcess: the rule above the steps fills with the marker as the section scrolls into view. */
+.progress-rule {
+  position: relative;
+}
+
+.progress-rule::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: calc(var(--progress, 0) * 100%);
+  background: hsl(var(--marker));
+  pointer-events: none;
+  z-index: 1;
+}
+
 .faq summary::-webkit-details-marker {
   display: none;
 }

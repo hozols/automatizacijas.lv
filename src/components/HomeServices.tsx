@@ -57,12 +57,9 @@ const HomeServices = () => {
               <h3 className="display-3 m-0 lg:col-span-4">
                 <span className="sweep">{service.title}</span>
               </h3>
-              <p className="m-0 lg:col-span-6 text-muted-foreground group-hover:text-foreground transition-colors">
+              <p className="m-0 lg:col-span-8 text-muted-foreground group-hover:text-foreground transition-colors">
                 {service.description}
               </p>
-              <span className="lg:col-span-2 lg:text-right font-semibold text-primary underline underline-offset-4 decoration-[1.5px]">
-                Uzzināt vairāk
-              </span>
             </Link>
           </li>
         ))}

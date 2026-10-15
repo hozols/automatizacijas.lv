@@ -3,7 +3,7 @@ import React from 'react';
 const faqs = [
   {
     question: 'Kas ir mākslīgais intelekts un kā tas var palīdzēt manam biznesam?',
-    answer: 'Mākslīgais intelekts (MI) ir tehnoloģija, kas ļauj datoriem veikt uzdevumus, kurus tradicionāli veic cilvēki — piemēram, atbildēt uz klientu jautājumiem, analizēt datus vai automatizēt atkārtojošos procesus. Biznesā MI palīdz ietaupīt laiku, samazināt izmaksas un uzlabot klientu apkalpošanu. Mūsu klienti vidēji ietaupa 15-25 stundas nedēļā katram darbiniekam.',
+    answer: 'Mākslīgais intelekts (MI) ir tehnoloģija, kas ļauj datoriem veikt uzdevumus, kurus tradicionāli veic cilvēki: atbildēt uz klientu jautājumiem, analizēt datus vai automatizēt atkārtojošos procesus. Biznesā MI palīdz ietaupīt laiku, samazināt izmaksas un uzlabot klientu apkalpošanu. Mūsu klienti vidēji ietaupa 15-25 stundas nedēļā katram darbiniekam.',
   },
   {
     question: 'Cik maksā AI automatizācijas ieviešana?',
@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     question: 'Kā sākt sadarbību ar automatizacijas.lv?',
-    answer: 'Sāciet ar bezmaksas konsultāciju — sazinieties ar mums pa tālruni +371 20 015 830, e-pastu info@automatizacijas.lv vai WhatsApp. Konsultācijā mēs novērtēsim jūsu biznesa vajadzības, piedāvāsim piemērotāko risinājumu un sniegsim orientējošu tāmi. Nav nekādu saistību — vienkārši aprunāsimies par jūsu mērķiem.',
+    answer: 'Sāciet ar bezmaksas konsultāciju. Sazinieties ar mums pa tālruni +371 20 015 830, e-pastu info@automatizacijas.lv vai WhatsApp. Konsultācijā mēs novērtēsim jūsu biznesa vajadzības, piedāvāsim piemērotāko risinājumu un sniegsim orientējošu tāmi. Nav nekādu saistību, vienkārši aprunāsimies par jūsu mērķiem.',
   },
 ];
 

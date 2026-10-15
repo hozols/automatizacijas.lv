@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { trackCTAClick } from '@/lib/analytics';
+import { useScrollProgress } from '@/hooks/useScrollProgress';
 
 const steps = [
   {
@@ -26,11 +27,16 @@ const steps = [
 ];
 
 const HomeProcess = () => {
+  const [listRef, progress] = useScrollProgress<HTMLOListElement>();
   return (
     <section className="wrap band">
       <h2 className="display-2 m-0 max-w-[14em]">Kā notiek AI automatizācijas ieviešana?</h2>
 
-      <ol className="list-none p-0 m-0 mt-10 lg:mt-14 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-4">
+      <ol
+        ref={listRef}
+        className="progress-rule list-none p-0 m-0 mt-10 lg:mt-14 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-4"
+        style={{ '--progress': progress } as React.CSSProperties}
+      >
         {steps.map((step, i) => (
           <li key={step.title} className="border-t-2 border-foreground pt-4 pb-8">
             <span aria-hidden="true" className="font-display font-extrabold text-7xl leading-none text-primary">
