@@ -29,3 +29,7 @@ GOOGLE_CONSOLE_SETUP.md
 .playwright-mcp/
 .codex/
 /redesign-*.png
+
+# tooling
+.vercel
+test-results/
