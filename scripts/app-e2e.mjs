@@ -137,8 +137,8 @@ const isDark = (page) => page.evaluate(() => document.documentElement.classList.
   await page.goto(`${base}/`, { waitUntil: 'networkidle' });
   const sizes = await page.evaluate(() => [...document.querySelectorAll('.vignette')].slice(0, 3).map((el) => Math.round(el.getBoundingClientRect().width)));
   const bg = await page.evaluate(() => getComputedStyle(document.querySelector('.vignette')).backgroundColor);
-  check(`missing painting keeps the circle size (${sizes.join('/')})`, sizes.length === 3 && sizes.every((w) => w === sizes[0] && w > 100));
-  check(`missing painting shows the ash placeholder (${bg})`, bg === 'rgb(128, 128, 128)');
+  check(`missing painting keeps the square size (${sizes.join('/')})`, sizes.length === 3 && sizes.every((w) => w === sizes[0] && w > 100));
+  check(`missing painting shows the ash placeholder (${bg})`, bg === 'rgb(145, 145, 145)');
   await context.close();
 }
 
@@ -166,7 +166,7 @@ const isDark = (page) => page.evaluate(() => document.documentElement.classList.
   await context.close();
 }
 
-// 10. resizing below 1024px after the sequence returns the hero to its light resting state
+// 10. resizing below 1024px after the sequence returns the hero to its resting state (cluster visible)
 {
   const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
   await context.addCookies([{ name: 'cookies-accepted', value: 'true', url: base }]);
@@ -178,7 +178,7 @@ const isDark = (page) => page.evaluate(() => document.documentElement.classList.
   await page.setViewportSize({ width: 900, height: 900 });
   await page.waitForTimeout(600);
   const state = await page.evaluate(() => ({ bg: getComputedStyle(document.querySelector('.hero-stage')).backgroundColor, opacity: getComputedStyle(document.querySelector('.hero-cluster')).opacity }));
-  check(`narrow after sequence: room is light again (${state.bg}) and the cluster visible (${state.opacity})`, state.bg !== 'rgb(0, 0, 0)' && Number(state.opacity) > 0.9);
+  check(`narrow after sequence: room stays obsidian (${state.bg}) and the cluster is visible again (${state.opacity})`, state.bg === 'rgb(0, 0, 0)' && Number(state.opacity) > 0.9);
   await context.close();
 }
 

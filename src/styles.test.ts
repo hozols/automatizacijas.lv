@@ -45,3 +45,12 @@ describe('tokens', () => {
     expect(tw).not.toMatch(/0 24px 48px/);
   });
 });
+
+describe('hero', () => {
+  it('is black from the first frame and has the scroll prompt', () => {
+    expect(css()).toMatch(/\.hero-stage \{[^}]*background: hsl\(var\(--ink\)\)/);
+    expect(css()).not.toMatch(/--p-ink/);
+    expect(read('src/components/hero/HeroSection.tsx')).toContain('scroll-prompt');
+    expect(read('src/components/hero/HeroSection.tsx')).not.toContain('--p-ink');
+  });
+});

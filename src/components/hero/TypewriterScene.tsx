@@ -95,10 +95,11 @@ export default function TypewriterScene({ staticLine = false, scroll, onReady, o
         onCreated={({ gl, camera }) => { gl.setClearColor(0x000000, 0); camera.lookAt(0, 0.85, 0); }}
         style={{ background: 'transparent' }}
       >
-        <ambientLight intensity={0.7} />
-        <directionalLight position={[-3, 5, 3]} intensity={1.9} color="#fffaf2" />
-        <directionalLight position={[3, 2, -2]} intensity={0.6} />
-        <directionalLight position={[0, 3, -4]} intensity={1.2} color="#f6f5f0" />
+        {/* lit for a black room: a cooler key, a hard rim from behind so the silhouette separates from the void */}
+        <ambientLight intensity={0.55} />
+        <directionalLight position={[-3, 5, 3]} intensity={2.2} color="#ffffff" />
+        <directionalLight position={[3, 2, -2]} intensity={0.8} />
+        <directionalLight position={[0, 3, -4]} intensity={1.8} color="#ffffff" />
         <Suspense fallback={null}>
           <Rig pointer={pointer} scroll={scroll} staticLine={staticLine} onReady={onReady} />
           <ContactShadows position={[0, -0.005, 0]} opacity={0.45} scale={6} blur={2.2} far={2} resolution={256} frames={1} />

@@ -75,10 +75,11 @@ function CaptureStage() {
 }
 
 /*
-  The first room. On a desktop without reduced motion the room is 200vh tall
-  and its stage sticks: scrolling dollies the camera back, turns the machine,
-  opens the wordmark's tracking and darkens the room to ink. Everywhere else
-  the room is a plain stack in its final state.
+  The first room: obsidian, the machine under a white headline. On a desktop
+  without reduced motion the room is 200vh tall and its stage sticks:
+  scrolling dollies the camera back, turns the machine and opens the
+  wordmark's tracking. Everywhere else the room is a plain stack in its
+  final state.
 */
 /* The pin itself is CSS (see .hero-wrap in index.css); JavaScript only reads progress. */
 export const PIN_QUERY = `(min-width: ${PIN_MIN_WIDTH}px) and (prefers-reduced-motion: no-preference)`;
@@ -101,7 +102,6 @@ const HeroSection = () => {
     if (!el) return;
     const fade = Math.min(1, Math.max(0, p / 0.3));
     el.style.setProperty('--p', p.toFixed(4));
-    el.style.setProperty('--p-ink', Math.min(1, Math.max(0, (p - 0.7) / 0.3)).toFixed(4));
     el.style.setProperty('--p-fade', fade.toFixed(4));
     // once fully faded the cluster leaves the tab order and the accessibility tree
     el.querySelector('.hero-cluster')?.classList.toggle('is-faded', fade >= 0.999);
@@ -115,14 +115,14 @@ const HeroSection = () => {
 
   return (
     <section ref={wrapper} className="hero-wrap" data-hero-progress="0.0">
-      <div ref={stage} className="hero-stage">
+      <div ref={stage} className="hero-stage band-ink">
         <div className="hero-cluster wrap">
-          <p className="label m-0">AI automatizācija uzņēmumiem</p>
-          <h1 className="display-1 m-0 mt-4 max-w-[14em]">Darbi, kas birojā atkārtojas, izdarīti paši.</h1>
-          <p className="m-0 mt-4 text-[0.9375rem] text-muted-foreground">
-            <span className="font-medium text-foreground">Kleen1</span> · līgums no 20 minūtēm līdz 3
+          <p className="label m-0 text-smoke">AI automatizācija uzņēmumiem</p>
+          <h1 className="display-1 m-0 mt-5 max-w-[14em]">Darbi, kas birojā atkārtojas, izdarīti paši.</h1>
+          <p className="m-0 mt-5 text-ink-muted">
+            <span className="text-ink-foreground">Kleen1</span> · līgums no 20 minūtēm līdz 3
           </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link to="/contact" onClick={() => trackCTAClick('bezmaksas_konsultacija', 'hero')} className="btn btn-solid">
               Pieteikt konsultāciju
             </Link>
@@ -130,6 +130,15 @@ const HeroSection = () => {
               Paveiktie darbi
             </Link>
           </div>
+        </div>
+
+        <div className="hero-prompt scroll-prompt mono" aria-hidden="true">
+          <span>Ritini tālāk</span>
+          <span className="scroll-prompt-box">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.25">
+              <path d="M2.5 5l4.5 4.5L11.5 5" />
+            </svg>
+          </span>
         </div>
 
         <Wordmark />
