@@ -71,5 +71,134 @@ const isDark = (page) => page.evaluate(() => document.documentElement.classList.
   await context.close();
 }
 
+// 4. motion on a direct production load: below-fold reveals are armed, then play on scroll
+{
+  const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  await context.addCookies([{ name: 'cookies-accepted', value: 'true', url: base }]);
+  const page = await context.newPage();
+  await page.goto(`${base}/?motion=on`, { waitUntil: 'networkidle' });
+  await page.waitForTimeout(2500);
+  const armed = await page.evaluate(() => {
+    const below = [...document.querySelectorAll('.reveal, .hairline-draw')].filter((el) => el.getBoundingClientRect().top > window.innerHeight);
+    return { count: below.length, on: below.filter((el) => el.classList.contains('is-on')).length };
+  });
+  check(`below-fold reveals start armed (${armed.on}/${armed.count} already on)`, armed.count > 5 && armed.on === 0);
+  const H = await page.evaluate(() => document.documentElement.scrollHeight);
+  for (let y = 0; y <= H; y += 300) {
+    await page.evaluate((v) => window.scrollTo(0, v), y);
+    await page.waitForTimeout(120);
+  }
+  await page.waitForTimeout(900);
+  const played = await page.evaluate(() => {
+    const all = [...document.querySelectorAll('.reveal, .hairline-draw')];
+    return { count: all.length, on: all.filter((el) => el.classList.contains('is-on')).length };
+  });
+  check(`reveals play after scrolling (${played.on}/${played.count})`, played.count > 0 && played.on === played.count);
+  await context.close();
+}
+
+// 5. reduced motion: every primitive rests in its final state without scrolling
+{
+  const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, reducedMotion: 'reduce' });
+  await context.addCookies([{ name: 'cookies-accepted', value: 'true', url: base }]);
+  const page = await context.newPage();
+  await page.goto(`${base}/`, { waitUntil: 'networkidle' });
+  await page.waitForTimeout(2500);
+  const rest = await page.evaluate(() => {
+    const inner = [...document.querySelectorAll('.reveal-inner')].map((el) => getComputedStyle(el).transform);
+    const lines = [...document.querySelectorAll('.hairline-draw')].map((el) => getComputedStyle(el).transform);
+    const counters = [...document.querySelectorAll('.tabular-nums')].map((el) => el.textContent.trim());
+    return { words: inner.length, wordsAtRest: inner.filter((t) => t === 'none' || t === 'matrix(1, 0, 0, 1, 0, 0)').length, lines: lines.length, linesAtRest: lines.filter((t) => t === 'none' || t === 'matrix(1, 0, 0, 1, 0, 0)').length, counters };
+  });
+  check(`reduced motion: all ${rest.words} words at rest`, rest.words > 0 && rest.wordsAtRest === rest.words);
+  check(`reduced motion: all ${rest.lines} hairlines at rest`, rest.lines > 0 && rest.linesAtRest === rest.lines);
+  check(`reduced motion: counters at target (${rest.counters.join(', ')})`, rest.counters.includes('3 min') && rest.counters.includes('50+') && rest.counters.includes('5 h'));
+  await context.close();
+}
+
+// 6. a deep link into the cases room still ends with the counters at their targets
+{
+  const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  await context.addCookies([{ name: 'cookies-accepted', value: 'true', url: base }]);
+  const page = await context.newPage();
+  await page.goto(`${base}/?motion=on#cases`, { waitUntil: 'networkidle' });
+  await page.waitForTimeout(3500);
+  const counters = await page.evaluate(() => [...document.querySelectorAll('#cases .tabular-nums')].map((el) => el.textContent.trim()));
+  check(`#cases deep link: counters reach targets (${counters.join(', ')})`, counters.includes('3 min') && counters.includes('50+') && counters.includes('5 h'));
+  await context.close();
+}
+
+// 7. a missing painting leaves an ash circle of the same size
+{
+  const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  await context.addCookies([{ name: 'cookies-accepted', value: 'true', url: base }]);
+  await context.route('**/paintings/tax-collector-*.webp', (route) => route.fulfill({ status: 404, body: 'gone' }));
+  const page = await context.newPage();
+  await page.goto(`${base}/`, { waitUntil: 'networkidle' });
+  const sizes = await page.evaluate(() => [...document.querySelectorAll('.vignette')].slice(0, 3).map((el) => Math.round(el.getBoundingClientRect().width)));
+  const bg = await page.evaluate(() => getComputedStyle(document.querySelector('.vignette')).backgroundColor);
+  check(`missing painting keeps the circle size (${sizes.join('/')})`, sizes.length === 3 && sizes.every((w) => w === sizes[0] && w > 100));
+  check(`missing painting shows the ash placeholder (${bg})`, bg === 'rgb(128, 128, 128)');
+  await context.close();
+}
+
+// 8. paintings are served as WebP
+{
+  const page = await browser.newPage();
+  let ok = true;
+  for (const f of ['tax-collector-800.webp', 'lavoisier-1600.webp', 'scholar-writing-400.webp']) {
+    const res = await page.request.get(`${base}/paintings/${f}`);
+    ok = ok && res.status() === 200 && (res.headers()['content-type'] || '').includes('image/webp');
+  }
+  check('paintings respond 200 image/webp', ok);
+  await page.close();
+}
+
+// 9. the hero room does not change height after hydration (no 100vh jump)
+{
+  const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  const page = await context.newPage();
+  await page.goto(`${base}/?motion=on`, { waitUntil: 'domcontentloaded' });
+  const before = await page.evaluate(() => document.querySelector('.hero-wrap')?.offsetHeight ?? 0);
+  await page.waitForTimeout(3500);
+  const after = await page.evaluate(() => document.querySelector('.hero-wrap')?.offsetHeight ?? 0);
+  check(`hero height stable across hydration (${before} -> ${after})`, before > 0 && before === after);
+  await context.close();
+}
+
+// 10. resizing below 1024px after the sequence returns the hero to its light resting state
+{
+  const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  await context.addCookies([{ name: 'cookies-accepted', value: 'true', url: base }]);
+  const page = await context.newPage();
+  await page.goto(`${base}/?hero=3d`, { waitUntil: 'networkidle' });
+  await page.waitForTimeout(2500);
+  await page.evaluate(() => window.scrollTo(0, 1100));
+  await page.waitForTimeout(600);
+  await page.setViewportSize({ width: 900, height: 900 });
+  await page.waitForTimeout(600);
+  const state = await page.evaluate(() => ({ bg: getComputedStyle(document.querySelector('.hero-stage')).backgroundColor, opacity: getComputedStyle(document.querySelector('.hero-cluster')).opacity }));
+  check(`narrow after sequence: room is light again (${state.bg}) and the cluster visible (${state.opacity})`, state.bg !== 'rgb(0, 0, 0)' && Number(state.opacity) > 0.9);
+  await context.close();
+}
+
+// 11. while the cluster is faded out it cannot take keyboard focus
+{
+  const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  await context.addCookies([{ name: 'cookies-accepted', value: 'true', url: base }]);
+  const page = await context.newPage();
+  await page.goto(`${base}/?hero=3d`, { waitUntil: 'networkidle' });
+  await page.waitForTimeout(2500);
+  await page.evaluate(() => window.scrollTo(0, 500));
+  await page.waitForTimeout(600);
+  const focusable = await page.evaluate(() => {
+    const a = document.querySelector('.hero-cluster a');
+    a.focus();
+    return document.activeElement === a;
+  });
+  check('faded hero buttons are not focusable', !focusable);
+  await context.close();
+}
+
 await browser.close();
 if (failures) { console.error(`${failures} failure(s)`); process.exit(1); }

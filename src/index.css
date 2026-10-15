@@ -616,9 +616,6 @@
   --p-fade: 0;
 }
 
-.hero-wrap.is-pinned {
-  height: 200vh;
-}
 
 .hero-stage {
   position: relative;
@@ -627,10 +624,17 @@
   background: color-mix(in srgb, hsl(var(--ink)) calc(var(--p-ink) * 100%), hsl(var(--background)));
 }
 
-.hero-wrap.is-pinned .hero-stage {
-  position: sticky;
-  top: 3.5rem;
-  height: calc(100vh - 3.5rem);
+/* The pin: pure CSS, so the layout is the same before and after hydration. */
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  .hero-wrap {
+    height: 200vh;
+  }
+
+  .hero-stage {
+    position: sticky;
+    top: 3.5rem;
+    height: calc(100vh - 3.5rem);
+  }
 }
 
 .hero-cluster {
@@ -640,6 +644,10 @@
   text-align: center;
   opacity: calc(1 - var(--p-fade));
   transform: translateY(calc(var(--p-fade) * -1.5rem));
+}
+
+.hero-cluster.is-faded {
+  visibility: hidden;
 }
 
 .hero-cluster > * {

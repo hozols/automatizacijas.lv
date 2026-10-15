@@ -28,7 +28,7 @@ const quotes = [
 
 const HomeCases = () => {
   return (
-    <section className="band">
+    <section id="cases" className="band">
       <div className="wrap">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-4">

@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { isStaticMotion, pinnedProgress } from './motionPrefs';
+import { pinnedProgress } from './motionPrefs';
 
 export interface PinnedProgress {
   /* 0..1, updated every scroll frame without React renders */
@@ -22,8 +22,11 @@ export function usePinnedProgress<T extends HTMLElement>(
 
   useEffect(() => {
     const el = ref.current;
-    if (!enabled || !el || isStaticMotion()) {
+    if (!enabled || !el) {
       progress.current = 0;
+      onUpdate?.(0);
+      onChange?.(0);
+      lastTenth.current = 0;
       return;
     }
     let raf = 0;

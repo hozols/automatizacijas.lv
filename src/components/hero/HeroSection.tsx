@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { trackCTAClick } from '@/lib/analytics';
 import { useHeroMode } from './useHeroMode';
 import { usePinnedProgress } from '@/components/motion/usePinnedProgress';
-import { isStaticMotion } from '@/components/motion/motionPrefs';
 import Wordmark from './Wordmark';
 
 const TypewriterScene = lazy(() => import('./TypewriterScene'));
@@ -81,15 +80,18 @@ function CaptureStage() {
   opens the wordmark's tracking and darkens the room to ink. Everywhere else
   the room is a plain stack in its final state.
 */
+/* The pin itself is CSS (see .hero-wrap in index.css); JavaScript only reads progress. */
+export const PIN_QUERY = `(min-width: ${PIN_MIN_WIDTH}px) and (prefers-reduced-motion: no-preference)`;
+
 const HeroSection = () => {
   const mode = useHeroMode();
   const [pinned, setPinned] = useState(false);
   const stage = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const decide = () => setPinned(!isStaticMotion() && window.innerWidth >= PIN_MIN_WIDTH);
+    const mq = window.matchMedia(PIN_QUERY);
+    const decide = () => setPinned(mq.matches);
     decide();
-    const mq = window.matchMedia(`(min-width: ${PIN_MIN_WIDTH}px)`);
     mq.addEventListener('change', decide);
     return () => mq.removeEventListener('change', decide);
   }, []);
@@ -97,9 +99,12 @@ const HeroSection = () => {
   const onUpdate = useCallback((p: number) => {
     const el = stage.current;
     if (!el) return;
+    const fade = Math.min(1, Math.max(0, p / 0.3));
     el.style.setProperty('--p', p.toFixed(4));
     el.style.setProperty('--p-ink', Math.min(1, Math.max(0, (p - 0.7) / 0.3)).toFixed(4));
-    el.style.setProperty('--p-fade', Math.min(1, Math.max(0, p / 0.3)).toFixed(4));
+    el.style.setProperty('--p-fade', fade.toFixed(4));
+    // once fully faded the cluster leaves the tab order and the accessibility tree
+    el.querySelector('.hero-cluster')?.classList.toggle('is-faded', fade >= 0.999);
   }, []);
   const onTenth = useCallback((tenth: number) => {
     stage.current?.parentElement?.setAttribute('data-hero-progress', tenth.toFixed(1));
@@ -109,7 +114,7 @@ const HeroSection = () => {
   if (mode === 'capture') return <CaptureStage />;
 
   return (
-    <section ref={wrapper} className={`hero-wrap ${pinned ? 'is-pinned' : ''}`} data-hero-progress="0.0">
+    <section ref={wrapper} className="hero-wrap" data-hero-progress="0.0">
       <div ref={stage} className="hero-stage">
         <div className="hero-cluster wrap">
           <p className="label m-0">AI automatizācija uzņēmumiem</p>
