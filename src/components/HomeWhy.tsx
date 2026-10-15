@@ -1,15 +1,19 @@
 import React from 'react';
 import Reveal from '@/components/motion/Reveal';
 
+/* An editorial colour field: the sand wash, obsidian text, no card chrome. */
 const HomeWhy = () => {
   return (
-    <section className="bg-card">
-      <div className="wrap band grid gap-8 lg:grid-cols-12 lg:gap-14">
-        <h2 className="display-2 m-0 lg:col-span-5">
-          <Reveal text="Kāpēc tieši tagad" />
-        </h2>
+    <section className="wrap pb-6 lg:pb-10">
+      <div className="panel panel-sand grid gap-8 lg:grid-cols-12 lg:gap-14">
+        <div className="lg:col-span-5">
+          <p className="label m-0 opacity-70">Konteksts</p>
+          <h2 className="display-2 m-0 mt-4">
+            <Reveal text="Kāpēc tieši tagad" />
+          </h2>
+        </div>
 
-        <div className="max-w-[40em] space-y-5 text-lg leading-relaxed lg:col-span-7">
+        <div className="max-w-[40em] space-y-5 text-[1.0625rem] leading-relaxed lg:col-span-7">
           <p className="m-0">
             <strong>Mākslīgais intelekts</strong> (MI) strauji maina veidu, kā uzņēmumi Latvijā veic ikdienas
             biznesa procesus. AI automatizācija ļauj samazināt manuālo darbu, paātrināt lēmumu pieņemšanu un

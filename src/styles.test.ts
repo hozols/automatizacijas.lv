@@ -63,3 +63,15 @@ describe('chrome', () => {
     expect(read('src/components/Header.tsx')).toContain('band-ink');
   });
 });
+
+describe('rooms', () => {
+  it('cases are flat cards, why is a sand panel, process is forest, no italics', () => {
+    expect(read('src/components/HomeCases.tsx')).toContain('sheet');
+    expect(read('src/components/HomeCases.tsx')).not.toContain('italic');
+    expect(read('src/components/HomeWhy.tsx')).toContain('panel-sand');
+    expect(read('src/components/HomeProcess.tsx')).toContain('bg-forest');
+    expect(read('src/components/HomePainting.tsx')).toContain('case-card');
+    expect(read('src/components/HomePainting.tsx')).not.toMatch(/notched-card|Scroll</);
+    expect(css()).toMatch(/\.band-ink \.sheet \.btn-solid/);
+  });
+});

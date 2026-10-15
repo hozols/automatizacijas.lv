@@ -31,9 +31,10 @@ const steps = [
 const HomeProcess = () => {
   const [listRef, progress] = useScrollProgress<HTMLOListElement>();
   return (
-    <section className="band band-ink">
+    <section className="band bg-forest text-ink-foreground">
       <div className="wrap">
-      <h2 className="display-2 m-0 max-w-[14em]">
+      <p className="label m-0 text-white/60">Process</p>
+      <h2 className="display-2 m-0 mt-4 max-w-[14em]">
         <Reveal text="Kā tas notiek" />
       </h2>
 
@@ -43,15 +44,15 @@ const HomeProcess = () => {
         style={{ '--progress': progress } as React.CSSProperties}
       >
         {steps.map((step, i) => (
-          <li key={step.title} className="border-t border-ink-rule pb-8 pt-5">
+          <li key={step.title} className="border-t border-white/15 pb-8 pt-5">
             <span className="flex items-center gap-3">
               <Hex filled className="text-ink-foreground" />
               <span aria-hidden="true" className="display text-5xl leading-none">
                 {i + 1}
               </span>
             </span>
-            <h3 className="mb-2 mt-5 text-lg font-medium leading-snug">{step.title}</h3>
-            <p className="m-0 text-ink-muted">{step.description}</p>
+            <h3 className="mb-2 mt-5 text-lg leading-snug">{step.title}</h3>
+            <p className="m-0 text-white/70">{step.description}</p>
           </li>
         ))}
       </ol>
@@ -61,7 +62,7 @@ const HomeProcess = () => {
         <Link
           to="/contact"
           onClick={() => trackCTAClick('bezmaksas_konsultacija', 'home_process')}
-          className="link font-semibold"
+          className="link"
         >
           Pieteikties bezmaksas konsultācijai
         </Link>

@@ -44,7 +44,7 @@ const HomeIndustries = () => {
               Katrā nozarē atkārtojas citi darbi. Šajās piecās zinām, kur parasti slēpjas lielākais laika
               zudums.
             </p>
-            <Link to="/nozares" className="link inline-block mt-5 font-semibold">
+            <Link to="/nozares" className="link mt-5 inline-block">
               Skatīt visas nozares
             </Link>
           </div>

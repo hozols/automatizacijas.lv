@@ -29,9 +29,12 @@ const HomeFAQ = () => {
   return (
     <section className="wrap band">
       <div className="grid gap-8 lg:grid-cols-12 lg:gap-14">
-        <h2 className="display-2 m-0 lg:col-span-5">Biežāk uzdotie jautājumi</h2>
+        <div className="lg:col-span-5">
+          <p className="label m-0 text-muted-foreground">Jautājumi</p>
+          <h2 className="display-2 m-0 mt-4">Biežāk uzdotie jautājumi</h2>
+        </div>
 
-        <div className="lg:col-span-7 border-t-2 border-foreground">
+        <div className="border-t border-foreground lg:col-span-7">
           {faqs.map((faq) => (
             <details key={faq.question} className="faq border-b border-border">
               <summary className="display-3 flex cursor-pointer list-none items-baseline justify-between gap-6 py-5">

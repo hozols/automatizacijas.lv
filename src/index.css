@@ -363,6 +363,19 @@
     color: hsl(var(--foreground));
   }
 
+  .band-ink .sheet .btn-solid {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  .band-ink .sheet .btn-solid:hover {
+    background: hsl(var(--ink));
+  }
+
+  .band-ink .sheet :focus-visible {
+    outline-color: hsl(var(--ring));
+  }
+
   /* An editorial colour field, not a card. */
   .panel {
     border-radius: 24px;

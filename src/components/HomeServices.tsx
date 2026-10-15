@@ -6,9 +6,9 @@ import Hairline from '@/components/motion/Hairline';
 import Hex from '@/components/motion/Hex';
 
 /*
-  The ink room. Three circular paintings of office work as it was done for
-  five hundred years, and the six things the machine now does instead.
-  Hovering a service puts its painting and name into one of the circles.
+  The black void. Three desaturated paintings of office work as it was done
+  for five hundred years, and the six things the machine now does instead.
+  Hovering a service puts its painting and name into one of the frames.
 */
 
 interface Vignette {
@@ -72,8 +72,8 @@ const HomeServices = () => {
     <section className="band band-ink">
       <div className="wrap">
         <div className="flex items-baseline justify-between gap-6">
-          <span className="label text-ink-muted">Birojs kopš 1514. gada</span>
-          <span className="label hidden text-ink-muted sm:inline">Sešas lietas, ko mašīna dara pati</span>
+          <span className="label text-smoke">Birojs kopš 1514. gada</span>
+          <span className="label hidden text-smoke sm:inline">Sešas lietas, ko mašīna dara pati</span>
         </div>
         <h2 className="display-2 m-0 mt-8 text-center">
           <Reveal text="Ko mašīna dara pati" />
@@ -82,7 +82,7 @@ const HomeServices = () => {
         <ul className="m-0 mt-14 grid list-none grid-cols-3 gap-4 p-0 sm:gap-8 lg:mt-20 lg:px-[8%]">
           {vignettes.map((v, i) => (
             <li key={i} className="flex flex-col items-center text-center">
-              <span className="display-3 mb-5 block">{v.caption}</span>
+              <span className="label mb-5 block text-smoke">{v.caption}</span>
               <span className="vignette">
                 <img
                   key={v.slug}
@@ -96,7 +96,7 @@ const HomeServices = () => {
                   decoding="async"
                 />
               </span>
-              <span className="mt-5 flex gap-2" aria-hidden="true">
+              <span className="mt-5 flex gap-2 text-smoke" aria-hidden="true">
                 <Hex filled={i === 0} />
                 <Hex filled={i === 1} />
                 <Hex filled={i === 2} />
@@ -116,7 +116,7 @@ const HomeServices = () => {
                 onFocus={() => setHovered(i)}
                 className="group grid gap-x-8 gap-y-1 py-6 text-current no-underline lg:grid-cols-12 lg:items-baseline"
               >
-                <span className="label lg:col-span-1">0{i + 1}</span>
+                <span className="label text-smoke lg:col-span-1">0{i + 1}</span>
                 <span className="display-3 lg:col-span-4">
                   <Reveal text={service.title} stagger={30} />
                 </span>

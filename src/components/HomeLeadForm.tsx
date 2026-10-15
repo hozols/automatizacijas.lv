@@ -54,7 +54,8 @@ const HomeLeadForm = () => {
     <section id="konsultacija" className="band band-ink">
       <div className="wrap grid gap-10 lg:grid-cols-12 lg:gap-14 lg:items-start">
         <div className="lg:col-span-5">
-          <h2 className="display-2 m-0">Pieteikties bezmaksas konsultācijai</h2>
+          <p className="label m-0 text-smoke">Konsultācija</p>
+          <h2 className="display-2 m-0 mt-4">Pieteikties bezmaksas konsultācijai</h2>
           <p className="mt-5 mb-0 text-lg text-ink-muted max-w-[26em]">
             Pastāstiet, kurš darbs jūsu uzņēmumā aizņem visvairāk laika. Atbildēsim 24 stundu laikā un
             pateiksim, vai un kā to var automatizēt.
@@ -62,20 +63,20 @@ const HomeLeadForm = () => {
           <p className="mt-8 mb-0 text-ink-muted">
             Var arī uzreiz zvanīt vai rakstīt:
             <br />
-            <a href="tel:+37120015830" className="font-bold text-ink-foreground underline underline-offset-4">
+            <a href="tel:+37120015830" className="text-ink-foreground underline underline-offset-4">
               +371 20 015 830
             </a>
             <br />
             <a
               href="mailto:info@automatizacijas.lv"
-              className="font-bold text-ink-foreground underline underline-offset-4"
+              className="text-ink-foreground underline underline-offset-4"
             >
               info@automatizacijas.lv
             </a>
           </p>
         </div>
 
-        <div className="lg:col-span-7 sheet p-6 sm:p-10">
+        <div className="sheet lg:col-span-7">
           {status === 'sent' ? (
             <div role="status" className="py-6">
               <h3 className="display-3 m-0">
@@ -161,7 +162,7 @@ const HomeLeadForm = () => {
                 </button>
 
                 {status === 'error' && (
-                  <p role="alert" className="mt-4 mb-0 font-semibold text-destructive">
+                  <p role="alert" className="mt-4 mb-0 text-destructive">
                     Pieteikums netika nosūtīts. Pārbaudiet interneta savienojumu un mēģiniet vēlreiz vai rakstiet
                     uz info@automatizacijas.lv.
                   </p>

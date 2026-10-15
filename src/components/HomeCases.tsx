@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { trackCTAClick } from '@/lib/analytics';
 import Reveal from '@/components/motion/Reveal';
-import Hairline from '@/components/motion/Hairline';
 import Counter from '@/components/motion/Counter';
 
 const cases = [
@@ -26,51 +25,47 @@ const quotes = [
   },
 ];
 
+/* The white surface: three flat case cards and two flat testimonial cards. */
 const HomeCases = () => {
   return (
     <section id="cases" className="band">
       <div className="wrap">
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
-          <div className="lg:col-span-4">
-            <h2 className="display-2 m-0">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="label m-0 text-muted-foreground">Gadījumi</p>
+            <h2 className="display-2 m-0 mt-4">
               <Reveal text="Paveiktie darbi" />
             </h2>
-            <p className="m-0 mt-5 max-w-[24em] text-muted-foreground">
+            <p className="m-0 mt-4 max-w-[28em] text-muted-foreground">
               Katrs projekts sākas ar vienu konkrētu darbu, kas kādam komandā apnicis. Šeit ir trīs no tiem.
             </p>
-            <Link to="/portfolio" onClick={() => trackCTAClick('visi_projekti', 'home_cases')} className="btn btn-line mt-8">
-              Visi projekti
-            </Link>
           </div>
-          <div className="lg:col-span-8">
-            <Hairline />
-            <ol className="m-0 list-none p-0">
-              {cases.map((item) => (
-                <li key={item.client} className="grid gap-x-8 gap-y-2 border-b border-border py-7 sm:grid-cols-5">
-                  <div className="sm:col-span-2">
-                    <p className="m-0 font-medium">{item.client}</p>
-                    <p className="m-0 leading-snug text-muted-foreground">{item.work}</p>
-                  </div>
-                  <p className="m-0 sm:col-span-3">
-                    <span className="display block text-[clamp(2.5rem,5vw,4.5rem)] leading-none">
-                      <Counter from={item.from} to={item.to} suffix={item.suffix} />
-                    </span>
-                    <span className="mt-1 block text-[0.9375rem] text-muted-foreground">{item.note}</span>
-                  </p>
-                </li>
-              ))}
-            </ol>
-          </div>
+          <Link to="/portfolio" onClick={() => trackCTAClick('visi_projekti', 'home_cases')} className="btn btn-line shrink-0">
+            Visi projekti
+          </Link>
         </div>
 
-        <div className="mt-14 grid gap-10 md:grid-cols-2 lg:mt-20 lg:gap-14">
+        <ol className="m-0 mt-10 grid list-none gap-4 p-0 md:grid-cols-3 lg:mt-12">
+          {cases.map((item) => (
+            <li key={item.client} className="sheet flex flex-col gap-4">
+              <span className="label text-muted-foreground">{item.client}</span>
+              <span className="display block text-[3.5rem] leading-none lg:text-[4rem]">
+                <Counter from={item.from} to={item.to} suffix={item.suffix} />
+              </span>
+              <span className="caption block text-muted-foreground">{item.note}</span>
+              <span className="display-3 mt-auto block pt-4">{item.work}</span>
+            </li>
+          ))}
+        </ol>
+
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
           {quotes.map((quote) => (
-            <figure key={quote.author} className="m-0">
-              <blockquote lang={quote.lang} className="display-3 m-0 italic">
+            <figure key={quote.author} className="sheet m-0 flex flex-col gap-6">
+              <blockquote lang={quote.lang} className="m-0 text-[1.25rem] leading-normal tracking-tight">
                 {quote.lang === 'lv' ? `„${quote.text}”` : `“${quote.text}”`}
               </blockquote>
-              <figcaption className="mt-4 text-[0.9375rem]">
-                <span className="font-medium">{quote.author}</span>
+              <figcaption className="caption mt-auto">
+                <span className="text-foreground">{quote.author}</span>
                 <span className="text-muted-foreground">, {quote.role}</span>
               </figcaption>
             </figure>
