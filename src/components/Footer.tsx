@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { useCookies } from '@/contexts/CookieContext';
 import { INDUSTRY_ROUTES, MAIN_ROUTES, MORE_ROUTES, SERVICE_ROUTES } from './MenuOverlay';
 
-/* The chalk footer: every route as a plain link, credits, nothing decorative. */
-const footerLink = 'text-current no-underline hover:underline underline-offset-4 decoration-1';
+/* The obsidian footer: every route as a plain link, credits, nothing decorative. */
+const footerLink = 'text-smoke no-underline transition-colors hover:text-ink-foreground';
 
 const Column = ({ title, links }: { title: string; links: { to: string; label: string }[] }) => (
   <nav aria-label={title}>
-    <p className="label m-0 mb-4 text-muted-foreground">{title}</p>
-    <ul className="m-0 list-none space-y-2 p-0 text-[0.9375rem]">
+    <p className="label m-0 mb-5 text-smoke">{title}</p>
+    <ul className="m-0 list-none space-y-2.5 p-0 text-[0.9375rem]">
       {links.map((link) => (
         <li key={link.to}>
           <Link to={link.to} className={footerLink}>
@@ -26,14 +26,14 @@ const Footer = () => {
   const { openModal } = useCookies();
 
   return (
-    <footer className="band-chalk pb-24 md:pb-0">
-      <div className="wrap pb-10 pt-14 lg:pt-20">
+    <footer className="band-ink pb-24 md:pb-0">
+      <div className="wrap pb-10 pt-[clamp(5rem,8vw,7.5rem)]">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-4">
-            <Link to="/" className="display block text-[clamp(2rem,3vw,2.75rem)] text-current no-underline">
+            <Link to="/" className="display block text-[clamp(1.5rem,2.5vw,2rem)] text-current no-underline">
               automatizācijas.lv
             </Link>
-            <p className="m-0 mt-5 max-w-[24em] text-muted-foreground">
+            <p className="m-0 mt-5 max-w-[24em] text-ink-muted">
               AI automatizācija uzņēmumiem Latvijā. Rīga.
             </p>
             <p className="m-0 mt-6 text-[0.9375rem] leading-loose">
@@ -63,8 +63,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <hr className="hairline mt-14" />
-        <div className="flex flex-col gap-3 pt-5 text-[0.8125rem] text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+        <hr className="hairline mt-16" />
+        <div className="caption flex flex-col gap-3 pt-6 text-smoke sm:flex-row sm:items-center sm:justify-between">
           <span>
             {`© ${currentYear} automatizācijas.lv. Gleznas: The Metropolitan Museum of Art, Open Access (CC0).`}
           </span>

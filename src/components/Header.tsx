@@ -5,8 +5,8 @@ import MenuOverlay from './MenuOverlay';
 import { trackCTAClick } from '@/lib/analytics';
 
 /*
-  A 56px gallery header: the mark on the left, one text link and one pill on
-  the right. Every route lives in the menu overlay and in the footer.
+  A 56px obsidian header: the mark on the left, one text link and one filled
+  button on the right. Every route lives in the menu overlay and in the footer.
 */
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +19,7 @@ const Header = () => {
       >
         Pāriet uz saturu
       </a>
-      <header className="sticky top-0 z-50 border-b border-border bg-background">
+      <header className="band-ink sticky top-0 z-50 border-b border-ink-rule">
         <div className="wrap flex h-14 items-center justify-between gap-6">
           <Logo />
           <div className="flex items-center gap-5">
@@ -28,7 +28,7 @@ const Header = () => {
               onClick={() => setMenuOpen(true)}
               aria-haspopup="dialog"
               aria-expanded={menuOpen}
-              className="label cursor-pointer border-0 bg-transparent p-0 text-current hover:underline underline-offset-[0.3em]"
+              className="cursor-pointer border-0 bg-transparent p-0 text-[1rem] text-current hover:text-ink-muted"
             >
               Izvēlne
             </button>

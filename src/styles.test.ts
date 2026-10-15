@@ -54,3 +54,12 @@ describe('hero', () => {
     expect(read('src/components/hero/HeroSection.tsx')).not.toContain('--p-ink');
   });
 });
+
+describe('chrome', () => {
+  it('has no monogram or chalk and uses mono labels', () => {
+    for (const f of ['Header', 'Logo', 'MenuOverlay', 'Footer']) expect(read(`src/components/${f}.tsx`)).not.toMatch(/monogram|band-chalk|display-2/);
+    expect(read('src/components/Logo.tsx')).toContain('logo-mark');
+    expect(read('src/components/Footer.tsx')).toContain('band-ink');
+    expect(read('src/components/Header.tsx')).toContain('band-ink');
+  });
+});

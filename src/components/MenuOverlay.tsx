@@ -77,14 +77,16 @@ const MenuOverlay = ({ open, onClose }: Props) => {
     >
       <div className="wrap flex h-full flex-col py-5">
         <div className="flex items-center justify-between">
-          <span className="label">Izvēlne</span>
+          <span className="label text-smoke">Izvēlne</span>
           <button
             type="button"
             onClick={onClose}
             aria-label="Aizvērt izvēlni"
-            className="monogram cursor-pointer bg-transparent text-current"
+            className="scroll-prompt-box cursor-pointer bg-transparent text-current hover:bg-white/10"
           >
-            ×
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.25" aria-hidden="true">
+              <path d="M2.5 2.5l9 9M11.5 2.5l-9 9" />
+            </svg>
           </button>
         </div>
 
@@ -93,7 +95,7 @@ const MenuOverlay = ({ open, onClose }: Props) => {
             <ul className="m-0 list-none p-0">
               {MAIN_ROUTES.map((r) => (
                 <li key={r.to}>
-                  <Link to={r.to} className={`display-2 block py-1 ${linkClass}`}>
+                  <Link to={r.to} className={`display-1 block py-1 ${linkClass}`}>
                     {r.label}
                   </Link>
                 </li>
@@ -103,7 +105,7 @@ const MenuOverlay = ({ open, onClose }: Props) => {
 
           <div className="grid gap-10 sm:grid-cols-2 lg:col-span-5">
             <nav aria-label="Pakalpojumi">
-              <p className="label m-0 mb-4 text-ink-muted">Pakalpojumi</p>
+              <p className="label m-0 mb-4 text-smoke">Pakalpojumi</p>
               <ul className="m-0 list-none space-y-2 p-0 text-[0.9375rem]">
                 {SERVICE_ROUTES.map((r) => (
                   <li key={r.to}>
@@ -115,7 +117,7 @@ const MenuOverlay = ({ open, onClose }: Props) => {
               </ul>
             </nav>
             <nav aria-label="Nozares un citas lapas">
-              <p className="label m-0 mb-4 text-ink-muted">Nozares</p>
+              <p className="label m-0 mb-4 text-smoke">Nozares</p>
               <ul className="m-0 list-none space-y-2 p-0 text-[0.9375rem]">
                 {INDUSTRY_ROUTES.map((r) => (
                   <li key={r.to}>
@@ -125,7 +127,7 @@ const MenuOverlay = ({ open, onClose }: Props) => {
                   </li>
                 ))}
               </ul>
-              <p className="label m-0 mb-4 mt-8 text-ink-muted">Vēl</p>
+              <p className="label m-0 mb-4 mt-8 text-smoke">Vēl</p>
               <ul className="m-0 list-none space-y-2 p-0 text-[0.9375rem]">
                 {MORE_ROUTES.map((r) => (
                   <li key={r.to}>
@@ -144,7 +146,7 @@ const MenuOverlay = ({ open, onClose }: Props) => {
             <a href="tel:+37120015830" className={linkClass}>
               +371 20 015 830
             </a>
-            <span className="mx-3 text-ink-muted">/</span>
+            <span className="mx-3 text-smoke">/</span>
             <a href="mailto:info@automatizacijas.lv" className={linkClass}>
               info@automatizacijas.lv
             </a>

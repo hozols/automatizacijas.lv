@@ -19,7 +19,7 @@ const MobileStickyBar = () => {
   if (location.pathname === '/contact' || !visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background border-t border-border px-4 pt-3 safe-area-bottom">
+    <div className="band-ink fixed bottom-0 left-0 right-0 z-40 border-t border-ink-rule px-4 pt-3 safe-area-bottom md:hidden">
       <Link to="/contact" className="btn btn-solid w-full min-h-[3rem]">
         Pieteikties konsultācijai
       </Link>
