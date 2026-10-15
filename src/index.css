@@ -1,5 +1,47 @@
-@import '@fontsource/instrument-serif/400.css';
-@import '@fontsource/instrument-serif/400-italic.css';
+/*
+  Instrument Serif is self-hosted from public/fonts so index.html can preload
+  it under a stable name. The fallback face is sized to the serif's width so
+  the headline keeps its line count while the font loads (no layout shift).
+*/
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/instrument-serif-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/instrument-serif-latin-ext-400-normal.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/instrument-serif-latin-400-italic.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/instrument-serif-latin-ext-400-italic.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Instrument Serif Fallback';
+  src: local('Times New Roman'), local('Georgia');
+  size-adjust: 84%;
+  ascent-override: 95%;
+  descent-override: 25%;
+}
 @import '@fontsource-variable/manrope/wght.css';
 
 @tailwind base;
@@ -77,7 +119,7 @@
   /* h1 and h2 carry the serif display face; smaller headings stay in the grotesk. */
   h1,
   h2 {
-    font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+    font-family: 'Instrument Serif', 'Instrument Serif Fallback', Georgia, serif;
     font-weight: 400;
     letter-spacing: -0.02em;
     text-wrap: balance;
@@ -128,7 +170,7 @@
   }
 
   .display {
-    font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+    font-family: 'Instrument Serif', 'Instrument Serif Fallback', Georgia, serif;
     font-weight: 400;
     line-height: 0.9;
     letter-spacing: -0.02em;
@@ -317,7 +359,7 @@
     height: 2rem;
     border: 1.5px solid currentColor;
     border-radius: 50%;
-    font-family: 'Instrument Serif', Georgia, serif;
+    font-family: 'Instrument Serif', 'Instrument Serif Fallback', Georgia, serif;
     font-size: 1.25rem;
     line-height: 1;
     padding-bottom: 0.1em;

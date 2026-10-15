@@ -113,7 +113,7 @@ export default {
 			},
 			fontFamily: {
 				sans: ['"Manrope Variable"', 'system-ui', 'sans-serif'],
-				display: ['"Instrument Serif"', 'Georgia', '"Times New Roman"', 'serif'],
+				display: ['"Instrument Serif"', '"Instrument Serif Fallback"', 'Georgia', 'serif'],
 				inter: ['"Manrope Variable"', 'system-ui', 'sans-serif']
 			},
 			letterSpacing: {

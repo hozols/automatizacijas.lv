@@ -87,6 +87,8 @@ const HomeServices = () => {
                 <img
                   key={v.slug}
                   src={`/paintings/${v.slug}-800.webp`}
+                  srcSet={`/paintings/${v.slug}-400.webp 400w, /paintings/${v.slug}-800.webp 800w`}
+                  sizes="(min-width: 1024px) 15rem, 30vw"
                   alt={v.alt}
                   width={800}
                   height={800}

@@ -1,72 +1,72 @@
 # automatizacijas.lv design system
 
-The site sells office automation to Latvian business owners, accountants and
-office managers. The look is quiet and editorial: warm off-white paper, one
-near-black ink for text, buttons and links, thin ruled lines, a serif for
-headlines and a plain sans for everything else. No accent colour. It must
+The site is a gallery about office work. Old-master paintings of clerks,
+merchants and letter writers show how the work was done for five hundred
+years; a 3D typewriter and the copy show what the machine does now. The look
+is "Renaissance gallery on putty paper": a warm gray canvas, hard cuts into
+black rooms, monumental serif type, hairlines, circles and hexagons. It must
 not look like a generated SaaS template.
+
+Reference: `docs/superpowers/specs/2026-10-15-gallery-redesign-design.md`.
 
 ## Tokens (src/index.css, tailwind.config.ts)
 
 | Name | Value | Use |
 | --- | --- | --- |
-| paper `bg-background` | #F6F5F0 | page ground |
-| sheet `bg-card` | #FFFFFF | documents, forms, menus |
-| ink `text-foreground`, `bg-primary`, `band-ink` | #151719 | text, buttons, links, dark bands, footer |
-| rule `border-border` | #E3E0D8 | ruled lines |
-| highlighter `bg-marker`, `.mark`, `.sweep` | #EDE6D2 | a pale underline on hover or on what is done |
+| putty `bg-background` | #C4C3B6 | page canvas, light rooms |
+| bone `bg-card`, `.sheet` | #E7E5E4 | cards, sheets, the elevated light surface |
+| chalk `.band-chalk` | #EBEBEB | footer |
+| vellum `border-border`, `.hairline` | #DFDCD5 | hairlines on light rooms |
+| graphite `text-muted-foreground` | #595855 | muted text |
+| ink `text-foreground`, `bg-primary`, `.band-ink` | #000000 | dark rooms, text, the pill button |
+| paper `text-ink-foreground` | #FFFFFF | text on dark rooms |
+| ash `bg-ash` | #808080 | image placeholders only |
 
-Dark mode is the `.dark-mode` class on `<html>`: the same system inverted
-(off-white on near-black). Every token has a value in both, so use tokens and
-never hard-coded colours (`blue-500`, `#fff`, `gray-400`).
+No other colour. No gradients, shadows or blur. There is no dark-mode
+toggle: the page is light and dark by room.
 
-Type: Newsreader (serif, static weight 500 so the font stays small) for `h1`/`h2` (classes
-`display-1`, `display-2`, `display-3`), Manrope for everything else. `h3` and
-smaller are the text face at 600. Sentence case in new copy. No letter-spacing
-tweaks beyond the -0.01em the display face carries.
+Type: **Instrument Serif** (400, italic available) for everything 24px and
+up: `.wordmark` (22vw, cropped at the viewport), `.display-2` (section
+titles), `.display-1` (page h1), `.display-3` (captions, subheadings,
+quotes). **Manrope** for everything 26px and below: body 16px, `.label`
+(12px, 500, uppercase, 0.08em), `.micro` (9px uppercase). Sentence case in
+copy; labels uppercase. Never set body text in the serif.
 
-## Layout rules
+## Rooms and layout
 
-1. Left aligned. No `text-center` section headers, no `mx-auto` text blocks.
-2. One container: `.wrap`. Sections are full-width bands; the content grid is
-   12 columns: heading in 4 or 5, content in the rest.
-3. Lists are ruled rows (`RuledList`, `CheckList`), not grids of cards.
-   A bordered box is allowed only for a thing that is really a sheet: a form,
-   a document, a menu, a dialog, a price table. Use the `.sheet` class.
-4. Numbers only on real sequences (`Steps`).
-5. Icons: none as decoration. Allowed only inside controls where they carry
-   meaning (menu, close, theme, external link, chevron in a select).
-6. Motion is allowed only when it answers a user action (hover, click,
-   scroll position) or shows the thing the nearby text describes. Hover
-   changes colour or sweeps the highlighter. No background particles,
-   glow, blur, shimmer, pulse, hover-lift, scale-on-hover or entrance
-   animations. The hero typewriter is the one scene that moves on its own.
-   `prefers-reduced-motion: reduce` turns every allowed motion into its
-   final state.
-7. Radius: `rounded-md` at most (4px). No `rounded-full` pills or badges.
-8. Buttons: `btn btn-solid` (main action), `btn btn-line` (secondary). Text
-   links: `link`. No arrows or icons in button or link text.
-9. One closing `CtaBand` per page, directly above the footer.
-10. Form fields: `field` + `field-label` classes, on a `.sheet`.
+1. Sections are full-bleed rooms with hard cuts, alternating putty and ink;
+   bone is the elevated light surface for sheets and one room per page.
+2. One container, `.wrap`, capped at 1600px. Content sits on a 12-column
+   grid: heading in 4 or 5 columns, content in the rest, or centered in an
+   ink room.
+3. Lists are hairline rows (`RuledList`, `CheckList`, `Steps`, `Faq`), never
+   grids of cards. A `.sheet` (bone, hairline, 9px) is for a form, a
+   document, a menu, a price table.
+4. Numbers only on real sequences; the serif sets them large.
+5. Shapes: circles for imagery (`.vignette`), hexagons for indicators
+   (`Hex`), pills for buttons (`.btn`, 28.8px), 9px corners on sheets, 2px
+   on links, the notched black card for the one floating object.
+6. Icons: none as decoration. Only the monogram, the menu close, the hex,
+   the chevron in a select.
+7. Buttons: `.btn.btn-solid` (ink pill, one per view), `.btn.btn-line`
+   (hairline pill). Text links: `.link`, underline only. No arrows.
+8. Imagery: Met Open Access paintings only (`docs/paintings.md`), as
+   circular vignettes or one full-bleed panel per page, credited. No stock
+   photography, no illustration.
 
-## Avoid (these are what made the old site look generated)
+## Motion (src/components/motion)
 
-Pill badges above headings, uppercase tracked labels, a single coloured word in
-a headline, stat cards with icon + big number, identical icon cards in a 3-col
-grid, "Uzzināt vairāk →", middle-dot separated meta strings, em dashes in copy,
-emoji.
-
-## Components (src/components/page/index.tsx)
-
-`PageShell`, `Breadcrumbs`, `PageHero` (title, lede, facts[]), `Section`
-(title, intro, tone: paper | sheet | ink), `Prose`, `CheckList`, `RuledList`
-(items with title, desc, aside, to; columns 1 | 2), `Steps`, `Faq`, `CtaBand`.
-Reference page: `src/pages/ChatbotuIzstrade.tsx`. Reference for bespoke
-sections: the `Home*.tsx` components.
-
-Alternate `Section` tones paper / sheet down the page so bands are visible.
+Motion answers scrolling or hovering, or shows the thing the copy
+describes. `Reveal` (words slide up once), `Hairline` (draws left to
+right), `Counter` (counts to the number), `Parallax` (a painting sits
+deeper than the page), `Marquee` (the slow serif ticker), the hero's pinned
+scroll sequence and the typewriter are the whole vocabulary. No particles,
+glow, shimmer, pulse, hover-lift or scale on cards. Every primitive renders
+its final state under `prefers-reduced-motion` and in the prerender, and
+never changes layout after it runs.
 
 ## Copy
 
 Plain verbs, concrete nouns, sentence case. Say what the thing does. Button
-text says what happens. Do not invent numbers, clients or results.
+text says what happens. No invented numbers, clients or results. No em
+dashes, no emoji, no "Uzzināt vairāk".

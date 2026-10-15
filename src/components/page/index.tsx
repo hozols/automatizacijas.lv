@@ -86,6 +86,8 @@ export const PageHero = ({ title, lede, facts, vignette, children }: PageHeroPro
           <span className="vignette" style={{ width: 'min(100%, 13rem)' }}>
             <img
               src={`/paintings/${vignette}-800.webp`}
+              srcSet={`/paintings/${vignette}-400.webp 400w, /paintings/${vignette}-800.webp 800w`}
+              sizes="13rem"
               alt={PAINTING_ALT[vignette] ?? ''}
               width={800}
               height={800}

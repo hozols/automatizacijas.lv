@@ -38,6 +38,7 @@ for (const entry of manifest) {
   const left = Math.round(Math.min(Math.max(entry.focus.x * width - side / 2, 0), width - side));
   const top = Math.round(Math.min(Math.max(entry.focus.y * height - side / 2, 0), height - side));
   await sharp(src).extract({ left, top, width: side, height: side }).resize(800, 800).webp({ quality: 80 }).toFile(square);
+  await sharp(src).extract({ left, top, width: side, height: side }).resize(400, 400).webp({ quality: 80 }).toFile(square.replace('-800.webp', '-400.webp'));
 
   credits.push({ slug: entry.slug, use: entry.use, line: creditLine(meta) });
   console.log('ok  ', entry.slug, '|', meta.title, '|', `${width}x${height}`);

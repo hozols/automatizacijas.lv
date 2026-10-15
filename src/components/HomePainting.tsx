@@ -13,6 +13,8 @@ const HomePainting = () => {
       <Parallax factor={0.12} className="absolute inset-0">
         <img
           src="/paintings/lavoisier-1600.webp"
+          srcSet="/paintings/lavoisier-800.webp 800w, /paintings/lavoisier-1600.webp 1600w"
+          sizes="100vw"
           alt="Žaks Luī Davids, Antuāns Lorāns Lavuazjē un Marija Anna Lavuazjē, 1788. Vīrietis pie rakstāmgalda ar papīriem un spalvu."
           width={1600}
           height={2107}
