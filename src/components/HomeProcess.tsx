@@ -31,7 +31,7 @@ const steps = [
 const HomeProcess = () => {
   const [listRef, progress] = useScrollProgress<HTMLOListElement>();
   return (
-    <section className="band bg-forest text-ink-foreground">
+    <section className="band band-ink bg-forest">
       <div className="wrap">
       <p className="label m-0 text-white/60">Process</p>
       <h2 className="display-2 m-0 mt-4 max-w-[14em]">

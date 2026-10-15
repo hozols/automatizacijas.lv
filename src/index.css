@@ -323,12 +323,6 @@
     color: hsl(var(--ink));
   }
 
-  .btn-line-invert:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: hsl(var(--ink-foreground));
-    color: hsl(var(--ink-foreground));
-  }
-
   .band-action :focus-visible,
   .band-ink :focus-visible {
     outline-color: hsl(var(--ink-foreground));
@@ -470,7 +464,7 @@
   }
 
   .field::placeholder {
-    color: hsl(var(--smoke));
+    color: hsl(var(--muted-foreground));
   }
 
   .field:hover {
@@ -697,6 +691,8 @@
 
 .hero-stage {
   position: relative;
+  display: flex;
+  flex-direction: column;
   min-height: calc(100vh - 3.5rem);
   overflow: hidden;
   background: hsl(var(--ink));
@@ -719,6 +715,7 @@
 .hero-cluster {
   position: relative;
   z-index: 3;
+  flex: none;
   padding-top: clamp(2rem, 7vh, 4.5rem);
   text-align: center;
   opacity: calc(1 - var(--p-fade));
@@ -742,16 +739,28 @@
   opacity: calc(1 - var(--p-fade));
 }
 
+/* The machine takes whatever height is left between the headline and the wordmark, and stands on the letters. */
+.hero-visual {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 auto;
+  align-self: center;
+  min-height: 0;
+  width: auto;
+  max-width: 100%;
+  aspect-ratio: 4 / 3;
+  margin: 0.5rem auto 0;
+}
+
 /* The wordmark sits on the floor of the room; its tracking opens and it fades to smoke as the room scrolls. */
 .wordmark-frame {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: relative;
   z-index: 1;
+  flex: none;
   display: flex;
   justify-content: center;
   overflow: hidden;
+  margin-top: calc(clamp(3.5rem, 9vw, 7.25rem) * -0.3);
   pointer-events: none;
 }
 
@@ -762,21 +771,9 @@
   color: color-mix(in srgb, hsl(var(--smoke)) calc(var(--p) * 100%), hsl(var(--ink-foreground)));
 }
 
-/* The machine stands on the letters: its box ends a third of the way up the wordmark. */
-.hero-visual {
-  position: absolute;
-  left: 50%;
-  bottom: calc(clamp(3.5rem, 9vw, 7.25rem) * 0.42);
-  z-index: 2;
-  height: min(36vw, 52vh);
-  aspect-ratio: 4 / 3;
-  transform: translateX(-50%);
-}
-
 @media (max-width: 1023px) {
   .hero-stage {
     min-height: 0;
-    padding-bottom: calc(clamp(3.5rem, 9vw, 7.25rem) * 0.9);
   }
 
   .hero-prompt {
@@ -784,13 +781,13 @@
   }
 
   .hero-visual {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    transform: none;
-    height: auto;
+    flex: none;
     width: min(92vw, 34rem);
-    margin: 1rem auto calc(clamp(3.5rem, 9vw, 7.25rem) * -0.45);
+    margin: 1rem auto 0;
+  }
+
+  .wordmark-frame {
+    margin-top: calc(clamp(3.5rem, 9vw, 7.25rem) * -0.2);
   }
 }
 

@@ -141,8 +141,8 @@ const HeroSection = () => {
           </span>
         </div>
 
-        <Wordmark />
         <HeroVisual scroll={progress} />
+        <Wordmark />
       </div>
     </section>
   );

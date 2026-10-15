@@ -248,7 +248,7 @@ const TrainingPage = () => {
         </Section>
 
         {/* CTA: same band as CtaBand, but the actions open the dialog instead of navigating */}
-        <section className="band-action">
+        <section className="band-action band-ink">
           <div className="wrap py-14 lg:py-20 grid gap-8 lg:grid-cols-12 lg:gap-14 lg:items-end">
             <div className="lg:col-span-7">
               <h2 className="display-2 m-0">Gatavi sākt mācīties?</h2>
@@ -267,7 +267,7 @@ const TrainingPage = () => {
               <button
                 type="button"
                 onClick={() => handleTrainingClick(trainingData.seminars)}
-                className="btn btn-line btn-line-invert"
+                className="btn btn-line"
               >
                 Pieteikt semināru
               </button>

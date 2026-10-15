@@ -200,5 +200,32 @@ const isDark = (page) => page.evaluate(() => document.documentElement.classList.
   await context.close();
 }
 
+// 12. outlined buttons and links stay visible on every dark room (hero, menu, training CTA, forest process)
+{
+  const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  await context.addCookies([{ name: 'cookies-accepted', value: 'true', url: base }]);
+  const page = await context.newPage();
+  const white = 'rgb(255, 255, 255)';
+  await page.goto(`${base}/`, { waitUntil: 'networkidle' });
+  const hero = await page.evaluate(() => getComputedStyle(document.querySelector('.hero-cluster .btn-line')).color);
+  await page.click('header button[aria-haspopup="dialog"]');
+  await page.waitForTimeout(300);
+  const menu = await page.evaluate(() => getComputedStyle(document.querySelector('dialog[open] .btn-solid')).backgroundColor);
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(300);
+  const forest = await page.evaluate(() => getComputedStyle(document.querySelector('.bg-forest a.link')).color);
+  await page.hover('.bg-forest a.link');
+  await page.waitForTimeout(200);
+  const forestHover = await page.evaluate(() => getComputedStyle(document.querySelector('.bg-forest a.link')).color);
+  await page.goto(`${base}/training/`, { waitUntil: 'networkidle' });
+  const training = await page.evaluate(() => getComputedStyle(document.querySelector('.band-action .btn-line')).color);
+  check(`hero outlined button is white (${hero})`, hero === white);
+  check(`menu solid button is white (${menu})`, menu === white);
+  check(`forest room link is white (${forest})`, forest === white);
+  check(`forest room link stays light on hover (${forestHover})`, forestHover !== 'rgb(87, 87, 87)');
+  check(`training outlined button is white (${training})`, training === white);
+  await context.close();
+}
+
 await browser.close();
 if (failures) { console.error(`${failures} failure(s)`); process.exit(1); }
