@@ -55,6 +55,36 @@ const check = (name, ok) => { console.log(`${ok ? 'ok  ' : 'FAIL'} ${name}`); if
   await page.close();
 }
 
+// 3c. the pinned scroll sequence reaches the end and never overlaps the next room
+for (const [w, h] of [[1440, 900], [1280, 700]]) {
+  const page = await browser.newPage({ viewport: { width: w, height: h } });
+  await page.goto(`${base}/?hero=3d`, { waitUntil: 'networkidle' });
+  await page.waitForSelector('[data-hero-mode="3d"][data-hero-ready="1"]', { timeout: 30000 });
+  check(`${w}x${h}: hero is pinned`, await page.evaluate(() => document.querySelector('.hero-wrap')?.classList.contains('is-pinned') ?? false));
+  await page.evaluate((y) => window.scrollTo(0, y), h * 1.2);
+  await page.waitForTimeout(700);
+  check(`${w}x${h}: progress reaches 1.0`, (await page.getAttribute('.hero-wrap', 'data-hero-progress')) === '1.0');
+  const gap = await page.evaluate(() => {
+    const stage = document.querySelector('.hero-stage').getBoundingClientRect();
+    const next = document.querySelector('.hero-wrap').nextElementSibling.getBoundingClientRect();
+    return next.top - stage.bottom;
+  });
+  check(`${w}x${h}: next room starts below the stage (gap ${Math.round(gap)}px)`, gap >= -1);
+  await page.close();
+}
+
+// 3d. reduced motion on a 1024px desktop: no pin, image mode, wordmark present
+{
+  const context = await browser.newContext({ viewport: { width: 1024, height: 768 }, reducedMotion: 'reduce' });
+  const page = await context.newPage();
+  await page.goto(`${base}/?hero=3d`, { waitUntil: 'networkidle' });
+  await page.waitForTimeout(2000);
+  check('reduced 1024: not pinned', !(await page.evaluate(() => document.querySelector('.hero-wrap')?.classList.contains('is-pinned'))));
+  check('reduced 1024: image mode', (await page.getAttribute('[data-hero-mode]', 'data-hero-mode')) === 'image');
+  check('reduced 1024: wordmark visible', (await page.locator('.wordmark').count()) === 1);
+  await context.close();
+}
+
 // 4. a missing model falls back to the image instead of crashing the page
 {
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });

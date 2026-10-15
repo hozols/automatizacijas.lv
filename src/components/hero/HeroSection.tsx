@@ -1,13 +1,17 @@
-import React, { Suspense, lazy, useCallback, useState } from 'react';
+import React, { Suspense, lazy, useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { trackCTAClick } from '@/lib/analytics';
 import { useHeroMode } from './useHeroMode';
+import { usePinnedProgress } from '@/components/motion/usePinnedProgress';
+import { isStaticMotion } from '@/components/motion/motionPrefs';
+import Wordmark from './Wordmark';
 
 const TypewriterScene = lazy(() => import('./TypewriterScene'));
 
 const IMAGE_SRC = '/images/hero-typewriter.webp';
 const IMAGE_SRC_600 = '/images/hero-typewriter-600.webp';
 const IMAGE_ALT = 'Rakstāmmašīna, kas raksta: rēķini apstrādāti';
+const PIN_MIN_WIDTH = 1024;
 
 /* A failed chunk or GLB load must not take the page down: report and show the image. */
 class SceneErrorBoundary extends React.Component<{ onError: () => void; children: React.ReactNode }, { failed: boolean }> {
@@ -24,7 +28,7 @@ class SceneErrorBoundary extends React.Component<{ onError: () => void; children
   }
 }
 
-function HeroVisual() {
+function HeroVisual({ scroll }: { scroll: { current: number } }) {
   const mode = useHeroMode();
   const [ready, setReady] = useState(false);
   const [lost, setLost] = useState(false);
@@ -33,11 +37,11 @@ function HeroVisual() {
   const show3d = mode === '3d' && !lost;
 
   return (
-    <div className="relative aspect-[4/3] w-full" data-hero-mode={show3d ? '3d' : 'image'} data-hero-ready={ready ? '1' : '0'}>
+    <div className="hero-visual" data-hero-mode={show3d ? '3d' : 'image'} data-hero-ready={ready ? '1' : '0'}>
       <img
         src={IMAGE_SRC}
         srcSet={`${IMAGE_SRC_600} 600w, ${IMAGE_SRC} 1200w`}
-        sizes="(min-width: 1024px) 50vw, 100vw"
+        sizes="(min-width: 1024px) 60vw, 100vw"
         alt={IMAGE_ALT}
         width={1200}
         height={900}
@@ -50,7 +54,7 @@ function HeroVisual() {
         <div className="absolute inset-0 transition-opacity duration-300" style={{ opacity: ready ? 1 : 0 }} aria-hidden="true">
           <SceneErrorBoundary onError={onLost}>
             <Suspense fallback={null}>
-              <TypewriterScene onReady={onReady} onContextLost={onLost} />
+              <TypewriterScene scroll={scroll} onReady={onReady} onContextLost={onLost} />
             </Suspense>
           </SceneErrorBoundary>
         </div>
@@ -71,38 +75,60 @@ function CaptureStage() {
   );
 }
 
+/*
+  The first room. On a desktop without reduced motion the room is 200vh tall
+  and its stage sticks: scrolling dollies the camera back, turns the machine,
+  opens the wordmark's tracking and darkens the room to ink. Everywhere else
+  the room is a plain stack in its final state.
+*/
 const HeroSection = () => {
   const mode = useHeroMode();
+  const [pinned, setPinned] = useState(false);
+  const stage = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const decide = () => setPinned(!isStaticMotion() && window.innerWidth >= PIN_MIN_WIDTH);
+    decide();
+    const mq = window.matchMedia(`(min-width: ${PIN_MIN_WIDTH}px)`);
+    mq.addEventListener('change', decide);
+    return () => mq.removeEventListener('change', decide);
+  }, []);
+
+  const onUpdate = useCallback((p: number) => {
+    const el = stage.current;
+    if (!el) return;
+    el.style.setProperty('--p', p.toFixed(4));
+    el.style.setProperty('--p-ink', Math.min(1, Math.max(0, (p - 0.7) / 0.3)).toFixed(4));
+    el.style.setProperty('--p-fade', Math.min(1, Math.max(0, p / 0.3)).toFixed(4));
+  }, []);
+  const onTenth = useCallback((tenth: number) => {
+    stage.current?.parentElement?.setAttribute('data-hero-progress', tenth.toFixed(1));
+  }, []);
+  const [wrapper, progress] = usePinnedProgress<HTMLElement>(pinned, onTenth, onUpdate);
+
   if (mode === 'capture') return <CaptureStage />;
 
   return (
-    <section className="wrap pt-10 pb-16 sm:pt-14 lg:pt-16 lg:pb-24">
-      <div className="grid gap-10 lg:gap-12 lg:grid-cols-12 lg:items-center">
-        <div className="lg:col-span-6">
-          <h1 className="display-1 m-0 max-w-[11em]">
-            AI automatizācija darbiem, kas birojā atkārtojas katru dienu
-          </h1>
-
-          <p className="lede mt-6 lg:mt-8 text-foreground">
-            Rēķinu ievade, līgumu sagatavošana, atbildes uz klientu jautājumiem. Uzbūvējam sistēmu, kas šos
-            darbus izdara pati, un pieslēdzam to programmām, kuras jau lietojat.
+    <section ref={wrapper} className={`hero-wrap ${pinned ? 'is-pinned' : ''}`} data-hero-progress="0.0">
+      <div ref={stage} className="hero-stage">
+        <div className="hero-cluster wrap">
+          <p className="label m-0">AI automatizācija uzņēmumiem</p>
+          <h1 className="display-1 m-0 mt-4 max-w-[14em]">Darbi, kas birojā atkārtojas, izdarīti paši.</h1>
+          <p className="m-0 mt-4 text-[0.9375rem] text-muted-foreground">
+            <span className="font-medium text-foreground">Kleen1</span> · līgums no 20 minūtēm līdz 3
           </p>
-
-          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link to="/contact" onClick={() => trackCTAClick('bezmaksas_konsultacija', 'hero')} className="btn btn-solid">
-              Pieteikt bezmaksas konsultāciju
+              Pieteikt konsultāciju
             </Link>
             <Link to="/portfolio" onClick={() => trackCTAClick('skatit_darbus', 'hero')} className="btn btn-line">
-              Skatīt paveiktos darbus
+              Paveiktie darbi
             </Link>
           </div>
-
-          <p className="mt-4 mb-0 text-muted-foreground">Konsultācija ir bez maksas un bez saistībām.</p>
         </div>
 
-        <div className="lg:col-span-6">
-          <HeroVisual />
-        </div>
+        <Wordmark />
+        <HeroVisual scroll={progress} />
       </div>
     </section>
   );

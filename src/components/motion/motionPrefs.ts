@@ -6,8 +6,11 @@
 
 export function isStaticMotion(): boolean {
   if (typeof window === 'undefined') return true;
-  if (navigator.webdriver === true) return true;
-  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return true;
+  // tooling (screenshots, e2e) can ask automation to behave like a visitor
+  const params = new URLSearchParams(window.location.search);
+  const override = params.get('motion') === 'on' || params.get('hero') === '3d';
+  return navigator.webdriver === true && !override;
 }
 
 export function splitWords(text: string): string[] {

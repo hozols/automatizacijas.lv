@@ -9,22 +9,35 @@ import { useTypingLoop } from './useTypingLoop';
 export interface TypewriterSceneProps {
   /* first line fully typed, no animation (fallback capture, reduced motion) */
   staticLine?: boolean;
+  /* 0..1 scroll progress of the pinned hero; the camera dollies back and the machine turns */
+  scroll?: { current: number };
   onReady?: () => void;
   onContextLost?: () => void;
 }
 
 const MAX_YAW = THREE.MathUtils.degToRad(8);
 const MAX_PITCH = THREE.MathUtils.degToRad(4);
+const BASE_YAW = -0.35;
+const SCROLL_YAW = 1.55; // ends seen from the side
+const CAMERA_Z = 4.4;
+const SCROLL_DOLLY = 2.6; // camera ends at z 7.0
+const LOOK_AT = new THREE.Vector3(0, 0.85, 0);
 
-function Rig({ pointer, staticLine, onReady }: { pointer: React.MutableRefObject<{ x: number; y: number }>; staticLine: boolean; onReady?: () => void }) {
+function Rig({ pointer, scroll, staticLine, onReady }: { pointer: React.MutableRefObject<{ x: number; y: number }>; scroll?: { current: number }; staticLine: boolean; onReady?: () => void }) {
   const group = useRef<THREE.Group>(null);
   const loop = useTypingLoop(staticLine);
   const readyRef = useRef(false);
 
   useFrame((state, delta) => {
     if (!group.current) return;
-    group.current.rotation.y = THREE.MathUtils.damp(group.current.rotation.y, -0.35 + pointer.current.x * MAX_YAW, 6, delta);
+    const p = scroll?.current ?? 0;
+    group.current.rotation.y = THREE.MathUtils.damp(group.current.rotation.y, BASE_YAW + SCROLL_YAW * p + pointer.current.x * MAX_YAW, 6, delta);
     group.current.rotation.x = THREE.MathUtils.damp(group.current.rotation.x, 0.08 - pointer.current.y * MAX_PITCH, 6, delta);
+    const z = CAMERA_Z + SCROLL_DOLLY * p;
+    if (Math.abs(state.camera.position.z - z) > 0.0005) {
+      state.camera.position.z = z;
+      state.camera.lookAt(LOOK_AT);
+    }
     if (!readyRef.current && state.clock.elapsedTime > 0.05) {
       readyRef.current = true;
       onReady?.();
@@ -50,7 +63,7 @@ function ContextLossWatcher({ onLost }: { onLost?: () => void }) {
   return null;
 }
 
-export default function TypewriterScene({ staticLine = false, onReady, onContextLost }: TypewriterSceneProps) {
+export default function TypewriterScene({ staticLine = false, scroll, onReady, onContextLost }: TypewriterSceneProps) {
   const pointer = useRef({ x: 0, y: 0 });
   const wrapper = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(true);
@@ -76,7 +89,7 @@ export default function TypewriterScene({ staticLine = false, onReady, onContext
     >
       <Canvas
         dpr={[1, 1.75]}
-        camera={{ position: [0, 1.75, 5.3], fov: 30 }}
+        camera={{ position: [0, 1.75, CAMERA_Z], fov: 30 }}
         frameloop={inView ? 'always' : 'never'}
         gl={{ alpha: true, antialias: true, powerPreference: 'low-power' }}
         onCreated={({ gl, camera }) => { gl.setClearColor(0x000000, 0); camera.lookAt(0, 0.85, 0); }}
@@ -87,7 +100,7 @@ export default function TypewriterScene({ staticLine = false, onReady, onContext
         <directionalLight position={[3, 2, -2]} intensity={0.6} />
         <directionalLight position={[0, 3, -4]} intensity={1.2} color="#f6f5f0" />
         <Suspense fallback={null}>
-          <Rig pointer={pointer} staticLine={staticLine} onReady={onReady} />
+          <Rig pointer={pointer} scroll={scroll} staticLine={staticLine} onReady={onReady} />
           <ContactShadows position={[0, -0.005, 0]} opacity={0.45} scale={6} blur={2.2} far={2} resolution={256} frames={1} />
         </Suspense>
         <ContextLossWatcher onLost={onContextLost} />

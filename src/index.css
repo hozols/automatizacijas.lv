@@ -565,3 +565,101 @@
     display: none;
   }
 }
+
+/* Hero room. --p is the pinned scroll progress (0..1), set by HeroSection each frame. */
+.hero-wrap {
+  position: relative;
+  --p: 0;
+  --p-ink: 0;
+  --p-fade: 0;
+}
+
+.hero-wrap.is-pinned {
+  height: 200vh;
+}
+
+.hero-stage {
+  position: relative;
+  min-height: calc(100vh - 3.5rem);
+  overflow: hidden;
+  background: color-mix(in srgb, hsl(var(--ink)) calc(var(--p-ink) * 100%), hsl(var(--background)));
+}
+
+.hero-wrap.is-pinned .hero-stage {
+  position: sticky;
+  top: 3.5rem;
+  height: calc(100vh - 3.5rem);
+}
+
+.hero-cluster {
+  position: relative;
+  z-index: 3;
+  padding-top: clamp(1.5rem, 5vh, 3.5rem);
+  text-align: center;
+  opacity: calc(1 - var(--p-fade));
+  transform: translateY(calc(var(--p-fade) * -1.5rem));
+}
+
+.hero-cluster > * {
+  margin-inline: auto;
+}
+
+/* The wordmark sits on the floor of the room, cropped at both edges and at the baseline. */
+.wordmark-frame {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+  font-size: 22vw;
+  line-height: 0.84;
+  pointer-events: none;
+}
+
+.wordmark {
+  display: block;
+  transform: translateY(0.1em);
+  letter-spacing: calc(-0.035em + var(--p) * 0.115em);
+  color: color-mix(in srgb, hsl(var(--ink-foreground)) calc(var(--p-ink) * 100%), color-mix(in srgb, hsl(var(--muted-foreground)) calc(var(--p) * 100%), hsl(var(--foreground))));
+}
+
+/* The machine stands on the letters: its box ends a third of the way up the wordmark. */
+.hero-visual {
+  position: absolute;
+  left: 50%;
+  bottom: calc(22vw * 0.84 * 0.36);
+  z-index: 2;
+  height: min(36vw, 52vh);
+  aspect-ratio: 4 / 3;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 1023px) {
+  .hero-stage {
+    min-height: 0;
+    padding-bottom: calc(22vw * 0.84 * 0.9);
+  }
+
+  .hero-visual {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    height: auto;
+    width: min(92vw, 34rem);
+    margin: 1rem auto calc(-22vw * 0.84 * 0.5);
+  }
+}
+
+@supports not (color: color-mix(in srgb, red, blue)) {
+  .hero-stage {
+    background: hsl(var(--background));
+  }
+
+  .wordmark {
+    color: hsl(var(--foreground));
+  }
+}

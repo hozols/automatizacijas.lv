@@ -8,12 +8,13 @@ export interface PinnedProgress {
 
 /*
   Scroll progress through a tall wrapper whose child is sticky. The value
-  lives in a ref so a canvas or a style can read it every frame. `onChange`
-  is called with the value rounded to a tenth, for the rare React-side use.
+  lives in a ref so a canvas or a style can read it every frame. `onUpdate`
+  runs on every scroll frame; `onChange` only when the tenth changes.
 */
 export function usePinnedProgress<T extends HTMLElement>(
   enabled: boolean,
   onChange?: (tenth: number) => void,
+  onUpdate?: (progress: number) => void,
 ): [React.RefObject<T>, PinnedProgress] {
   const ref = useRef<T>(null);
   const progress = useRef<PinnedProgress>({ current: 0 }).current;
@@ -22,7 +23,7 @@ export function usePinnedProgress<T extends HTMLElement>(
   useEffect(() => {
     const el = ref.current;
     if (!enabled || !el || isStaticMotion()) {
-      progress.current = enabled ? 0 : 1;
+      progress.current = 0;
       return;
     }
     let raf = 0;
@@ -30,6 +31,7 @@ export function usePinnedProgress<T extends HTMLElement>(
       raf = 0;
       const r = el.getBoundingClientRect();
       progress.current = pinnedProgress(r.top, r.height, window.innerHeight);
+      onUpdate?.(progress.current);
       const tenth = Math.round(progress.current * 10) / 10;
       if (tenth !== lastTenth.current) {
         lastTenth.current = tenth;
@@ -47,7 +49,7 @@ export function usePinnedProgress<T extends HTMLElement>(
       window.removeEventListener('resize', onScroll);
       if (raf) cancelAnimationFrame(raf);
     };
-  }, [enabled, onChange, progress]);
+  }, [enabled, onChange, onUpdate, progress]);
 
   return [ref, progress];
 }
