@@ -112,9 +112,10 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			},
 			fontFamily: {
-				sans: ['"Manrope Variable"', 'system-ui', 'sans-serif'],
-				display: ['"Instrument Serif"', '"Instrument Serif Fallback"', 'Georgia', 'serif'],
-				inter: ['"Manrope Variable"', 'system-ui', 'sans-serif']
+				sans: ['"Inter Variable"', '"Inter Fallback"', 'system-ui', 'sans-serif'],
+				display: ['"Inter Variable"', '"Inter Fallback"', 'system-ui', 'sans-serif'],
+				mono: ['"JetBrains Mono Variable"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+				inter: ['"Inter Variable"', '"Inter Fallback"', 'system-ui', 'sans-serif']
 			},
 			letterSpacing: {
 				/* the old theme tightened every heading; the serif carries its own spacing */

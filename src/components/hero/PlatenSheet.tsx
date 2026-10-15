@@ -14,7 +14,7 @@ interface Props {
   width?: number;
 }
 
-const FONT = `600 ${PAPER_FONT_PX}px "Manrope Variable", system-ui, sans-serif`;
+const FONT = `500 ${PAPER_FONT_PX}px "JetBrains Mono Variable", ui-monospace, Menlo, monospace`;
 
 export default function PlatenSheet({
   text, chars, phase, charStep = 0.03, position = [0, 1.24, -0.62], rotation = [-0.3, 0, 0], width = 1.4,
