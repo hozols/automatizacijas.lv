@@ -265,3 +265,17 @@ All work on `redesign-2026`. Deploy previews from that branch for review.
 Merge to `main` only when the user approves the preview. Production deploys
 are currently done from the CLI, so the final step is a documented
 `vercel --prod` from `main`.
+
+## Amendment, 2026-10-15 (after Task 7)
+
+The user redirected fonts and colours toward siamezi.lv. Decisions, approved
+in conversation:
+
+- Dark is the default theme: night navy ground `#0B1220`, bone text `#F1EEE4`,
+  amber accent `#E0A458` for actions, links and the highlighter. The paper
+  theme survives as `.light-mode`.
+- Type: Newsreader (serif, 500) for display headings, Manrope for text.
+- The typewriter keeps its Meshy texture (navy, cream keys, carmine spools) and
+  gets a bone rim light and an amber fill so it separates from the ground. The
+  platen sheet is always bone paper with navy ink, in every theme.
+- Everything else in this spec stands. DESIGN.md is updated to match.

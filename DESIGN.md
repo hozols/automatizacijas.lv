@@ -1,26 +1,30 @@
 # automatizacijas.lv design system
 
 The site sells office automation to Latvian business owners, accountants and
-office managers. The look comes from their world: paper forms, ruled lines,
-navy ink, a highlighter. It must not look like a generated SaaS template.
+office managers. The look is a quiet night office: deep navy ground, warm
+off-white text, one amber accent, a serif for headlines and a plain sans for
+everything else (the same pairing as siamezi.lv). It must not look like a
+generated SaaS template.
 
 ## Tokens (src/index.css, tailwind.config.ts)
 
 | Name | Value | Use |
 | --- | --- | --- |
-| paper `bg-background` | #EEF0F2 | page ground |
-| sheet `bg-card` | #FFFFFF | documents, forms, menus, alternate bands |
-| ink `text-foreground`, `band-ink` | #1B2440 | text, dark bands, footer |
-| carmine `text-primary`, `bg-primary` | #9E2B35 | actions and links only |
-| highlighter `bg-marker`, `.mark`, `.sweep` | #F4DC5A | marks what is done or hovered |
-| rule `border-border` | #C9CED8 | ruled lines |
+| night `bg-background` | #0B1220 | page ground |
+| sheet `bg-card` | #111A2C | documents, forms, menus, alternate bands |
+| bone `text-foreground` | #F1EEE4 | text |
+| deep `band-ink` | #080E1A | the darker alternate band, footer |
+| amber `text-primary`, `bg-primary`, `bg-marker` | #E0A458 | actions, links, the highlighter |
+| rule `border-border` | #232F47 | ruled lines |
 
-Dark mode is the `.dark-mode` class on `<html>`; every token has a dark value,
-so use tokens and never hard-coded colours (`blue-500`, `#fff`, `gray-400`).
+Dark is the default. The paper theme (light ground, navy ink, carmine) is the
+`.light-mode` class on `<html>`; every token has a value in both, so use
+tokens and never hard-coded colours (`blue-500`, `#fff`, `gray-400`).
 
-Type: Sofia Sans Extra Condensed 800 for `h1`/`h2` (classes `display-1`,
-`display-2`, `display-3`), Sofia Sans for everything else. `h3` and smaller are
-the text face in bold. Sentence case in new copy. No letter-spacing tweaks.
+Type: Newsreader (serif, weight 500, optical size 72) for `h1`/`h2` (classes
+`display-1`, `display-2`, `display-3`), Manrope for everything else. `h3` and
+smaller are the text face at 600. Sentence case in new copy. No letter-spacing
+tweaks beyond the -0.01em the display face carries.
 
 ## Layout rules
 

@@ -110,12 +110,12 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			},
 			fontFamily: {
-				sans: ['"Sofia Sans Variable"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
-				display: ['"Sofia Sans Extra Condensed Variable"', '"Arial Narrow"', '"Helvetica Neue"', 'sans-serif'],
-				inter: ['"Sofia Sans Variable"', '"Helvetica Neue"', 'Arial', 'sans-serif']
+				sans: ['"Manrope Variable"', 'system-ui', 'sans-serif'],
+				display: ['"Newsreader Variable"', 'Georgia', '"Times New Roman"', 'serif'],
+				inter: ['"Manrope Variable"', 'system-ui', 'sans-serif']
 			},
 			letterSpacing: {
-				/* the old theme tightened every heading; the condensed face needs none */
+				/* the old theme tightened every heading; the serif carries its own spacing */
 				tighter: '0',
 				tight: '0'
 			},

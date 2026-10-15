@@ -76,10 +76,8 @@ const HeroSection = () => {
     <section className="wrap pt-10 pb-16 sm:pt-14 lg:pt-16 lg:pb-24">
       <div className="grid gap-10 lg:gap-12 lg:grid-cols-12 lg:items-center">
         <div className="lg:col-span-6">
-          <h1 className="display-1 m-0">
-            AI automatizācija <br className="hidden lg:inline" />
-            darbiem, kas birojā <br className="hidden lg:inline" />
-            atkārtojas katru dienu
+          <h1 className="display-1 m-0 max-w-[11em]">
+            AI automatizācija darbiem, kas birojā atkārtojas katru dienu
           </h1>
 
           <p className="lede mt-6 lg:mt-8 text-foreground">

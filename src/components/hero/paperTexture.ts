@@ -9,10 +9,9 @@ export interface PaperColors {
   rule: string;
 }
 
+/* The sheet is a physical object: bone paper and navy ink in every theme. */
 export function readPaperColors(): PaperColors {
-  const s = getComputedStyle(document.documentElement);
-  const hsl = (name: string) => `hsl(${s.getPropertyValue(name).trim()})`;
-  return { paper: hsl('--card'), ink: hsl('--foreground'), rule: hsl('--border') };
+  return { paper: '#F1EEE4', ink: '#1B2440', rule: '#C9CED8' };
 }
 
 export function layoutLines(text: string, maxChars: number): string[] {

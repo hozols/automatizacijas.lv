@@ -14,7 +14,7 @@ interface Props {
   width?: number;
 }
 
-const FONT = `700 ${PAPER_FONT_PX}px "Sofia Sans Variable", "Helvetica Neue", Arial, sans-serif`;
+const FONT = `600 ${PAPER_FONT_PX}px "Manrope Variable", system-ui, sans-serif`;
 
 export default function PlatenSheet({
   text, chars, phase, charStep = 0.03, position = [0, 1.24, -0.62], rotation = [-0.3, 0, 0], width = 1.4,
@@ -44,11 +44,8 @@ export default function PlatenSheet({
     };
     if (document.fonts?.load) document.fonts.load(FONT).then(paint, paint);
     else paint();
-    const observer = new MutationObserver(paint);
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
     return () => {
       alive = false;
-      observer.disconnect();
     };
   }, [canvas, texture, text]);
 

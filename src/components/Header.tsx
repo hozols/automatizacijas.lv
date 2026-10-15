@@ -42,7 +42,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const [isDarkMode, setIsDarkMode] = useState(() => localStorage.getItem('theme') === 'dark');
+  const [isDarkMode, setIsDarkMode] = useState(() => localStorage.getItem('theme') !== 'light');
 
   useEffect(() => {
     const root = document.documentElement;

@@ -82,10 +82,12 @@ export default function TypewriterScene({ staticLine = false, onReady, onContext
         onCreated={({ gl, camera }) => { gl.setClearColor(0x000000, 0); camera.lookAt(0, 0.85, 0); }}
         style={{ background: 'transparent' }}
       >
-        <ambientLight intensity={0.7} />
-        <directionalLight position={[-3, 5, 3]} intensity={1.7} />
-        <directionalLight position={[3, 2, -2]} intensity={0.5} />
-        <directionalLight position={[0, 3, -4]} intensity={0.8} />
+        <ambientLight intensity={0.55} />
+        <directionalLight position={[-3, 5, 3]} intensity={2.1} color="#fff6e8" />
+        <directionalLight position={[3, 2, -2]} intensity={0.6} />
+        {/* rim light so the navy body separates from the navy page */}
+        <directionalLight position={[0, 3, -4]} intensity={1.8} color="#f1eee4" />
+        <directionalLight position={[-4, 1.5, -3]} intensity={1.1} color="#e0a458" />
         <Suspense fallback={null}>
           <Rig pointer={pointer} staticLine={staticLine} onReady={onReady} />
           <ContactShadows position={[0, -0.005, 0]} opacity={0.45} scale={6} blur={2.2} far={2} resolution={256} frames={1} />
