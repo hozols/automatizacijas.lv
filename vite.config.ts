@@ -24,7 +24,16 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: undefined,
+        manualChunks(id) {
+          if (
+            id.includes('node_modules/three') ||
+            id.includes('node_modules/@react-three') ||
+            id.includes('node_modules/three-stdlib')
+          ) {
+            return 'three';
+          }
+          return undefined;
+        },
       },
     },
   },
