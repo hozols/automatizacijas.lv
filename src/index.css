@@ -1,4 +1,5 @@
-@import '@fontsource/newsreader/500.css';
+@import '@fontsource/instrument-serif/400.css';
+@import '@fontsource/instrument-serif/400-italic.css';
 @import '@fontsource-variable/manrope/wght.css';
 
 @tailwind base;
@@ -6,87 +7,55 @@
 @tailwind utilities;
 
 /*
-  Palette (light first, one ink)
-  papīrs  #F6F5F0  warm off-white, the page ground
-  lapa    #FFFFFF  a sheet laid on the paper: forms, documents, menus
-  tinte   #151719  near-black: text, buttons, links, the dark bands
-  līnija  #E3E0D8  ruled lines
-  marķieris #EDE6D2 a pale highlighter for the sweep and the mark
-  Dark mode is the same system inverted: warm off-white on near-black.
+  Palette: a gallery on putty paper. Warm grays and black, nothing else.
+  putty    #C4C3B6  page canvas, light rooms
+  bone     #E7E5E4  cards and sheets, one step above putty
+  chalk    #EBEBEB  footer
+  vellum   #DFDCD5  hairlines on light rooms
+  graphite #595855  muted text
+  ink      #000000  dark rooms, text, the pill button
+  paper    #FFFFFF  text on dark rooms
+  ash      #808080  image placeholders only
 */
 @layer base {
   :root {
-    --background: 40 20% 96%;
-    --foreground: 210 10% 9%;
+    --background: 56 11% 74%;
+    --foreground: 0 0% 0%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 210 10% 9%;
+    --card: 20 6% 90%;
+    --card-foreground: 0 0% 0%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 10% 9%;
+    --popover: 20 6% 90%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 210 10% 9%;
-    --primary-foreground: 40 20% 97%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 40 14% 91%;
-    --secondary-foreground: 210 10% 9%;
+    --secondary: 20 6% 90%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 40 14% 91%;
-    --muted-foreground: 210 6% 40%;
+    --muted: 20 6% 90%;
+    --muted-foreground: 45 2% 34%;
 
-    --accent: 40 14% 91%;
-    --accent-foreground: 210 10% 9%;
+    --accent: 20 6% 90%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 72% 42%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 40 12% 86%;
-    --input: 40 12% 78%;
-    --ring: 210 10% 9%;
+    --border: 42 14% 85%;
+    --input: 45 2% 60%;
+    --ring: 0 0% 0%;
 
-    --ink: 210 10% 9%;
-    --ink-foreground: 40 20% 96%;
-    --ink-muted: 40 10% 70%;
-    --ink-rule: 210 8% 24%;
-    --marker: 44 40% 86%;
+    --ink: 0 0% 0%;
+    --ink-foreground: 0 0% 100%;
+    --ink-muted: 0 0% 62%;
+    --ink-rule: 0 0% 25%;
+    --marker: 42 14% 85%;
+    --chalk: 0 0% 92%;
+    --ash: 0 0% 50%;
 
-    --radius: 0.25rem;
-  }
-
-  .dark-mode {
-    --background: 210 8% 8%;
-    --foreground: 40 20% 94%;
-
-    --card: 210 7% 12%;
-    --card-foreground: 40 20% 94%;
-
-    --popover: 210 7% 12%;
-    --popover-foreground: 40 20% 94%;
-
-    --primary: 40 20% 94%;
-    --primary-foreground: 210 8% 8%;
-
-    --secondary: 210 6% 16%;
-    --secondary-foreground: 40 20% 94%;
-
-    --muted: 210 6% 16%;
-    --muted-foreground: 40 8% 66%;
-
-    --accent: 210 6% 16%;
-    --accent-foreground: 40 20% 94%;
-
-    --destructive: 0 70% 60%;
-    --destructive-foreground: 210 8% 8%;
-
-    --border: 210 6% 20%;
-    --input: 210 6% 28%;
-    --ring: 40 20% 94%;
-
-    --ink: 210 8% 5%;
-    --ink-foreground: 40 20% 94%;
-    --ink-muted: 40 8% 64%;
-    --ink-rule: 210 6% 20%;
-    --marker: 44 30% 30%;
+    --radius: 9px;
   }
 
   * {
@@ -101,16 +70,16 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Manrope Variable', system-ui, sans-serif;
-    font-size: 1.0625rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.5;
   }
 
-  /* h1 and h2 carry the serif display face; smaller headings stay in the text face. */
+  /* h1 and h2 carry the serif display face; smaller headings stay in the grotesk. */
   h1,
   h2 {
-    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
-    font-weight: 500;
-    letter-spacing: -0.01em;
+    font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
     text-wrap: balance;
   }
 
@@ -125,7 +94,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid hsl(var(--ring));
+    outline: 1.5px solid hsl(var(--ring));
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -136,15 +105,16 @@
 }
 
 @layer components {
+  /* Rooms are full bleed; content sits on a wide grid that only caps at 1600px. */
   .wrap {
     width: 100%;
-    max-width: 77.5rem;
+    max-width: 100rem;
     margin-inline: auto;
-    padding-inline: clamp(1.25rem, 4vw, 3rem);
+    padding-inline: clamp(1.25rem, 3vw, 3rem);
   }
 
   .band {
-    padding-block: clamp(3.5rem, 8vw, 7rem);
+    padding-block: clamp(3.75rem, 8vw, 6rem);
   }
 
   .band-ink {
@@ -152,48 +122,88 @@
     color: hsl(var(--ink-foreground));
   }
 
+  .band-chalk {
+    background: hsl(var(--chalk));
+    color: hsl(var(--foreground));
+  }
+
   .display {
-    font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
-    font-weight: 500;
-    line-height: 1.06;
-    letter-spacing: -0.01em;
+    font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
     text-wrap: balance;
   }
 
+  /* page h1 */
   .display-1 {
     @apply display;
-    font-size: clamp(2.5rem, 4.6vw, 4.25rem);
-    line-height: 1.04;
-    text-wrap: balance;
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.015em;
   }
 
+  /* section title */
   .display-2 {
     @apply display;
-    font-size: clamp(2.25rem, 4.4vw, 3.75rem);
+    font-size: clamp(2.75rem, 7vw, 5.875rem);
+    line-height: 0.9;
   }
 
+  /* subheading, captions */
   .display-3 {
     @apply display;
-    font-size: clamp(1.6rem, 2.4vw, 2.1rem);
-    line-height: 1.15;
+    font-size: 1.375rem;
+    line-height: 1.2;
+    letter-spacing: 0;
+  }
+
+  /* the brand set so large it leaves the viewport */
+  .wordmark {
+    @apply display;
+    font-size: 22vw;
+    line-height: 0.84;
+    letter-spacing: -0.035em;
+    white-space: nowrap;
+  }
+
+  .label {
+    font-family: 'Manrope Variable', system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .micro {
+    font-family: 'Manrope Variable', system-ui, sans-serif;
+    font-size: 0.5625rem;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
 
   .lede {
-    font-size: clamp(1.125rem, 1.5vw, 1.3125rem);
+    font-size: clamp(1.0625rem, 1.3vw, 1.25rem);
     line-height: 1.5;
-    max-width: 38em;
+    max-width: 36em;
   }
 
+  /* Pill buttons: the one filled element on a page. */
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 3.25rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--radius);
-    font-weight: 600;
-    font-size: 1.0625rem;
+    min-height: 2.75rem;
+    padding: 0.6rem 1.25rem;
+    border-radius: 28.8px;
+    font-family: 'Manrope Variable', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.8125rem;
     line-height: 1.2;
+    letter-spacing: 0.01em;
     white-space: nowrap;
     text-decoration: none;
     transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
@@ -209,13 +219,18 @@
     color: hsl(var(--primary-foreground));
   }
 
-  .band-ink .btn-solid:hover {
+  .band-ink .btn-solid {
     background: hsl(var(--ink-foreground));
     color: hsl(var(--ink));
   }
 
+  .band-ink .btn-solid:hover {
+    background: hsl(var(--ink-muted));
+    color: hsl(var(--ink));
+  }
+
   .btn-line {
-    border: 1.5px solid currentColor;
+    border: 1px solid currentColor;
     color: inherit;
   }
 
@@ -225,53 +240,87 @@
     color: hsl(var(--background));
   }
 
-  /* The closing call-to-action band: the one place ink fills the page. */
+  .band-ink .btn-line:hover {
+    background: hsl(var(--ink-foreground));
+    border-color: hsl(var(--ink-foreground));
+    color: hsl(var(--ink));
+  }
+
+  /* The closing call-to-action room is an ink room; these keep older pages working. */
   .band-action {
-    background: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
+    background: hsl(var(--ink));
+    color: hsl(var(--ink-foreground));
   }
 
   .btn-invert {
-    background: hsl(var(--primary-foreground));
-    color: hsl(var(--primary));
+    background: hsl(var(--ink-foreground));
+    color: hsl(var(--ink));
   }
 
   .btn-invert:hover {
-    background: hsl(var(--muted-foreground));
-    color: hsl(var(--primary-foreground));
+    background: hsl(var(--ink-muted));
+    color: hsl(var(--ink));
   }
 
   .btn-line-invert:hover {
-    background: hsl(var(--primary-foreground));
-    border-color: hsl(var(--primary-foreground));
-    color: hsl(var(--primary));
+    background: hsl(var(--ink-foreground));
+    border-color: hsl(var(--ink-foreground));
+    color: hsl(var(--ink));
   }
 
-  .band-action :focus-visible {
-    outline-color: hsl(var(--primary-foreground));
-  }
-
+  .band-action :focus-visible,
   .band-ink :focus-visible {
-    outline-color: hsl(var(--marker));
+    outline-color: hsl(var(--ink-foreground));
   }
 
   .link {
-    color: hsl(var(--primary));
+    color: inherit;
     text-decoration: underline;
-    text-decoration-thickness: 1.5px;
+    text-decoration-thickness: 1px;
     text-underline-offset: 0.2em;
+    border-radius: 2px;
   }
 
   .link:hover {
     color: hsl(var(--muted-foreground));
   }
 
+  .band-ink .link:hover {
+    color: hsl(var(--ink-muted));
+  }
+
+  /* A sheet laid on the canvas: bone, hairline, 9px corners, flat. */
   .sheet {
     background: hsl(var(--card));
     color: hsl(var(--card-foreground));
     border: 1px solid hsl(var(--border));
     border-radius: var(--radius);
-    box-shadow: 0 1px 0 hsl(225 41% 18% / 0.06), 0 18px 40px -24px hsl(225 41% 18% / 0.35);
+  }
+
+  /* Hairline rules, the only divider in the system. */
+  .hairline {
+    border: 0;
+    height: 1px;
+    background: hsl(var(--border));
+  }
+
+  .band-ink .hairline {
+    background: hsl(var(--ink-rule));
+  }
+
+  /* The monogram: a circled serif "a". */
+  .monogram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border: 1.5px solid currentColor;
+    border-radius: 50%;
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 1.25rem;
+    line-height: 1;
+    padding-bottom: 0.1em;
   }
 
   .mark {
@@ -293,10 +342,10 @@
     width: 100%;
     min-height: 3rem;
     padding: 0.6rem 0.75rem;
-    background: hsl(var(--background));
+    background: transparent;
     border: 0;
-    border-bottom: 2px solid hsl(var(--foreground));
-    border-radius: 2px 2px 0 0;
+    border-bottom: 1px solid hsl(var(--foreground));
+    border-radius: 0;
     color: hsl(var(--foreground));
     font: inherit;
   }
@@ -307,9 +356,8 @@
   }
 
   .field:focus-visible {
-    outline: 2px solid hsl(var(--ring));
-    outline-offset: 0;
-    border-bottom-color: hsl(var(--ring));
+    outline: none;
+    border-bottom-width: 2px;
   }
 }
 
@@ -438,4 +486,16 @@
   .sweep.is-on {
     transition: none;
   }
+}
+
+/* The menu overlay is a native dialog made full screen. */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  border: 0;
+  overflow-y: auto;
+}
+
+.menu-overlay::backdrop {
+  background: transparent;
 }

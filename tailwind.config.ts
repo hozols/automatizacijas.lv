@@ -25,6 +25,8 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				chalk: 'hsl(var(--chalk))',
+				ash: 'hsl(var(--ash))',
 				cosmic: {
 					/* legacy names from the old theme, mapped onto the current palette */
 					dark: 'hsl(var(--foreground))',
@@ -111,7 +113,7 @@ export default {
 			},
 			fontFamily: {
 				sans: ['"Manrope Variable"', 'system-ui', 'sans-serif'],
-				display: ['Newsreader', 'Georgia', '"Times New Roman"', 'serif'],
+				display: ['"Instrument Serif"', 'Georgia', '"Times New Roman"', 'serif'],
 				inter: ['"Manrope Variable"', 'system-ui', 'sans-serif']
 			},
 			letterSpacing: {

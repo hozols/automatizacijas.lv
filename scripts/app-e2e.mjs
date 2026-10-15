@@ -1,5 +1,5 @@
 // Usage: node scripts/app-e2e.mjs http://localhost:4610
-// Theme toggle persistence, deferred bootstrap under slow images, and chunk-failure recovery.
+// Menu overlay keyboard behaviour, deferred bootstrap under slow images, and chunk-failure recovery.
 import { chromium } from 'playwright';
 
 const base = (process.argv[2] ?? 'http://localhost:4610').replace(/\/$/, '');
@@ -8,23 +8,27 @@ let failures = 0;
 const check = (name, ok) => { console.log(`${ok ? 'ok  ' : 'FAIL'} ${name}`); if (!ok) failures++; };
 const isDark = (page) => page.evaluate(() => document.documentElement.classList.contains('dark-mode'));
 
-// 1. a returning dark user switches to light and the choice survives client-side navigation
+// 1. the menu overlay opens, traps focus, closes on Escape, and returns focus to the trigger
 {
   const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
-  await context.addInitScript(() => { try { localStorage.setItem('theme', 'dark'); } catch {} });
   await context.addCookies([{ name: 'cookies-accepted', value: 'true', url: base }]);
   const page = await context.newPage();
   await page.goto(`${base}/`, { waitUntil: 'networkidle' });
   await page.waitForTimeout(1500);
-  check('stored dark is applied', await isDark(page));
-  await page.getByRole('button', { name: /gaišo režīmu/ }).first().click();
-  await page.waitForTimeout(300);
-  check('toggle switches to light', !(await isDark(page)));
-  check('light is stored', (await page.evaluate(() => localStorage.getItem('theme'))) === 'light');
-  await page.getByRole('link', { name: 'Projekti' }).first().click();
-  await page.waitForURL(/\/portfolio/);
-  await page.waitForTimeout(800);
-  check('light survives client navigation', !(await isDark(page)));
+  const trigger = page.getByRole('button', { name: 'Izvēlne' });
+  await trigger.click();
+  const dialog = page.locator('dialog[open]');
+  check('menu opens as a modal dialog', (await dialog.count()) === 1);
+  let inside = true;
+  for (let i = 0; i < 20; i++) {
+    await page.keyboard.press('Tab');
+    inside = inside && (await page.evaluate(() => !!document.activeElement?.closest('dialog[open]')));
+  }
+  check('Tab stays inside the menu', inside);
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(200);
+  check('Escape closes the menu', (await page.locator('dialog[open]').count()) === 0);
+  check('focus returns to the trigger', await page.evaluate(() => document.activeElement?.textContent?.trim() === 'Izvēlne'));
   await context.close();
 }
 
