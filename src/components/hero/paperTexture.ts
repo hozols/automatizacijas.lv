@@ -38,7 +38,8 @@ export const PAPER_H = 768;
 export const PAPER_FONT_PX = 58;
 const RULE_GAP = 72;
 const MARGIN_X = 96;
-const FIRST_BASELINE = 150;
+/* the print line sits low on the sheet, just above the machine; earlier rules read as already-typed space */
+const FIRST_BASELINE = 560;
 
 export function drawPaper(
   ctx: CanvasRenderingContext2D,
@@ -53,7 +54,7 @@ export function drawPaper(
   ctx.fillRect(0, 0, w, h);
   ctx.strokeStyle = colors.rule;
   ctx.lineWidth = 2;
-  for (let y = FIRST_BASELINE + 14; y < h; y += RULE_GAP) {
+  for (let y = FIRST_BASELINE + 14; y > 40; y -= RULE_GAP) {
     ctx.beginPath();
     ctx.moveTo(MARGIN_X - 24, y);
     ctx.lineTo(w - MARGIN_X + 24, y);

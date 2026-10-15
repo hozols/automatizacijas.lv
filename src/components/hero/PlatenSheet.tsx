@@ -17,7 +17,7 @@ interface Props {
 const FONT = `700 ${PAPER_FONT_PX}px "Sofia Sans Variable", "Helvetica Neue", Arial, sans-serif`;
 
 export default function PlatenSheet({
-  text, chars, phase, charStep = 0.012, position = [0, 1.05, -0.32], rotation = [-0.28, 0, 0], width = 1.5,
+  text, chars, phase, charStep = 0.03, position = [0, 1.24, -0.62], rotation = [-0.3, 0, 0], width = 1.4,
 }: Props) {
   const group = useRef<THREE.Group>(null);
   const canvas = useMemo(() => {

@@ -76,10 +76,10 @@ export default function TypewriterScene({ staticLine = false, onReady, onContext
     >
       <Canvas
         dpr={[1, 1.75]}
-        camera={{ position: [0, 1.7, 4.4], fov: 30 }}
+        camera={{ position: [0, 1.75, 5.3], fov: 30 }}
         frameloop={inView ? 'always' : 'never'}
         gl={{ alpha: true, antialias: true, powerPreference: 'low-power' }}
-        onCreated={({ gl }) => { gl.setClearColor(0x000000, 0); }}
+        onCreated={({ gl, camera }) => { gl.setClearColor(0x000000, 0); camera.lookAt(0, 0.85, 0); }}
         style={{ background: 'transparent' }}
       >
         <ambientLight intensity={0.7} />
