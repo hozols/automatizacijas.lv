@@ -90,6 +90,7 @@ const ChatbotuIzstrade = () => {
         />
 
         <PageHero
+          vignette="letter"
           title="AI čatbota izstrāde latviešu valodā"
           lede={
             <>

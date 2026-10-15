@@ -95,6 +95,7 @@ const AiPlatformuIzstrade = () => {
         />
 
         <PageHero
+          vignette="scholar-writing"
           title="AI platformu izstrāde uzņēmumiem"
           lede={
             <>

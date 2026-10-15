@@ -90,6 +90,7 @@ const NozareEkomercija = () => {
         />
 
         <PageHero
+          vignette="merchant-hals"
           title="AI automatizācija e-komercijas uzņēmumiem"
           lede={
             <>

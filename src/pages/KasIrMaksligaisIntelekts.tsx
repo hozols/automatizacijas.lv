@@ -121,6 +121,7 @@ const KasIrMaksligaisIntelekts = () => {
         />
 
         <PageHero
+          vignette="scholar-writing"
           title="Kas ir mākslīgais intelekts? Ceļvedis latviski"
           lede={
             <>

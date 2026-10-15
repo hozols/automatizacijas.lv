@@ -94,6 +94,7 @@ const NozareGramatvediba = () => {
         />
 
         <PageHero
+          vignette="tax-collector"
           title="AI automatizācija grāmatvedības birojiem un finansēm"
           lede={
             <>

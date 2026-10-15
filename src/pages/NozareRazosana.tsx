@@ -90,6 +90,7 @@ const NozareRazosana = () => {
         />
 
         <PageHero
+          vignette="lavoisier"
           title="AI automatizācija ražošanas uzņēmumiem"
           lede={
             <>

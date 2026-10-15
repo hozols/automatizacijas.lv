@@ -94,6 +94,7 @@ const DokumentuAutomatizacija = () => {
         />
 
         <PageHero
+          vignette="tax-collector"
           title="Dokumentu automatizācija ar AI"
           lede={
             <>

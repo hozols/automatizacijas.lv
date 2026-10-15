@@ -88,6 +88,7 @@ const ProcesuAutomatizacija = () => {
         />
 
         <PageHero
+          vignette="merchant-van-dyck"
           title="Biznesa procesu automatizācija ar AI"
           lede={
             <>

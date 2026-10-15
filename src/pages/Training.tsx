@@ -190,7 +190,7 @@ const TrainingPage = () => {
       <PageShell>
         <Breadcrumbs items={[{ label: 'Sākums', to: '/' }, { label: 'Apmācības' }]} />
 
-        <PageHero title={t('training.title')} lede={t('training.subtitle')} />
+        <PageHero vignette="letter" title={t('training.title')} lede={t('training.subtitle')} />
 
         {/* Online Courses */}
         <Section title={t('training.courses.title')} intro={t('training.courses.subtitle')} tone="sheet">

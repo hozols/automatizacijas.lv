@@ -88,6 +88,7 @@ const MajaslapuIzstrade = () => {
         />
 
         <PageHero
+          vignette="merchant-van-dyck"
           title="Mājaslapu izstrāde ar AI integrāciju"
           lede={
             <>

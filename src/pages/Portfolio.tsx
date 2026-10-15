@@ -39,6 +39,7 @@ const PortfolioPage = () => {
         <Breadcrumbs items={[{ label: 'Sākums', to: '/' }, { label: 'Projekti' }]} />
 
         <PageHero
+          vignette="lavoisier"
           title="Paveiktie darbi"
           lede={
             <>
