@@ -32,16 +32,26 @@ const check = (name, ok) => { console.log(`${ok ? 'ok  ' : 'FAIL'} ${name}`); if
   await page.close();
 }
 
-// 3. reduced motion switched on after load unmounts the scene (real path, no override)
+// 3. reduced motion switched on after load unmounts the scene, on the same page
 {
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
   await page.goto(`${base}/?hero=3d`, { waitUntil: 'networkidle' });
   await page.waitForSelector('[data-hero-mode="3d"][data-hero-ready="1"]', { timeout: 30000 });
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.waitForTimeout(500);
-  await page.goto(`${base}/`, { waitUntil: 'networkidle' });
-  await page.waitForTimeout(2000);
   check('reduced motion -> image mode', (await page.getAttribute('[data-hero-mode]', 'data-hero-mode')) === 'image');
+  check('no canvas after reduced motion', (await page.locator('[data-hero-mode] canvas').count()) === 0);
+  await page.close();
+}
+
+// 3b. narrowing the viewport below 768px after load unmounts the scene
+{
+  const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  await page.goto(`${base}/?hero=3d`, { waitUntil: 'networkidle' });
+  await page.waitForSelector('[data-hero-mode="3d"][data-hero-ready="1"]', { timeout: 30000 });
+  await page.setViewportSize({ width: 600, height: 900 });
+  await page.waitForTimeout(500);
+  check('narrow viewport -> image mode', (await page.getAttribute('[data-hero-mode]', 'data-hero-mode')) === 'image');
   await page.close();
 }
 

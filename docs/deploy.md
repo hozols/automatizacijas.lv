@@ -28,6 +28,7 @@ Checks worth running before a production deploy:
     npx vite preview --port 4610 --strictPort &
     npm run check:hydration http://localhost:4610   # every route hydrates cleanly
     npm run hero:e2e http://localhost:4610          # hero fallbacks
+    npm run app:e2e http://localhost:4610           # theme toggle, deferred bootstrap, chunk recovery
 
 Local `vite preview` only maps `/x/` (trailing slash) to `x/index.html`;
 Vercel serves it for `/x` as well.

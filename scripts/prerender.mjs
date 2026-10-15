@@ -47,6 +47,8 @@ for (const route of routes) {
         if (n.nextSibling && n.nextSibling.nodeType === Node.TEXT_NODE) pairs.push(n);
       }
       for (const n of pairs) n.parentNode.insertBefore(document.createComment(''), n.nextSibling);
+      // the theme class belongs to the visitor, not to the capture
+      document.documentElement.classList.remove('light-mode', 'dark-mode');
       return document.documentElement.outerHTML;
     }));
   html = normalizeStyleAttributes(stripRuntimeScripts(html, keep));

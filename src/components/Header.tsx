@@ -43,24 +43,21 @@ const Header = () => {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   // Light is the default. Start from it on every render path so prerendered HTML
-  // and the client agree; the stored choice is applied after mount.
-  const storedTheme = useRef<string | null>(null);
+  // and the client agree. The inline script in index.html has already put
+  // `dark-mode` on <html> for a returning dark user; read that after mount.
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const themeApplied = useRef(false);
 
   useEffect(() => {
-    try {
-      storedTheme.current = localStorage.getItem('theme');
-    } catch {
-      storedTheme.current = null;
-    }
-    if (storedTheme.current === 'dark') setIsDarkMode(true);
+    if (document.documentElement.classList.contains('dark-mode')) setIsDarkMode(true);
+    themeApplied.current = true;
   }, []);
 
   useEffect(() => {
     const root = document.documentElement;
     root.classList.toggle('dark-mode', isDarkMode);
     root.classList.toggle('light-mode', !isDarkMode);
-    if (!isDarkMode && storedTheme.current === 'dark') return; // first pass, before the stored choice applied
+    if (!themeApplied.current) return; // mount pass: the stored choice is being read, do not overwrite it
     try {
       localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
     } catch {

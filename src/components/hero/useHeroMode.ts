@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { decideHeroMode, readHeroEnv, type HeroMode } from './heroMode';
+import { HERO_MIN_WIDTH, decideHeroMode, readHeroEnv, type HeroMode } from './heroMode';
 
 const IDLE_FALLBACK_MS = 1500;
 
@@ -11,7 +11,7 @@ type IdleWindow = Window & {
 /*
   Always 'image' on the first render so prerendered HTML and the client
   agree. After hydration, waits for idle (or 1.5 s) and switches to '3d'
-  when the environment allows. Reacts to reduced-motion changes.
+  when the environment allows. Reacts to reduced-motion and viewport-width changes.
 */
 export function useHeroMode(): HeroMode {
   const [mode, setMode] = useState<HeroMode>('image');
@@ -32,10 +32,13 @@ export function useHeroMode(): HeroMode {
       timeoutId = window.setTimeout(apply, IDLE_FALLBACK_MS);
     }
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const wide = window.matchMedia(`(min-width: ${HERO_MIN_WIDTH}px)`);
     mq.addEventListener('change', apply);
+    wide.addEventListener('change', apply);
     return () => {
       cancelled = true;
       mq.removeEventListener('change', apply);
+      wide.removeEventListener('change', apply);
       if (idleId !== undefined) w.cancelIdleCallback?.(idleId);
       if (timeoutId !== undefined) window.clearTimeout(timeoutId);
     };

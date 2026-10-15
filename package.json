@@ -15,7 +15,8 @@
     "hero:e2e": "node scripts/hero-e2e.mjs",
     "build:spa": "vite build",
     "prerender": "node scripts/prerender.mjs",
-    "check:hydration": "node scripts/check-hydration.mjs"
+    "check:hydration": "node scripts/check-hydration.mjs",
+    "app:e2e": "node scripts/app-e2e.mjs"
   },
   "dependencies": {
     "@fontsource-variable/manrope": "^5.3.0",

@@ -19,11 +19,17 @@ describe('decideHeroMode', () => {
   it('falls back to image under automation (prerender)', () => {
     expect(decideHeroMode({ ...ok, webdriver: true })).toBe('image');
   });
-  it('override 3d wins over automation and width', () => {
-    expect(decideHeroMode({ ...ok, webdriver: true, width: 320, override: '3d' })).toBe('3d');
+  it('override 3d wins over automation', () => {
+    expect(decideHeroMode({ ...ok, webdriver: true, override: '3d' })).toBe('3d');
+  });
+  it('a narrow viewport beats the 3d override', () => {
+    expect(decideHeroMode({ ...ok, webdriver: true, width: 320, override: '3d' })).toBe('image');
   });
   it('override capture returns capture', () => {
     expect(decideHeroMode({ ...ok, webdriver: true, override: 'capture' })).toBe('capture');
+  });
+  it('reduced motion beats the 3d override', () => {
+    expect(decideHeroMode({ ...ok, reducedMotion: true, override: '3d' })).toBe('image');
   });
   it('override cannot beat missing WebGL2', () => {
     expect(decideHeroMode({ ...ok, webgl2: false, override: '3d' })).toBe('image');
