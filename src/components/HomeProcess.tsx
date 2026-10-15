@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { trackCTAClick } from '@/lib/analytics';
 import { useScrollProgress } from '@/hooks/useScrollProgress';
+import Reveal from '@/components/motion/Reveal';
+import Hex from '@/components/motion/Hex';
 
 const steps = [
   {
@@ -29,8 +31,11 @@ const steps = [
 const HomeProcess = () => {
   const [listRef, progress] = useScrollProgress<HTMLOListElement>();
   return (
-    <section className="wrap band">
-      <h2 className="display-2 m-0 max-w-[14em]">Kā notiek AI automatizācijas ieviešana?</h2>
+    <section className="band band-ink">
+      <div className="wrap">
+      <h2 className="display-2 m-0 max-w-[14em]">
+        <Reveal text="Kā tas notiek" />
+      </h2>
 
       <ol
         ref={listRef}
@@ -38,17 +43,20 @@ const HomeProcess = () => {
         style={{ '--progress': progress } as React.CSSProperties}
       >
         {steps.map((step, i) => (
-          <li key={step.title} className="border-t-2 border-foreground pt-4 pb-8">
-            <span aria-hidden="true" className="font-display font-extrabold text-7xl leading-none text-primary">
-              {i + 1}
+          <li key={step.title} className="border-t border-ink-rule pb-8 pt-5">
+            <span className="flex items-center gap-3">
+              <Hex filled className="text-ink-foreground" />
+              <span aria-hidden="true" className="display text-5xl leading-none">
+                {i + 1}
+              </span>
             </span>
-            <h3 className="mt-3 mb-2 text-xl font-bold leading-snug">{step.title}</h3>
-            <p className="m-0 text-muted-foreground">{step.description}</p>
+            <h3 className="mb-2 mt-5 text-lg font-medium leading-snug">{step.title}</h3>
+            <p className="m-0 text-ink-muted">{step.description}</p>
           </li>
         ))}
       </ol>
 
-      <p className="mt-4 mb-0 text-lg max-w-[38em]">
+      <p className="mt-4 mb-0 max-w-[38em] text-lg">
         Pamata čatbots ir gatavs 1-2 nedēļās, procesu automatizācija parasti 2-6 nedēļās.{' '}
         <Link
           to="/contact"
@@ -58,6 +66,7 @@ const HomeProcess = () => {
           Pieteikties bezmaksas konsultācijai
         </Link>
       </p>
+      </div>
     </section>
   );
 };

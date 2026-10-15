@@ -1,4 +1,6 @@
 import React from 'react';
+import Reveal from '@/components/motion/Reveal';
+import Hairline from '@/components/motion/Hairline';
 
 const faqs = [
   {
@@ -32,9 +34,9 @@ const HomeFAQ = () => {
         <div className="lg:col-span-7 border-t-2 border-foreground">
           {faqs.map((faq) => (
             <details key={faq.question} className="faq border-b border-border">
-              <summary className="flex items-baseline justify-between gap-6 py-5 text-lg font-bold leading-snug cursor-pointer list-none">
+              <summary className="display-3 flex cursor-pointer list-none items-baseline justify-between gap-6 py-5">
                 {faq.question}
-                <span aria-hidden="true" className="faq-sign shrink-0 font-sans font-normal text-3xl leading-none text-primary" />
+                <span aria-hidden="true" className="faq-sign shrink-0 font-sans text-2xl font-light leading-none" />
               </summary>
               <p className="m-0 pb-6 max-w-[40em] text-muted-foreground">{faq.answer}</p>
             </details>

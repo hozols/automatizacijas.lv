@@ -16,7 +16,7 @@ export default function Marquee({ items, className = '', duration = 40 }: Props)
   const row = (ariaHidden: boolean) => (
     <ul className="marquee-row m-0 flex list-none gap-x-12 p-0" aria-hidden={ariaHidden || undefined}>
       {items.map((item, i) => (
-        <li key={i} className="display-2 whitespace-nowrap">
+        <li key={i} className="display whitespace-nowrap text-[clamp(2.25rem,4.5vw,4rem)]">
           {item}
         </li>
       ))}

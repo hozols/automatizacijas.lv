@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Reveal from '@/components/motion/Reveal';
+import Hairline from '@/components/motion/Hairline';
 
 const industries = [
   {
@@ -31,11 +33,13 @@ const industries = [
 
 const HomeIndustries = () => {
   return (
-    <section className="bg-card border-y border-border">
+    <section>
       <div className="wrap band">
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-5">
-            <h2 className="display-2 m-0">Nozares, kurām palīdzam</h2>
+            <h2 className="display-2 m-0">
+              <Reveal text="Nozares, kurām palīdzam" />
+            </h2>
             <p className="mt-5 mb-0 text-muted-foreground max-w-[26em]">
               Katrā nozarē atkārtojas citi darbi. Šajās piecās zinām, kur parasti slēpjas lielākais laika
               zudums.
@@ -45,9 +49,11 @@ const HomeIndustries = () => {
             </Link>
           </div>
 
-          <ul className="lg:col-span-7 list-none p-0 m-0">
+          <div className="lg:col-span-7">
+          <Hairline />
+          <ul className="list-none p-0 m-0">
             {industries.map((industry) => (
-              <li key={industry.path} className="border-b border-border first:border-t-2 first:border-t-foreground">
+              <li key={industry.path} className="border-b border-border">
                 <Link to={industry.path} className="service-row block py-5 no-underline text-foreground">
                   <span className="display-3 block">
                     <span className="sweep">{industry.title}</span>
@@ -57,6 +63,7 @@ const HomeIndustries = () => {
               </li>
             ))}
           </ul>
+          </div>
         </div>
       </div>
     </section>

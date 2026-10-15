@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import HeroSection from '@/components/hero/HeroSection';
 import HomeClients from '@/components/HomeClients';
+import HomePainting from '@/components/HomePainting';
 import HomeServices from '@/components/HomeServices';
 import HomeCases from '@/components/HomeCases';
 import HomeWhy from '@/components/HomeWhy';
@@ -125,12 +126,13 @@ const Index = () => {
         <Header />
         <main className="flex-1">
           <HeroSection />
-          <HomeClients />
           <HomeServices />
+          <HomePainting />
           <HomeCases />
           <HomeWhy />
           <HomeIndustries />
           <HomeProcess />
+          <HomeClients />
           <HomeLeadForm />
           <HomeFAQ />
         </main>

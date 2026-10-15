@@ -1,12 +1,15 @@
 import React from 'react';
+import Reveal from '@/components/motion/Reveal';
 
 const HomeWhy = () => {
   return (
-    <section className="wrap band">
-      <div className="grid gap-8 lg:grid-cols-12 lg:gap-14">
-        <h2 className="display-2 m-0 lg:col-span-5">Kāpēc AI automatizācija jūsu uzņēmumam?</h2>
+    <section className="bg-card">
+      <div className="wrap band grid gap-8 lg:grid-cols-12 lg:gap-14">
+        <h2 className="display-2 m-0 lg:col-span-5">
+          <Reveal text="Kāpēc tieši tagad" />
+        </h2>
 
-        <div className="lg:col-span-7 space-y-5 text-lg leading-relaxed max-w-[40em]">
+        <div className="max-w-[40em] space-y-5 text-lg leading-relaxed lg:col-span-7">
           <p className="m-0">
             <strong>Mākslīgais intelekts</strong> (MI) strauji maina veidu, kā uzņēmumi Latvijā veic ikdienas
             biznesa procesus. AI automatizācija ļauj samazināt manuālo darbu, paātrināt lēmumu pieņemšanu un

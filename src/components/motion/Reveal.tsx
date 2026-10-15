@@ -44,11 +44,14 @@ export default function Reveal({ text, as = 'span', className = '', stagger = 40
   return (
     <Tag ref={ref} className={`reveal ${on ? 'is-on' : ''} ${className}`} aria-label={text}>
       {words.map((w, i) => (
-        <span key={i} className="reveal-word" aria-hidden="true">
-          <span className="reveal-inner" style={{ transitionDelay: `${i * stagger}ms` }}>
-            {w}
-          </span>{' '}
-        </span>
+        <React.Fragment key={i}>
+          <span className="reveal-word" aria-hidden="true">
+            <span className="reveal-inner" style={{ transitionDelay: `${i * stagger}ms` }}>
+              {w}
+            </span>
+          </span>
+          {i < words.length - 1 ? ' ' : null}
+        </React.Fragment>
       ))}
     </Tag>
   );

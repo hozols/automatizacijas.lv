@@ -30,7 +30,7 @@ const Footer = () => {
       <div className="wrap pb-10 pt-14 lg:pt-20">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-4">
-            <Link to="/" className="display-2 block text-current no-underline">
+            <Link to="/" className="display block text-[clamp(2rem,3vw,2.75rem)] text-current no-underline">
               automatizācijas.lv
             </Link>
             <p className="m-0 mt-5 max-w-[24em] text-muted-foreground">
