@@ -499,3 +499,69 @@
 .menu-overlay::backdrop {
   background: transparent;
 }
+
+/* Motion primitives. Every one of these has a resting state the prerender captures. */
+.reveal-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+.reveal-inner {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.1, 1);
+}
+
+.reveal.is-on .reveal-inner {
+  transform: translateY(0);
+}
+
+.hairline-draw {
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.2, 0.7, 0.1, 1);
+}
+
+.hairline-draw.is-on {
+  transform: scaleX(1);
+}
+
+.marquee {
+  overflow: hidden;
+}
+
+.marquee-track {
+  width: max-content;
+  animation: marquee var(--marquee-duration, 40s) linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 1.5rem)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-inner,
+  .hairline-draw {
+    transition: none;
+    transform: none;
+  }
+
+  .marquee-track {
+    animation: none;
+    width: auto;
+    flex-wrap: wrap;
+  }
+
+  .marquee-track > [aria-hidden='true'] {
+    display: none;
+  }
+}

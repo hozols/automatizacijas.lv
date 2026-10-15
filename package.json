@@ -16,7 +16,8 @@
     "build:spa": "vite build",
     "prerender": "node scripts/prerender.mjs",
     "check:hydration": "node scripts/check-hydration.mjs",
-    "app:e2e": "node scripts/app-e2e.mjs"
+    "app:e2e": "node scripts/app-e2e.mjs",
+    "paintings": "node scripts/fetch-paintings.mjs"
   },
   "dependencies": {
     "@fontsource-variable/manrope": "^5.3.0",
