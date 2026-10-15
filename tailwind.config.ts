@@ -25,8 +25,12 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
-				chalk: 'hsl(var(--chalk))',
+				smoke: 'hsl(var(--smoke))',
 				ash: 'hsl(var(--ash))',
+				sand: 'hsl(var(--sand))',
+				forest: 'hsl(var(--forest))',
+				iris: 'hsl(var(--iris))',
+				slate: 'hsl(var(--slate))',
 				cosmic: {
 					/* legacy names from the old theme, mapped onto the current palette */
 					dark: 'hsl(var(--foreground))',
@@ -82,20 +86,23 @@ export default {
 				}
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'var(--radius)',
-				sm: '2px',
-				xl: '6px',
-				'2xl': '8px',
-				'3xl': '10px'
+				/* 8 / 12 / 16 / 24: nothing below 8px on a component */
+				DEFAULT: '8px',
+				sm: '8px',
+				md: '8px',
+				lg: '8px',
+				xl: '12px',
+				'2xl': '16px',
+				'3xl': '24px'
 			},
 			boxShadow: {
-				sm: '0 1px 0 hsl(225 41% 18% / 0.06)',
-				DEFAULT: '0 1px 0 hsl(225 41% 18% / 0.06), 0 6px 16px -12px hsl(225 41% 18% / 0.3)',
-				md: '0 1px 0 hsl(225 41% 18% / 0.06), 0 10px 24px -16px hsl(225 41% 18% / 0.3)',
-				lg: '0 1px 0 hsl(225 41% 18% / 0.06), 0 14px 32px -20px hsl(225 41% 18% / 0.35)',
-				xl: '0 1px 0 hsl(225 41% 18% / 0.06), 0 18px 40px -24px hsl(225 41% 18% / 0.35)',
-				'2xl': '0 1px 0 hsl(225 41% 18% / 0.06), 0 24px 48px -28px hsl(225 41% 18% / 0.4)'
+				/* the system is flat: every shadow utility is the one subtle shadow */
+				sm: 'var(--shadow-subtle)',
+				DEFAULT: 'var(--shadow-subtle)',
+				md: 'var(--shadow-subtle)',
+				lg: 'var(--shadow-subtle)',
+				xl: 'var(--shadow-subtle)',
+				'2xl': 'var(--shadow-subtle)'
 			},
 			keyframes: {
 				'accordion-down': {
@@ -118,9 +125,8 @@ export default {
 				inter: ['"Inter Variable"', '"Inter Fallback"', 'system-ui', 'sans-serif']
 			},
 			letterSpacing: {
-				/* the old theme tightened every heading; the serif carries its own spacing */
-				tighter: '0',
-				tight: '0'
+				tighter: '-0.025em',
+				tight: '-0.01em'
 			},
 		}
 	},

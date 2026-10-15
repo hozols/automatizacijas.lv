@@ -25,7 +25,7 @@ const HomePainting = () => {
       </Parallax>
 
       <div className="absolute inset-0 flex items-center justify-center p-6">
-        <div className="notched-card">
+        <div className="case-card">
           <p className="label m-0 text-ink-muted">Gadījums</p>
           <p className="display-3 m-0 mt-5 max-w-[14em]">Kleen1 sagatavo un nosūta līgumu pēc katras klienta sapulces.</p>
           <p className="display m-0 mt-8 text-[clamp(3rem,6vw,5rem)] leading-none">
