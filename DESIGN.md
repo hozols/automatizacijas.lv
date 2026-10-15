@@ -1,25 +1,24 @@
 # automatizacijas.lv design system
 
 The site sells office automation to Latvian business owners, accountants and
-office managers. The look is a quiet night office: deep navy ground, warm
-off-white text, one amber accent, a serif for headlines and a plain sans for
-everything else (the same pairing as siamezi.lv). It must not look like a
-generated SaaS template.
+office managers. The look is quiet and editorial: warm off-white paper, one
+near-black ink for text, buttons and links, thin ruled lines, a serif for
+headlines and a plain sans for everything else. No accent colour. It must
+not look like a generated SaaS template.
 
 ## Tokens (src/index.css, tailwind.config.ts)
 
 | Name | Value | Use |
 | --- | --- | --- |
-| night `bg-background` | #0B1220 | page ground |
-| sheet `bg-card` | #111A2C | documents, forms, menus, alternate bands |
-| bone `text-foreground` | #F1EEE4 | text |
-| deep `band-ink` | #080E1A | the darker alternate band, footer |
-| amber `text-primary`, `bg-primary`, `bg-marker` | #E0A458 | actions, links, the highlighter |
-| rule `border-border` | #232F47 | ruled lines |
+| paper `bg-background` | #F6F5F0 | page ground |
+| sheet `bg-card` | #FFFFFF | documents, forms, menus |
+| ink `text-foreground`, `bg-primary`, `band-ink` | #151719 | text, buttons, links, dark bands, footer |
+| rule `border-border` | #E3E0D8 | ruled lines |
+| highlighter `bg-marker`, `.mark`, `.sweep` | #EDE6D2 | a pale underline on hover or on what is done |
 
-Dark is the default. The paper theme (light ground, navy ink, carmine) is the
-`.light-mode` class on `<html>`; every token has a value in both, so use
-tokens and never hard-coded colours (`blue-500`, `#fff`, `gray-400`).
+Dark mode is the `.dark-mode` class on `<html>`: the same system inverted
+(off-white on near-black). Every token has a value in both, so use tokens and
+never hard-coded colours (`blue-500`, `#fff`, `gray-400`).
 
 Type: Newsreader (serif, weight 500, optical size 72) for `h1`/`h2` (classes
 `display-1`, `display-2`, `display-3`), Manrope for everything else. `h3` and

@@ -279,3 +279,12 @@ in conversation:
   gets a bone rim light and an amber fill so it separates from the ground. The
   platen sheet is always bone paper with navy ink, in every theme.
 - Everything else in this spec stands. DESIGN.md is updated to match.
+
+## Amendment 2, 2026-10-15 (after Task 9)
+
+The dark navy and amber colourway was rejected as generated-looking. Chosen
+from three rendered options: warm off-white paper `#F6F5F0`, one near-black
+ink `#151719` for text, buttons and links, rule `#E3E0D8`, pale highlighter
+`#EDE6D2`. No accent colour. Dark mode is the inverse. Fonts stay Newsreader
+and Manrope. Light is the default again; the stored `dark` choice is applied
+after mount.
