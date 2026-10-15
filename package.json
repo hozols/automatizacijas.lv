@@ -10,7 +10,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "shoot": "node scripts/shoot.mjs"
+    "shoot": "node scripts/shoot.mjs",
+    "hero:capture": "node scripts/capture-hero.mjs",
+    "hero:e2e": "node scripts/hero-e2e.mjs"
   },
   "dependencies": {
     "@fontsource-variable/manrope": "^5.3.0",
