@@ -437,3 +437,10 @@
 .faq[open] .faq-sign::before {
   content: '\2212';
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .sweep,
+  .sweep.is-on {
+    transition: none;
+  }
+}

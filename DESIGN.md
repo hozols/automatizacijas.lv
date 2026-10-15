@@ -33,9 +33,13 @@ the text face in bold. Sentence case in new copy. No letter-spacing tweaks.
 4. Numbers only on real sequences (`Steps`).
 5. Icons: none as decoration. Allowed only inside controls where they carry
    meaning (menu, close, theme, external link, chevron in a select).
-6. No gradients, glows, blur, glass, floating particles, shimmer, pulse,
-   hover-lift, scale-on-hover, entrance animations. Hover changes colour or
-   sweeps the highlighter, nothing moves.
+6. Motion is allowed only when it answers a user action (hover, click,
+   scroll position) or shows the thing the nearby text describes. Hover
+   changes colour or sweeps the highlighter. No background particles,
+   glow, blur, shimmer, pulse, hover-lift, scale-on-hover or entrance
+   animations. The hero typewriter is the one scene that moves on its own.
+   `prefers-reduced-motion: reduce` turns every allowed motion into its
+   final state.
 7. Radius: `rounded-md` at most (4px). No `rounded-full` pills or badges.
 8. Buttons: `btn btn-solid` (main action), `btn btn-line` (secondary). Text
    links: `link`. No arrows or icons in button or link text.
