@@ -62,24 +62,24 @@ const AiPlatformuIzstrade = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>AI Platformu Izstrāde Uzņēmumiem | automatizacijas.lv</title>
-        <meta name="description" content="Pielāgotu AI platformu un risinājumu izstrāde jūsu uzņēmumam. No idejas līdz gatavam produktam — AI čatboti, datu platformas, automatizācijas sistēmas." />
+        <title>AI platformu izstrāde uzņēmumiem | automatizacijas.lv</title>
+        <meta name="description" content="Pielāgotas AI sistēmas uz jūsu datiem: iekšējie asistenti, zināšanu bāzes un integrācijas ar esošajām programmām." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/ai-platformu-izstrade" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/ai-platformu-izstrade" />
         <link rel="alternate" hrefLang="lv" href="https://automatizacijas.lv/ai-platformu-izstrade" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/ai-platformu-izstrade" />
-        <meta property="og:title" content="AI Platformu Izstrāde Uzņēmumiem | automatizacijas.lv" />
-        <meta property="og:description" content="Pielāgotu AI platformu un risinājumu izstrāde jūsu uzņēmumam. AI čatboti, datu platformas, automatizācijas sistēmas." />
+        <meta property="og:title" content="AI platformu izstrāde uzņēmumiem | automatizacijas.lv" />
+        <meta property="og:description" content="Pielāgotas AI sistēmas uz jūsu datiem: iekšējie asistenti, zināšanu bāzes un integrācijas ar esošajām programmām." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI Platformu Izstrāde Uzņēmumiem" />
-        <meta name="twitter:description" content="Pielāgotu AI platformu un risinājumu izstrāde jūsu uzņēmumam." />
+        <meta name="twitter:title" content="AI platformu izstrāde uzņēmumiem" />
+        <meta name="twitter:description" content="Pielāgotas AI sistēmas uz jūsu datiem: iekšējie asistenti, zināšanu bāzes un integrācijas ar esošajām programmām." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -95,7 +95,7 @@ const AiPlatformuIzstrade = () => {
         />
 
         <PageHero
-          title="AI Platformu un Risinājumu Izstrāde"
+          title="AI platformu izstrāde uzņēmumiem"
           lede={
             <>
               Izstrādājam <strong>pielāgotas AI platformas</strong>, kas risina jūsu uzņēmuma unikālās vajadzības.

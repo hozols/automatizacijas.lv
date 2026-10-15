@@ -90,23 +90,23 @@ const KasIrMaksligaisIntelekts = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>Kas ir Mākslīgais Intelekts? Ceļvedis 2026 | automatizacijas.lv</title>
-        <meta name="description" content="Kas ir mākslīgais intelekts (MI) un kā to izmantot biznesā? AI veidi, praktiski pielietojumi Latvijā un populārākie rīki. Ceļvedis." />
+        <title>Kas ir mākslīgais intelekts? Ceļvedis latviski 2026</title>
+        <meta name="description" content="Mākslīgais intelekts vienkārši latviski: kas tas ir, kā strādā ChatGPT un līdzīgi rīki, un kur to izmanto Latvijas uzņēmumi." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/kas-ir-maksligais-intelekts" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/kas-ir-maksligais-intelekts" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://automatizacijas.lv/kas-ir-maksligais-intelekts" />
-        <meta property="og:title" content="Kas ir Mākslīgais Intelekts? Pilnīgs Ceļvedis" />
-        <meta property="og:description" content="Uzziniet, kas ir mākslīgais intelekts, kā tas darbojas un kā to izmantot biznesā Latvijā." />
+        <meta property="og:title" content="Kas ir mākslīgais intelekts? Ceļvedis latviski 2026" />
+        <meta property="og:description" content="Mākslīgais intelekts vienkārši latviski: kas tas ir, kā strādā ChatGPT un līdzīgi rīki, un kur to izmanto Latvijas uzņēmumi." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Kas ir Mākslīgais Intelekts? Pilnīgs Ceļvedis" />
-        <meta name="twitter:description" content="Uzziniet, kas ir mākslīgais intelekts, kā tas darbojas un kā to izmantot biznesā Latvijā." />
+        <meta name="twitter:title" content="Kas ir mākslīgais intelekts? Ceļvedis latviski 2026" />
+        <meta name="twitter:description" content="Mākslīgais intelekts vienkārši latviski: kas tas ir, kā strādā ChatGPT un līdzīgi rīki, un kur to izmanto Latvijas uzņēmumi." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -121,7 +121,7 @@ const KasIrMaksligaisIntelekts = () => {
         />
 
         <PageHero
-          title="Kas ir mākslīgais intelekts? Pilnīgs ceļvedis 2026. gadam"
+          title="Kas ir mākslīgais intelekts? Ceļvedis latviski"
           lede={
             <>
               Mākslīgais intelekts (MI) jeb <strong>artificial intelligence (AI)</strong> ir

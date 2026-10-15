@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { searchTitle, trimDescription } from '@/lib/seo';
 import { useParams, Link } from 'react-router-dom';
 import PageTransition from '@/components/PageTransition';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -100,6 +101,8 @@ const relatedLinks: Record<string, { label: string; path: string }[]> = {
 
 interface PostData {
   titleKey: string;
+  /* Optional search title; the H1 stays the translated title. */
+  metaTitle?: string;
   contentKey: string;
   excerptKey: string;
   date: string;
@@ -171,6 +174,7 @@ const blogPostData: Record<string, PostData> = {
     authorRole: 'AI automatizācijas eksperts',
   },
   'gramatvedibas-automatizacija-celvedis': {
+    metaTitle: 'Grāmatvedības automatizācija 2026: pilns ceļvedis',
     titleKey: 'blog.post7.title',
     contentKey: 'blog.post7.content',
     excerptKey: 'blog.post7.excerpt',
@@ -181,6 +185,7 @@ const blogPostData: Record<string, PostData> = {
     authorRole: 'AI automatizācijas eksperts',
   },
   '10-dokumentu-apstrades-procesi-ko-ai-var-automatizet': {
+    metaTitle: '10 dokumentu procesi, ko AI automatizē uzņēmumā',
     titleKey: 'blog.post8.title',
     contentKey: 'blog.post8.content',
     excerptKey: 'blog.post8.excerpt',
@@ -191,6 +196,7 @@ const blogPostData: Record<string, PostData> = {
     authorRole: 'AI automatizācijas eksperts',
   },
   'ka-izvelities-ai-platformu-uznemumam': {
+    metaTitle: 'Kā izvēlēties AI platformu uzņēmumam',
     titleKey: 'blog.post9.title',
     contentKey: 'blog.post9.content',
     excerptKey: 'blog.post9.excerpt',
@@ -201,6 +207,7 @@ const blogPostData: Record<string, PostData> = {
     authorRole: 'AI automatizācijas eksperts',
   },
   'ai-chatbots-latviesu-valoda': {
+    metaTitle: 'AI čatbots latviešu valodā: kā tas strādā un ko dod',
     titleKey: 'blog.post10.title',
     contentKey: 'blog.post10.content',
     excerptKey: 'blog.post10.excerpt',
@@ -221,6 +228,7 @@ const blogPostData: Record<string, PostData> = {
     authorRole: 'AI automatizācijas eksperts',
   },
   'e-komercijas-automatizacija-7-veidi': {
+    metaTitle: 'E-komercijas automatizācija: 7 veidi, kā AI pārdod',
     titleKey: 'blog.post12.title',
     contentKey: 'blog.post12.content',
     excerptKey: 'blog.post12.excerpt',
@@ -241,6 +249,7 @@ const blogPostData: Record<string, PostData> = {
     authorRole: 'AI automatizācijas eksperts',
   },
   '5-kludas-ai-ieviesana': {
+    metaTitle: '5 kļūdas AI ieviešanā un kā no tām izvairīties',
     titleKey: 'blog.post14.title',
     contentKey: 'blog.post14.content',
     excerptKey: 'blog.post14.excerpt',
@@ -251,6 +260,7 @@ const blogPostData: Record<string, PostData> = {
     authorRole: 'AI automatizācijas eksperts',
   },
   'gramatvedibas-birojs-ietaupija-25-stundas': {
+    metaTitle: 'Kā grāmatvedības birojs ietaupīja 25 stundas nedēļā',
     titleKey: 'blog.post15.title',
     contentKey: 'blog.post15.content',
     excerptKey: 'blog.post15.excerpt',
@@ -261,6 +271,7 @@ const blogPostData: Record<string, PostData> = {
     authorRole: 'AI automatizācijas eksperts',
   },
   'ai-vs-tradicionala-klientu-apkalposana': {
+    metaTitle: 'AI vai tradicionālā klientu apkalpošana: skaitļi',
     titleKey: 'blog.post16.title',
     contentKey: 'blog.post16.content',
     excerptKey: 'blog.post16.excerpt',
@@ -287,6 +298,37 @@ const blogPostData: Record<string, PostData> = {
     date: '2026-04-08',
     readTime: '16 min',
     category: 'AI',
+    author: 'Māris Ozols',
+    authorRole: 'AI automatizācijas eksperts',
+  },
+  'chatgpt-latviski-ka-lietot': {
+    titleKey: 'blog.post19.title',
+    metaTitle: 'ChatGPT latviski: kas tas ir un kā to lietot (2026)',
+    contentKey: 'blog.post19.content',
+    excerptKey: 'blog.post19.excerpt',
+    date: '2026-07-30',
+    readTime: '12 min',
+    category: 'AI',
+    author: 'Māris Ozols',
+    authorRole: 'AI automatizācijas eksperts',
+  },
+  'crm-sistema-ka-izveleties': {
+    titleKey: 'blog.post20.title',
+    contentKey: 'blog.post20.content',
+    excerptKey: 'blog.post20.excerpt',
+    date: '2026-07-30',
+    readTime: '11 min',
+    category: 'Automatizācija',
+    author: 'Māris Ozols',
+    authorRole: 'AI automatizācijas eksperts',
+  },
+  'digitalizacija-uznemumam-ar-ko-sakt': {
+    titleKey: 'blog.post21.title',
+    contentKey: 'blog.post21.content',
+    excerptKey: 'blog.post21.excerpt',
+    date: '2026-07-30',
+    readTime: '11 min',
+    category: 'Digitalizācija',
     author: 'Māris Ozols',
     authorRole: 'AI automatizācijas eksperts',
   },
@@ -433,6 +475,8 @@ const BlogPost = () => {
 
   const content = t(post.contentKey);
   const toc = generateTOC(content);
+  const metaTitle = searchTitle(post.metaTitle ?? t(post.titleKey));
+  const metaDescription = trimDescription(t(post.excerptKey));
   const author = post.author || 'automatizacijas.lv';
   const authorRole = post.authorRole || 'AI automatizācijas eksperts';
 
@@ -454,16 +498,16 @@ const BlogPost = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>{t(post.titleKey)} | automatizacijas.lv</title>
-        <meta name="description" content={t(post.excerptKey)} />
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
         <meta name="robots" content="index, follow" />
         <meta name="author" content={author} />
         <link rel="canonical" href={`https://automatizacijas.lv/blog/${slug}`} />
         <link rel="alternate" hreflang="lv" href={`https://automatizacijas.lv/blog/${slug}`} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://automatizacijas.lv/blog/${slug}`} />
-        <meta property="og:title" content={t(post.titleKey)} />
-        <meta property="og:description" content={t(post.excerptKey)} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -474,8 +518,8 @@ const BlogPost = () => {
         <meta property="article:author" content={author} />
         <meta property="article:section" content={post.category} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={t(post.titleKey)} />
-        <meta name="twitter:description" content={t(post.excerptKey)} />
+        <meta name="twitter:title" content={metaTitle} />
+        <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",

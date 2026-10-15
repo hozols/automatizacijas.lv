@@ -57,24 +57,24 @@ const DatuAnalize = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>Datu Analīze un BI ar AI | automatizacijas.lv</title>
-        <meta name="description" content="AI vadīta biznesa inteliģence — automātiskas atskaites, tendenču analīze, prognozēšana un datu vizualizācija. Pieņemiet lēmumus ar datiem." />
+        <title>Datu analīze un atskaites ar AI | automatizacijas.lv</title>
+        <meta name="description" content="Automātiskas atskaites, tendenču analīze un prognozes no datiem, kas jums jau ir. Lēmumi bez Excel nakšu darba." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/datu-analize" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/datu-analize" />
         <link rel="alternate" hrefLang="lv" href="https://automatizacijas.lv/datu-analize" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/datu-analize" />
-        <meta property="og:title" content="Datu Analīze un BI ar AI | automatizacijas.lv" />
-        <meta property="og:description" content="AI vadīta biznesa inteliģence — automātiskas atskaites, tendenču analīze, prognozēšana un datu vizualizācija." />
+        <meta property="og:title" content="Datu analīze un atskaites ar AI | automatizacijas.lv" />
+        <meta property="og:description" content="Automātiskas atskaites, tendenču analīze un prognozes no datiem, kas jums jau ir. Lēmumi bez Excel nakšu darba." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Datu Analīze un BI ar AI" />
-        <meta name="twitter:description" content="AI vadīta biznesa inteliģence — automātiskas atskaites, tendenču analīze un prognozēšana." />
+        <meta name="twitter:title" content="Datu analīze un atskaites ar AI" />
+        <meta name="twitter:description" content="Automātiskas atskaites, tendenču analīze un prognozes no datiem, kas jums jau ir. Lēmumi bez Excel nakšu darba." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -90,7 +90,7 @@ const DatuAnalize = () => {
         />
 
         <PageHero
-          title="Datu Analīze un Biznesa Inteliģence ar AI"
+          title="Datu analīze un atskaites ar AI"
           lede={
             <>
               Pārvērtiet savus biznesa datus par vērtīgiem ieskatiem un gudrākiem lēmumiem. Mūsu AI vadītā analītika

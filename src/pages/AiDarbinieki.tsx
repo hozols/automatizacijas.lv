@@ -60,24 +60,24 @@ const AiDarbinieki = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>AI Darbinieki Jūsu Uzņēmumam | automatizacijas.lv</title>
-        <meta name="description" content="Gatavi izmantošanai AI darbinieki biznesa procesiem — klientu apkalpošana, satura veidošana, datu apstrāde. Strādā 24/7 bez kļūdām." />
+        <title>AI darbinieki un AI aģenti uzņēmumam | automatizacijas.lv</title>
+        <meta name="description" content="AI darbinieki konkrētiem uzdevumiem: klientu atbildes, satura sagatavošana, datu apstrāde. Strādā jūsu sistēmās un jūsu noteikumos." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/ai-darbinieki" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/ai-darbinieki" />
         <link rel="alternate" hrefLang="lv" href="https://automatizacijas.lv/ai-darbinieki" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/ai-darbinieki" />
-        <meta property="og:title" content="AI Darbinieki Jūsu Uzņēmumam | automatizacijas.lv" />
-        <meta property="og:description" content="Gatavi izmantošanai AI darbinieki biznesa procesiem. Strādā 24/7 bez kļūdām." />
+        <meta property="og:title" content="AI darbinieki un AI aģenti uzņēmumam | automatizacijas.lv" />
+        <meta property="og:description" content="AI darbinieki konkrētiem uzdevumiem: klientu atbildes, satura sagatavošana, datu apstrāde. Strādā jūsu sistēmās un jūsu noteikumos." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI Darbinieki Jūsu Uzņēmumam" />
-        <meta name="twitter:description" content="Gatavi izmantošanai AI darbinieki biznesa procesiem. Strādā 24/7 bez kļūdām." />
+        <meta name="twitter:title" content="AI darbinieki un AI aģenti uzņēmumam" />
+        <meta name="twitter:description" content="AI darbinieki konkrētiem uzdevumiem: klientu atbildes, satura sagatavošana, datu apstrāde. Strādā jūsu sistēmās un jūsu noteikumos." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -93,7 +93,7 @@ const AiDarbinieki = () => {
         />
 
         <PageHero
-          title="AI Darbinieki: Virtuālie Komandas Biedri Jūsu Biznesam"
+          title="AI darbinieki un AI aģenti uzņēmumam"
           lede={
             <>
               Iedomājieties komandas biedru, kas <strong>strādā 24/7 bez pārtraukumiem</strong>, nekad nepieļauj

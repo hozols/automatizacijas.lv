@@ -137,23 +137,23 @@ const Contact = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>Bezmaksas AI Konsultācija | automatizacijas.lv</title>
-        <meta name="description" content="Sazinieties ar mums bezmaksas AI konsultācijai. Palīdzēsim izvēlēties piemērotāko AI risinājumu jūsu biznesam. Zvani +371 20 015 830."/>
+        <title>Bezmaksas AI konsultācija | automatizacijas.lv</title>
+        <meta name="description" content="Pastāstiet, kurš darbs birojā atkārtojas. Atbildam 24 stundu laikā ar priekšlikumu, ko var automatizēt un ko tas maksā."/>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/contact" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/contact" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/contact" />
-        <meta property="og:title" content="Sazinies ar Mums | automatizacijas.lv" />
-        <meta property="og:description" content="Sazinieties ar mums bezmaksas AI konsultācijai. Zvani +371 20 015 830 vai raksti." />
+        <meta property="og:title" content="Bezmaksas AI konsultācija | automatizacijas.lv" />
+        <meta property="og:description" content="Pastāstiet, kurš darbs birojā atkārtojas. Atbildam 24 stundu laikā ar priekšlikumu, ko var automatizēt un ko tas maksā." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Sazinies ar Mums | automatizacijas.lv" />
-        <meta name="twitter:description" content="Sazinieties ar mums bezmaksas AI konsultācijai." />
+        <meta name="twitter:title" content="Bezmaksas AI konsultācija" />
+        <meta name="twitter:description" content="Pastāstiet, kurš darbs birojā atkārtojas. Atbildam 24 stundu laikā ar priekšlikumu, ko var automatizēt un ko tas maksā." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",

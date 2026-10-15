@@ -61,24 +61,24 @@ const NozareGramatvediba = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>AI Automatizācija Grāmatvedībai un Finansēm | automatizacijas.lv</title>
-        <meta name="description" content="AI risinājumi grāmatvedības birojiem, finanšu uzņēmumiem un nodaļām. Rēķinu apstrāde, atskaites, nodokļi — viss automatizēts." />
+        <title>AI grāmatvedības birojiem un finansēm | automatizacijas.lv</title>
+        <meta name="description" content="Kā grāmatvedības biroji automatizē rēķinu apstrādi, atskaites un klientu dokumentus ar AI. Ko tas ietaupa un ar ko sākt." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/nozares/gramatvediba-un-finanses" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/nozares/gramatvediba-un-finanses" />
         <link rel="alternate" hrefLang="lv" href="https://automatizacijas.lv/nozares/gramatvediba-un-finanses" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/nozares/gramatvediba-un-finanses" />
-        <meta property="og:title" content="AI Automatizācija Grāmatvedībai un Finansēm | automatizacijas.lv" />
-        <meta property="og:description" content="AI risinājumi grāmatvedības birojiem, finanšu uzņēmumiem un nodaļām. Rēķinu apstrāde, atskaites, nodokļi — viss automatizēts." />
+        <meta property="og:title" content="AI grāmatvedības birojiem un finansēm | automatizacijas.lv" />
+        <meta property="og:description" content="Kā grāmatvedības biroji automatizē rēķinu apstrādi, atskaites un klientu dokumentus ar AI. Ko tas ietaupa un ar ko sākt." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI Automatizācija Grāmatvedībai un Finansēm" />
-        <meta name="twitter:description" content="AI risinājumi grāmatvedības birojiem un finanšu uzņēmumiem Latvijā." />
+        <meta name="twitter:title" content="AI grāmatvedības birojiem un finansēm" />
+        <meta name="twitter:description" content="Kā grāmatvedības biroji automatizē rēķinu apstrādi, atskaites un klientu dokumentus ar AI. Ko tas ietaupa un ar ko sākt." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -94,7 +94,7 @@ const NozareGramatvediba = () => {
         />
 
         <PageHero
-          title="AI Automatizācija Grāmatvedības un Finanšu Nozarei"
+          title="AI automatizācija grāmatvedības birojiem un finansēm"
           lede={
             <>
               Grāmatvedības nozare Latvijā piedzīvo fundamentālas pārmaiņas. AI tehnoloģijas ļauj automatizēt <strong>rēķinu apstrādi,

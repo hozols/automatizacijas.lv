@@ -92,15 +92,15 @@ const Index = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>AI Automatizācija Latvijā | automatizacijas.lv</title>
-        <meta name="description" content="AI automatizācijas risinājumi uzņēmumiem Latvijā. Grāmatvedības automatizācija, dokumentu apstrāde, AI čatboti, datu analīze. Bezmaksas konsultācija." />
+        <title>AI automatizācija uzņēmumiem Latvijā | automatizacijas.lv</title>
+        <meta name="description" content="Rēķinu ievade, dokumentu apstrāde, atbildes klientiem: uzbūvējam AI sistēmu, kas šos darbus dara pati, un pieslēdzam to jūsu programmām." />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href="https://automatizacijas.lv/" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/" />
-        <meta property="og:title" content="AI Automatizācija Latvijā | automatizacijas.lv" />
-        <meta property="og:description" content="Profesionāli AI automatizācijas risinājumi uzņēmumiem Latvijā. Grāmatvedības automatizācija, dokumentu apstrāde, AI čatboti un datu analīze." />
+        <meta property="og:title" content="AI automatizācija uzņēmumiem Latvijā | automatizacijas.lv" />
+        <meta property="og:description" content="Rēķinu ievade, dokumentu apstrāde, atbildes klientiem: uzbūvējam AI sistēmu, kas šos darbus dara pati, un pieslēdzam to jūsu programmām." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -108,8 +108,8 @@ const Index = () => {
         <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI Automatizācija Latvijā | automatizacijas.lv" />
-        <meta name="twitter:description" content="Profesionāli AI automatizācijas risinājumi uzņēmumiem Latvijā. Grāmatvedības automatizācija, dokumentu apstrāde un AI čatboti." />
+        <meta name="twitter:title" content="AI automatizācija uzņēmumiem Latvijā" />
+        <meta name="twitter:description" content="Rēķinu ievade, dokumentu apstrāde, atbildes klientiem: uzbūvējam AI sistēmu, kas šos darbus dara pati, un pieslēdzam to jūsu programmām." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>

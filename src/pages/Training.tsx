@@ -88,23 +88,23 @@ const TrainingPage = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>AI Apmācības un Kursi Latvijā | automatizacijas.lv</title>
-        <meta name="description" content="Mākslīgā intelekta apmācības un korporatīvie semināri Latvijā. Apgūstiet AI automatizāciju, čatbotus un datu analīzi ar profesionāliem kursiem. Sertifikāti."/>
+        <title>Mākslīgā intelekta kursi uzņēmumiem | automatizacijas.lv</title>
+        <meta name="description" content="AI apmācības komandām: kā lietot ChatGPT un AI rīkus ikdienas darbā. Praktiski, latviski, jūsu uzņēmuma piemēros."/>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/training" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/training" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/training" />
-        <meta property="og:title" content="AI Apmācības un Semināri | automatizacijas.lv" />
-        <meta property="og:description" content="AI apmācības un semināri uzņēmumiem Latvijā. Apgūstiet mākslīgo intelektu ar profesionāliem kursiem." />
+        <meta property="og:title" content="Mākslīgā intelekta kursi uzņēmumiem | automatizacijas.lv" />
+        <meta property="og:description" content="AI apmācības komandām: kā lietot ChatGPT un AI rīkus ikdienas darbā. Praktiski, latviski, jūsu uzņēmuma piemēros." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI Apmācības un Semināri | automatizacijas.lv" />
-        <meta name="twitter:description" content="AI apmācības un semināri uzņēmumiem Latvijā." />
+        <meta name="twitter:title" content="Mākslīgā intelekta kursi uzņēmumiem" />
+        <meta name="twitter:description" content="AI apmācības komandām: kā lietot ChatGPT un AI rīkus ikdienas darbā. Praktiski, latviski, jūsu uzņēmuma piemēros." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",

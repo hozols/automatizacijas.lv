@@ -54,24 +54,24 @@ const Nozares = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>AI Automatizācija pa Nozarēm | automatizacijas.lv</title>
-        <meta name="description" content="AI automatizācija dažādām nozarēm Latvijā — grāmatvedība, e-komercija, ražošana, loģistika, juridiskās firmas. Pielāgoti risinājumi." />
+        <title>AI automatizācija pa nozarēm | automatizacijas.lv</title>
+        <meta name="description" content="Ko AI automatizē grāmatvedībā, e-komercijā, ražošanā, loģistikā un juridiskajās firmās. Piemēri katrai nozarei." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/nozares" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/nozares" />
         <link rel="alternate" hrefLang="lv" href="https://automatizacijas.lv/nozares" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/nozares" />
-        <meta property="og:title" content="AI Automatizācija pa Nozarēm | automatizacijas.lv" />
-        <meta property="og:description" content="AI automatizācijas risinājumi dažādām nozarēm Latvijā — grāmatvedība, e-komercija, ražošana, loģistika, juridiskās firmas." />
+        <meta property="og:title" content="AI automatizācija pa nozarēm | automatizacijas.lv" />
+        <meta property="og:description" content="Ko AI automatizē grāmatvedībā, e-komercijā, ražošanā, loģistikā un juridiskajās firmās. Piemēri katrai nozarei." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI Automatizācija pa Nozarēm" />
-        <meta name="twitter:description" content="AI automatizācijas risinājumi dažādām nozarēm Latvijā." />
+        <meta name="twitter:title" content="AI automatizācija pa nozarēm" />
+        <meta name="twitter:description" content="Ko AI automatizē grāmatvedībā, e-komercijā, ražošanā, loģistikā un juridiskajās firmās. Piemēri katrai nozarei." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
@@ -80,7 +80,7 @@ const Nozares = () => {
         <Breadcrumbs items={[{ label: 'Sākums', to: '/' }, { label: 'Nozares' }]} />
 
         <PageHero
-          title="AI Automatizācija pa Nozarēm"
+          title="AI automatizācija pa nozarēm"
           lede={
             <>
               Katra nozare saskaras ar unikāliem izaicinājumiem, un AI risinājumi ir visefektīvākie, kad tie ir pielāgoti konkrētās

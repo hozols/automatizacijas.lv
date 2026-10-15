@@ -58,23 +58,23 @@ const ChatbotuIzstrade = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>AI Čatbotu Izstrāde Latvijā | automatizacijas.lv</title>
-        <meta name="description" content="AI čatbotu izstrāde uzņēmumiem Latvijā. Inteliģenti čatboti latviešu valodā 24/7 klientu apkalpošanai. CRM integrācija. No €299/mēn." />
+        <title>AI čatbota izstrāde latviešu valodā | automatizacijas.lv</title>
+        <meta name="description" content="Čatbots, kas atbild klientiem latviski 24/7, pieslēdzas CRM un mājaslapai. Pamata versija gatava 1 līdz 2 nedēļās." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/chatbotu-izstrade" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/chatbotu-izstrade" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/chatbotu-izstrade" />
-        <meta property="og:title" content="AI Čatbotu Izstrāde Latvijā | automatizacijas.lv" />
-        <meta property="og:description" content="Inteliģenti AI čatboti klientu apkalpošanai latviešu valodā. 24/7 atbalsts, CRM integrācija." />
+        <meta property="og:title" content="AI čatbota izstrāde latviešu valodā | automatizacijas.lv" />
+        <meta property="og:description" content="Čatbots, kas atbild klientiem latviski 24/7, pieslēdzas CRM un mājaslapai. Pamata versija gatava 1 līdz 2 nedēļās." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI Čatbotu Izstrāde Latvijā" />
-        <meta name="twitter:description" content="Inteliģenti AI čatboti klientu apkalpošanai latviešu valodā." />
+        <meta name="twitter:title" content="AI čatbota izstrāde latviešu valodā" />
+        <meta name="twitter:description" content="Čatbots, kas atbild klientiem latviski 24/7, pieslēdzas CRM un mājaslapai. Pamata versija gatava 1 līdz 2 nedēļās." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -90,7 +90,7 @@ const ChatbotuIzstrade = () => {
         />
 
         <PageHero
-          title="AI Čatbotu Izstrāde Uzņēmumiem Latvijā"
+          title="AI čatbota izstrāde latviešu valodā"
           lede={
             <>
               Izveidojam inteliģentus AI čatbotus, kas apkalpo jūsu klientus <strong>24/7 latviešu valodā</strong>.

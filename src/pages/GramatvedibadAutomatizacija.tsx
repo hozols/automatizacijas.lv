@@ -61,24 +61,24 @@ const GramatvedibadAutomatizacija = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>Grāmatvedības Automatizācija ar AI | automatizacijas.lv</title>
-        <meta name="description" content="AI grāmatvedības automatizācija — rēķinu apstrāde, atskaišu ģenerēšana, datu saskaņošana un nodokļu aprēķini. Samaziniet manuālo darbu par 70%." />
+        <title>Grāmatvedības automatizācija ar AI | automatizacijas.lv</title>
+        <meta name="description" content="Automātiska rēķinu un e-rēķinu apstrāde, bankas izrakstu saskaņošana un ievade jūsu grāmatvedības programmā. Grāmatvežiem un birojiem." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/gramatvedibas-automatizacija" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/gramatvedibas-automatizacija" />
         <link rel="alternate" hrefLang="lv" href="https://automatizacijas.lv/gramatvedibas-automatizacija" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/gramatvedibas-automatizacija" />
-        <meta property="og:title" content="Grāmatvedības Automatizācija ar AI | automatizacijas.lv" />
-        <meta property="og:description" content="AI grāmatvedības automatizācija — rēķinu apstrāde, atskaišu ģenerēšana, datu saskaņošana un nodokļu aprēķini." />
+        <meta property="og:title" content="Grāmatvedības automatizācija ar AI | automatizacijas.lv" />
+        <meta property="og:description" content="Automātiska rēķinu un e-rēķinu apstrāde, bankas izrakstu saskaņošana un ievade jūsu grāmatvedības programmā. Grāmatvežiem un birojiem." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Grāmatvedības Automatizācija ar AI" />
-        <meta name="twitter:description" content="AI grāmatvedības automatizācija — rēķinu apstrāde, atskaišu ģenerēšana, datu saskaņošana un nodokļu aprēķini." />
+        <meta name="twitter:title" content="Grāmatvedības automatizācija ar AI" />
+        <meta name="twitter:description" content="Automātiska rēķinu un e-rēķinu apstrāde, bankas izrakstu saskaņošana un ievade jūsu grāmatvedības programmā. Grāmatvežiem un birojiem." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -94,7 +94,7 @@ const GramatvedibadAutomatizacija = () => {
         />
 
         <PageHero
-          title="Grāmatvedības Automatizācija ar Mākslīgo Intelektu"
+          title="Grāmatvedības automatizācija ar AI"
           lede={
             <>
               Pārveidojiet savu grāmatvedības praksi ar AI tehnoloģijām. Automatizējiet <strong>rēķinu apstrādi, PVN deklarācijas, bankas izrakstu saskaņošanu</strong> un

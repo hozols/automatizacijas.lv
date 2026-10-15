@@ -57,24 +57,24 @@ const NozareRazosana = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>AI Automatizācija Ražošanas Uzņēmumiem | automatizacijas.lv</title>
-        <meta name="description" content="AI risinājumi ražošanas uzņēmumiem Latvijā. Kvalitātes kontrole, prediktīvā apkope, piegādes ķēžu optimizācija un ražošanas plānošana." />
+        <title>AI automatizācija ražošanai | automatizacijas.lv</title>
+        <meta name="description" content="Kvalitātes kontrole, pasūtījumu dokumenti un piegādes ķēdes dati ar AI ražošanas uzņēmumos Latvijā." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/nozares/razosana" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/nozares/razosana" />
         <link rel="alternate" hrefLang="lv" href="https://automatizacijas.lv/nozares/razosana" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/nozares/razosana" />
-        <meta property="og:title" content="AI Automatizācija Ražošanas Uzņēmumiem | automatizacijas.lv" />
-        <meta property="og:description" content="AI risinājumi ražošanas nozarei — kvalitātes kontrole, prediktīvā apkope, ražošanas optimizācija." />
+        <meta property="og:title" content="AI automatizācija ražošanai | automatizacijas.lv" />
+        <meta property="og:description" content="Kvalitātes kontrole, pasūtījumu dokumenti un piegādes ķēdes dati ar AI ražošanas uzņēmumos Latvijā." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI Automatizācija Ražošanas Uzņēmumiem" />
-        <meta name="twitter:description" content="AI risinājumi ražošanas nozarei Latvijā." />
+        <meta name="twitter:title" content="AI automatizācija ražošanai" />
+        <meta name="twitter:description" content="Kvalitātes kontrole, pasūtījumu dokumenti un piegādes ķēdes dati ar AI ražošanas uzņēmumos Latvijā." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -90,7 +90,7 @@ const NozareRazosana = () => {
         />
 
         <PageHero
-          title="AI Automatizācija Ražošanas Nozarei Latvijā"
+          title="AI automatizācija ražošanas uzņēmumiem"
           lede={
             <>
               Latvijas ražošanas uzņēmumi saskaras ar augošu konkurenci, darbaspēka trūkumu un prasību pēc augstākas kvalitātes.

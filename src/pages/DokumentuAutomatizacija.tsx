@@ -61,24 +61,24 @@ const DokumentuAutomatizacija = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>Dokumentu Automatizācija ar AI | automatizacijas.lv</title>
-        <meta name="description" content="Automātiska dokumentu apstrāde, rēķinu digitalizācija, līgumu analīze un datu izvilkšana ar AI. Ietaupiet līdz 80% laika. No €199/mēn." />
+        <title>Dokumentu automatizācija ar AI | automatizacijas.lv</title>
+        <meta name="description" content="Rēķinu, e-rēķinu, līgumu un pavadzīmju datus AI nolasa, pārbauda un ievada jūsu sistēmā. Dokumentu pārvaldība bez pārrakstīšanas." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/dokumentu-automatizacija" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/dokumentu-automatizacija" />
         <link rel="alternate" hrefLang="lv" href="https://automatizacijas.lv/dokumentu-automatizacija" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/dokumentu-automatizacija" />
-        <meta property="og:title" content="Dokumentu Automatizācija ar AI | automatizacijas.lv" />
-        <meta property="og:description" content="Automātiska dokumentu apstrāde, rēķinu digitalizācija, līgumu analīze un datu izvilkšana ar AI. Ietaupiet līdz 80% laika." />
+        <meta property="og:title" content="Dokumentu automatizācija ar AI | automatizacijas.lv" />
+        <meta property="og:description" content="Rēķinu, e-rēķinu, līgumu un pavadzīmju datus AI nolasa, pārbauda un ievada jūsu sistēmā. Dokumentu pārvaldība bez pārrakstīšanas." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Dokumentu Automatizācija ar AI" />
-        <meta name="twitter:description" content="Automātiska dokumentu apstrāde, rēķinu digitalizācija un datu izvilkšana ar AI." />
+        <meta name="twitter:title" content="Dokumentu automatizācija ar AI" />
+        <meta name="twitter:description" content="Rēķinu, e-rēķinu, līgumu un pavadzīmju datus AI nolasa, pārbauda un ievada jūsu sistēmā. Dokumentu pārvaldība bez pārrakstīšanas." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -94,7 +94,7 @@ const DokumentuAutomatizacija = () => {
         />
 
         <PageHero
-          title="Dokumentu Automatizācija Uzņēmumiem Latvijā"
+          title="Dokumentu automatizācija ar AI"
           lede={
             <>
               Pārvēršam jūsu dokumentu apstrādi no laikietilpīga manuāla procesa par{' '}

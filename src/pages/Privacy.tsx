@@ -7,15 +7,15 @@ const Privacy = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>Privātuma Politika | automatizacijas.lv</title>
-        <meta name="description" content="automatizacijas.lv privātuma politika. Uzziniet, kā mēs apstrādājam jūsu personas datus saskaņā ar GDPR prasībām." />
+        <title>Privātuma politika | automatizacijas.lv</title>
+        <meta name="description" content="Kādus datus automatizacijas.lv apstrādā, kāpēc un cik ilgi. Sīkdatnes, analītika un jūsu tiesības." />
         <meta name="robots" content="noindex, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/privacy" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/privacy" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/privacy" />
-        <meta property="og:title" content="Privātuma Politika | automatizacijas.lv" />
-        <meta property="og:description" content="automatizacijas.lv privātuma politika un GDPR atbilstība." />
+        <meta property="og:title" content="Privātuma politika | automatizacijas.lv" />
+        <meta property="og:description" content="Kādus datus automatizacijas.lv apstrādā, kāpēc un cik ilgi. Sīkdatnes, analītika un jūsu tiesības." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -38,7 +38,7 @@ const Privacy = () => {
           ]}
         />
 
-        <PageHero title="Privātuma Politika" lede="Pēdējoreiz atjaunināts: 2026. gada 22. februāris" />
+        <PageHero title="Privātuma politika" lede="Pēdējoreiz atjaunināts: 2026. gada 22. februāris" />
 
         <article>
           <Section title="1. Datu Pārzinis">

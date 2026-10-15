@@ -56,23 +56,23 @@ const MajaslapuIzstrade = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>Mājaslapu Izstrāde ar AI | automatizacijas.lv</title>
-        <meta name="description" content="Profesionāla mājaslapu izstrāde ar AI integrāciju Latvijā. Modernas mājas lapas, e-veikali un web aplikācijas. SEO optimizācija, čatboti un analītika. No €800." />
+        <title>Mājaslapu izstrāde ar AI integrāciju | automatizacijas.lv</title>
+        <meta name="description" content="Mājaslapas un e-veikali ar čatbotu, personalizāciju un SEO jau iebūvētu. Skaidra cena pirms darba sākuma." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/majaslapu-izstrade" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/majaslapu-izstrade" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/majaslapu-izstrade" />
-        <meta property="og:title" content="Mājaslapu Izstrāde ar AI | automatizacijas.lv" />
-        <meta property="og:description" content="Profesionāla mājaslapu izstrāde ar AI integrāciju Latvijā. Modernas mājas lapas un e-veikali." />
+        <meta property="og:title" content="Mājaslapu izstrāde ar AI integrāciju | automatizacijas.lv" />
+        <meta property="og:description" content="Mājaslapas un e-veikali ar čatbotu, personalizāciju un SEO jau iebūvētu. Skaidra cena pirms darba sākuma." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Mājaslapu Izstrāde ar AI" />
-        <meta name="twitter:description" content="Profesionāla mājaslapu izstrāde ar AI integrāciju Latvijā." />
+        <meta name="twitter:title" content="Mājaslapu izstrāde ar AI integrāciju" />
+        <meta name="twitter:description" content="Mājaslapas un e-veikali ar čatbotu, personalizāciju un SEO jau iebūvētu. Skaidra cena pirms darba sākuma." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -88,7 +88,7 @@ const MajaslapuIzstrade = () => {
         />
 
         <PageHero
-          title="Mājaslapu Izstrāde ar AI Integrāciju"
+          title="Mājaslapu izstrāde ar AI integrāciju"
           lede={
             <>
               Izveidojam modernas, ātras un <strong>SEO optimizētas mājas lapas</strong>, kas ne tikai labi

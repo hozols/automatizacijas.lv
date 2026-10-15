@@ -51,7 +51,7 @@ const translations = {
     'hero.showcase.explore': 'Izpētīt pakalpojumus',
     
     // Services
-    'services.title': 'Mūsu AI Pakalpojumi',
+    'services.title': 'AI pakalpojumi uzņēmumiem',
     'services.description': 'Visaptveroši AI risinājumi, kas transformē jūsu biznesa procesus un uzlabo efektivitāti',
     'services.workers.title': 'AI Darbinieki',
     'services.workers.subtitle': 'Gatavi izmantošanai AI darbinieki, kas nevainojami integrējas jūsu komandā',
@@ -138,7 +138,7 @@ const translations = {
     'features.learn_more': 'Uzzināt vairāk →',
     
     // Contact Page
-    'contact.title': 'Sazinaties ar mums',
+    'contact.title': 'Pieteikt bezmaksas konsultāciju',
     'contact.subtitle': 'Gatavi transformēt savu biznesu ar AI? Sazinieties ar mūsu ekspertiem.',
     'contact.form.title': 'Nosūtiet mums ziņu',
     'contact.form.name': 'Vārds',
@@ -179,7 +179,7 @@ const translations = {
     'contact.form.error': 'Radās kļūda nosūtot ziņu. Lūdzu mēģiniet vēlreiz.',
     
     // Training Page
-    'training.title': 'AI Apmācības un Izglītība',
+    'training.title': 'Mākslīgā intelekta kursi un apmācības uzņēmumiem',
     'training.subtitle': 'Apgūstiet AI tehnoloģijas ar mūsu ekspertu vadītajiem kursiem un semināriiem',
     'training.courses.title': 'Online Kursi',
     'training.courses.subtitle': 'Mācieties savā tempā ar strukturētiem online kursiem',
@@ -214,10 +214,10 @@ const translations = {
     'training.cta.contact': 'Pieteikt semināru',
 
     // Blog
-    'blog.meta.title': 'AI Automatizācijas Blogs | automatizacijas.lv',
-    'blog.meta.description': 'Raksti un padomi par mākslīgo intelektu, biznesa automatizāciju un digitālo transformāciju Latvijā. Uzziniet jaunākās AI tendences.',
+    'blog.meta.title': 'AI automatizācijas blogs | automatizacijas.lv',
+    'blog.meta.description': 'Raksti par AI automatizāciju, ChatGPT latviski, čatbotiem un grāmatvedības digitalizāciju Latvijas uzņēmumiem.',
     'blog.badge': 'Blogs',
-    'blog.title': 'Jaunākais no AI Pasaules',
+    'blog.title': 'Jaunākais no AI pasaules',
     'blog.subtitle': 'Raksti, padomi un ieskati par AI tehnoloģijām, automatizāciju un digitālo transformāciju',
     'blog.read_more': 'Lasīt vairāk',
     'blog.back': '← Atpakaļ uz blogu',

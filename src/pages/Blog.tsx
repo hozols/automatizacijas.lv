@@ -7,6 +7,30 @@ import { PageShell, Breadcrumbs, PageHero, CtaBand } from '@/components/page';
 
 const blogPosts = [
   {
+    slug: 'chatgpt-latviski-ka-lietot',
+    titleKey: 'blog.post19.title',
+    excerptKey: 'blog.post19.excerpt',
+    date: '2026-07-30',
+    readTime: '12 min',
+    category: 'AI',
+  },
+  {
+    slug: 'crm-sistema-ka-izveleties',
+    titleKey: 'blog.post20.title',
+    excerptKey: 'blog.post20.excerpt',
+    date: '2026-07-30',
+    readTime: '11 min',
+    category: 'Automatizācija',
+  },
+  {
+    slug: 'digitalizacija-uznemumam-ar-ko-sakt',
+    titleKey: 'blog.post21.title',
+    excerptKey: 'blog.post21.excerpt',
+    date: '2026-07-30',
+    readTime: '11 min',
+    category: 'Digitalizācija',
+  },
+  {
     slug: 'labakie-ai-riki-latvijas-uznemumiem-2026-atjaunots',
     titleKey: 'blog.post18.title',
     excerptKey: 'blog.post18.excerpt',

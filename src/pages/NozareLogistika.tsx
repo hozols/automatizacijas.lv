@@ -58,23 +58,23 @@ const NozareLogistika = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>AI Automatizācija Loģistikai | automatizacijas.lv</title>
-        <meta name="description" content="AI risinājumi loģistikas uzņēmumiem — maršrutu optimizācija, sūtījumu izsekošana, automatizēta dokumentācija un noliktavu pārvaldība." />
+        <title>AI automatizācija loģistikai | automatizacijas.lv</title>
+        <meta name="description" content="Pavadzīmju apstrāde, maršrutu plānošana un klientu paziņojumi ar AI loģistikas uzņēmumiem." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/nozares/logistika" />
         <link rel="alternate" hrefLang="lv" href="https://automatizacijas.lv/nozares/logistika" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/nozares/logistika" />
-        <meta property="og:title" content="AI Automatizācija Loģistikai | automatizacijas.lv" />
-        <meta property="og:description" content="AI risinājumi loģistikas uzņēmumiem — maršrutu optimizācija, sūtījumu izsekošana, dokumentācija." />
+        <meta property="og:title" content="AI automatizācija loģistikai | automatizacijas.lv" />
+        <meta property="og:description" content="Pavadzīmju apstrāde, maršrutu plānošana un klientu paziņojumi ar AI loģistikas uzņēmumiem." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI Automatizācija Loģistikai" />
-        <meta name="twitter:description" content="AI risinājumi loģistikas uzņēmumiem Latvijā." />
+        <meta name="twitter:title" content="AI automatizācija loģistikai" />
+        <meta name="twitter:description" content="Pavadzīmju apstrāde, maršrutu plānošana un klientu paziņojumi ar AI loģistikas uzņēmumiem." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -90,7 +90,7 @@ const NozareLogistika = () => {
         />
 
         <PageHero
-          title="AI Risinājumi Loģistikas Uzņēmumiem"
+          title="AI automatizācija loģistikas uzņēmumiem"
           lede={
             <>
               Loģistikas nozare Latvijā ir stratēģiski svarīga, taču saskaras ar pieaugošām izmaksām, sarežģītākiem piegādes tīkliem

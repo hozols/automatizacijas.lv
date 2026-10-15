@@ -8,27 +8,13 @@
       try { if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark-mode'); } catch (e) {}
     </script>
     
-    <!-- Default meta (overridden by react-helmet-async per page) -->
-    <title>AI Automatizācija Latvijā | automatizacijas.lv</title>
-    <meta name="description" content="AI automatizācijas risinājumi uzņēmumiem Latvijā. Grāmatvedības automatizācija, dokumentu apstrāde, AI čatboti, datu analīze. Bezmaksas konsultācija." />
+    <!-- The page title is replaced per route by react-helmet-async; every other SEO tag is
+         emitted by the page itself so prerendered HTML never carries two descriptions or
+         two canonicals. -->
+    <title>AI automatizācija uzņēmumiem Latvijā | automatizacijas.lv</title>
     <meta name="author" content="automatizacijas.lv" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://automatizacijas.lv/" />
-    <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://automatizacijas.lv/" />
-    <meta property="og:title" content="AI Automatizācija Latvijā | automatizacijas.lv" />
-    <meta property="og:description" content="AI automatizācijas risinājumi uzņēmumiem Latvijā. Grāmatvedības automatizācija, dokumentu apstrāde, AI čatboti, datu analīze." />
-    <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="automatizacijas.lv" />
-    <meta property="og:locale" content="lv_LV" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="AI Automatizācija Latvijā | automatizacijas.lv" />
-    <meta name="twitter:description" content="AI automatizācijas risinājumi uzņēmumiem Latvijā. Grāmatvedības automatizācija, dokumentu apstrāde, AI čatboti." />
-    <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
-    
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1D9GFNDNFG"></script>
     <script>

@@ -8,23 +8,23 @@ const PortfolioPage = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>AI Projekti un Paveiktie Darbi | automatizacijas.lv</title>
-        <meta name="description" content="AI automatizācijas projekti un paveiktie darbi Latvijas uzņēmumiem. Čatboti, procesu automatizācija un datu analīzes risinājumi. Reāli rezultāti."/>
+        <title>Paveiktie AI projekti | automatizacijas.lv</title>
+        <meta name="description" content="Konkrēti AI automatizācijas projekti Latvijas uzņēmumiem: kas bija problēma, ko uzbūvējām, ko tas mainīja."/>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/portfolio" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/portfolio" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/portfolio" />
-        <meta property="og:title" content="AI Projektu Portfolio | automatizacijas.lv" />
-        <meta property="og:description" content="Apskatiet mūsu AI automatizācijas projektus un paveiktos darbus Latvijas uzņēmumiem." />
+        <meta property="og:title" content="Paveiktie AI projekti | automatizacijas.lv" />
+        <meta property="og:description" content="Konkrēti AI automatizācijas projekti Latvijas uzņēmumiem: kas bija problēma, ko uzbūvējām, ko tas mainīja." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI Projektu Portfolio | automatizacijas.lv" />
-        <meta name="twitter:description" content="Apskatiet mūsu AI automatizācijas projektus un paveiktos darbus." />
+        <meta name="twitter:title" content="Paveiktie AI projekti" />
+        <meta name="twitter:description" content="Konkrēti AI automatizācijas projekti Latvijas uzņēmumiem: kas bija problēma, ko uzbūvējām, ko tas mainīja." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -39,7 +39,7 @@ const PortfolioPage = () => {
         <Breadcrumbs items={[{ label: 'Sākums', to: '/' }, { label: 'Projekti' }]} />
 
         <PageHero
-          title="AI projekti un paveiktie darbi"
+          title="Paveiktie darbi"
           lede={
             <>
               Apskatiet mūsu AI automatizācijas projektus Latvijas un starptautiskajiem uzņēmumiem.

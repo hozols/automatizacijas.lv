@@ -57,24 +57,24 @@ const NozareEkomercija = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>AI Automatizācija E-komercijai | automatizacijas.lv</title>
-        <meta name="description" content="AI risinājumi e-komercijas uzņēmumiem — chatboti klientu apkalpošanai, pasūtījumu automatizācija, personalizētas rekomendācijas un pamesto grozu atgūšana." />
+        <title>AI automatizācija e-komercijai | automatizacijas.lv</title>
+        <meta name="description" content="Klientu atbildes, pasūtījumu apstrāde un produktu apraksti ar AI e-veikaliem. Integrācijas ar Shopify un WooCommerce." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/nozares/e-komercija" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/nozares/e-komercija" />
         <link rel="alternate" hrefLang="lv" href="https://automatizacijas.lv/nozares/e-komercija" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/nozares/e-komercija" />
-        <meta property="og:title" content="AI Automatizācija E-komercijai | automatizacijas.lv" />
-        <meta property="og:description" content="AI risinājumi e-komercijas uzņēmumiem — chatboti, pasūtījumu apstrāde, personalizētas rekomendācijas." />
+        <meta property="og:title" content="AI automatizācija e-komercijai | automatizacijas.lv" />
+        <meta property="og:description" content="Klientu atbildes, pasūtījumu apstrāde un produktu apraksti ar AI e-veikaliem. Integrācijas ar Shopify un WooCommerce." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI Automatizācija E-komercijai" />
-        <meta name="twitter:description" content="AI risinājumi e-komercijas uzņēmumiem Latvijā." />
+        <meta name="twitter:title" content="AI automatizācija e-komercijai" />
+        <meta name="twitter:description" content="Klientu atbildes, pasūtījumu apstrāde un produktu apraksti ar AI e-veikaliem. Integrācijas ar Shopify un WooCommerce." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -90,7 +90,7 @@ const NozareEkomercija = () => {
         />
 
         <PageHero
-          title="AI Risinājumi E-komercijas Uzņēmumiem"
+          title="AI automatizācija e-komercijas uzņēmumiem"
           lede={
             <>
               E-komercijas nozarē konkurence ir sīva, un klientu gaidas nemitīgi aug. AI automatizācija ļauj jums <strong>apkalpot

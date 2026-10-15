@@ -58,23 +58,23 @@ const NozareJuridiskasFirmas = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>AI Automatizācija Juridiskajām Firmām | automatizacijas.lv</title>
-        <meta name="description" content="AI risinājumi juridiskajām firmām un juristiem — līgumu analīze, dokumentu automatizācija, juridiskā izpēte un klientu uzņemšanas automatizācija." />
+        <title>AI automatizācija juridiskajām firmām | automatizacijas.lv</title>
+        <meta name="description" content="Līgumu analīze, dokumentu sagatavošana un klientu pieprasījumu šķirošana ar AI juridiskajām firmām." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/nozares/juridiskas-firmas" />
         <link rel="alternate" hrefLang="lv" href="https://automatizacijas.lv/nozares/juridiskas-firmas" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://automatizacijas.lv/nozares/juridiskas-firmas" />
-        <meta property="og:title" content="AI Automatizācija Juridiskajām Firmām | automatizacijas.lv" />
-        <meta property="og:description" content="AI risinājumi juridiskajām firmām — līgumu analīze, dokumentu automatizācija, juridiskā izpēte." />
+        <meta property="og:title" content="AI automatizācija juridiskajām firmām | automatizacijas.lv" />
+        <meta property="og:description" content="Līgumu analīze, dokumentu sagatavošana un klientu pieprasījumu šķirošana ar AI juridiskajām firmām." />
         <meta property="og:image" content="https://automatizacijas.lv/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="automatizacijas.lv" />
         <meta property="og:locale" content="lv_LV" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI Automatizācija Juridiskajām Firmām" />
-        <meta name="twitter:description" content="AI risinājumi juridiskajām firmām un juristiem Latvijā." />
+        <meta name="twitter:title" content="AI automatizācija juridiskajām firmām" />
+        <meta name="twitter:description" content="Līgumu analīze, dokumentu sagatavošana un klientu pieprasījumu šķirošana ar AI juridiskajām firmām." />
         <meta name="twitter:image" content="https://automatizacijas.lv/og-image.jpg" />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -90,7 +90,7 @@ const NozareJuridiskasFirmas = () => {
         />
 
         <PageHero
-          title="AI Risinājumi Juridiskajām Firmām un Juristiem"
+          title="AI automatizācija juridiskajām firmām"
           lede={
             <>
               Juridiskā nozare balstās uz precizitāti, rūpīgu analīzi un lielu dokumentu apjomu apstrādi. AI tehnoloģijas
