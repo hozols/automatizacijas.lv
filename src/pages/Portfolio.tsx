@@ -1,9 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import Header from '@/components/Header';
 import PortfolioShowcase from '@/components/PortfolioCarousel';
-import Footer from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
+import { PageShell, Breadcrumbs, PageHero, Prose, CtaBand } from '@/components/page';
 
 const PortfolioPage = () => {
   return (
@@ -36,38 +35,41 @@ const PortfolioPage = () => {
           ]
         })}</script>
       </Helmet>
-      <div className="min-h-screen flex flex-col bg-background text-foreground">
-        <Header />
-        <main>
-          {/* SEO intro content */}
-          <section className="pt-16 sm:pt-24 pb-8 px-4 sm:px-6 md:px-8">
-            <div className="max-w-4xl mx-auto text-center space-y-4">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground">
-                AI projekti un paveiktie darbi
-              </h1>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Apskatiet mūsu AI automatizācijas projektus Latvijas un starptautiskajiem uzņēmumiem.
-                No automatizētas līgumu ģenerēšanas līdz inteliģentām klientu apkalpošanas sistēmām —
-                katrs projekts demonstrē reālus rezultātus un izmērāmu biznesa vērtību.
-              </p>
-            </div>
-            <div className="max-w-4xl mx-auto mt-8 space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                Mūsu <strong className="text-foreground">AI automatizācijas portfelis</strong> ietver projektus dažādās nozarēs — nekustamie īpašumi,
-                e-komercija, mārketings, klientu apkalpošana un procesu vadība. Katrs projekts ir izstrādāts
-                individuāli, ņemot vērā klienta specifiskās vajadzības un biznesa mērķus.
-              </p>
-              <p>
-                Rezultāti runā paši par sevi: mūsu klienti ir sasnieguši līdz pat <strong className="text-foreground">80% procesa paātrināšanu</strong>,
-                ietaupījuši <strong className="text-foreground">60+ stundas</strong> ikdienas darbā un ievērojami uzlabojuši klientu apmierinātību
-                ar inteliģentiem automatizācijas risinājumiem.
-              </p>
-            </div>
-          </section>
-          <PortfolioShowcase />
-        </main>
-        <Footer />
-      </div>
+      <PageShell>
+        <Breadcrumbs items={[{ label: 'Sākums', to: '/' }, { label: 'Projekti' }]} />
+
+        <PageHero
+          title="AI projekti un paveiktie darbi"
+          lede={
+            <>
+              Apskatiet mūsu AI automatizācijas projektus Latvijas un starptautiskajiem uzņēmumiem.
+              No automatizētas līgumu ģenerēšanas līdz inteliģentām klientu apkalpošanas sistēmām,
+              katrs projekts demonstrē reālus rezultātus un izmērāmu biznesa vērtību.
+            </>
+          }
+        >
+          <Prose className="text-muted-foreground">
+            <p>
+              Mūsu <strong className="text-foreground">AI automatizācijas portfelis</strong> ietver projektus dažādās nozarēs: nekustamie īpašumi,
+              e-komercija, mārketings, klientu apkalpošana un procesu vadība. Katrs projekts ir izstrādāts
+              individuāli, ņemot vērā klienta specifiskās vajadzības un biznesa mērķus.
+            </p>
+            <p>
+              Rezultāti runā paši par sevi: mūsu klienti ir sasnieguši līdz pat <strong className="text-foreground">80% procesa paātrināšanu</strong>,
+              ietaupījuši <strong className="text-foreground">60+ stundas</strong> ikdienas darbā un ievērojami uzlabojuši klientu apmierinātību
+              ar inteliģentiem automatizācijas risinājumiem.
+            </p>
+          </Prose>
+        </PageHero>
+
+        <PortfolioShowcase />
+
+        <CtaBand
+          title="Vēlaties līdzīgu risinājumu savam uzņēmumam?"
+          primary={{ to: '/contact', label: 'Pieteikties konsultācijai' }}
+          secondary={{ to: '/pricing', label: 'Apskatīt cenas' }}
+        />
+      </PageShell>
     </PageTransition>
   );
 };

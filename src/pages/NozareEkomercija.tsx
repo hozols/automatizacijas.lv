@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
-import { Button } from '@/components/ui/button';
-import { ChevronDown, ShoppingCart, MessageSquare, Package, TrendingUp, ArrowRight, CheckCircle, Clock, Zap, Shield, Star, BarChart3 } from 'lucide-react';
+import { PageShell, Breadcrumbs, PageHero, Section, Prose, CheckList, RuledList, Faq, CtaBand } from '@/components/page';
 
 const faqs = [
   {
@@ -57,8 +54,6 @@ const breadcrumbSchema = {
 };
 
 const NozareEkomercija = () => {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
   return (
     <PageTransition>
       <Helmet>
@@ -85,238 +80,135 @@ const NozareEkomercija = () => {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
-      <div className="min-h-screen flex flex-col bg-background text-foreground">
-        <Header />
-        <main className="flex-1">
-          <nav className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 pt-8 text-sm text-muted-foreground">
-            <Link to="/" className="hover:text-primary transition-colors">Sākums</Link>
-            <span className="mx-2">/</span>
-            <Link to="/nozares" className="hover:text-primary transition-colors">Nozares</Link>
-            <span className="mx-2">/</span>
-            <span className="text-foreground">E-komercija</span>
-          </nav>
+      <PageShell>
+        <Breadcrumbs
+          items={[
+            { label: 'Sākums', to: '/' },
+            { label: 'Nozares', to: '/nozares' },
+            { label: 'E-komercija' },
+          ]}
+        />
 
-          <section className="py-12 sm:py-16 px-4 sm:px-6 md:px-8">
-            <div className="max-w-4xl mx-auto">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-                AI Risinājumi E-komercijas Uzņēmumiem
-              </h1>
-              <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
-                E-komercijas nozarē konkurence ir sīva, un klientu gaidas nemitīgi aug. AI automatizācija ļauj jums <strong className="text-foreground">apkalpot
-                klientus 24/7, personalizēt iepirkšanās pieredzi un automatizēt operatīvos procesus</strong> — vienlaikus samazinot
-                izmaksas un palielinot pārdošanas apjomu.
+        <PageHero
+          title="AI Risinājumi E-komercijas Uzņēmumiem"
+          lede={
+            <>
+              E-komercijas nozarē konkurence ir sīva, un klientu gaidas nemitīgi aug. AI automatizācija ļauj jums <strong>apkalpot
+              klientus 24/7, personalizēt iepirkšanās pieredzi un automatizēt operatīvos procesus</strong>, vienlaikus samazinot
+              izmaksas un palielinot pārdošanas apjomu.
+            </>
+          }
+          facts={['24/7 klientu apkalpošana', '+25% konversija', '60% ātrāka apstrāde', 'Personalizēta pieredze']}
+        />
+
+        <article>
+          <Section title="E-komercijas izaicinājumi Latvijā">
+            <Prose>
+              <p>
+                Latvijas e-komercijas tirgus strauji aug: pēdējo gadu laikā tiešsaistes pirkumu apjoms ir dubultojies.
+                Tomēr līdz ar izaugsmi pieaug arī izaicinājumi. Klienti sagaida tūlītējas atbildes, ātru piegādi un
+                personalizētu pieredzi. Konkurence no starptautiskiem tirgotājiem spiež Latvijas e-veikalus meklēt veidus,
+                kā darīt vairāk ar mazākiem resursiem.
               </p>
+              <p>
+                Daudzi e-komercijas uzņēmumi joprojām apstrādā pasūtījumus manuāli, atbild uz klientu jautājumiem e-pastā
+                ar kavēšanos un zaudē potenciālos klientus, jo nespēj nodrošināt atbalstu ārpus darba laika. Šīs problēmas
+                ir atrisināmas ar AI, un rezultāti ir redzami jau pirmajā mēnesī.
+              </p>
+            </Prose>
+            <CheckList
+              className="mt-8"
+              items={[
+                'Klienti gaida atbildes stundām, un aiziet pie konkurenta, kas atbild ātrāk',
+                'Manuāla pasūtījumu apstrāde un statusa atjaunināšana prasa daudz laika',
+                'Pamestie grozi veido 60-80% no visiem sāktajiem pirkumiem',
+                'Produktu aprakstu rakstīšana simtiem vai tūkstošiem preču ir milzīgs darbs',
+                'Krājumu pārvaldība bez prognozēšanas rada vai nu pārpalikumus, vai deficītu',
+                'Klientu atsauksmju un atgriešanas pieprasījumu apstrāde aizņem daudz resursu',
+              ]}
+            />
+          </Section>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-                {[
-                  { icon: MessageSquare, label: '24/7 klientu apkalpošana' },
-                  { icon: TrendingUp, label: '+25% konversija' },
-                  { icon: Clock, label: '60% ātrāka apstrāde' },
-                  { icon: Star, label: 'Personalizēta pieredze' },
-                ].map((item, i) => (
-                  <div key={i} className="flex flex-col items-center gap-2 p-4 rounded-lg border border-border bg-card/60 text-center">
-                    <item.icon className="h-6 w-6 text-primary" />
-                    <span className="text-sm font-medium text-foreground">{item.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+          <Section
+            title="AI risinājumi e-komercijas veikaliem"
+            tone="sheet"
+            intro="Mūsu AI risinājumi aptver visu e-komercijas ciklu, no klientu piesaistes līdz pēcpārdošanas apkalpošanai. Katrs modulis darbojas gan atsevišķi, gan kā daļa no integrētas sistēmas."
+          >
+            <RuledList
+              items={[
+                {
+                  title: 'AI chatboti klientu apkalpošanai',
+                  desc: 'Inteliģents chatbots, kas atbild uz klientu jautājumiem 24/7 latviešu, angļu un krievu valodā. Palīdz ar produktu izvēli, pasūtījumu izsekošanu, atgriešanas procesu un bieži uzdotajiem jautājumiem. Sarežģītus jautājumus automātiski nodod cilvēkam ar pilnu kontekstu.',
+                },
+                {
+                  title: 'Pasūtījumu automatizācija',
+                  desc: 'Automātiska pasūtījumu apstrāde no saņemšanas līdz nosūtīšanai. AI pārbauda maksājumu statusu, ģenerē pavadzīmes, atjaunina krājumus un informē klientu par statusu. Samazina pasūtījuma apstrādes laiku no stundām uz minūtēm.',
+                },
+                {
+                  title: 'Personalizētas rekomendācijas',
+                  desc: 'AI analizē klienta pirkšanas vēsturi, pārlūkošanas uzvedību un līdzīgu klientu datus, lai piedāvātu visprecīzākās produktu rekomendācijas. "Klienti, kas pirka šo, arī iegādājās...", bet daudz gudrāk un precīzāk nekā vienkāršs algoritms.',
+                },
+                {
+                  title: 'Pamesto grozu atgūšana',
+                  desc: 'AI identificē pamesto grozu iemeslus un automātiski sūta personalizētus atgādinājumus. Pirmais atgādinājums pēc 1 stundas, otrais ar īpašu piedāvājumu pēc 24 stundām. Vidēji atgūst 10-20% pamesto grozu, kas ir tieša ieņēmumu palielināšana.',
+                },
+                {
+                  title: 'Krājumu pārvaldība ar AI',
+                  desc: 'AI prognozē pieprasījumu, balstoties uz vēsturiskajiem datiem, sezonalitāti un tirgus tendencēm. Automātiski brīdina par zemiem krājumiem, iesaka pasūtīšanas apjomus un laiku. Samazina gan pārpalikumu izmaksas, gan zaudētos pārdošanas gadījumus deficīta dēļ.',
+                },
+                {
+                  title: 'Automātiski produktu apraksti',
+                  desc: 'AI ģenerē unikālus, SEO optimizētus produktu aprakstus latviešu valodā. Ielādējiet produkta specifikācijas un fotoattēlus. AI izveido pārdošanas tekstu, atslēgas vārdus un meta aprakstus. Ideāli veikaliem ar simtiem vai tūkstošiem produktu.',
+                },
+              ]}
+            />
+          </Section>
 
-          <article className="px-4 sm:px-6 md:px-8 pb-16">
-            <div className="max-w-4xl mx-auto space-y-12">
+          <Section
+            title="Rezultāti e-komercijā"
+            intro="E-komercijas uzņēmumi, kas ievieš AI automatizāciju, redz tūlītēju ietekmi uz pārdošanas rādītājiem un klientu apmierinātību. Šeit ir tipiski rezultāti."
+          >
+            <RuledList
+              columns={2}
+              items={[
+                { title: 'Konversijas pieaugums', desc: 'ar personalizāciju', aside: '+25%' },
+                { title: 'Grozu atgūšana', desc: 'no pamestajiem groziem', aside: '15-20%' },
+                { title: 'Jautājumu atbildēti', desc: 'bez cilvēka iesaistes', aside: '80%' },
+                { title: 'Ātrāka apkalpošana', desc: 'klientu jautājumiem', aside: '3x' },
+              ]}
+            />
+            <Prose className="mt-8">
+              <p>
+                Uzziniet vairāk par mūsu{' '}
+                <Link to="/chatbotu-izstrade" className="link">AI chatbotu izstrādi</Link>{' '}
+                un{' '}
+                <Link to="/procesu-automatizacija" className="link">procesu automatizācijas</Link> pakalpojumiem.
+              </p>
+            </Prose>
+          </Section>
 
-              {/* Izaicinājumi */}
-              <section>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">E-komercijas izaicinājumi Latvijā</h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Latvijas e-komercijas tirgus strauji aug — pēdējo gadu laikā tiešsaistes pirkumu apjoms ir dubultojies.
-                  Tomēr līdz ar izaugsmi pieaug arī izaicinājumi. Klienti sagaida tūlītējas atbildes, ātru piegādi un
-                  personalizētu pieredzi. Konkurence no starptautiskiem tirgotājiem spiež Latvijas e-veikalus meklēt veidus,
-                  kā darīt vairāk ar mazākiem resursiem.
-                </p>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Daudzi e-komercijas uzņēmumi joprojām apstrādā pasūtījumus manuāli, atbild uz klientu jautājumiem e-pastā
-                  ar kavēšanos un zaudē potenciālos klientus, jo nespēj nodrošināt atbalstu ārpus darba laika. Šīs problēmas
-                  ir atrisināmas ar AI — un rezultāti ir redzami jau pirmajā mēnesī.
-                </p>
-                <div className="space-y-3 mb-6">
-                  {[
-                    'Klienti gaida atbildes stundām — un aiziet pie konkurenta, kas atbild ātrāk',
-                    'Manuāla pasūtījumu apstrāde un statusa atjaunināšana prasa daudz laika',
-                    'Pamestie grozi veido 60-80% no visiem sāktajiem pirkumiem',
-                    'Produktu aprakstu rakstīšana simtiem vai tūkstošiem preču ir milzīgs darbs',
-                    'Krājumu pārvaldība bez prognozēšanas rada vai nu pārpalikumus, vai deficītu',
-                    'Klientu atsauksmju un atgriešanas pieprasījumu apstrāde aizņem daudz resursu',
-                  ].map((item, i) => (
-                    <div key={i} className="flex gap-2 text-muted-foreground">
-                      <CheckCircle className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
-                      <span className="leading-relaxed">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </section>
+          <Section title="Biežāk uzdotie jautājumi" tone="sheet">
+            <Faq items={faqs} />
+          </Section>
 
-              {/* AI risinājumi */}
-              <section>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">AI risinājumi e-komercijas veikaliem</h2>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Mūsu AI risinājumi aptver visu e-komercijas ciklu — no klientu piesaistes līdz pēcpārdošanas apkalpošanai.
-                  Katrs modulis darbojas gan atsevišķi, gan kā daļa no integrētas sistēmas.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {[
-                    {
-                      icon: MessageSquare,
-                      title: 'AI chatboti klientu apkalpošanai',
-                      desc: 'Inteliģents chatbots, kas atbild uz klientu jautājumiem 24/7 latviešu, angļu un krievu valodā. Palīdz ar produktu izvēli, pasūtījumu izsekošanu, atgriešanas procesu un bieži uzdotajiem jautājumiem. Sarežģītus jautājumus automātiski nodod cilvēkam ar pilnu kontekstu.',
-                    },
-                    {
-                      icon: Package,
-                      title: 'Pasūtījumu automatizācija',
-                      desc: 'Automātiska pasūtījumu apstrāde no saņemšanas līdz nosūtīšanai. AI pārbauda maksājumu statusu, ģenerē pavadzīmes, atjaunina krājumus un informē klientu par statusu. Samazina pasūtījuma apstrādes laiku no stundām uz minūtēm.',
-                    },
-                    {
-                      icon: Star,
-                      title: 'Personalizētas rekomendācijas',
-                      desc: 'AI analizē klienta pirkšanas vēsturi, pārlūkošanas uzvedību un līdzīgu klientu datus, lai piedāvātu visprecīzākās produktu rekomendācijas. "Klienti, kas pirka šo, arī iegādājās..." — bet daudz gudrāk un precīzāk nekā vienkāršs algoritms.',
-                    },
-                    {
-                      icon: ShoppingCart,
-                      title: 'Pamesto grozu atgūšana',
-                      desc: 'AI identificē pamesto grozu iemeslus un automātiski sūta personalizētus atgādinājumus. Pirmais atgādinājums pēc 1 stundas, otrais ar īpašu piedāvājumu pēc 24 stundām. Vidēji atgūst 10-20% pamesto grozu, kas ir tieša ieņēmumu palielināšana.',
-                    },
-                  ].map((item, i) => (
-                    <div key={i} className="p-5 rounded-lg border border-border bg-card/60">
-                      <div className="flex items-center gap-2 mb-2">
-                        <item.icon className="h-5 w-5 text-primary" />
-                        <h3 className="font-semibold text-foreground">{item.title}</h3>
-                      </div>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                  <div className="p-5 rounded-lg border border-border bg-card/60">
-                    <div className="flex items-center gap-2 mb-2">
-                      <BarChart3 className="h-5 w-5 text-primary" />
-                      <h3 className="font-semibold text-foreground">Krājumu pārvaldība ar AI</h3>
-                    </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      AI prognozē pieprasījumu, balstoties uz vēsturiskajiem datiem, sezonalitāti un tirgus tendencēm.
-                      Automātiski brīdina par zemiem krājumiem, iesaka pasūtīšanas apjomus un laiku. Samazina gan
-                      pārpalikumu izmaksas, gan zaudētos pārdošanas gadījumus deficīta dēļ.
-                    </p>
-                  </div>
-                  <div className="p-5 rounded-lg border border-border bg-card/60">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Zap className="h-5 w-5 text-primary" />
-                      <h3 className="font-semibold text-foreground">Automātiski produktu apraksti</h3>
-                    </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      AI ģenerē unikālus, SEO optimizētus produktu aprakstus latviešu valodā. Ielādējiet produkta
-                      specifikācijas un fotoattēlus — AI izveido pārdošanas tekstu, atslēgas vārdus un meta aprakstus.
-                      Ideāli veikaliem ar simtiem vai tūkstošiem produktu.
-                    </p>
-                  </div>
-                </div>
-              </section>
+          <Section title="Saistītie pakalpojumi">
+            <RuledList
+              items={[
+                { to: '/chatbotu-izstrade', title: 'Chatbotu Izstrāde', desc: 'AI chatboti klientu apkalpošanai un pārdošanai' },
+                { to: '/procesu-automatizacija', title: 'Procesu Automatizācija', desc: 'Biznesa procesu optimizācija un automatizācija' },
+                { to: '/datu-analize', title: 'Datu Analīze', desc: 'Pārdošanas datu analīze un prognozēšana' },
+              ]}
+            />
+          </Section>
+        </article>
 
-              {/* Rezultāti */}
-              <section>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Rezultāti e-komercijā</h2>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  E-komercijas uzņēmumi, kas ievieš AI automatizāciju, redz tūlītēju ietekmi uz pārdošanas rādītājiem
-                  un klientu apmierinātību. Šeit ir tipiski rezultāti.
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                  {[
-                    { value: '+25%', label: 'Konversijas pieaugums', desc: 'ar personalizāciju' },
-                    { value: '15-20%', label: 'Grozu atgūšana', desc: 'no pamestajiem groziem' },
-                    { value: '80%', label: 'Jautājumu atbildēti', desc: 'bez cilvēka iesaistes' },
-                    { value: '3x', label: 'Ātrāka apkalpošana', desc: 'klientu jautājumiem' },
-                  ].map((item, i) => (
-                    <div key={i} className="p-5 rounded-lg border border-border bg-card/60 text-center">
-                      <span className="text-3xl font-bold text-primary">{item.value}</span>
-                      <p className="font-medium text-foreground mt-1">{item.label}</p>
-                      <p className="text-xs text-muted-foreground mt-1">{item.desc}</p>
-                    </div>
-                  ))}
-                </div>
-                <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
-                  Uzziniet vairāk par mūsu{' '}
-                  <Link to="/chatbotu-izstrade" className="text-primary hover:underline">AI chatbotu izstrādi</Link>{' '}
-                  un{' '}
-                  <Link to="/procesu-automatizacija" className="text-primary hover:underline">procesu automatizācijas</Link> pakalpojumiem.
-                </p>
-              </section>
-
-              {/* FAQ */}
-              <section>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Biežāk uzdotie jautājumi</h2>
-                <div className="space-y-3">
-                  {faqs.map((faq, index) => (
-                    <div key={index} className="rounded-lg border border-border bg-card/60 overflow-hidden hover:border-primary/20 transition-colors">
-                      <button onClick={() => setOpenFaq(openFaq === index ? null : index)} className="w-full flex items-center justify-between p-4 sm:p-5 text-left gap-4">
-                        <span className="text-sm sm:text-base font-medium text-foreground leading-snug">{faq.question}</span>
-                        <ChevronDown className={`h-5 w-5 flex-shrink-0 text-muted-foreground transition-transform duration-200 ${openFaq === index ? 'rotate-180' : ''}`} />
-                      </button>
-                      {openFaq === index && (
-                        <div className="px-4 sm:px-5 pb-4 sm:pb-5">
-                          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{faq.answer}</p>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              {/* Related Pages */}
-              <section>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Saistītie pakalpojumi</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  <Link to="/chatbotu-izstrade" className="p-4 rounded-lg border border-border bg-card/60 hover:border-primary/30 transition-colors group">
-                    <h3 className="font-medium text-foreground text-sm mb-1">Chatbotu Izstrāde</h3>
-                    <p className="text-xs text-muted-foreground">AI chatboti klientu apkalpošanai un pārdošanai</p>
-                  </Link>
-                  <Link to="/procesu-automatizacija" className="p-4 rounded-lg border border-border bg-card/60 hover:border-primary/30 transition-colors group">
-                    <h3 className="font-medium text-foreground text-sm mb-1">Procesu Automatizācija</h3>
-                    <p className="text-xs text-muted-foreground">Biznesa procesu optimizācija un automatizācija</p>
-                  </Link>
-                  <Link to="/datu-analize" className="p-4 rounded-lg border border-border bg-card/60 hover:border-primary/30 transition-colors group">
-                    <h3 className="font-medium text-foreground text-sm mb-1">Datu Analīze</h3>
-                    <p className="text-xs text-muted-foreground">Pārdošanas datu analīze un prognozēšana</p>
-                  </Link>
-                </div>
-              </section>
-
-              {/* CTA */}
-              <section className="p-8 rounded-xl bg-gradient-to-br from-primary/5 via-card to-primary/5 border border-primary/20 text-center">
-                <h2 className="text-2xl font-bold text-foreground mb-3">Palieliniet e-veikala pārdošanas apjomu ar AI</h2>
-                <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-                  Bezmaksas konsultācijā analizēsim jūsu e-veikala procesus un parādīsim, kā AI var palielināt konversiju,
-                  uzlabot klientu pieredzi un samazināt operatīvās izmaksas.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <Link to="/contact">
-                    <Button className="bg-primary text-primary-foreground hover:bg-primary/90 group">
-                      <ShoppingCart className="h-4 w-4 mr-2" />
-                      Bezmaksas konsultācija
-                    </Button>
-                  </Link>
-                  <Link to="/pricing">
-                    <Button variant="outline" className="border-primary/20 text-primary hover:bg-primary/10 group">
-                      Apskatīt cenas
-                      <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
-                </div>
-              </section>
-            </div>
-          </article>
-        </main>
-        <Footer />
-      </div>
+        <CtaBand
+          title="Palieliniet e-veikala pārdošanas apjomu ar AI"
+          text="Bezmaksas konsultācijā analizēsim jūsu e-veikala procesus un parādīsim, kā AI var palielināt konversiju, uzlabot klientu pieredzi un samazināt operatīvās izmaksas."
+          primary={{ to: '/contact', label: 'Bezmaksas konsultācija' }}
+          secondary={{ to: '/pricing', label: 'Apskatīt cenas' }}
+        />
+      </PageShell>
     </PageTransition>
   );
 };

@@ -3,9 +3,10 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
-import HomeTrustBar from '@/components/HomeTrustBar';
-import HomeAIIntro from '@/components/HomeAIIntro';
-import Features from '@/components/Features';
+import HomeClients from '@/components/HomeClients';
+import HomeServices from '@/components/HomeServices';
+import HomeCases from '@/components/HomeCases';
+import HomeWhy from '@/components/HomeWhy';
 import HomeProcess from '@/components/HomeProcess';
 import HomeIndustries from '@/components/HomeIndustries';
 import HomeLeadForm from '@/components/HomeLeadForm';
@@ -116,16 +117,15 @@ const Index = () => {
       <div className="min-h-screen flex flex-col bg-background text-foreground">
         <Header />
         <main className="flex-1">
-          <div className="space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-20">
-            <HeroSection />
-            <HomeTrustBar />
-            <HomeAIIntro />
-            <Features />
-            <HomeIndustries />
-            <HomeProcess />
-            <HomeLeadForm />
-            <HomeFAQ />
-          </div>
+          <HeroSection />
+          <HomeClients />
+          <HomeServices />
+          <HomeCases />
+          <HomeWhy />
+          <HomeIndustries />
+          <HomeProcess />
+          <HomeLeadForm />
+          <HomeFAQ />
         </main>
         <Footer />
       </div>

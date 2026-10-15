@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import React from 'react';
 
 const faqs = [
   {
@@ -25,47 +24,20 @@ const faqs = [
 ];
 
 const HomeFAQ = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
   return (
-    <section className="w-full py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-12">
-      <div className="max-w-3xl mx-auto space-y-8 sm:space-y-12">
-        <div className="text-center space-y-2 sm:space-y-3">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium tracking-tighter leading-tight">
-            Biežāk uzdotie jautājumi
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            Atbildes uz populārākajiem jautājumiem par AI automatizāciju un mūsu pakalpojumiem
-          </p>
-        </div>
+    <section className="wrap band">
+      <div className="grid gap-8 lg:grid-cols-12 lg:gap-14">
+        <h2 className="display-2 m-0 lg:col-span-5">Biežāk uzdotie jautājumi</h2>
 
-        <div className="space-y-3">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="rounded-lg border border-border bg-card/60 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:border-primary/20"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-4 sm:p-5 text-left gap-4"
-              >
-                <span className="text-sm sm:text-base font-medium text-foreground leading-snug">
-                  {faq.question}
-                </span>
-                <ChevronDown
-                  className={`h-5 w-5 flex-shrink-0 text-muted-foreground transition-transform duration-200 ${
-                    openIndex === index ? 'rotate-180' : ''
-                  }`}
-                />
-              </button>
-              {openIndex === index && (
-                <div className="px-4 sm:px-5 pb-4 sm:pb-5">
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </div>
-              )}
-            </div>
+        <div className="lg:col-span-7 border-t-2 border-foreground">
+          {faqs.map((faq) => (
+            <details key={faq.question} className="faq border-b border-border">
+              <summary className="flex items-baseline justify-between gap-6 py-5 text-lg font-bold leading-snug cursor-pointer list-none">
+                {faq.question}
+                <span aria-hidden="true" className="faq-sign shrink-0 font-sans font-normal text-3xl leading-none text-primary" />
+              </summary>
+              <p className="m-0 pb-6 max-w-[40em] text-muted-foreground">{faq.answer}</p>
+            </details>
           ))}
         </div>
       </div>

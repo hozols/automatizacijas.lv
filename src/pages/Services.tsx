@@ -1,9 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import Header from '@/components/Header';
 import Services from '@/components/Services';
-import Footer from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
+import { PageShell } from '@/components/page';
 
 const ServicesPage = () => {
   return (
@@ -36,13 +35,9 @@ const ServicesPage = () => {
           ]
         })}</script>
       </Helmet>
-      <div className="min-h-screen flex flex-col bg-background text-foreground">
-        <Header />
-        <main>
-          <Services />
-        </main>
-        <Footer />
-      </div>
+      <PageShell>
+        <Services />
+      </PageShell>
     </PageTransition>
   );
 };

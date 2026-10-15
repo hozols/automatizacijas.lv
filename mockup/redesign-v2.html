@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>automatizācijas.lv — redesign v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --paper:#F6F4EC;        /* warm ivory */
+  --paper-2:#FBFAF4;
+  --card:#FFFFFF;
+  --ink:#211F1A;
+  --ink-soft:#5C584F;
+  --ink-faint:#8A867B;
+  --line:#E5E1D5;
+  --line-soft:#EEEBE1;
+  --clay:#C2603F;         /* Claude-like terracotta */
+  --clay-deep:#A84E30;
+  --clay-wash:#F3E7DF;
+  --radius:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Hanken Grotesk",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.serif{font-family:"Fraunces",serif;font-optical-sizing:auto;letter-spacing:-.01em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+
+/* ===== NAV ===== */
+nav{position:sticky;top:0;z-index:100;background:rgba(246,244,236,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-soft)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:78px}
+.logo{font-family:"Fraunces";font-weight:600;font-size:21px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.logo .mk{width:13px;height:13px;border-radius:50%;background:var(--clay)}
+.logo .tld{color:var(--clay)}
+.nav-links{display:flex;gap:36px;font-size:15.5px;color:var(--ink-soft)}
+.nav-links a{color:inherit;text-decoration:none;transition:color .25s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{background:var(--ink);color:var(--paper);font-weight:600;font-size:14.5px;padding:12px 22px;border-radius:100px;text-decoration:none;transition:transform .3s cubic-bezier(.2,.8,.2,1),background .3s}
+.nav-cta:hover{transform:translateY(-2px);background:var(--clay)}
+
+/* ===== HERO ===== */
+.hero{padding:96px 0 80px;position:relative;overflow:hidden}
+.hero-deco{position:absolute;right:-180px;top:-120px;width:620px;height:620px;border-radius:50%;
+  background:radial-gradient(circle,var(--clay-wash) 0%,rgba(243,231,223,.4) 45%,transparent 70%);z-index:0}
+.hero-in{position:relative;z-index:2;max-width:880px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;background:var(--paper-2);border:1px solid var(--line);
+  padding:8px 16px;border-radius:100px;font-size:13.5px;color:var(--ink-soft);margin-bottom:34px;
+  opacity:0;animation:rise .8s .05s forwards}
+.eyebrow .pin{width:7px;height:7px;border-radius:50%;background:var(--clay)}
+h1{font-size:clamp(44px,7vw,86px);font-weight:500;line-height:1.02;margin-bottom:30px;letter-spacing:-.025em}
+h1 .l{display:block;opacity:0;transform:translateY(26px);animation:rise .9s forwards}
+h1 .l:nth-child(1){animation-delay:.12s}
+h1 .l:nth-child(2){animation-delay:.24s}
+h1 .l:nth-child(3){animation-delay:.36s}
+h1 em{font-style:italic;color:var(--clay)}
+.lead{font-size:clamp(17px,1.9vw,20px);color:var(--ink-soft);max-width:560px;line-height:1.62;margin-bottom:42px;
+  opacity:0;animation:rise .9s .5s forwards}
+.cta-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;opacity:0;animation:rise .9s .62s forwards}
+.btn-pri{background:var(--clay);color:#fff;font-weight:600;font-size:16px;padding:16px 28px;border-radius:100px;text-decoration:none;transition:transform .3s cubic-bezier(.2,.8,.2,1),background .3s,box-shadow .3s}
+.btn-pri:hover{transform:translateY(-3px);background:var(--clay-deep);box-shadow:0 14px 32px rgba(194,96,63,.22)}
+.btn-sec{color:var(--ink);font-weight:500;font-size:16px;padding:16px 24px;border-radius:100px;text-decoration:none;border:1px solid var(--line);background:var(--paper-2);transition:border-color .3s,transform .3s}
+.btn-sec:hover{border-color:var(--ink-faint);transform:translateY(-3px)}
+@keyframes rise{to{opacity:1;transform:translateY(0)}}
+
+/* stats */
+.stats{display:flex;gap:60px;margin-top:74px;flex-wrap:wrap;opacity:0;animation:rise 1s .8s forwards}
+.stat .n{font-family:"Fraunces";font-size:46px;font-weight:500;line-height:1;color:var(--ink)}
+.stat .n em{font-style:normal;color:var(--clay)}
+.stat .t{color:var(--ink-soft);font-size:14.5px;margin-top:10px;max-width:175px;line-height:1.5}
+
+/* ===== LOGOS ===== */
+.trust{border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);padding:36px 0}
+.trust-label{text-align:center;color:var(--ink-faint);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:24px}
+.trust-row{display:flex;justify-content:center;gap:54px;flex-wrap:wrap;align-items:center;opacity:.62}
+.trust-row span{font-family:"Fraunces";font-weight:500;font-size:21px;color:var(--ink)}
+
+/* ===== SECTIONS ===== */
+section{padding:108px 0}
+.sec-tag{color:var(--clay);font-size:14px;letter-spacing:.02em;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.sec-tag::before{content:"";width:26px;height:1px;background:var(--clay)}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:36px;margin-bottom:56px;flex-wrap:wrap}
+.sec-head h2{font-family:"Fraunces";font-weight:500;font-size:clamp(32px,4.2vw,52px);max-width:600px;line-height:1.05;letter-spacing:-.02em}
+.sec-head p{color:var(--ink-soft);max-width:330px;font-size:16px;line-height:1.6}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px 30px;transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .4s}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(33,31,26,.07);border-color:var(--line)}
+.card .ic{width:52px;height:52px;border-radius:14px;background:var(--clay-wash);display:flex;align-items:center;justify-content:center;font-size:23px;margin-bottom:24px}
+.card h3{font-family:"Fraunces";font-weight:600;font-size:22px;margin-bottom:12px;letter-spacing:-.01em}
+.card p{color:var(--ink-soft);font-size:15px;line-height:1.62;margin-bottom:22px}
+.card .more{color:var(--ink);font-size:14.5px;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:gap .3s}
+.card .more .arr{color:var(--clay)}
+.card:hover .more{gap:13px}
+.card.big{grid-column:span 2;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(120deg,#FBF3EE 0%,#FFFFFF 62%)}
+
+/* quote */
+.quote{text-align:center;max-width:880px;margin:0 auto}
+.quote blockquote{font-family:"Fraunces";font-weight:400;font-size:clamp(26px,3.6vw,40px);line-height:1.28;letter-spacing:-.015em}
+.quote blockquote em{font-style:italic;color:var(--clay)}
+.quote .by{margin-top:30px;color:var(--ink-soft);font-size:15px}
+.quote .by b{color:var(--ink);font-weight:600}
+
+/* CTA band */
+.band-in{background:var(--ink);border-radius:28px;padding:66px 56px;display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap;position:relative;overflow:hidden}
+.band-in::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(194,96,63,.4),transparent 68%);right:-130px;bottom:-180px}
+.band-in h2{font-family:"Fraunces";font-weight:500;color:var(--paper);font-size:clamp(30px,4vw,46px);max-width:560px;line-height:1.06;letter-spacing:-.02em;position:relative}
+.band-in .btn-clay{background:var(--clay);color:#fff;font-weight:600;font-size:16px;padding:18px 32px;border-radius:100px;text-decoration:none;white-space:nowrap;transition:transform .3s,background .3s;position:relative}
+.band-in .btn-clay:hover{transform:translateY(-3px);background:var(--clay-deep)}
+
+/* footer */
+.foot{padding:64px 0 56px;border-top:1px solid var(--line-soft);margin-top:108px;color:var(--ink-soft);font-size:14.5px}
+.foot-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;align-items:center}
+@media(max-width:880px){.cards{grid-template-columns:1fr}.card.big{grid-column:span 1}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="logo"><span class="mk"></span>automatizācijas<span class="tld">.lv</span></div>
+    <div class="nav-links">
+      <a href="#">Risinājumi</a>
+      <a href="#">Nozares</a>
+      <a href="#">Cenas</a>
+      <a href="#">Blogs</a>
+      <a href="#">Par mums</a>
+    </div>
+    <a href="#" class="nav-cta">Bezmaksas konsultācija</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-deco"></div>
+  <div class="wrap hero-in">
+    <div class="eyebrow"><span class="pin"></span> AI automatizācija uzņēmumiem Latvijā</div>
+    <h1 class="serif">
+      <span class="l">Atbrīvojiet komandu</span>
+      <span class="l">no darba, ko mašīna</span>
+      <span class="l">var <em>izdarīt labāk.</em></span>
+    </h1>
+    <p class="lead">Mākslīgā intelekta risinājumi, kas pārņem rutīnu — grāmatvedību, dokumentus, klientu apkalpošanu un datu analīzi. Cilvēkiem paliek darbs, kuram tiešām vajadzīgs cilvēks.</p>
+    <div class="cta-row">
+      <a href="#" class="btn-pri">Sākt sarunu</a>
+      <a href="#" class="btn-sec">Apskatīt risinājumus →</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n serif"><em>20+</em>h</div><div class="t">ietaupītas nedēļā katram darbiniekam</div></div>
+      <div class="stat"><div class="n serif"><em>40+</em></div><div class="t">automatizēti uzņēmumu procesi</div></div>
+      <div class="stat"><div class="n serif"><em>24/7</em></div><div class="t">atbalsts latviešu valodā</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="trust">
+  <div class="trust-label">Uzticas augošie Latvijas uzņēmumi</div>
+  <div class="trust-row">
+    <span>Nordic Logistics</span><span>RīgaBooks</span><span>MedTech LV</span><span>eVeikals</span><span>Juridiskais Partneris</span>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-tag">Ko mēs darām</div>
+        <h2>Risinājumi, kas strādā,<br>kamēr jūs guļat.</h2>
+      </div>
+      <p>Katrs risinājums tiek pielāgots jūsu procesiem un integrēts ar esošajām sistēmām.</p>
+    </div>
+    <div class="cards">
+      <div class="card big">
+        <div>
+          <div class="ic">⚙︎</div>
+          <h3>Procesu automatizācija</h3>
+          <p>No pasūtījuma līdz rēķinam — savienojam jūsu rīkus un likvidējam manuālo darbu. Make, n8n un pielāgotas integrācijas, kas pielāgojas jūsu darba ritmam.</p>
+        </div>
+        <a class="more" href="#">Uzzināt vairāk <span class="arr">→</span></a>
+      </div>
+      <div class="card">
+        <div class="ic">✦</div>
+        <h3>AI čatboti</h3>
+        <p>Klientu apkalpošana 24/7 latviešu valodā, kas pazīst jūsu biznesu.</p>
+        <a class="more" href="#">Uzzināt vairāk <span class="arr">→</span></a>
+      </div>
+      <div class="card">
+        <div class="ic">❑</div>
+        <h3>Dokumentu apstrāde</h3>
+        <p>Rēķini, līgumi un atskaites — nolasīti, sašķiroti un ievadīti automātiski.</p>
+        <a class="more" href="#">Uzzināt vairāk <span class="arr">→</span></a>
+      </div>
+      <div class="card">
+        <div class="ic">◷</div>
+        <h3>Datu analīze</h3>
+        <p>Reāllaika informācijas paneļi, kas pārvērš datus skaidros lēmumos.</p>
+        <a class="more" href="#">Uzzināt vairāk <span class="arr">→</span></a>
+      </div>
+      <div class="card big">
+        <div>
+          <div class="ic">◇</div>
+          <h3>AI darbinieki</h3>
+          <p>Autonomi aģenti, kas veic veselas uzdevumu ķēdes — no e-pasta atbildēm līdz grāmatvedības ierakstiem, vienmēr ar cilvēka uzraudzību.</p>
+        </div>
+        <a class="more" href="#">Uzzināt vairāk <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap quote">
+    <div class="sec-tag" style="justify-content:center">Klientu pieredze</div>
+    <blockquote class="serif">“Pirmajā mēnesī <em>ietaupījām vairāk nekā 80 stundas</em> manuālā darba. Komanda beidzot strādā ar klientiem, nevis ar tabulām.”</blockquote>
+    <div class="by"><b>Anna Bērziņa</b> · operāciju vadītāja, RīgaBooks</div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="band-in">
+    <h2>Parunāsim par to, ko varam automatizēt jūsu uzņēmumā.</h2>
+    <a href="#" class="btn-clay">Pieteikt bezmaksas konsultāciju →</a>
+  </div>
+</div>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="logo"><span class="mk"></span>automatizācijas<span class="tld">.lv</span></div>
+    <div>+371 20 015 830 · info@automatizacijas.lv · Rīga, Latvija</div>
+    <div>© 2026 automatizācijas.lv</div>
+  </div>
+</footer>
+
+</body>
+</html>

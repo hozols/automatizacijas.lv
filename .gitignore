@@ -24,3 +24,8 @@ dist-ssr
 *.sw?
 GOOGLE_CONSOLE_OPTIMIZATION.md
 GOOGLE_CONSOLE_SETUP.md
+
+# local tooling / screenshots
+.playwright-mcp/
+.codex/
+/redesign-*.png

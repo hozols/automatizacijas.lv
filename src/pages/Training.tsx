@@ -1,30 +1,13 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
-import TrainingModal from '@/components/TrainingModal';
-import { 
-  BookOpen, 
-  Users, 
-  Clock, 
-  Award, 
-  Monitor, 
-  CheckCircle, 
-  GraduationCap,
-  Building,
-  Briefcase,
-  Shield,
-  ArrowRight,
-  MessageCircle
-} from 'lucide-react';
+import TrainingModal, { type TrainingItem } from '@/components/TrainingModal';
+import { PageShell, Breadcrumbs, PageHero, Section, Prose, CheckList } from '@/components/page';
 
 const TrainingPage = () => {
   const { t } = useLanguage();
-  const [selectedTraining, setSelectedTraining] = useState<any>(null);
+  const [selectedTraining, setSelectedTraining] = useState<TrainingItem | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const trainingData = {
@@ -32,7 +15,6 @@ const TrainingPage = () => {
       title: t('training.courses.title'),
       subtitle: t('training.courses.subtitle'),
       description: t('training.courses.description'),
-      icon: <Monitor className="h-6 w-6 text-primary" />,
       type: 'courses' as const,
       features: [
         t('training.courses.features.selfpaced'),
@@ -45,7 +27,6 @@ const TrainingPage = () => {
       title: t('training.seminars.title'),
       subtitle: t('training.seminars.subtitle'),
       description: t('training.seminars.description'),
-      icon: <Users className="h-6 w-6 text-primary" />,
       type: 'seminars' as const,
       features: [
         t('training.seminars.features.customized'),
@@ -59,48 +40,42 @@ const TrainingPage = () => {
         title: t('training.topics.ai_basics'),
         subtitle: 'AI Pamati',
         description: t('training.topics.ai_basics.description'),
-        icon: <Monitor className="h-5 w-5 text-primary" />,
         type: 'topic' as const
       },
       {
         title: t('training.topics.automation'),
         subtitle: 'Automatizācija',
         description: t('training.topics.automation.description'),
-        icon: <CheckCircle className="h-5 w-5 text-primary" />,
         type: 'topic' as const
       },
       {
         title: t('training.topics.chatbots'),
         subtitle: 'Čatboti',
         description: t('training.topics.chatbots.description'),
-        icon: <Users className="h-5 w-5 text-primary" />,
         type: 'topic' as const
       },
       {
         title: t('training.topics.data_analysis'),
         subtitle: 'Datu Analīze',
         description: t('training.topics.data_analysis.description'),
-        icon: <Briefcase className="h-5 w-5 text-primary" />,
         type: 'topic' as const
       },
       {
         title: t('training.topics.machine_learning'),
         subtitle: 'Mašīnmācīšanās',
         description: t('training.topics.machine_learning.description'),
-        icon: <GraduationCap className="h-5 w-5 text-primary" />,
         type: 'topic' as const
       },
       {
         title: t('training.topics.ethics'),
         subtitle: 'AI Ētika',
         description: t('training.topics.ethics.description'),
-        icon: <Shield className="h-5 w-5 text-primary" />,
         type: 'topic' as const
       }
     ]
   };
 
-  const handleTrainingClick = (training: Training) => {
+  const handleTrainingClick = (training: TrainingItem) => {
     setSelectedTraining(training);
     setIsModalOpen(true);
   };
@@ -212,241 +187,93 @@ const TrainingPage = () => {
           ]
         })}</script>
       </Helmet>
-      <div className="min-h-screen flex flex-col bg-background text-foreground">
-        <Header />
-        
-        <main className="flex-1">
-          {/* Hero Section */}
-          <section className="relative w-full py-16 md:py-24 px-6 md:px-12 bg-background">
-            <div className="absolute inset-0 cosmic-grid opacity-20"></div>
-            <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter text-foreground animate-fade-in-up">
-                {t('training.title')}
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in-up animate-delay-200">
-                {t('training.subtitle')}
+      <PageShell>
+        <Breadcrumbs items={[{ label: 'Sākums', to: '/' }, { label: 'Apmācības' }]} />
+
+        <PageHero title={t('training.title')} lede={t('training.subtitle')} />
+
+        {/* Online Courses */}
+        <Section title={t('training.courses.title')} intro={t('training.courses.subtitle')} tone="sheet">
+          <Prose>
+            <p>{t('training.courses.description')}</p>
+          </Prose>
+          <CheckList className="mt-8" items={trainingData.courses.features} />
+          <button
+            type="button"
+            onClick={() => handleTrainingClick(trainingData.courses)}
+            className="btn btn-line mt-8"
+          >
+            Uzzināt vairāk
+          </button>
+        </Section>
+
+        {/* Corporate Seminars */}
+        <Section title={t('training.seminars.title')} intro={t('training.seminars.subtitle')}>
+          <Prose>
+            <p>{t('training.seminars.description')}</p>
+          </Prose>
+          <CheckList className="mt-8" items={trainingData.seminars.features} />
+          <button
+            type="button"
+            onClick={() => handleTrainingClick(trainingData.seminars)}
+            className="btn btn-line mt-8"
+          >
+            Uzzināt vairāk
+          </button>
+        </Section>
+
+        {/* Training Topics: ruled rows, each opens the details dialog */}
+        <Section title={t('training.topics.title')} tone="sheet">
+          <ul className="list-none p-0 m-0 border-t-2 border-foreground">
+            {trainingData.topics.map((topic) => (
+              <li key={topic.title} className="border-b border-border">
+                <button
+                  type="button"
+                  onClick={() => handleTrainingClick(topic)}
+                  className="service-row group grid w-full gap-x-8 gap-y-1.5 py-5 sm:grid-cols-[1fr_auto] sm:items-baseline bg-transparent border-0 text-left text-foreground cursor-pointer"
+                >
+                  <span className="text-xl font-bold leading-snug">
+                    <span className="sweep">{topic.title}</span>
+                  </span>
+                  <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+                    {topic.description}
+                  </span>
+                  <span className="sm:col-start-2 sm:row-start-1 sm:row-span-2 sm:text-right font-semibold text-primary underline underline-offset-4 decoration-[1.5px]">
+                    Uzzināt vairāk
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </Section>
+
+        {/* CTA: same band as CtaBand, but the actions open the dialog instead of navigating */}
+        <section className="band-action">
+          <div className="wrap py-14 lg:py-20 grid gap-8 lg:grid-cols-12 lg:gap-14 lg:items-end">
+            <div className="lg:col-span-7">
+              <h2 className="display-2 m-0">Gatavi sākt mācīties?</h2>
+              <p className="mt-4 mb-0 text-lg max-w-[34em] opacity-90">
+                Sazinieties ar mums, lai uzzinātu vairāk par mūsu kursiem un semināriem
               </p>
             </div>
-          </section>
-
-          {/* Training Cards Section */}
-          <section className="w-full py-16 px-6 md:px-12">
-            <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                
-                {/* Online Courses Card */}
-                <Card className="p-8 border border-border/50 bg-card/60 backdrop-blur-xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] animate-fade-in-up animate-delay-400">
-                  <CardHeader className="p-0 mb-6">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="p-3 rounded-lg bg-primary/10 backdrop-blur-sm">
-                        <Monitor className="h-8 w-8 text-primary" />
-                      </div>
-                      <CardTitle className="text-2xl font-medium">
-                        {t('training.courses.title')}
-                      </CardTitle>
-                    </div>
-                    <p className="text-muted-foreground">
-                      {t('training.courses.subtitle')}
-                    </p>
-                  </CardHeader>
-                  
-                  <CardContent className="p-0 space-y-6">
-                    <p className="text-muted-foreground leading-relaxed">
-                      {t('training.courses.description')}
-                    </p>
-
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-lg bg-primary/10 backdrop-blur-sm">
-                          <Clock className="h-5 w-5 text-primary" />
-                        </div>
-                        <span className="text-sm font-medium">
-                          {t('training.courses.features.selfpaced')}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-lg bg-primary/10 backdrop-blur-sm">
-                          <Briefcase className="h-5 w-5 text-primary" />
-                        </div>
-                        <span className="text-sm font-medium">
-                          {t('training.courses.features.practical')}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-lg bg-primary/10 backdrop-blur-sm">
-                          <Award className="h-5 w-5 text-primary" />
-                        </div>
-                        <span className="text-sm font-medium">
-                          {t('training.courses.features.certificate')}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-lg bg-primary/10 backdrop-blur-sm">
-                          <Users className="h-5 w-5 text-primary" />
-                        </div>
-                        <span className="text-sm font-medium">
-                          {t('training.courses.features.support')}
-                        </span>
-                      </div>
-                    </div>
-
-                    <Button 
-                      onClick={() => handleTrainingClick(trainingData.courses)}
-                      className="w-full bg-primary/10 text-primary hover:bg-primary/20 border border-primary/20 backdrop-blur-sm transition-all duration-300 group"
-                    >
-                      <MessageCircle className="h-4 w-4 mr-2 group-hover:animate-pulse" />
-                      Uzzināt vairāk
-                      <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </CardContent>
-                </Card>
-
-                {/* Corporate Seminars Card */}
-                <Card className="p-8 border border-border/50 bg-card/60 backdrop-blur-xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] animate-fade-in-up animate-delay-600">
-                  <CardHeader className="p-0 mb-6">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="p-3 rounded-lg bg-primary/10 backdrop-blur-sm">
-                        <Users className="h-8 w-8 text-primary" />
-                      </div>
-                      <CardTitle className="text-2xl font-medium">
-                        {t('training.seminars.title')}
-                      </CardTitle>
-                    </div>
-                    <p className="text-muted-foreground">
-                      {t('training.seminars.subtitle')}
-                    </p>
-                  </CardHeader>
-                  
-                  <CardContent className="p-0 space-y-6">
-                    <p className="text-muted-foreground leading-relaxed">
-                      {t('training.seminars.description')}
-                    </p>
-
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-lg bg-primary/10 backdrop-blur-sm">
-                          <Building className="h-5 w-5 text-primary" />
-                        </div>
-                        <span className="text-sm font-medium">
-                          {t('training.seminars.features.customized')}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-lg bg-primary/10 backdrop-blur-sm">
-                          <GraduationCap className="h-5 w-5 text-primary" />
-                        </div>
-                        <span className="text-sm font-medium">
-                          {t('training.seminars.features.expert')}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-lg bg-primary/10 backdrop-blur-sm">
-                          <CheckCircle className="h-5 w-5 text-primary" />
-                        </div>
-                        <span className="text-sm font-medium">
-                          {t('training.seminars.features.interactive')}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-lg bg-primary/10 backdrop-blur-sm">
-                          <BookOpen className="h-5 w-5 text-primary" />
-                        </div>
-                        <span className="text-sm font-medium">
-                          {t('training.seminars.features.materials')}
-                        </span>
-                      </div>
-                    </div>
-
-                    <Button 
-                      onClick={() => handleTrainingClick(trainingData.seminars)}
-                      className="w-full bg-primary/10 text-primary hover:bg-primary/20 border border-primary/20 backdrop-blur-sm transition-all duration-300 group"
-                    >
-                      <MessageCircle className="h-4 w-4 mr-2 group-hover:animate-pulse" />
-                      Uzzināt vairāk
-                      <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
+            <div className="lg:col-span-5 flex flex-col sm:flex-row lg:justify-end gap-3">
+              <button
+                type="button"
+                onClick={() => handleTrainingClick(trainingData.courses)}
+                className="btn btn-invert"
+              >
+                Apskatīt kursus
+              </button>
+              <button
+                type="button"
+                onClick={() => handleTrainingClick(trainingData.seminars)}
+                className="btn btn-line btn-line-invert"
+              >
+                Pieteikt semināru
+              </button>
             </div>
-          </section>
-
-          {/* Training Topics Section */}
-          <section className="w-full py-16 px-6 md:px-12 bg-muted/30">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-center space-y-6 mb-12">
-                <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-foreground animate-fade-in-up animate-delay-800">
-                  {t('training.topics.title')}
-                </h2>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {trainingData.topics.map((topic, index) => (
-                  <Card 
-                    key={index}
-                    className="p-6 border border-border/50 bg-card/60 backdrop-blur-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-[1.02] cursor-pointer animate-fade-in-up"
-                    style={{ animationDelay: `${(index + 1) * 100}ms` }}
-                    onClick={() => handleTrainingClick(topic)}
-                  >
-                    <CardContent className="p-0 space-y-3">
-                      <div className="flex items-center gap-4">
-                        <div className="p-3 rounded-lg bg-primary/10 backdrop-blur-sm">
-                          {topic.icon}
-                        </div>
-                        <h3 className="font-medium text-foreground group-hover:text-primary transition-colors">
-                          {topic.title}
-                        </h3>
-                      </div>
-                      <p className="text-sm text-muted-foreground leading-relaxed pl-16 group-hover:text-foreground transition-colors">
-                        {topic.description}
-                      </p>
-                      <div className="pt-2 flex items-center justify-end">
-                        <span className="text-xs text-primary font-medium group-hover:scale-110 transition-transform">
-                          Uzzināt vairāk →
-                        </span>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* CTA Section */}
-          <section className="w-full py-16 px-6 md:px-12">
-            <div className="max-w-4xl mx-auto text-center space-y-8">
-              <div className="space-y-4 animate-fade-in-up animate-delay-1000">
-                <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-foreground">
-                  Gatavi sākt mācīties?
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Sazinieties ar mums, lai uzzinātu vairāk par mūsu kursiem un semināriem
-                </p>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animate-delay-1200">
-                <Button 
-                  onClick={() => handleTrainingClick(trainingData.courses)}
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 group px-8 py-3"
-                >
-                  <BookOpen className="h-5 w-5 mr-2 group-hover:animate-pulse" />
-                  Apskatīt kursus
-                </Button>
-                
-                <Button 
-                  variant="outline"
-                  onClick={() => handleTrainingClick(trainingData.seminars)}
-                  className="border-primary/20 text-primary hover:bg-primary/10 transition-all duration-200 group px-8 py-3"
-                >
-                  <Users className="h-5 w-5 mr-2 group-hover:animate-pulse" />
-                  Pieteikt semināru
-                </Button>
-              </div>
-            </div>
-          </section>
-        </main>
-
-        <Footer />
+          </div>
+        </section>
 
         {/* Training Modal */}
         {selectedTraining && (
@@ -456,7 +283,7 @@ const TrainingPage = () => {
             training={selectedTraining}
           />
         )}
-      </div>
+      </PageShell>
     </PageTransition>
   );
 };

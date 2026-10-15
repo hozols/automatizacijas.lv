@@ -1,503 +1,439 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import '@fontsource-variable/sofia-sans/wght.css';
+@import '@fontsource-variable/sofia-sans-extra-condensed/wght.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Palette
+  papīrs   #EEF0F2  cool office-paper grey, the page ground
+  lapa     #FFFFFF  a sheet laid on the paper: forms, documents, menus
+  tinte    #1B2440  navy writing ink: text and the dark bands
+  karmīns  #9E2B35  Latvian carmine: actions and links, nothing else
+  marķieris #F4DC5A highlighter: marks what has been automated
+  līnija   #C9CED8  ruled lines
+*/
 @layer base {
   :root {
-    --background: 0 0% 98%; /* Very light grey */
-    --foreground: 0 0% 20%; /* Dark grey */
+    --background: 210 13% 94%;
+    --foreground: 225 41% 18%;
 
-    --card: 0 0% 96%; /* Light grey card */
-    --card-foreground: 0 0% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 225 41% 18%;
 
-    --popover: 0 0% 96%;
-    --popover-foreground: 0 0% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 41% 18%;
 
-    --primary: 217 91% 60%; /* Blue */
-    --primary-foreground: 0 0% 98%; /* White */
+    --primary: 355 57% 39%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 92%; /* Light grey secondary */
-    --secondary-foreground: 0 0% 25%;
+    --secondary: 213 18% 90%;
+    --secondary-foreground: 225 41% 18%;
 
-    --muted: 0 0% 88%; /* Medium light grey */
-    --muted-foreground: 0 0% 35%; /* Darker grey for better contrast */
+    --muted: 213 18% 90%;
+    --muted-foreground: 223 17% 38%;
 
-    --accent: 217 91% 60%; /* Blue accent */
-    --accent-foreground: 0 0% 98%;
+    --accent: 213 18% 90%;
+    --accent-foreground: 225 41% 18%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 42%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 75%; /* Darker grey border for better contrast */
-    --input: 0 0% 90%;
-    --ring: 217 91% 60%; /* Blue ring */
+    --border: 220 16% 82%;
+    --input: 220 16% 72%;
+    --ring: 355 57% 39%;
 
-    --radius: 0.5rem;
+    --ink: 225 41% 18%;
+    --ink-foreground: 210 13% 94%;
+    --ink-muted: 220 20% 72%;
+    --ink-rule: 225 28% 30%;
+    --marker: 51 88% 65%;
+
+    --radius: 0.25rem;
   }
 
   .dark-mode {
-    --background: 0 0% 8%; /* Dark charcoal */
-    --foreground: 0 0% 95%; /* Light grey/white */
+    --background: 226 39% 12%;
+    --foreground: 213 20% 93%;
 
-    --card: 0 0% 12%; /* Slightly lighter charcoal */
-    --card-foreground: 0 0% 95%;
+    --card: 225 38% 17%;
+    --card-foreground: 213 20% 93%;
 
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 225 38% 17%;
+    --popover-foreground: 213 20% 93%;
 
-    --primary: 217 91% 60%; /* Blue primary */
-    --primary-foreground: 0 0% 98%; /* White */
+    --primary: 355 72% 70%;
+    --primary-foreground: 226 39% 12%;
 
-    --secondary: 0 0% 18%; /* Medium charcoal */
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 225 32% 22%;
+    --secondary-foreground: 213 20% 93%;
 
-    --muted: 0 0% 22%; /* Medium charcoal */
-    --muted-foreground: 0 0% 70%; /* Medium grey */
+    --muted: 225 32% 22%;
+    --muted-foreground: 220 20% 72%;
 
-    --accent: 217 91% 60%; /* Blue accent */
-    --accent-foreground: 0 0% 98%;
+    --accent: 225 32% 22%;
+    --accent-foreground: 213 20% 93%;
 
-    --border: 0 0% 22%; /* Medium charcoal border */
-    --input: 0 0% 22%;
-    --ring: 217 91% 60%; /* Blue ring */
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 226 39% 12%;
+
+    --border: 225 28% 28%;
+    --input: 225 28% 36%;
+    --ring: 355 72% 70%;
+
+    --ink: 226 44% 8%;
+    --ink-foreground: 213 20% 93%;
+    --ink-muted: 220 20% 68%;
+    --ink-rule: 225 28% 22%;
+    --marker: 51 70% 55%;
   }
 
   * {
     @apply border-border;
   }
 
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5rem;
+  }
+
   body {
-    @apply bg-background font-inter text-foreground antialiased;
-    letter-spacing: -0.025em;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Sofia Sans Variable', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    font-feature-settings: 'ss01' off;
   }
-  
+
+  /* Long Latvian words fit a condensed face; h1 and h2 carry it, smaller headings stay in the text face. */
+  h1,
+  h2 {
+    font-family: 'Sofia Sans Extra Condensed Variable', 'Arial Narrow', 'Helvetica Neue', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-wrap: balance;
+  }
+
+  h3,
+  h4 {
+    letter-spacing: 0;
+  }
+
   ::selection {
-    @apply bg-primary text-primary-foreground;
+    background: hsl(var(--marker));
+    color: hsl(225 41% 18%);
   }
 
-  .cosmic-gradient {
-    background: linear-gradient(135deg, rgba(64, 64, 64, 0.2) 0%, rgba(32, 32, 32, 0.4) 100%);
-  }
-
-  .dark-mode .cosmic-gradient {
-    background: linear-gradient(135deg, rgba(64, 64, 64, 0.2) 0%, rgba(32, 32, 32, 0.4) 100%);
-  }
-
-  .cosmic-glow {
-    position: relative;
-  }
-
-  .cosmic-glow::before {
-    content: "";
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-    z-index: -1;
-    border-radius: inherit;
-  }
-
-  .dark-mode .cosmic-glow::before {
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  }
-
-  .cosmic-grid {
-    background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 30px 30px;
-  }
-
-  .dark-mode .cosmic-grid {
-    background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 3px;
+    border-radius: 2px;
   }
 
   .text-balance {
     text-wrap: balance;
   }
-  
-  .cosmic-glass {
-    @apply backdrop-blur-sm bg-card border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.1)];
+}
+
+@layer components {
+  .wrap {
+    width: 100%;
+    max-width: 77.5rem;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 3rem);
   }
 
-  .dark-mode .cosmic-glass {
-    @apply backdrop-blur-sm bg-card border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.1)];
+  .band {
+    padding-block: clamp(3.5rem, 8vw, 7rem);
   }
-  
+
+  .band-ink {
+    background: hsl(var(--ink));
+    color: hsl(var(--ink-foreground));
+  }
+
+  .display {
+    font-family: 'Sofia Sans Extra Condensed Variable', 'Arial Narrow', 'Helvetica Neue', sans-serif;
+    font-weight: 800;
+    line-height: 0.98;
+    letter-spacing: 0;
+    text-wrap: balance;
+  }
+
+  .display-1 {
+    @apply display;
+    font-size: clamp(3rem, 6.1vw, 5.5rem);
+    line-height: 0.96;
+    text-wrap: wrap;
+  }
+
+  .display-2 {
+    @apply display;
+    font-size: clamp(2.5rem, 5.2vw, 4.5rem);
+  }
+
+  .display-3 {
+    @apply display;
+    font-size: clamp(1.9rem, 3vw, 2.6rem);
+    line-height: 1.02;
+  }
+
+  .lede {
+    font-size: clamp(1.125rem, 1.5vw, 1.3125rem);
+    line-height: 1.5;
+    max-width: 38em;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.25rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    font-weight: 650;
+    font-size: 1.0625rem;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .btn-solid {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  .btn-solid:hover {
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+
+  .band-ink .btn-solid:hover {
+    background: hsl(var(--ink-foreground));
+    color: hsl(var(--ink));
+  }
+
+  .btn-line {
+    border: 1.5px solid currentColor;
+    color: inherit;
+  }
+
+  .btn-line:hover {
+    background: hsl(var(--foreground));
+    border-color: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+
+  /* The closing call-to-action band: the one place carmine fills the page. */
+  .band-action {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  .btn-invert {
+    background: hsl(var(--primary-foreground));
+    color: hsl(var(--primary));
+  }
+
+  .btn-invert:hover {
+    background: hsl(var(--ink));
+    color: hsl(var(--ink-foreground));
+  }
+
+  .btn-line-invert:hover {
+    background: hsl(var(--primary-foreground));
+    border-color: hsl(var(--primary-foreground));
+    color: hsl(var(--primary));
+  }
+
+  .band-action :focus-visible {
+    outline-color: hsl(var(--primary-foreground));
+  }
+
+  .band-ink :focus-visible {
+    outline-color: hsl(var(--marker));
+  }
+
+  .link {
+    color: hsl(var(--primary));
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.2em;
+  }
+
+  .link:hover {
+    color: hsl(var(--foreground));
+  }
+
+  .sheet {
+    background: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    box-shadow: 0 1px 0 hsl(225 41% 18% / 0.06), 0 18px 40px -24px hsl(225 41% 18% / 0.35);
+  }
+
+  .mark {
+    background: linear-gradient(hsl(var(--marker)), hsl(var(--marker))) no-repeat 0 72% / 100% 0.78em;
+    color: inherit;
+    padding-inline: 0.12em;
+    margin-inline: -0.12em;
+  }
+
+  .dark-mode .mark {
+    color: hsl(226 39% 12%);
+    background-size: 100% 1.2em;
+    background-position: 0 50%;
+  }
+
+  /* Form fields drawn like a paper form: a ruled line to write on. */
+  .field-label {
+    display: block;
+    font-size: 0.9375rem;
+    font-weight: 650;
+    margin-bottom: 0.35rem;
+  }
+
+  .field {
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.6rem 0.75rem;
+    background: hsl(var(--background));
+    border: 0;
+    border-bottom: 2px solid hsl(var(--foreground));
+    border-radius: 2px 2px 0 0;
+    color: hsl(var(--foreground));
+    font: inherit;
+  }
+
+  .field::placeholder {
+    color: hsl(var(--muted-foreground));
+    opacity: 0.8;
+  }
+
+  .field:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 0;
+    border-bottom-color: hsl(var(--ring));
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Legacy effect classes. Older pages still reference these names; they are
+   kept so nothing breaks, and defined as calm, static styles.
+   ------------------------------------------------------------------------ */
+@layer components {
+  .cosmic-gradient,
+  .cosmic-glass,
   .cosmic-card {
-    @apply bg-card border border-border backdrop-blur-sm;
-  }
-  
-  .nav-pill {
-    @apply backdrop-blur-md bg-card border border-border rounded-full;
-  }
-  
-  .nav-pill-item {
-    @apply px-4 py-2 text-sm rounded-full transition-colors;
-  }
-  
-  .nav-pill-item:hover {
-    @apply bg-accent text-accent-foreground;
-  }
-  
-  .nav-pill-item.active {
-    @apply bg-accent text-accent-foreground;
-  }
-  
-  .icon-glow {
-    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
-    transition: filter 0.3s ease;
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
   }
 
-  .dark-mode .icon-glow {
-    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
-  }
-  
-  .collapsible-trigger:hover .icon-glow {
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
-  }
-
-  .dark-mode .collapsible-trigger:hover .icon-glow {
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  .cosmic-grid,
+  .cosmic-glow::before {
+    background: none;
   }
 
   .task-card {
-    @apply transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-primary/30;
+    @apply transition-colors duration-200;
   }
-  
+
   .task-card.dragging {
-    @apply scale-105 shadow-lg border-primary opacity-70 rotate-1 z-10;
+    @apply opacity-50;
   }
-  
-  .task-card.dragged-over {
-    @apply border-primary border-dashed;
-  }
-  
-  .task-card-enter {
-    @apply opacity-0 -translate-y-4;
-  }
-  
-  .task-card-enter-active {
-    @apply opacity-100 translate-y-0 transition-all duration-300 ease-out;
-  }
-  
-  .task-card-exit {
-    @apply opacity-100;
-  }
-  
-  .task-card-exit-active {
-    @apply opacity-0 translate-y-4 transition-all duration-300 ease-in;
-  }
-  
+
+  .task-card.dragged-over,
   .column-highlight {
-    @apply bg-accent/20 transition-all duration-300;
+    @apply border-primary;
   }
 
-  /* Advanced Animation System */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes fadeInRight {
-    from {
-      opacity: 0;
-      transform: translateX(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes scaleIn {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes glow {
-    0%, 100% {
-      box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
-    }
-    50% {
-      box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.6);
-    }
-  }
-
-  @keyframes shimmer {
-    0% {
-      background-position: -200% 0;
-    }
-    100% {
-      background-position: 200% 0;
-    }
-  }
-
-  @keyframes bounce-subtle {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-5px);
-    }
-  }
-
-  @keyframes rotate-slow {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes pulse-glow {
-    0%, 100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.8;
-      transform: scale(1.05);
-    }
-  }
-
-  /* Animation Classes */
-  .animate-fade-in-up {
-    animation: fadeInUp 0.2s ease-out forwards;
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  .animate-fade-in-left {
-    animation: fadeInLeft 0.2s ease-out forwards;
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-
-  .animate-fade-in-right {
-    animation: fadeInRight 0.2s ease-out forwards;
-    opacity: 0;
-    transform: translateX(20px);
-  }
-
-  .animate-scale-in {
-    animation: scaleIn 0.2s ease-out forwards;
-    opacity: 0;
-    transform: scale(0.95);
-  }
-
-  .animate-slide-down {
-    animation: slideDown 0.2s ease-out forwards;
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite;
-  }
-
-  .animate-shimmer {
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-    background-size: 200% 100%;
-    animation: shimmer 2s infinite;
-  }
-
-  .animate-bounce-subtle {
-    animation: bounce-subtle 2s ease-in-out infinite;
-  }
-
-  .animate-rotate-slow {
-    animation: rotate-slow 20s linear infinite;
-  }
-
-  .animate-pulse-glow {
-    animation: pulse-glow 3s ease-in-out infinite;
-  }
-
-  /* Staggered Animation Delays */
-  .animate-delay-100 { animation-delay: 0.1s; }
-  .animate-delay-200 { animation-delay: 0.2s; }
-  .animate-delay-300 { animation-delay: 0.3s; }
-  .animate-delay-400 { animation-delay: 0.4s; }
-  .animate-delay-500 { animation-delay: 0.5s; }
-  .animate-delay-600 { animation-delay: 0.6s; }
-  .animate-delay-700 { animation-delay: 0.7s; }
-  .animate-delay-800 { animation-delay: 0.8s; }
-
-  /* Hover Effects */
-  .hover-lift {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  }
-
-  .hover-glow {
-    transition: all 0.3s ease;
-  }
-
-  .hover-glow:hover {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
-    border-color: rgba(59, 130, 246, 0.6);
-  }
-
-  .hover-scale {
-    transition: transform 0.2s ease;
-  }
-
-  .hover-scale:hover {
-    transform: scale(1.05);
-  }
-
-  .hover-rotate {
-    transition: transform 0.3s ease;
-  }
-
-  .hover-rotate:hover {
-    transform: rotate(5deg);
-  }
-
-  /* Interactive Button Effects */
-  .btn-magnetic {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .btn-magnetic::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.5s;
-  }
-
-  .btn-magnetic:hover::before {
-    left: 100%;
-  }
-
-  .btn-magnetic:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  }
-
-  /* Scroll Animations */
-  .scroll-fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .scroll-fade-in.animate-in {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .scroll-slide-left {
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .scroll-slide-left.animate-in {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .scroll-slide-right {
-    opacity: 0;
-    transform: translateX(50px);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .scroll-slide-right.animate-in {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .scroll-scale-in {
-    opacity: 0;
-    transform: scale(0.8);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .scroll-scale-in.animate-in {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  /* Loading Animation */
   .loading-dots {
     display: inline-flex;
-    gap: 2px;
+    gap: 0.25rem;
   }
 
   .loading-dots span {
-    width: 4px;
-    height: 4px;
+    width: 0.4rem;
+    height: 0.4rem;
     border-radius: 50%;
-    background-color: currentColor;
-    animation: loading-dots 1.4s infinite both;
+    background: currentColor;
+    animation: loading-dots 1.2s infinite ease-in-out both;
   }
 
   .loading-dots span:nth-child(1) { animation-delay: -0.32s; }
   .loading-dots span:nth-child(2) { animation-delay: -0.16s; }
 
   @keyframes loading-dots {
-    0%, 80%, 100% {
-      opacity: 0.3;
-      transform: scale(0.8);
-    }
-    40% {
-      opacity: 1;
-      transform: scale(1);
-    }
+    0%, 80%, 100% { opacity: 0.25; }
+    40% { opacity: 1; }
   }
+}
+
+/* Content that used to wait for a scroll animation is simply visible. */
+.scroll-fade-in,
+.scroll-slide-left,
+.scroll-slide-right,
+.scroll-scale-in {
+  opacity: 1;
+  transform: none;
+}
+
+.safe-area-bottom {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Highlighter stroke that draws itself across a line of text. */
+.sweep {
+  background: linear-gradient(hsl(var(--marker)), hsl(var(--marker))) no-repeat 0 72% / 0% 0.78em;
+  transition: background-size 0.55s cubic-bezier(0.3, 0.7, 0.2, 1);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.sweep.is-on {
+  background-size: 100% 0.78em;
+}
+
+.dark-mode .sweep.is-on {
+  color: hsl(226 39% 12%);
+  background-size: 100% 1.25em;
+  background-position: 0 50%;
+}
+
+/* Row links: the highlighter marks the row title on hover and keyboard focus. */
+.service-row:hover .sweep,
+.service-row:focus-visible .sweep {
+  background-size: 100% 0.78em;
+}
+
+.dark-mode .service-row:hover .sweep,
+.dark-mode .service-row:focus-visible .sweep {
+  color: hsl(226 39% 12%);
+  background-size: 100% 1.1em;
+  background-position: 0 50%;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq .faq-sign::before {
+  content: '+';
+}
+
+.faq[open] .faq-sign::before {
+  content: '\2212';
 }

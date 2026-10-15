@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
-import { Button } from '@/components/ui/button';
-import { ChevronDown, Calculator, FileText, BarChart3, Shield, ArrowRight, CheckCircle, Clock, Zap, Plug } from 'lucide-react';
+import { PageShell, Breadcrumbs, PageHero, Section, Prose, CheckList, RuledList, Faq, CtaBand } from '@/components/page';
 
 const faqs = [
   {
@@ -61,8 +58,6 @@ const breadcrumbSchema = {
 };
 
 const NozareGramatvediba = () => {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
   return (
     <PageTransition>
       <Helmet>
@@ -89,246 +84,152 @@ const NozareGramatvediba = () => {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
-      <div className="min-h-screen flex flex-col bg-background text-foreground">
-        <Header />
-        <main className="flex-1">
-          <nav className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 pt-8 text-sm text-muted-foreground">
-            <Link to="/" className="hover:text-primary transition-colors">Sākums</Link>
-            <span className="mx-2">/</span>
-            <Link to="/nozares" className="hover:text-primary transition-colors">Nozares</Link>
-            <span className="mx-2">/</span>
-            <span className="text-foreground">Grāmatvedība un Finanses</span>
-          </nav>
+      <PageShell>
+        <Breadcrumbs
+          items={[
+            { label: 'Sākums', to: '/' },
+            { label: 'Nozares', to: '/nozares' },
+            { label: 'Grāmatvedība un Finanses' },
+          ]}
+        />
 
-          <section className="py-12 sm:py-16 px-4 sm:px-6 md:px-8">
-            <div className="max-w-4xl mx-auto">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-                AI Automatizācija Grāmatvedības un Finanšu Nozarei
-              </h1>
-              <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
-                Grāmatvedības nozare Latvijā piedzīvo fundamentālas pārmaiņas. AI tehnoloģijas ļauj automatizēt <strong className="text-foreground">rēķinu apstrādi,
-                nodokļu aprēķinus, atskaišu sagatavošanu un klientu dokumentu pārvaldību</strong> — atbrīvojot grāmatvežu laiku
-                konsultēšanai un stratēģiskiem uzdevumiem, kas rada vislielāko vērtību.
+        <PageHero
+          title="AI Automatizācija Grāmatvedības un Finanšu Nozarei"
+          lede={
+            <>
+              Grāmatvedības nozare Latvijā piedzīvo fundamentālas pārmaiņas. AI tehnoloģijas ļauj automatizēt <strong>rēķinu apstrādi,
+              nodokļu aprēķinus, atskaišu sagatavošanu un klientu dokumentu pārvaldību</strong>, atbrīvojot grāmatvežu laiku
+              konsultēšanai un stratēģiskiem uzdevumiem, kas rada vislielāko vērtību.
+            </>
+          }
+          facts={['Līdz 70% laika ietaupījums', 'VID atbilstība', 'ROI 3-6 mēnešos', 'GDPR un datu drošība']}
+        />
+
+        <article>
+          <Section title="Izaicinājumi grāmatvedībā">
+            <Prose>
+              <p>
+                Latvijas grāmatvedības nozare saskaras ar pieaugošu spiedienu: klientu skaits aug, likumdošana mainās, un klienti
+                sagaida ātrāku un precīzāku servisu. Tajā pašā laikā grāmatvežu trūkums darba tirgū nozīmē, ka biroji nevar vienkārši
+                pieņemt papildu darbiniekus. Šī situācija rada vairākus būtiskus izaicinājumus.
               </p>
+              <p>
+                Grāmatvedības biroji Latvijā apkalpo vidēji 30-80 klientus, un katram klientam ir desmitiem dokumentu mēnesī.
+                Rēķini no piegādātājiem, bankas izraksti, algu aprēķini, PVN deklarācijas, viss prasa manuālu apstrādi. Sezonas
+                laikā, gada pārskatu un deklarāciju periodā, slodze var trīskāršoties, radot milzīgu stresu un kļūdu risku.
+              </p>
+            </Prose>
+            <CheckList
+              className="mt-8"
+              items={[
+                'Manuāla rēķinu ievade grāmatvedības programmā, vidēji 3-5 minūtes katram rēķinam',
+                'Regulāras izmaiņas VID prasībās un nodokļu likmēs prasa pastāvīgu uzmanību',
+                'Klientu dokumentu šķirošana un klasificēšana aizņem līdz 25% darba laika',
+                'Kļūdas datu ievadē rada neatbilstības deklarācijās un papildu labošanas darbu',
+                'Grāmatvedības speciālistu trūkums darba tirgū apgrūtina biroja mērogošanu',
+                'Sezonālās slodzes (gada pārskati, deklarācijas) rada stresa un virsstundu periodus',
+              ]}
+            />
+          </Section>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-                {[
-                  { icon: Clock, label: 'Līdz 70% laika ietaupījums' },
-                  { icon: CheckCircle, label: 'VID atbilstība' },
-                  { icon: Zap, label: 'ROI 3-6 mēnešos' },
-                  { icon: Shield, label: 'GDPR un datu drošība' },
-                ].map((item, i) => (
-                  <div key={i} className="flex flex-col items-center gap-2 p-4 rounded-lg border border-border bg-card/60 text-center">
-                    <item.icon className="h-6 w-6 text-primary" />
-                    <span className="text-sm font-medium text-foreground">{item.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+          <Section
+            title="AI risinājumi finanšu sektoram"
+            tone="sheet"
+            intro="Mūsu AI risinājumi grāmatvedībai aptver visus galvenos procesus, no dokumentu saņemšanas līdz atskaišu iesniegšanai. Katrs risinājums ir pielāgots Latvijas grāmatvedības specifikai un normatīvajām prasībām."
+          >
+            <RuledList
+              items={[
+                {
+                  title: 'Automātiska rēķinu apstrāde',
+                  desc: 'AI nolasa rēķinus no PDF, e-pasta pielikumiem vai skenētiem dokumentiem. Automātiski izvelk piegādātāja datus, summas, PVN likmi, pozīcijas un maksājuma termiņu. Dati nonāk grāmatvedības programmā bez manuālas ievades, samazinot apstrādes laiku no 5 minūtēm uz 30 sekundēm.',
+                },
+                {
+                  title: 'Nodokļu aprēķini un deklarācijas',
+                  desc: 'AI automātiski aprēķina PVN, IIN un citus nodokļus, balstoties uz grāmatvedības datiem. Sistēma sagatavo deklarāciju melnrakstus VID formātos, pārbauda datu konsekvenci un brīdina par iespējamām kļūdām pirms iesniegšanas.',
+                },
+                {
+                  title: 'Atskaišu ģenerēšana',
+                  desc: 'Automātiska finanšu atskaišu, peļņas vai zaudējumu aprēķinu, bilances un naudas plūsmas pārskatu sagatavošana. AI apkopo datus no dažādiem avotiem un ģenerē strukturētas atskaites vadības lēmumu pieņemšanai un klientu informēšanai.',
+                },
+                {
+                  title: 'Klientu dokumentu pārvaldība',
+                  desc: 'Centralizēta klientu dokumentu glabāšana ar automātisku klasifikāciju un meklēšanu. AI sakārto dokumentus pa klientiem, periodiem un veidiem. Termiņu kontrole brīdina par tuvojošos deklarāciju termiņiem un līgumu beigām.',
+                },
+              ]}
+            />
+          </Section>
 
-          <article className="px-4 sm:px-6 md:px-8 pb-16">
-            <div className="max-w-4xl mx-auto space-y-12">
+          <Section
+            title="Integrācija ar Latvijas sistēmām"
+            intro="Mūsu AI risinājumi nevainojami integrējas ar Latvijā populārākajām grāmatvedības programmām un valsts sistēmām. Datu apmaiņa notiek automātiski, nodrošinot nepārtrauktu informācijas plūsmu bez manuālas iejaukšanās."
+          >
+            <RuledList
+              columns={2}
+              items={[
+                { title: 'Tildes Jumis', desc: 'Pilna integrācija ar rēķinu un atskaišu moduli' },
+                { title: '1C Grāmatvedība', desc: 'Automātisks dokumentu imports un eksports' },
+                { title: 'Horizon ERP', desc: 'Datu sinhronizācija ar ERP sistēmu' },
+                { title: 'VID EDS', desc: 'Deklarāciju sagatavošana un datu pārbaude' },
+                { title: 'Banku sistēmas', desc: 'Automātiska izrakstu importēšana un salīdzināšana' },
+                { title: 'E-rēķini', desc: 'E-rēķinu saņemšana un apstrāde Peppol formātā' },
+              ]}
+            />
+            <Prose className="mt-8">
+              <p>
+                Uzziniet vairāk par mūsu{' '}
+                <Link to="/gramatvedibas-automatizacija" className="link">grāmatvedības automatizācijas pakalpojumu</Link>{' '}
+                un{' '}
+                <Link to="/dokumentu-automatizacija" className="link">dokumentu automatizācijas risinājumiem</Link>.
+              </p>
+            </Prose>
+          </Section>
 
-              {/* Izaicinājumi */}
-              <section>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Izaicinājumi grāmatvedībā</h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Latvijas grāmatvedības nozare saskaras ar pieaugošu spiedienu — klientu skaits aug, likumdošana mainās, un klienti
-                  sagaida ātrāku un precīzāku servisu. Tajā pašā laikā grāmatvežu trūkums darba tirgū nozīmē, ka biroji nevar vienkārši
-                  pieņemt papildu darbiniekus. Šī situācija rada vairākus būtiskus izaicinājumus.
-                </p>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Grāmatvedības biroji Latvijā apkalpo vidēji 30-80 klientus, un katram klientam ir desmitiem dokumentu mēnesī.
-                  Rēķini no piegādātājiem, bankas izraksti, algu aprēķini, PVN deklarācijas — viss prasa manuālu apstrādi. Sezonas
-                  laikā — gada pārskatu un deklarāciju periodā — slodze var trīskāršoties, radot milzīgu stresu un kļūdu risku.
-                </p>
-                <div className="space-y-3 mb-6">
-                  {[
-                    'Manuāla rēķinu ievade grāmatvedības programmā — vidēji 3-5 minūtes katram rēķinam',
-                    'Regulāras izmaiņas VID prasībās un nodokļu likmēs prasa pastāvīgu uzmanību',
-                    'Klientu dokumentu šķirošana un klasificēšana aizņem līdz 25% darba laika',
-                    'Kļūdas datu ievadē rada neatbilstības deklarācijās un papildu labošanas darbu',
-                    'Grāmatvedības speciālistu trūkums darba tirgū apgrūtina biroja mērogošanu',
-                    'Sezonālās slodzes (gada pārskati, deklarācijas) rada stresa un virsstundu periodus',
-                  ].map((item, i) => (
-                    <div key={i} className="flex gap-2 text-muted-foreground">
-                      <CheckCircle className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
-                      <span className="leading-relaxed">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </section>
+          <Section
+            title="Rezultāti un ROI"
+            tone="sheet"
+            intro="Grāmatvedības biroji, kas ievieš AI automatizāciju, redz būtiskus uzlabojumus jau pirmajos mēnešos. Šeit ir tipiski rezultāti no mūsu klientu pieredzes Latvijā."
+          >
+            <RuledList
+              columns={2}
+              items={[
+                { title: 'Laika ietaupījums', desc: 'rutīnas uzdevumos', aside: '70%' },
+                { title: 'Mēneši līdz ROI', desc: 'investīcijas atgūšanai', aside: '3-6' },
+                { title: 'Vairāk klientu', desc: 'bez papildu darbiniekiem', aside: '2x' },
+                { title: 'Mazāk kļūdu', desc: 'datu ievadē un aprēķinos', aside: '95%' },
+              ]}
+            />
+            <Prose className="mt-8">
+              <p>
+                Piemēram, grāmatvedības birojs ar 4 darbiniekiem un 60 klientiem ieviesa mūsu rēķinu automatizācijas risinājumu.
+                Pirms ieviešanas katrs grāmatvedis pavadīja aptuveni 2 stundas dienā, manuāli ievadot rēķinus. Pēc AI ieviešanas
+                šis laiks samazinājās līdz 20 minūtēm, atbrīvojot 7 stundas dienā visam birojam. Tas ļāva uzņemt 15 jaunus klientus
+                bez papildu darbinieku pieņemšanas.
+              </p>
+            </Prose>
+          </Section>
 
-              {/* AI risinājumi */}
-              <section>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">AI risinājumi finanšu sektoram</h2>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Mūsu AI risinājumi grāmatvedībai aptver visus galvenos procesus — no dokumentu saņemšanas līdz atskaišu
-                  iesniegšanai. Katrs risinājums ir pielāgots Latvijas grāmatvedības specifikai un normatīvajām prasībām.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {[
-                    {
-                      icon: FileText,
-                      title: 'Automātiska rēķinu apstrāde',
-                      desc: 'AI nolasa rēķinus no PDF, e-pasta pielikumiem vai skenētiem dokumentiem. Automātiski izvelk piegādātāja datus, summas, PVN likmi, pozīcijas un maksājuma termiņu. Dati nonāk grāmatvedības programmā bez manuālas ievades — samazinot apstrādes laiku no 5 minūtēm uz 30 sekundēm.',
-                    },
-                    {
-                      icon: BarChart3,
-                      title: 'Nodokļu aprēķini un deklarācijas',
-                      desc: 'AI automātiski aprēķina PVN, IIN un citus nodokļus, balstoties uz grāmatvedības datiem. Sistēma sagatavo deklarāciju melnrakstus VID formātos, pārbauda datu konsekvenci un brīdina par iespējamām kļūdām pirms iesniegšanas.',
-                    },
-                    {
-                      icon: Calculator,
-                      title: 'Atskaišu ģenerēšana',
-                      desc: 'Automātiska finanšu atskaišu, peļņas vai zaudējumu aprēķinu, bilances un naudas plūsmas pārskatu sagatavošana. AI apkopo datus no dažādiem avotiem un ģenerē strukturētas atskaites vadības lēmumu pieņemšanai un klientu informēšanai.',
-                    },
-                    {
-                      icon: Shield,
-                      title: 'Klientu dokumentu pārvaldība',
-                      desc: 'Centralizēta klientu dokumentu glabāšana ar automātisku klasifikāciju un meklēšanu. AI sakārto dokumentus pa klientiem, periodiem un veidiem. Termiņu kontrole brīdina par tuvojošos deklarāciju termiņiem un līgumu beigām.',
-                    },
-                  ].map((item, i) => (
-                    <div key={i} className="p-5 rounded-lg border border-border bg-card/60">
-                      <div className="flex items-center gap-2 mb-2">
-                        <item.icon className="h-5 w-5 text-primary" />
-                        <h3 className="font-semibold text-foreground">{item.title}</h3>
-                      </div>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
+          <Section title="Biežāk uzdotie jautājumi">
+            <Faq items={faqs} />
+          </Section>
 
-              {/* Integrācija ar Latvijas sistēmām */}
-              <section>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Integrācija ar Latvijas sistēmām</h2>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Mūsu AI risinājumi nevainojami integrējas ar Latvijā populārākajām grāmatvedības programmām un valsts sistēmām.
-                  Datu apmaiņa notiek automātiski, nodrošinot nepārtrauktu informācijas plūsmu bez manuālas iejaukšanās.
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-                  {[
-                    { name: 'Tildes Jumis', desc: 'Pilna integrācija ar rēķinu un atskaišu moduli' },
-                    { name: '1C Grāmatvedība', desc: 'Automātisks dokumentu imports un eksports' },
-                    { name: 'Horizon ERP', desc: 'Datu sinhronizācija ar ERP sistēmu' },
-                    { name: 'VID EDS', desc: 'Deklarāciju sagatavošana un datu pārbaude' },
-                    { name: 'Banku sistēmas', desc: 'Automātiska izrakstu importēšana un salīdzināšana' },
-                    { name: 'E-rēķini', desc: 'E-rēķinu saņemšana un apstrāde Peppol formātā' },
-                  ].map((item, i) => (
-                    <div key={i} className="p-4 rounded-lg border border-border bg-card/60">
-                      <div className="flex items-center gap-2 mb-1">
-                        <Plug className="h-4 w-4 text-primary" />
-                        <h3 className="font-semibold text-foreground text-sm">{item.name}</h3>
-                      </div>
-                      <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
-                    </div>
-                  ))}
-                </div>
-                <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
-                  Uzziniet vairāk par mūsu{' '}
-                  <Link to="/gramatvedibas-automatizacija" className="text-primary hover:underline">grāmatvedības automatizācijas pakalpojumu</Link>{' '}
-                  un{' '}
-                  <Link to="/dokumentu-automatizacija" className="text-primary hover:underline">dokumentu automatizācijas risinājumiem</Link>.
-                </p>
-              </section>
+          <Section title="Saistītie pakalpojumi" tone="sheet">
+            <RuledList
+              items={[
+                { to: '/gramatvedibas-automatizacija', title: 'Grāmatvedības Automatizācija', desc: 'Pilna grāmatvedības procesu automatizācija ar AI' },
+                { to: '/dokumentu-automatizacija', title: 'Dokumentu Automatizācija', desc: 'Automātiska dokumentu apstrāde un digitalizācija' },
+                { to: '/datu-analize', title: 'Datu Analīze', desc: 'Finanšu datu analīze un prognozēšana ar AI' },
+              ]}
+            />
+          </Section>
+        </article>
 
-              {/* Rezultāti un ROI */}
-              <section>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Rezultāti un ROI</h2>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Grāmatvedības biroji, kas ievieš AI automatizāciju, redz būtiskus uzlabojumus jau pirmajos mēnešos.
-                  Šeit ir tipiski rezultāti no mūsu klientu pieredzes Latvijā.
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                  {[
-                    { value: '70%', label: 'Laika ietaupījums', desc: 'rutīnas uzdevumos' },
-                    { value: '3-6', label: 'Mēneši līdz ROI', desc: 'investīcijas atgūšanai' },
-                    { value: '2x', label: 'Vairāk klientu', desc: 'bez papildu darbiniekiem' },
-                    { value: '95%', label: 'Mazāk kļūdu', desc: 'datu ievadē un aprēķinos' },
-                  ].map((item, i) => (
-                    <div key={i} className="p-5 rounded-lg border border-border bg-card/60 text-center">
-                      <span className="text-3xl font-bold text-primary">{item.value}</span>
-                      <p className="font-medium text-foreground mt-1">{item.label}</p>
-                      <p className="text-xs text-muted-foreground mt-1">{item.desc}</p>
-                    </div>
-                  ))}
-                </div>
-                <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
-                  Piemēram, grāmatvedības birojs ar 4 darbiniekiem un 60 klientiem ieviesa mūsu rēķinu automatizācijas risinājumu.
-                  Pirms ieviešanas katrs grāmatvedis pavadīja aptuveni 2 stundas dienā, manuāli ievadot rēķinus. Pēc AI ieviešanas
-                  šis laiks samazinājās līdz 20 minūtēm — atbrīvojot 7 stundas dienā visam birojam. Tas ļāva uzņemt 15 jaunus klientus
-                  bez papildu darbinieku pieņemšanas.
-                </p>
-              </section>
-
-              {/* FAQ */}
-              <section>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Biežāk uzdotie jautājumi</h2>
-                <div className="space-y-3">
-                  {faqs.map((faq, index) => (
-                    <div key={index} className="rounded-lg border border-border bg-card/60 overflow-hidden hover:border-primary/20 transition-colors">
-                      <button onClick={() => setOpenFaq(openFaq === index ? null : index)} className="w-full flex items-center justify-between p-4 sm:p-5 text-left gap-4">
-                        <span className="text-sm sm:text-base font-medium text-foreground leading-snug">{faq.question}</span>
-                        <ChevronDown className={`h-5 w-5 flex-shrink-0 text-muted-foreground transition-transform duration-200 ${openFaq === index ? 'rotate-180' : ''}`} />
-                      </button>
-                      {openFaq === index && (
-                        <div className="px-4 sm:px-5 pb-4 sm:pb-5">
-                          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{faq.answer}</p>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              {/* Related Pages */}
-              <section>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Saistītie pakalpojumi</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  <Link to="/gramatvedibas-automatizacija" className="p-4 rounded-lg border border-border bg-card/60 hover:border-primary/30 transition-colors group">
-                    <h3 className="font-medium text-foreground text-sm mb-1">Grāmatvedības Automatizācija</h3>
-                    <p className="text-xs text-muted-foreground">Pilna grāmatvedības procesu automatizācija ar AI</p>
-                  </Link>
-                  <Link to="/dokumentu-automatizacija" className="p-4 rounded-lg border border-border bg-card/60 hover:border-primary/30 transition-colors group">
-                    <h3 className="font-medium text-foreground text-sm mb-1">Dokumentu Automatizācija</h3>
-                    <p className="text-xs text-muted-foreground">Automātiska dokumentu apstrāde un digitalizācija</p>
-                  </Link>
-                  <Link to="/datu-analize" className="p-4 rounded-lg border border-border bg-card/60 hover:border-primary/30 transition-colors group">
-                    <h3 className="font-medium text-foreground text-sm mb-1">Datu Analīze</h3>
-                    <p className="text-xs text-muted-foreground">Finanšu datu analīze un prognozēšana ar AI</p>
-                  </Link>
-                </div>
-              </section>
-
-              {/* CTA */}
-              <section className="p-8 rounded-xl bg-gradient-to-br from-primary/5 via-card to-primary/5 border border-primary/20 text-center">
-                <h2 className="text-2xl font-bold text-foreground mb-3">Automatizējiet grāmatvedības procesus ar AI</h2>
-                <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-                  Bezmaksas konsultācijā analizēsim jūsu grāmatvedības procesus un parādīsim, kā AI var ietaupīt laiku,
-                  samazināt kļūdas un ļaut jums apkalpot vairāk klientu.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <Link to="/contact">
-                    <Button className="bg-primary text-primary-foreground hover:bg-primary/90 group">
-                      <Calculator className="h-4 w-4 mr-2" />
-                      Bezmaksas konsultācija
-                    </Button>
-                  </Link>
-                  <Link to="/pricing">
-                    <Button variant="outline" className="border-primary/20 text-primary hover:bg-primary/10 group">
-                      Apskatīt cenas
-                      <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
-                </div>
-              </section>
-            </div>
-          </article>
-        </main>
-        <Footer />
-      </div>
+        <CtaBand
+          title="Automatizējiet grāmatvedības procesus ar AI"
+          text="Bezmaksas konsultācijā analizēsim jūsu grāmatvedības procesus un parādīsim, kā AI var ietaupīt laiku, samazināt kļūdas un ļaut jums apkalpot vairāk klientu."
+          primary={{ to: '/contact', label: 'Bezmaksas konsultācija' }}
+          secondary={{ to: '/pricing', label: 'Apskatīt cenas' }}
+        />
+      </PageShell>
     </PageTransition>
   );
 };

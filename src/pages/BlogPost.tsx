@@ -1,11 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useParams, Link } from 'react-router-dom';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Clock, ArrowLeft, ArrowRight, User, Share2 } from 'lucide-react';
+import { PageShell, Breadcrumbs, Section, RuledList, CtaBand } from '@/components/page';
 
 const relatedLinks: Record<string, { label: string; path: string }[]> = {
   'ka-ai-transforme-biznesa-procesus': [
@@ -294,24 +292,24 @@ const blogPostData: Record<string, PostData> = {
   },
 };
 
-// Render content with markdown-like heading support
+const months = [
+  'janvāris', 'februāris', 'marts', 'aprīlis', 'maijs', 'jūnijs',
+  'jūlijs', 'augusts', 'septembris', 'oktobris', 'novembris', 'decembris',
+];
+
+/* "2026-04-08" becomes "2026. gada 8. aprīlis". */
+const formatDate = (iso: string) => {
+  const [year, month, day] = iso.split('-').map(Number);
+  return `${year}. gada ${day}. ${months[month - 1]}`;
+};
+
+// Render content with markdown-like support: ## and ### headings, "- " lists, **bold** and [links](path)
 const renderContent = (content: string) => {
   const lines = content.split('\n');
   const elements: React.ReactNode[] = [];
   let currentParagraph: string[] = [];
+  let currentList: string[] = [];
   let key = 0;
-
-  const flushParagraph = () => {
-    if (currentParagraph.length > 0) {
-      const text = currentParagraph.join(' ');
-      elements.push(
-        <p key={key++} className="text-muted-foreground leading-relaxed mb-4">
-          {renderInlineFormatting(text)}
-        </p>
-      );
-      currentParagraph = [];
-    }
-  };
 
   const renderInlineFormatting = (text: string): React.ReactNode[] => {
     const parts = text.split(/(\*\*[^*]+\*\*|\[([^\]]+)\]\(([^)]+)\))/g);
@@ -319,7 +317,7 @@ const renderContent = (content: string) => {
       if (!part) return null;
       if (part.startsWith('**') && part.endsWith('**')) {
         return (
-          <strong key={i} className="text-foreground font-semibold">
+          <strong key={i} className="font-bold">
             {part.slice(2, -2)}
           </strong>
         );
@@ -327,7 +325,7 @@ const renderContent = (content: string) => {
       const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
       if (linkMatch) {
         return (
-          <Link key={i} to={linkMatch[2]} className="text-primary hover:underline">
+          <Link key={i} to={linkMatch[2]} className="link">
             {linkMatch[1]}
           </Link>
         );
@@ -336,28 +334,62 @@ const renderContent = (content: string) => {
     });
   };
 
+  const flushParagraph = () => {
+    if (currentParagraph.length > 0) {
+      const text = currentParagraph.join(' ');
+      elements.push(
+        <p key={key++} className="mt-0 mb-5">
+          {renderInlineFormatting(text)}
+        </p>
+      );
+      currentParagraph = [];
+    }
+  };
+
+  const flushList = () => {
+    if (currentList.length > 0) {
+      elements.push(
+        <ul key={key++} className="list-disc pl-6 space-y-2 mt-0 mb-6">
+          {currentList.map((item, i) => (
+            <li key={i}>{renderInlineFormatting(item)}</li>
+          ))}
+        </ul>
+      );
+      currentList = [];
+    }
+  };
+
+  const flush = () => {
+    flushParagraph();
+    flushList();
+  };
+
   for (const line of lines) {
     if (line.startsWith('### ')) {
-      flushParagraph();
+      flush();
       elements.push(
-        <h3 key={key++} className="text-xl sm:text-2xl font-bold text-foreground mt-8 mb-3">
+        <h3 key={key++} className="text-xl sm:text-2xl font-bold leading-snug mt-10 mb-3">
           {line.slice(4)}
         </h3>
       );
     } else if (line.startsWith('## ')) {
-      flushParagraph();
+      flush();
       elements.push(
-        <h2 key={key++} className="text-2xl sm:text-3xl font-bold text-foreground mt-10 mb-4" id={line.slice(3).toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9āčēģīķļņšūž-]/g, '')}>
+        <h2 key={key++} className="display-3 mt-14 mb-5 first:mt-0" id={line.slice(3).toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9āčēģīķļņšūž-]/g, '')}>
           {line.slice(3)}
         </h2>
       );
-    } else if (line.trim() === '') {
+    } else if (line.startsWith('- ')) {
       flushParagraph();
+      currentList.push(line.slice(2));
+    } else if (line.trim() === '') {
+      flush();
     } else {
+      flushList();
       currentParagraph.push(line);
     }
   }
-  flushParagraph();
+  flush();
 
   return elements;
 };
@@ -379,20 +411,22 @@ const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t } = useLanguage();
   const post = slug ? blogPostData[slug] : null;
+  /* The translation carries a leading arrow; link text has none. */
+  const backLabel = t('blog.back').replace(/^←\s*/, '');
 
   if (!post) {
     return (
       <PageTransition>
-        <Header />
-        <main className="min-h-screen flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-2xl font-bold text-foreground mb-4">Raksts nav atrasts</h1>
-            <Link to="/blog" className="text-primary hover:underline">
-              {t('blog.back')}
-            </Link>
+        <PageShell>
+          <div className="wrap band">
+            <h1 className="display-1 m-0">Raksts nav atrasts</h1>
+            <p className="mt-6 mb-0">
+              <Link to="/blog" className="link">
+                {backLabel}
+              </Link>
+            </p>
           </div>
-        </main>
-        <Footer />
+        </PageShell>
       </PageTransition>
     );
   }
@@ -500,102 +534,71 @@ const BlogPost = () => {
           })}</script>
         )}
       </Helmet>
-      <Header />
-      <main className="min-h-screen">
-        <article className="py-16 sm:py-24 px-4 sm:px-6 md:px-8">
-          <div className="max-w-3xl mx-auto">
-            <Link
-              to="/blog"
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-8"
-            >
-              <ArrowLeft size={16} />
-              {t('blog.back')}
-            </Link>
+      <PageShell>
+        <Breadcrumbs
+          items={[
+            { label: 'Sākums', to: '/' },
+            { label: 'Blogs', to: '/blog' },
+            { label: t(post.titleKey) },
+          ]}
+        />
 
-            <div className="flex items-center gap-3 mb-6">
-              <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                {post.category}
-              </span>
-              <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                <Clock size={12} />
-                {post.readTime}
-              </span>
-              <span className="text-xs text-muted-foreground">{post.date}</span>
-            </div>
+        <article>
+          <header className="wrap pt-8 pb-10 lg:pt-12 lg:pb-14">
+            <h1 className="display-1 m-0 max-w-[16em]">{t(post.titleKey)}</h1>
+            <p className="mt-6 lg:mt-8 mb-0 max-w-[42em] text-muted-foreground">
+              <span className="font-semibold text-foreground">{author}</span>, {authorRole}.{' '}
+              <time dateTime={post.date}>{formatDate(post.date)}</time>, lasīšanas laiks {post.readTime}.
+              Kategorija: {post.category}.
+            </p>
+          </header>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-              {t(post.titleKey)}
-            </h1>
+          <div className="wrap pb-16 lg:pb-24">
+            <div className="border-t-2 border-foreground pt-8 lg:pt-12 grid gap-10 lg:grid-cols-12 lg:gap-14">
+              {/* Table of contents */}
+              {toc.length > 2 && (
+                <nav aria-label="Satura rādītājs" className="lg:col-span-4 lg:sticky lg:top-24 lg:self-start">
+                  <h2 className="m-0 font-sans text-lg font-bold leading-snug">Satura rādītājs</h2>
+                  <ol className="list-none p-0 m-0 mt-4 border-t border-border">
+                    {toc.map((item, i) => (
+                      <li key={i} className="border-b border-border">
+                        <a
+                          href={`#${item.id}`}
+                          className="block py-2.5 text-muted-foreground no-underline hover:text-primary hover:underline underline-offset-4"
+                        >
+                          {item.text}
+                        </a>
+                      </li>
+                    ))}
+                  </ol>
+                </nav>
+              )}
 
-            {/* Author section */}
-            <div className="flex items-center gap-3 mb-8 pb-6 border-b border-border">
-              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                <User size={20} className="text-primary" />
+              <div className="min-w-0 lg:col-span-8 lg:col-start-5">
+                <div className="max-w-[42em] text-lg leading-relaxed">{renderContent(content)}</div>
+                <p className="mt-12 mb-0 pt-6 max-w-[42em] border-t border-border">
+                  <Link to="/blog" className="link">
+                    {backLabel}
+                  </Link>
+                </p>
               </div>
-              <div>
-                <p className="text-sm font-medium text-foreground">{author}</p>
-                <p className="text-xs text-muted-foreground">{authorRole}</p>
-              </div>
             </div>
-
-            {/* Table of contents */}
-            {toc.length > 2 && (
-              <nav className="mb-10 p-5 rounded-lg border border-border bg-card/60">
-                <h2 className="text-sm font-semibold text-foreground mb-3">Satura rādītājs</h2>
-                <ol className="space-y-1.5">
-                  {toc.map((item, i) => (
-                    <li key={i}>
-                      <a
-                        href={`#${item.id}`}
-                        className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        {i + 1}. {item.text}
-                      </a>
-                    </li>
-                  ))}
-                </ol>
-              </nav>
-            )}
-
-            <div className="prose prose-lg max-w-none">
-              {renderContent(content)}
-            </div>
-
-            {/* CTA Banner */}
-            <div className="mt-12 p-6 sm:p-8 rounded-xl bg-gradient-to-br from-primary/5 via-card to-primary/5 border border-primary/20 text-center">
-              <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-3">Vēlaties automatizēt šo procesu?</h2>
-              <p className="text-muted-foreground mb-4">Pieteikties bezmaksas konsultācijai un uzziniet, kā AI var palīdzēt jūsu uzņēmumam.</p>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
-              >
-                Pieteikties bezmaksas konsultācijai
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-
-            {/* Related Links */}
-            {slug && relatedLinks[slug] && (
-              <div className="mt-10 pt-8 border-t border-border">
-                <h2 className="text-lg font-semibold text-foreground mb-4">Saistītie pakalpojumi</h2>
-                <div className="flex flex-wrap gap-3">
-                  {relatedLinks[slug].map((link, i) => (
-                    <Link
-                      key={i}
-                      to={link.path}
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-border bg-card/60 text-sm text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
-                    >
-                      {link.label}
-                      <ArrowRight className="h-3.5 w-3.5" />
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
         </article>
-      </main>
-      <Footer />
+
+        {/* Related Links */}
+        {slug && relatedLinks[slug] && (
+          <Section title="Saistītie pakalpojumi" tone="sheet">
+            <RuledList items={relatedLinks[slug].map((link) => ({ title: link.label, to: link.path }))} />
+          </Section>
+        )}
+
+        <CtaBand
+          title="Vēlaties automatizēt šo procesu?"
+          text="Pieteikties bezmaksas konsultācijai un uzziniet, kā AI var palīdzēt jūsu uzņēmumam."
+          primary={{ to: '/contact', label: 'Pieteikties bezmaksas konsultācijai' }}
+        />
+      </PageShell>
     </PageTransition>
   );
 };

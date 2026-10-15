@@ -1,123 +1,174 @@
 import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { trackFormSubmission } from '@/lib/analytics';
+
+const FORM_ENDPOINT = 'https://formspree.io/f/mqalbdra';
+
+type Status = 'idle' | 'sending' | 'sent' | 'error';
+
+const INTERESTS = [
+  { value: 'Grāmatvedības automatizācija', label: 'Grāmatvedības automatizācija' },
+  { value: 'Dokumentu apstrāde', label: 'Dokumentu apstrāde' },
+  { value: 'AI čatbots', label: 'AI čatbots' },
+  { value: 'AI platforma', label: 'AI platforma' },
+  { value: 'Datu analīze', label: 'Datu analīze' },
+  { value: 'Cits', label: 'Cits' },
+];
 
 const HomeLeadForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    interest: '',
-  });
-  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '', company: '', interest: '' });
+  const [status, setStatus] = useState<Status>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const update = (field: keyof typeof formData) => (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => setFormData((data) => ({ ...data, [field]: e.target.value }));
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    setSubmitted(true);
+    setStatus('sending');
+
+    const body = new FormData();
+    body.append('name', formData.name);
+    body.append('email', formData.email);
+    body.append('company', formData.company);
+    body.append('interest', formData.interest);
+    body.append('_subject', 'Konsultācijas pieteikums no sākumlapas');
+    body.append('form_source', 'Sākumlapas forma');
+    body.append('page_url', window.location.href);
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        body,
+        headers: { Accept: 'application/json' },
+      });
+      if (!response.ok) throw new Error(`Form submission failed: ${response.status}`);
+      trackFormSubmission('home_lead_form');
+      setStatus('sent');
+    } catch (error) {
+      console.error('Lead form submission error:', error);
+      setStatus('error');
+    }
   };
 
-  if (submitted) {
-    return (
-      <section className="w-full py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-12">
-        <div className="max-w-2xl mx-auto text-center p-8 rounded-xl border border-primary/20 bg-gradient-to-br from-primary/5 via-card to-primary/5">
-          <CheckCircle className="h-12 w-12 text-primary mx-auto mb-4" />
-          <h2 className="text-2xl font-bold text-foreground mb-2">Paldies!</h2>
-          <p className="text-muted-foreground">Jūsu pieteikums ir saņemts. Mēs sazināsimies ar jums tuvāko 24 stundu laikā.</p>
-        </div>
-      </section>
-    );
-  }
-
   return (
-    <section className="w-full py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-12">
-      <div className="max-w-4xl mx-auto">
-        <div className="rounded-xl border border-border/50 bg-gradient-to-br from-card/80 via-background to-card/80 p-6 sm:p-8 md:p-10">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tighter leading-tight mb-3">
-              Pieteikties bezmaksas konsultācijai
-            </h2>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-              Aizpildiet formu un mūsu AI eksperts sazināsies ar jums, lai apspriestu jūsu uzņēmuma automatizācijas iespējas
-            </p>
-          </div>
+    <section id="konsultacija" className="band band-ink">
+      <div className="wrap grid gap-10 lg:grid-cols-12 lg:gap-14 lg:items-start">
+        <div className="lg:col-span-5">
+          <h2 className="display-2 m-0">Pieteikties bezmaksas konsultācijai</h2>
+          <p className="mt-5 mb-0 text-lg text-ink-muted max-w-[26em]">
+            Pastāstiet, kurš darbs jūsu uzņēmumā aizņem visvairāk laika. Atbildēsim 24 stundu laikā un
+            pateiksim, vai un kā to var automatizēt.
+          </p>
+          <p className="mt-8 mb-0 text-ink-muted">
+            Var arī uzreiz zvanīt vai rakstīt:
+            <br />
+            <a href="tel:+37120015830" className="font-bold text-ink-foreground underline underline-offset-4">
+              +371 20 015 830
+            </a>
+            <br />
+            <a
+              href="mailto:info@automatizacijas.lv"
+              className="font-bold text-ink-foreground underline underline-offset-4"
+            >
+              info@automatizacijas.lv
+            </a>
+          </p>
+        </div>
 
-          <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto">
-            <div className="space-y-2">
-              <label htmlFor="lead-name" className="text-sm font-medium text-foreground">
-                Vārds *
-              </label>
-              <input
-                id="lead-name"
-                type="text"
-                required
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
-                placeholder="Jūsu vārds"
-              />
+        <div className="lg:col-span-7 sheet p-6 sm:p-10">
+          {status === 'sent' ? (
+            <div role="status" className="py-6">
+              <h3 className="display-3 m-0">
+                <span className="mark">Pieteikums saņemts</span>
+              </h3>
+              <p className="mt-4 mb-0 text-lg">
+                Paldies, {formData.name}. Sazināsimies ar jums 24 stundu laikā uz {formData.email}.
+              </p>
             </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="grid gap-6 sm:grid-cols-2">
+              <div>
+                <label htmlFor="lead-name" className="field-label">
+                  Vārds
+                </label>
+                <input
+                  id="lead-name"
+                  name="name"
+                  type="text"
+                  required
+                  autoComplete="name"
+                  value={formData.name}
+                  onChange={update('name')}
+                  className="field"
+                />
+              </div>
 
-            <div className="space-y-2">
-              <label htmlFor="lead-email" className="text-sm font-medium text-foreground">
-                E-pasts *
-              </label>
-              <input
-                id="lead-email"
-                type="email"
-                required
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
-                placeholder="jusu.epasts@piemers.lv"
-              />
-            </div>
+              <div>
+                <label htmlFor="lead-email" className="field-label">
+                  E-pasts
+                </label>
+                <input
+                  id="lead-email"
+                  name="email"
+                  type="email"
+                  required
+                  autoComplete="email"
+                  value={formData.email}
+                  onChange={update('email')}
+                  className="field"
+                />
+              </div>
 
-            <div className="space-y-2">
-              <label htmlFor="lead-company" className="text-sm font-medium text-foreground">
-                Uzņēmums
-              </label>
-              <input
-                id="lead-company"
-                type="text"
-                value={formData.company}
-                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
-                placeholder="Jūsu uzņēmuma nosaukums"
-              />
-            </div>
+              <div>
+                <label htmlFor="lead-company" className="field-label">
+                  Uzņēmums <span className="font-normal text-muted-foreground">(nav obligāts)</span>
+                </label>
+                <input
+                  id="lead-company"
+                  name="company"
+                  type="text"
+                  autoComplete="organization"
+                  value={formData.company}
+                  onChange={update('company')}
+                  className="field"
+                />
+              </div>
 
-            <div className="space-y-2">
-              <label htmlFor="lead-interest" className="text-sm font-medium text-foreground">
-                Kas jūs interesē? *
-              </label>
-              <select
-                id="lead-interest"
-                required
-                value={formData.interest}
-                onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
-              >
-                <option value="">Izvēlieties...</option>
-                <option value="accounting">Grāmatvedības automatizācija</option>
-                <option value="documents">Dokumentu apstrāde</option>
-                <option value="chatbot">AI čatbots</option>
-                <option value="platform">AI platforma</option>
-                <option value="data">Datu analīze</option>
-                <option value="other">Cits</option>
-              </select>
-            </div>
+              <div>
+                <label htmlFor="lead-interest" className="field-label">
+                  Kas jūs interesē?
+                </label>
+                <select
+                  id="lead-interest"
+                  name="interest"
+                  required
+                  value={formData.interest}
+                  onChange={update('interest')}
+                  className="field"
+                >
+                  <option value="">Izvēlieties</option>
+                  {INTERESTS.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
 
-            <div className="sm:col-span-2 pt-2">
-              <Button
-                type="submit"
-                className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 group px-8 py-3"
-              >
-                Pieteikties bezmaksas konsultācijai
-                <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </div>
-          </form>
+              <div className="sm:col-span-2">
+                <button type="submit" disabled={status === 'sending'} className="btn btn-solid w-full sm:w-auto disabled:opacity-60">
+                  {status === 'sending' ? 'Sūta pieteikumu' : 'Nosūtīt pieteikumu'}
+                </button>
+
+                {status === 'error' && (
+                  <p role="alert" className="mt-4 mb-0 font-semibold text-destructive">
+                    Pieteikums netika nosūtīts. Pārbaudiet interneta savienojumu un mēģiniet vēlreiz vai rakstiet
+                    uz info@automatizacijas.lv.
+                  </p>
+                )}
+              </div>
+            </form>
+          )}
         </div>
       </div>
     </section>

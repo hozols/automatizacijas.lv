@@ -1,161 +1,96 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from './Logo';
-import {
-  MapPin,
-  Linkedin,
-  Facebook,
-  Twitter,
-  Github,
-  ArrowRight,
-  Shield,
-  FileText,
-  Settings,
-  Mail,
-  Phone
-} from 'lucide-react';
 import { useCookies } from '@/contexts/CookieContext';
+
+const serviceLinks = [
+  { to: '/services', label: 'AI risinājumi' },
+  { to: '/chatbotu-izstrade', label: 'AI čatboti' },
+  { to: '/procesu-automatizacija', label: 'Procesu automatizācija' },
+  { to: '/dokumentu-automatizacija', label: 'Dokumentu automatizācija' },
+  { to: '/gramatvedibas-automatizacija', label: 'Grāmatvedības automatizācija' },
+  { to: '/ai-platformu-izstrade', label: 'AI platformu izstrāde' },
+  { to: '/majaslapu-izstrade', label: 'Mājaslapu izstrāde' },
+  { to: '/nozares', label: 'Nozares' },
+];
+
+const companyLinks = [
+  { to: '/portfolio', label: 'Projekti' },
+  { to: '/pricing', label: 'Cenas' },
+  { to: '/blog', label: 'Blogs' },
+  { to: '/contact', label: 'Kontakti' },
+  { to: '/privacy', label: 'Privātuma politika' },
+];
+
+const footerLink = 'text-ink-muted no-underline hover:text-ink-foreground hover:underline underline-offset-4';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { openModal } = useCookies();
 
   return (
-    <footer className="w-full bg-gradient-to-br from-background via-card/80 to-background border-t border-border/50">
-      {/* Main Footer Content */}
-      <div className="py-16 sm:py-20 px-4 sm:px-6 md:px-8 lg:px-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
-            {/* Company Info */}
-            <div className="lg:col-span-2 space-y-6">
-              <div className="hover-scale transition-transform duration-200">
-                <Logo />
-              </div>
-              <p className="text-base text-muted-foreground max-w-md leading-relaxed">
-                Moderna AI automatizācija uzņēmumiem, kas novērtē efektivitāti, precizitāti un rezultātus. Mēs palīdzam jūsu biznesam augt ar jaunākajām AI tehnoloģijām.
-              </p>
-              
-              {/* Contact Info */}
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <Mail className="h-4 w-4 text-primary" />
-                  <span>info@automatizacijas.lv</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <Phone className="h-4 w-4 text-primary" />
-                  <span>+371 20 015 830</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <MapPin className="h-4 w-4 text-primary" />
-                  <span>Rīga, Latvija</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Services */}
-            <div className="space-y-6">
-              <h3 className="text-lg font-semibold text-foreground">Pakalpojumi</h3>
-              <div className="space-y-3">
-                <Link to="/services" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
-                  <span className="flex items-center gap-2">
-                    AI Risinājumi
-                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
-                  </span>
-                </Link>
-                <Link to="/chatbotu-izstrade" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
-                  <span className="flex items-center gap-2">
-                    AI Čatboti
-                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
-                  </span>
-                </Link>
-                <Link to="/procesu-automatizacija" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
-                  <span className="flex items-center gap-2">
-                    Procesu Automatizācija
-                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
-                  </span>
-                </Link>
-                <Link to="/dokumentu-automatizacija" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
-                  <span className="flex items-center gap-2">
-                    Dokumentu Automatizācija
-                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
-                  </span>
-                </Link>
-                <Link to="/gramatvedibas-automatizacija" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
-                  <span className="flex items-center gap-2">
-                    Grāmatvedības Automatizācija
-                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
-                  </span>
-                </Link>
-                <Link to="/ai-platformu-izstrade" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
-                  <span className="flex items-center gap-2">
-                    AI Platformu Izstrāde
-                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
-                  </span>
-                </Link>
-                <Link to="/majaslapu-izstrade" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
-                  <span className="flex items-center gap-2">
-                    Mājaslapu Izstrāde
-                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
-                  </span>
-                </Link>
-                <Link to="/nozares" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
-                  <span className="flex items-center gap-2">
-                    Nozares
-                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-all duration-200 transform -translate-x-1 group-hover:translate-x-0" />
-                  </span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Company */}
-            <div className="space-y-6">
-              <h3 className="text-lg font-semibold text-foreground">Uzņēmums</h3>
-              <div className="space-y-3">
-                <Link to="/portfolio" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Projekti</Link>
-                <Link to="/pricing" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Cenas</Link>
-                <Link to="/blog" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Blogs</Link>
-                <Link to="/contact" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">Kontakti</Link>
-              </div>
-            </div>
+    <footer className="band-ink pb-24 md:pb-0">
+      <div className="wrap pt-14 lg:pt-20 pb-10">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-14">
+          <div className="lg:col-span-6">
+            <Link to="/" className="display-2 block no-underline text-ink-foreground">
+              automatizacijas.lv
+            </Link>
+            <p className="mt-5 mb-0 text-ink-muted max-w-[26em]">
+              AI automatizācija uzņēmumiem Latvijā. Atrodamies Rīgā.
+            </p>
+            <p className="mt-6 mb-0 text-lg leading-loose">
+              <a href="tel:+37120015830" className="text-ink-foreground font-bold underline underline-offset-4">
+                +371 20 015 830
+              </a>
+              <br />
+              <a href="mailto:info@automatizacijas.lv" className="text-ink-foreground font-bold underline underline-offset-4">
+                info@automatizacijas.lv
+              </a>
+            </p>
           </div>
 
-          {/* Social Links & Newsletter */}
-          <div className="mt-12 sm:mt-16 pt-8 border-t border-border/30">
-            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
-              {/* Social Links */}
-              <div className="flex items-center gap-4">
-                <span className="text-sm text-muted-foreground">Sekojiet mums:</span>
-                <div className="flex gap-3">
-                  <a href="https://www.linkedin.com/company/sula-labs-io/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 rounded-lg bg-muted/50 hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-200 hover:scale-110">
-                    <Linkedin className="h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <nav aria-label="Pakalpojumi" className="lg:col-span-3">
+            <h3 className="m-0 mb-4 text-base font-bold">Pakalpojumi</h3>
+            <ul className="list-none p-0 m-0 space-y-2.5">
+              {serviceLinks.map((link) => (
+                <li key={link.to}>
+                  <Link to={link.to} className={footerLink}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <nav aria-label="Uzņēmums" className="lg:col-span-3">
+            <h3 className="m-0 mb-4 text-base font-bold">Uzņēmums</h3>
+            <ul className="list-none p-0 m-0 space-y-2.5">
+              {companyLinks.map((link) => (
+                <li key={link.to}>
+                  <Link to={link.to} className={footerLink}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/sula-labs-io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={footerLink}
+                >
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
-      </div>
 
-      {/* Bottom Footer */}
-      <div className="py-6 px-4 sm:px-6 md:px-8 lg:px-12 border-t border-border/30 bg-muted/20">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div className="text-center sm:text-left">
-              <span className="text-sm text-muted-foreground">
-                © {currentYear} AI Automatizācija. Visas tiesības aizsargātas.
-              </span>
-            </div>
-            
-            <div className="flex items-center gap-6 text-sm text-muted-foreground">
-              <button 
-                onClick={openModal}
-                className="flex items-center gap-2 hover:text-primary transition-colors duration-200 group"
-              >
-                <Settings className="h-3 w-3 group-hover:scale-110 transition-transform" />
-                <span>Sīkdatnes</span>
-              </button>
-            </div>
-          </div>
+        <div className="mt-14 pt-6 border-t border-ink-rule flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-ink-muted text-[0.9375rem]">
+          <span>© {currentYear} automatizacijas.lv. Visas tiesības aizsargātas.</span>
+          <button type="button" onClick={openModal} className={`${footerLink} text-left`}>
+            Sīkdatņu iestatījumi
+          </button>
         </div>
       </div>
     </footer>

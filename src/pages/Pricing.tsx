@@ -1,9 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import Header from '@/components/Header';
 import Pricing from '@/components/Pricing';
-import Footer from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
+import { PageShell, Breadcrumbs } from '@/components/page';
 
 const PricingPage = () => {
   return (
@@ -36,13 +35,10 @@ const PricingPage = () => {
           ]
         })}</script>
       </Helmet>
-      <div className="min-h-screen flex flex-col bg-background text-foreground">
-        <Header />
-        <main>
-          <Pricing />
-        </main>
-        <Footer />
-      </div>
+      <PageShell>
+        <Breadcrumbs items={[{ label: 'Sākums', to: '/' }, { label: 'Cenas' }]} />
+        <Pricing />
+      </PageShell>
     </PageTransition>
   );
 };

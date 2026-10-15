@@ -1,11 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
-import { Button } from '@/components/ui/button';
-import { ChevronDown, Bot, Zap, Clock, Users, ArrowRight, CheckCircle, Shield, MessageSquare, FileText, TrendingUp } from 'lucide-react';
+import { PageShell, Breadcrumbs, PageHero, Section, Prose, CheckList, RuledList, Steps, Faq, CtaBand } from '@/components/page';
 
 const faqs = [
   {
@@ -61,8 +57,6 @@ const breadcrumbSchema = {
 };
 
 const AiDarbinieki = () => {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
   return (
     <PageTransition>
       <Helmet>
@@ -89,268 +83,170 @@ const AiDarbinieki = () => {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
-      <div className="min-h-screen flex flex-col bg-background text-foreground">
-        <Header />
-        <main className="flex-1">
-          <nav className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 pt-8 text-sm text-muted-foreground">
-            <Link to="/" className="hover:text-primary transition-colors">Sākums</Link>
-            <span className="mx-2">/</span>
-            <Link to="/services" className="hover:text-primary transition-colors">Pakalpojumi</Link>
-            <span className="mx-2">/</span>
-            <span className="text-foreground">AI Darbinieki</span>
-          </nav>
+      <PageShell>
+        <Breadcrumbs
+          items={[
+            { label: 'Sākums', to: '/' },
+            { label: 'Pakalpojumi', to: '/services' },
+            { label: 'AI Darbinieki' },
+          ]}
+        />
 
-          <section className="py-12 sm:py-16 px-4 sm:px-6 md:px-8">
-            <div className="max-w-4xl mx-auto">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-                AI Darbinieki — Virtuālie Komandas Biedri Jūsu Biznesam
-              </h1>
-              <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8">
-                Iedomājieties komandas biedru, kas <strong className="text-foreground">strādā 24/7 bez pārtraukumiem</strong>, nekad
-                nepieļauj kļūdas rutīnas uzdevumos un spēj vienlaicīgi apkalpot desmitiem klientu. AI darbinieki nav nākotne — tie ir
-                šodienas risinājums, kas jau palīdz Latvijas uzņēmumiem strādāt efektīvāk un gudrāk.
+        <PageHero
+          title="AI Darbinieki: Virtuālie Komandas Biedri Jūsu Biznesam"
+          lede={
+            <>
+              Iedomājieties komandas biedru, kas <strong>strādā 24/7 bez pārtraukumiem</strong>, nekad nepieļauj
+              kļūdas rutīnas uzdevumos un spēj vienlaicīgi apkalpot desmitiem klientu. AI darbinieki nav nākotne.
+              Tie ir šodienas risinājums, kas jau palīdz Latvijas uzņēmumiem strādāt efektīvāk un gudrāk.
+            </>
+          }
+          facts={['24/7 pieejamība', '10x produktivitāte', 'No €199/mēn', 'Bez kļūdām']}
+        />
+
+        <article>
+          <Section title="Kas ir AI darbinieki?">
+            <Prose>
+              <p>
+                AI darbinieki ir mākslīgā intelekta aģenti, kas veic konkrētus biznesa uzdevumus autonomi vai ar
+                minimālu cilvēka iesaisti. Atšķirībā no vienkāršiem automatizācijas rīkiem, AI darbinieki saprot
+                kontekstu, mācās no pieredzes un spēj pieņemt lēmumus sarežģītās situācijās.
               </p>
+              <p>
+                Iedomājieties darbinieku, kas nekad neaizmirst nosūtīt atgādinājumu, vienmēr precīzi apstrādā datus
+                un spēj vienlaicīgi vadīt simtiem sarunu ar klientiem. Tieši to piedāvā AI darbinieki. Tie integrējas
+                jūsu esošajās sistēmās un sāk radīt vērtību jau no pirmās darba dienas.
+              </p>
+            </Prose>
+            <CheckList
+              className="mt-8"
+              items={[
+                'Veic rutīnas uzdevumus 10x ātrāk nekā cilvēks',
+                'Strādā bez pārtraukumiem: 24 stundas diennaktī, 365 dienas gadā',
+                'Nepieļauj kļūdas atkārtojamos procesos',
+                'Mācās un uzlabojas ar katru izpildītu uzdevumu',
+                'Integrējas ar jūsu esošajām sistēmām un rīkiem',
+                'Mērogojams: viens AI darbinieks var aizstāt veselu nodaļu',
+              ]}
+            />
+          </Section>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-                {[
-                  { icon: Clock, label: '24/7 pieejamība' },
-                  { icon: Zap, label: '10x produktivitāte' },
-                  { icon: TrendingUp, label: 'No €199/mēn' },
-                  { icon: Shield, label: 'Bez kļūdām' },
-                ].map((item, i) => (
-                  <div key={i} className="flex flex-col items-center gap-2 p-4 rounded-lg border border-border bg-card/60 text-center">
-                    <item.icon className="h-6 w-6 text-primary" />
-                    <span className="text-sm font-medium text-foreground">{item.label}</span>
-                  </div>
-                ))}
+          <Section
+            title="AI darbinieku veidi"
+            tone="sheet"
+            intro="Katram biznesa procesam savs AI darbinieks. Mēs palīdzam identificēt jomas, kur AI darbinieki radīs vislielāko ietekmi, un ieviešam risinājumus, kas pielāgoti tieši jūsu uzņēmuma vajadzībām."
+          >
+            <RuledList
+              items={[
+                {
+                  title: 'Klientu apkalpošanas AI darbinieks',
+                  desc: 'Atbild uz klientu jautājumiem jebkurā laikā, risina standarta problēmas, novirza sarežģītus pieprasījumus pie speciālistiem. Saprot latviešu valodu un spēj vadīt dabīgas sarunas ar augstu apmierinātības līmeni.',
+                },
+                {
+                  title: 'Satura veidošanas AI darbinieks',
+                  desc: 'Raksta un rediģē tekstus: sociālo tīklu ierakstus, e-pasta kampaņas, produktu aprakstus un emuāra rakstus. Saglabā jūsu zīmola toni un stilistiku, veidojot konsekventu komunikāciju visos kanālos.',
+                },
+                {
+                  title: 'Datu apstrādes AI darbinieks',
+                  desc: 'Apstrādā, analizē un strukturē liela apjoma datus. Veido atskaites, identificē tendences un sagatavo ieskatus lēmumu pieņemšanai. Darbu, kas cilvēkam aizņemtu stundas, AI darbinieks paveic minūtēs.',
+                },
+                {
+                  title: 'Pārdošanas AI darbinieks',
+                  desc: 'Kvalificē potenciālos klientus, personalizē piedāvājumus un uztur kontaktu ar esošajiem klientiem. Analizē pirkumu vēsturi un iesaka optimālo pārdošanas stratēģiju katram klientam.',
+                },
+                {
+                  title: 'Administratīvais AI darbinieks',
+                  desc: 'Pārvalda kalendārus, organizē sapulces, apstrādā e-pastus un veic dokumentu pārvaldību. Automatizē ikdienas administratīvos uzdevumus, atbrīvojot jūsu laiku stratēģiskam darbam.',
+                },
+              ]}
+            />
+          </Section>
+
+          <Section
+            title="Kā AI darbinieki integrējas jūsu komandā"
+            intro="AI darbinieka ieviešana nav sarežģīts vai ilgstošs process. Mēs esam izstrādājuši pārbaudītu pieeju, kas ļauj sākt gūt rezultātus jau dažu nedēļu laikā."
+          >
+            <Steps
+              items={[
+                {
+                  title: 'Procesu audits un plānošana',
+                  desc: 'Analizējam jūsu esošos biznesa procesus, identificējam rutīnas uzdevumus un novērtējam, kur AI darbinieki radīs vislielāko ietekmi. Izveidojam detalizētu ieviešanas plānu.',
+                },
+                {
+                  title: 'AI darbinieka konfigurācija',
+                  desc: 'Apmācām AI darbinieku uz jūsu specifiskajiem datiem, definējam darbības scenārijus un integrējam ar jūsu izmantotajām sistēmām: CRM, e-pastu, mājas lapu vai citiem rīkiem.',
+                },
+                {
+                  title: 'Testēšana un pielāgošana',
+                  desc: 'Testējam AI darbinieku reālos scenārijos, pielāgojam atbildes un uzvedību, un nodrošinām, ka tas strādā precīzi un atbilstoši jūsu biznesa standartiem.',
+                },
+                {
+                  title: 'Palaišana un nepārtraukta optimizācija',
+                  desc: 'Palaidam AI darbinieku produkcijā, uzraugām veiktspēju un nepārtraukti uzlabojam tā efektivitāti, balstoties uz reāliem datiem un atgriezenisko saiti.',
+                },
+              ]}
+            />
+          </Section>
+
+          <Section
+            title="Priekšrocības salīdzinājumā ar tradicionālo pieeju"
+            tone="sheet"
+            intro="AI darbinieki fundamentāli maina to, kā uzņēmumi pārvalda rutīnas uzdevumus. Salīdziniet tradicionālo pieeju ar AI darbinieku ieviešanu."
+          >
+            <div className="grid gap-10 md:grid-cols-2">
+              <div>
+                <h3 className="m-0 mb-4 text-xl font-bold leading-snug">Tradicionālā pieeja</h3>
+                <ul className="list-none p-0 m-0 border-t border-border">
+                  {[
+                    'Ierobežots darba laiks (8h dienā)',
+                    'Cilvēciskās kļūdas rutīnas uzdevumos',
+                    'Lēna mērogošana: jaunu darbinieku apmācība',
+                    'Augstas personāla izmaksas',
+                    'Nevienmērīga kvalitāte atkarībā no noslogojuma',
+                  ].map((item) => (
+                    <li key={item} className="py-3 border-b border-border text-muted-foreground">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="m-0 mb-4 text-xl font-bold leading-snug">AI darbinieki</h3>
+                <CheckList
+                  items={[
+                    'Strādā 24/7 bez pārtraukumiem',
+                    'Konsekventa precizitāte katrā uzdevumā',
+                    'Tūlītēja mērogošana: pievienojiet jaunus uzdevumus minūtēs',
+                    'Fiksētas un prognozējamas izmaksas',
+                    'Vienmērīgi augsta kvalitāte neatkarīgi no apjoma',
+                  ]}
+                />
               </div>
             </div>
-          </section>
+          </Section>
 
-          <article className="px-4 sm:px-6 md:px-8 pb-16">
-            <div className="max-w-4xl mx-auto space-y-12">
-              <section>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Kas ir AI darbinieki?</h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  AI darbinieki ir mākslīgā intelekta aģenti, kas veic konkrētus biznesa uzdevumus autonomi vai ar minimālu cilvēka iesaisti.
-                  Atšķirībā no vienkāršiem automatizācijas rīkiem, AI darbinieki saprot kontekstu, mācās no pieredzes un spēj pieņemt lēmumus
-                  sarežģītās situācijās.
-                </p>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Iedomājieties darbinieku, kas nekad neaizmirst nosūtīt atgādinājumu, vienmēr precīzi apstrādā datus un spēj vienlaicīgi
-                  vadīt simtiem sarunu ar klientiem — tieši to piedāvā AI darbinieki. Tie integrējas jūsu esošajās sistēmās un sāk
-                  radīt vērtību jau no pirmās darba dienas.
-                </p>
-                <div className="space-y-3 mb-6">
-                  {[
-                    'Veic rutīnas uzdevumus 10x ātrāk nekā cilvēks',
-                    'Strādā bez pārtraukumiem — 24 stundas diennaktī, 365 dienas gadā',
-                    'Nepieļauj kļūdas atkārtojamos procesos',
-                    'Mācās un uzlabojas ar katru izpildītu uzdevumu',
-                    'Integrējas ar jūsu esošajām sistēmām un rīkiem',
-                    'Mērogojams — viens AI darbinieks var aizstāt veselu nodaļu',
-                  ].map((item, i) => (
-                    <div key={i} className="flex gap-2 text-muted-foreground">
-                      <CheckCircle className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
-                      <span className="leading-relaxed">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </section>
+          <Section title="Biežāk uzdotie jautājumi">
+            <Faq items={faqs} />
+          </Section>
 
-              <section>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">AI darbinieku veidi</h2>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Katram biznesa procesam — savs AI darbinieks. Mēs palīdzam identificēt jomas, kur AI darbinieki radīs
-                  vislielāko ietekmi, un ieviešam risinājumus, kas pielāgoti tieši jūsu uzņēmuma vajadzībām.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {[
-                    {
-                      icon: MessageSquare,
-                      title: 'Klientu apkalpošanas AI darbinieks',
-                      desc: 'Atbild uz klientu jautājumiem jebkurā laikā, risina standarta problēmas, novirza sarežģītus pieprasījumus pie speciālistiem. Saprot latviešu valodu un spēj vadīt dabīgas sarunas ar augstu apmierinātības līmeni.',
-                    },
-                    {
-                      icon: FileText,
-                      title: 'Satura veidošanas AI darbinieks',
-                      desc: 'Raksta un rediģē tekstus — sociālo tīklu ierakstus, e-pasta kampaņas, produktu aprakstus un emuāra rakstus. Saglabā jūsu zīmola toni un stilistiku, veidojot konsekventu komunikāciju visos kanālos.',
-                    },
-                    {
-                      icon: Zap,
-                      title: 'Datu apstrādes AI darbinieks',
-                      desc: 'Apstrādā, analizē un strukturē liela apjoma datus. Veido atskaites, identificē tendences un sagatavo ieskatus lēmumu pieņemšanai. Darbu, kas cilvēkam aizņemtu stundas, AI darbinieks paveic minūtēs.',
-                    },
-                    {
-                      icon: TrendingUp,
-                      title: 'Pārdošanas AI darbinieks',
-                      desc: 'Kvalificē potenciālos klientus, personalizē piedāvājumus un uztur kontaktu ar esošajiem klientiem. Analizē pirkumu vēsturi un iesaka optimālo pārdošanas stratēģiju katram klientam.',
-                    },
-                    {
-                      icon: Users,
-                      title: 'Administratīvais AI darbinieks',
-                      desc: 'Pārvalda kalendārus, organizē sapulces, apstrādā e-pastus un veic dokumentu pārvaldību. Automatizē ikdienas administratīvos uzdevumus, atbrīvojot jūsu laiku stratēģiskam darbam.',
-                    },
-                  ].map((item, i) => (
-                    <div key={i} className="p-5 rounded-lg border border-border bg-card/60">
-                      <div className="flex items-center gap-3 mb-2">
-                        <item.icon className="h-5 w-5 text-primary flex-shrink-0" />
-                        <h3 className="font-semibold text-foreground">{item.title}</h3>
-                      </div>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
+          <Section title="Saistītie pakalpojumi" tone="sheet">
+            <RuledList
+              items={[
+                { to: '/chatbotu-izstrade', title: 'AI Čatbotu Izstrāde', desc: 'Inteliģenti čatboti klientu apkalpošanai' },
+                { to: '/procesu-automatizacija', title: 'Procesu Automatizācija', desc: 'Automatizējiet biznesa procesus ar AI' },
+                { to: '/ai-platformu-izstrade', title: 'AI Platformu Izstrāde', desc: 'Pielāgotas AI platformas jūsu biznesam' },
+              ]}
+            />
+          </Section>
+        </article>
 
-              <section>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Kā AI darbinieki integrējas jūsu komandā</h2>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  AI darbinieka ieviešana nav sarežģīts vai ilgstošs process. Mēs esam izstrādājuši pārbaudītu pieeju, kas ļauj
-                  sākt gūt rezultātus jau dažu nedēļu laikā.
-                </p>
-                <div className="space-y-4">
-                  {[
-                    {
-                      step: '1',
-                      title: 'Procesu audits un plānošana',
-                      desc: 'Analizējam jūsu esošos biznesa procesus, identificējam rutīnas uzdevumus un novērtējam, kur AI darbinieki radīs vislielāko ietekmi. Izveidojam detalizētu ieviešanas plānu.',
-                    },
-                    {
-                      step: '2',
-                      title: 'AI darbinieka konfigurācija',
-                      desc: 'Apmācām AI darbinieku uz jūsu specifiskajiem datiem, definējam darbības scenārijus un integrējam ar jūsu izmantotajām sistēmām — CRM, e-pastu, mājas lapu vai citiem rīkiem.',
-                    },
-                    {
-                      step: '3',
-                      title: 'Testēšana un pielāgošana',
-                      desc: 'Testējam AI darbinieku reālos scenārijos, pielāgojam atbildes un uzvedību, un nodrošinām, ka tas strādā precīzi un atbilstoši jūsu biznesa standartiem.',
-                    },
-                    {
-                      step: '4',
-                      title: 'Palaišana un nepārtraukta optimizācija',
-                      desc: 'Palaidam AI darbinieku produkcijā, uzraugām veiktspēju un nepārtraukti uzlabojam tā efektivitāti, balstoties uz reāliem datiem un atgriezenisko saiti.',
-                    },
-                  ].map((item, i) => (
-                    <div key={i} className="flex gap-4 p-5 rounded-lg border border-border bg-card/60">
-                      <span className="flex-shrink-0 h-8 w-8 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">{item.step}</span>
-                      <div>
-                        <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              <section>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Priekšrocības salīdzinājumā ar tradicionālo pieeju</h2>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  AI darbinieki fundamentāli maina to, kā uzņēmumi pārvalda rutīnas uzdevumus. Salīdziniet tradicionālo pieeju ar AI darbinieku ieviešanu.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="p-5 rounded-lg border border-border bg-card/60">
-                    <h3 className="font-semibold text-foreground mb-3">Tradicionālā pieeja</h3>
-                    <div className="space-y-2">
-                      {[
-                        'Ierobežots darba laiks (8h dienā)',
-                        'Cilvēciskās kļūdas rutīnas uzdevumos',
-                        'Lēna mērogošana — jaunu darbinieku apmācība',
-                        'Augstas personāla izmaksas',
-                        'Nevienmērīga kvalitāte atkarībā no noslogojuma',
-                      ].map((item, i) => (
-                        <div key={i} className="flex gap-2 text-muted-foreground text-sm">
-                          <span className="text-muted-foreground/50">-</span>
-                          <span>{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="p-5 rounded-lg border border-primary/20 bg-primary/5">
-                    <h3 className="font-semibold text-foreground mb-3">AI darbinieki</h3>
-                    <div className="space-y-2">
-                      {[
-                        'Strādā 24/7 bez pārtraukumiem',
-                        'Konsekventa precizitāte katrā uzdevumā',
-                        'Tūlītēja mērogošana — pievienojiet jaunus uzdevumus minūtēs',
-                        'Fiksētas un prognozējamas izmaksas',
-                        'Vienmērīgi augsta kvalitāte neatkarīgi no apjoma',
-                      ].map((item, i) => (
-                        <div key={i} className="flex gap-2 text-sm">
-                          <CheckCircle className="h-4 w-4 flex-shrink-0 text-primary mt-0.5" />
-                          <span className="text-foreground">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              {/* FAQ */}
-              <section>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Biežāk uzdotie jautājumi</h2>
-                <div className="space-y-3">
-                  {faqs.map((faq, index) => (
-                    <div key={index} className="rounded-lg border border-border bg-card/60 overflow-hidden hover:border-primary/20 transition-colors">
-                      <button onClick={() => setOpenFaq(openFaq === index ? null : index)} className="w-full flex items-center justify-between p-4 sm:p-5 text-left gap-4">
-                        <span className="text-sm sm:text-base font-medium text-foreground leading-snug">{faq.question}</span>
-                        <ChevronDown className={`h-5 w-5 flex-shrink-0 text-muted-foreground transition-transform duration-200 ${openFaq === index ? 'rotate-180' : ''}`} />
-                      </button>
-                      {openFaq === index && (
-                        <div className="px-4 sm:px-5 pb-4 sm:pb-5">
-                          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{faq.answer}</p>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              {/* Related Pages */}
-              <section>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Saistītie pakalpojumi</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  <Link to="/chatbotu-izstrade" className="p-4 rounded-lg border border-border bg-card/60 hover:border-primary/30 transition-colors group">
-                    <h3 className="font-medium text-foreground text-sm mb-1">AI Čatbotu Izstrāde</h3>
-                    <p className="text-xs text-muted-foreground">Inteliģenti čatboti klientu apkalpošanai</p>
-                  </Link>
-                  <Link to="/procesu-automatizacija" className="p-4 rounded-lg border border-border bg-card/60 hover:border-primary/30 transition-colors group">
-                    <h3 className="font-medium text-foreground text-sm mb-1">Procesu Automatizācija</h3>
-                    <p className="text-xs text-muted-foreground">Automatizējiet biznesa procesus ar AI</p>
-                  </Link>
-                  <Link to="/ai-platformu-izstrade" className="p-4 rounded-lg border border-border bg-card/60 hover:border-primary/30 transition-colors group">
-                    <h3 className="font-medium text-foreground text-sm mb-1">AI Platformu Izstrāde</h3>
-                    <p className="text-xs text-muted-foreground">Pielāgotas AI platformas jūsu biznesam</p>
-                  </Link>
-                </div>
-              </section>
-
-              {/* CTA */}
-              <section className="p-8 rounded-xl bg-gradient-to-br from-primary/5 via-card to-primary/5 border border-primary/20 text-center">
-                <h2 className="text-2xl font-bold text-foreground mb-3">Pievienojiet AI darbinieku savai komandai</h2>
-                <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-                  Bezmaksas konsultācijā novērtēsim jūsu procesus un parādīsim, kā AI darbinieks var uzlabot jūsu uzņēmuma efektivitāti.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <Link to="/contact">
-                    <Button className="bg-primary text-primary-foreground hover:bg-primary/90 group">
-                      <Bot className="h-4 w-4 mr-2" />
-                      Bezmaksas konsultācija
-                    </Button>
-                  </Link>
-                  <Link to="/pricing">
-                    <Button variant="outline" className="border-primary/20 text-primary hover:bg-primary/10 group">
-                      Apskatīt cenas
-                      <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
-                </div>
-              </section>
-            </div>
-          </article>
-        </main>
-        <Footer />
-      </div>
+        <CtaBand
+          title="Pievienojiet AI darbinieku savai komandai"
+          text="Bezmaksas konsultācijā novērtēsim jūsu procesus un parādīsim, kā AI darbinieks var uzlabot jūsu uzņēmuma efektivitāti."
+          primary={{ to: '/contact', label: 'Bezmaksas konsultācija' }}
+          secondary={{ to: '/pricing', label: 'Apskatīt cenas' }}
+        />
+      </PageShell>
     </PageTransition>
   );
 };

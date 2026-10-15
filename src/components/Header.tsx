@@ -1,340 +1,223 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, Sun, Moon, ChevronDown } from 'lucide-react';
 import Logo from './Logo';
-import { Menu, X, DollarSign, Sun, Moon, MessageCircle, Home, Briefcase, LayoutDashboard, ChevronDown, Bot, Globe, GraduationCap, BookOpen, MessageSquare, Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Switch } from '@/components/ui/switch';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { trackCTAClick } from '@/lib/analytics';
 
 const SOLUTIONS_ITEMS = [
-  { id: 'services', icon: Bot, labelKey: 'nav.ai_solutions', path: '/services' },
-  { id: 'chatbots', icon: MessageSquare, labelKey: 'nav.chatbots', path: '/chatbotu-izstrade' },
-  { id: 'automation', icon: Zap, labelKey: 'nav.automation', path: '/procesu-automatizacija' },
-  { id: 'documents', icon: BookOpen, labelKey: 'nav.documents', path: '/dokumentu-automatizacija' },
-  { id: 'accounting', icon: BookOpen, labelKey: 'nav.accounting', path: '/gramatvedibas-automatizacija' },
-  { id: 'webdev', icon: Globe, labelKey: 'nav.webdev', path: '/majaslapu-izstrade' },
-  { id: 'nozares', icon: GraduationCap, labelKey: 'nav.industries', path: '/nozares' },
+  { labelKey: 'nav.ai_solutions', path: '/services' },
+  { labelKey: 'nav.chatbots', path: '/chatbotu-izstrade' },
+  { labelKey: 'nav.automation', path: '/procesu-automatizacija' },
+  { labelKey: 'nav.documents', path: '/dokumentu-automatizacija' },
+  { labelKey: 'nav.accounting', path: '/gramatvedibas-automatizacija' },
+  { labelKey: 'nav.webdev', path: '/majaslapu-izstrade' },
+  { labelKey: 'nav.industries', path: '/nozares' },
 ];
 
-const NAV_SECTIONS = [
-  { id: '/', icon: Home, labelKey: 'nav.home', path: '/' },
-  { id: 'solutions', icon: LayoutDashboard, labelKey: 'nav.solutions', path: null, hasDropdown: true },
-  { id: 'portfolio', icon: Briefcase, labelKey: 'nav.portfolio', path: '/portfolio' },
-  { id: 'pricing', icon: DollarSign, labelKey: 'nav.pricing', path: '/pricing' },
-  { id: 'blog', icon: BookOpen, labelKey: 'nav.blog', path: '/blog' },
-  { id: 'contact', icon: MessageCircle, labelKey: 'nav.contact', path: '/contact' },
+const NAV_LINKS = [
+  { labelKey: 'nav.portfolio', path: '/portfolio' },
+  { labelKey: 'nav.pricing', path: '/pricing' },
+  { labelKey: 'nav.blog', path: '/blog' },
+  { labelKey: 'nav.contact', path: '/contact' },
+];
+
+const SOLUTIONS_PATHS = [
+  '/services',
+  '/chatbotu-izstrade',
+  '/procesu-automatizacija',
+  '/majaslapu-izstrade',
+  '/training',
+  '/dokumentu-automatizacija',
+  '/gramatvedibas-automatizacija',
+  '/ai-platformu-izstrade',
+  '/datu-analize',
+  '/ai-darbinieki',
 ];
 
 const Header = () => {
   const location = useLocation();
+  const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
-  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
-  const desktopDropdownRef = useRef<HTMLDivElement>(null);
-  const tabletDropdownRef = useRef<HTMLDivElement>(null);
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    const saved = localStorage.getItem('theme');
-    return saved ? saved === 'dark' : false;
-  });
-  const { t } = useLanguage();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [isDarkMode, setIsDarkMode] = useState(() => localStorage.getItem('theme') === 'dark');
 
   useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.remove('light-mode');
-      document.documentElement.classList.add('dark-mode');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark-mode');
-      document.documentElement.classList.add('light-mode');
-      localStorage.setItem('theme', 'light');
-    }
+    const root = document.documentElement;
+    root.classList.toggle('dark-mode', isDarkMode);
+    root.classList.toggle('light-mode', !isDarkMode);
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
   }, [isDarkMode]);
 
   useEffect(() => {
-    const saved = localStorage.getItem('theme');
-    if (!saved) {
-      document.documentElement.classList.add('light-mode');
-    }
-  }, []);
+    setMobileMenuOpen(false);
+    setSolutionsOpen(false);
+  }, [location.pathname]);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as Node;
-      const isInsideDesktop = desktopDropdownRef.current?.contains(target);
-      const isInsideTablet = tabletDropdownRef.current?.contains(target);
-      if (!isInsideDesktop && !isInsideTablet) {
-        setSolutionsOpen(false);
-      }
+    if (!solutionsOpen) return;
+    const onPointerDown = (event: MouseEvent) => {
+      if (!dropdownRef.current?.contains(event.target as Node)) setSolutionsOpen(false);
     };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setSolutionsOpen(false);
+    };
+    document.addEventListener('mousedown', onPointerDown);
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', onPointerDown);
+      document.removeEventListener('keydown', onKeyDown);
+    };
+  }, [solutionsOpen]);
 
   const activePage = location.pathname;
-  const isSolutionsActive = ['/services', '/chatbotu-izstrade', '/procesu-automatizacija', '/majaslapu-izstrade', '/training', '/dokumentu-automatizacija', '/gramatvedibas-automatizacija', '/ai-platformu-izstrade', '/datu-analize', '/ai-darbinieki', '/nozares'].includes(activePage) || activePage.startsWith('/nozares/');
+  const isSolutionsActive = SOLUTIONS_PATHS.includes(activePage) || activePage.startsWith('/nozares');
 
-  const handleMobileNavClick = () => {
-    setMobileMenuOpen(false);
-    setMobileSolutionsOpen(false);
-  };
+  const navLinkClass = (active: boolean) =>
+    cn(
+      'py-2 font-semibold no-underline border-b-2 transition-colors',
+      active ? 'border-primary text-foreground' : 'border-transparent text-foreground hover:border-foreground'
+    );
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-    if (mobileMenuOpen) setMobileSolutionsOpen(false);
-  };
-
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+  const themeLabel = isDarkMode ? 'Ieslēgt gaišo režīmu' : 'Ieslēgt tumšo režīmu';
 
   return (
     <>
-    <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-lg focus:text-sm focus:font-medium">
-      Pāriet uz saturu
-    </a>
-    <header className="sticky top-0 z-50 pt-2 sm:pt-4 md:pt-6 lg:pt-8 px-2 sm:px-3 md:px-4">
-      <div className="w-full max-w-7xl mx-auto py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-6 lg:px-8 flex items-center justify-between">
-        <div className="p-2 sm:p-3">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md"
+      >
+        Pāriet uz saturu
+      </a>
+      <header className="sticky top-0 z-50 bg-background border-b border-border">
+        <div className="wrap flex items-center justify-between gap-6 h-[4.5rem]">
           <Logo />
-        </div>
 
-        <button
-          className="md:hidden p-2 sm:p-3 rounded-xl sm:rounded-2xl text-muted-foreground hover:text-foreground transition-colors"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle mobile menu"
-        >
-          {mobileMenuOpen ? <X size={20} className="sm:w-6 sm:h-6" /> : <Menu size={20} className="sm:w-6 sm:h-6" />}
-        </button>
+          <nav aria-label="Galvenā navigācija" className="hidden lg:flex items-center gap-7">
+            <div className="relative" ref={dropdownRef}>
+              <button
+                type="button"
+                onClick={() => setSolutionsOpen((open) => !open)}
+                aria-expanded={solutionsOpen}
+                aria-controls="solutions-menu"
+                className={cn(navLinkClass(isSolutionsActive), 'inline-flex items-center gap-1')}
+              >
+                {t('nav.solutions')}
+                <ChevronDown
+                  size={16}
+                  aria-hidden="true"
+                  className={cn('transition-transform duration-150', solutionsOpen && 'rotate-180')}
+                />
+              </button>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center absolute left-1/2 transform -translate-x-1/2">
-          <div className="rounded-full px-1 py-1 backdrop-blur-md bg-background/80 border border-border shadow-lg transition-all duration-300 flex gap-1">
-            {NAV_SECTIONS.map(({ id, icon: Icon, labelKey, path, hasDropdown }) => {
-              if (hasDropdown) {
-                return (
-                  <div key={id} className="relative" ref={desktopDropdownRef}>
-                    <button
-                      onClick={() => setSolutionsOpen(!solutionsOpen)}
+              {solutionsOpen && (
+                <div id="solutions-menu" className="sheet absolute top-full left-0 mt-3 w-72 py-2">
+                  {SOLUTIONS_ITEMS.map(({ labelKey, path }) => (
+                    <Link
+                      key={path}
+                      to={path}
                       className={cn(
-                        "px-3 lg:px-4 py-2 rounded-full transition-all duration-300 relative group text-sm lg:text-base flex items-center justify-center",
-                        isSolutionsActive
-                          ? 'text-accent-foreground bg-accent'
-                          : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                        'block px-4 py-2.5 no-underline hover:bg-muted',
+                        activePage === path ? 'font-bold text-primary' : 'text-foreground'
                       )}
                     >
-                      <Icon size={16} className="mr-1.5 group-hover:animate-pulse flex-shrink-0" />
-                      <span className="whitespace-nowrap">{t(labelKey)}</span>
-                      <ChevronDown size={14} className={cn("ml-1 transition-transform duration-200", solutionsOpen && "rotate-180")} />
-                    </button>
-
-                    {solutionsOpen && (
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 rounded-xl backdrop-blur-md bg-background/95 border border-border shadow-xl py-2 animate-in fade-in slide-in-from-top-2 duration-200 z-50">
-                        {SOLUTIONS_ITEMS.map(({ id: subId, icon: SubIcon, labelKey: subLabelKey, path: subPath }) => (
-                          <Link
-                            key={subId}
-                            to={subPath}
-                            onClick={() => setSolutionsOpen(false)}
-                            className={cn(
-                              "flex items-center gap-3 px-4 py-2.5 text-sm transition-all duration-200",
-                              activePage === subPath
-                                ? 'text-accent-foreground bg-accent/50'
-                                : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                            )}
-                          >
-                            <SubIcon size={16} className="flex-shrink-0" />
-                            <span>{t(subLabelKey)}</span>
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                );
-              }
-
-              return (
-                <Link
-                  key={id}
-                  to={path!}
-                  className={cn(
-                    "px-3 lg:px-4 py-2 rounded-full transition-all duration-300 relative group text-sm lg:text-base flex items-center justify-center",
-                    activePage === path
-                      ? 'text-accent-foreground bg-accent'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                  )}
-                >
-                  <Icon size={16} className="mr-1.5 group-hover:animate-pulse flex-shrink-0" />
-                  <span className="whitespace-nowrap">{t(labelKey)}</span>
-                </Link>
-              );
-            })}
-          </div>
-        </nav>
-
-        {/* Tablet Navigation - Simplified */}
-        <nav className="hidden md:flex lg:hidden items-center absolute left-1/2 transform -translate-x-1/2">
-          <div className="rounded-full px-1 py-1 backdrop-blur-md bg-background/80 border border-border shadow-lg transition-all duration-300 flex gap-1">
-            {NAV_SECTIONS.map(({ id, icon: Icon, labelKey, path, hasDropdown }) => {
-              if (hasDropdown) {
-                return (
-                  <div key={id} className="relative" ref={tabletDropdownRef}>
-                    <button
-                      onClick={() => setSolutionsOpen(!solutionsOpen)}
-                      className={cn(
-                        "px-2 py-2 rounded-full transition-all duration-300 relative group text-xs flex items-center justify-center",
-                        isSolutionsActive
-                          ? 'text-accent-foreground bg-accent'
-                          : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                      )}
-                      aria-label={t(labelKey)}
-                      aria-expanded={solutionsOpen}
-                    >
-                      <Icon size={14} className="group-hover:animate-pulse flex-shrink-0" />
-                      <ChevronDown size={10} className={cn("ml-0.5 transition-transform duration-200", solutionsOpen && "rotate-180")} />
-                    </button>
-
-                    {solutionsOpen && (
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 rounded-xl backdrop-blur-md bg-background/95 border border-border shadow-xl py-2 animate-in fade-in slide-in-from-top-2 duration-200 z-50">
-                        {SOLUTIONS_ITEMS.map(({ id: subId, icon: SubIcon, labelKey: subLabelKey, path: subPath }) => (
-                          <Link
-                            key={subId}
-                            to={subPath}
-                            onClick={() => setSolutionsOpen(false)}
-                            className={cn(
-                              "flex items-center gap-3 px-4 py-2.5 text-sm transition-all duration-200",
-                              activePage === subPath
-                                ? 'text-accent-foreground bg-accent/50'
-                                : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                            )}
-                          >
-                            <SubIcon size={14} className="flex-shrink-0" />
-                            <span>{t(subLabelKey)}</span>
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                );
-              }
-
-              return (
-                <Link
-                  key={id}
-                  to={path!}
-                  className={cn(
-                    "px-2 py-2 rounded-full transition-all duration-300 relative group text-xs flex items-center justify-center",
-                    activePage === path
-                      ? 'text-accent-foreground bg-accent'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                  )}
-                  aria-label={t(labelKey)}
-                >
-                  <Icon size={14} className="group-hover:animate-pulse flex-shrink-0" aria-hidden="true" />
-                </Link>
-              );
-            })}
-          </div>
-        </nav>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden absolute top-16 sm:top-20 left-2 sm:left-4 right-2 sm:right-4 bg-background/95 backdrop-blur-md py-3 sm:py-4 px-4 sm:px-6 border border-border rounded-xl sm:rounded-2xl shadow-lg z-50 animate-in slide-in-from-top-2 duration-300">
-            <div className="flex flex-col gap-1 sm:gap-2">
-              {NAV_SECTIONS.map(({ id, icon: Icon, labelKey, path, hasDropdown }) => {
-                if (hasDropdown) {
-                  return (
-                    <div key={id}>
-                      <button
-                        onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
-                        className={cn(
-                          "w-full px-3 py-2.5 text-sm sm:text-base rounded-lg sm:rounded-md transition-all duration-300 flex items-center justify-between",
-                          isSolutionsActive
-                            ? 'bg-accent text-accent-foreground'
-                            : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                        )}
-                      >
-                        <span className="flex items-center">
-                          <Icon size={16} className="mr-2.5 sm:mr-3 flex-shrink-0" />
-                          <span className="whitespace-nowrap">{t(labelKey)}</span>
-                        </span>
-                        <ChevronDown size={16} className={cn("transition-transform duration-200", mobileSolutionsOpen && "rotate-180")} />
-                      </button>
-
-                      {mobileSolutionsOpen && (
-                        <div className="ml-6 mt-1 mb-1 flex flex-col gap-1 border-l-2 border-border/50 pl-3">
-                          {SOLUTIONS_ITEMS.map(({ id: subId, icon: SubIcon, labelKey: subLabelKey, path: subPath }) => (
-                            <Link
-                              key={subId}
-                              to={subPath}
-                              className={cn(
-                                "px-3 py-2 text-sm rounded-md transition-all duration-200 flex items-center",
-                                activePage === subPath
-                                  ? 'bg-accent/50 text-accent-foreground'
-                                  : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                              )}
-                              onClick={handleMobileNavClick}
-                            >
-                              <SubIcon size={14} className="mr-2.5 flex-shrink-0" />
-                              <span>{t(subLabelKey)}</span>
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  );
-                }
-
-                return (
-                  <Link
-                    key={id}
-                    to={path!}
-                    className={cn(
-                      "px-3 py-2.5 text-sm sm:text-base rounded-lg sm:rounded-md transition-all duration-300 flex items-center",
-                      activePage === path
-                        ? 'bg-accent text-accent-foreground'
-                        : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                    )}
-                    onClick={handleMobileNavClick}
-                  >
-                    <Icon size={16} className="mr-2.5 sm:mr-3 flex-shrink-0" />
-                    <span className="whitespace-nowrap">{t(labelKey)}</span>
-                  </Link>
-                );
-              })}
-
-              <div className="flex items-center justify-between px-3 py-2.5 border-t border-border pt-3 sm:pt-4 mt-2">
-                <span className="text-sm sm:text-base text-muted-foreground">{t('nav.theme')}</span>
-                <div className="flex items-center gap-2">
-                  <Moon size={16} className={cn(isDarkMode ? 'text-primary' : 'text-muted-foreground')} />
-                  <Switch checked={!isDarkMode} onCheckedChange={toggleTheme} className="data-[state=checked]:bg-primary" />
-                  <Sun size={16} className={cn(!isDarkMode ? 'text-primary' : 'text-muted-foreground')} />
+                      {t(labelKey)}
+                    </Link>
+                  ))}
                 </div>
-              </div>
+              )}
             </div>
+
+            {NAV_LINKS.map(({ labelKey, path }) => (
+              <Link key={path} to={path} className={navLinkClass(activePage === path)}>
+                {t(labelKey)}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-2 sm:gap-3">
+            <button
+              type="button"
+              onClick={() => setIsDarkMode((dark) => !dark)}
+              aria-label={themeLabel}
+              title={themeLabel}
+              className="hidden sm:inline-flex h-11 w-11 items-center justify-center rounded-md text-foreground hover:bg-muted"
+            >
+              {isDarkMode ? <Sun size={20} aria-hidden="true" /> : <Moon size={20} aria-hidden="true" />}
+            </button>
+
+            <Link
+              to="/contact"
+              onClick={() => trackCTAClick('bezmaksas_konsultacija', 'header')}
+              className="btn btn-solid hidden md:inline-flex min-h-[2.75rem] py-2 px-4 text-base"
+            >
+              Pieteikt konsultāciju
+            </Link>
+
+            <button
+              type="button"
+              className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-md text-foreground hover:bg-muted"
+              onClick={() => setMobileMenuOpen((open) => !open)}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label={mobileMenuOpen ? 'Aizvērt izvēlni' : 'Atvērt izvēlni'}
+            >
+              {mobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+            </button>
           </div>
+        </div>
+
+        {mobileMenuOpen && (
+          <nav
+            id="mobile-menu"
+            aria-label="Galvenā navigācija"
+            className="lg:hidden border-t border-border bg-background max-h-[calc(100vh-4.5rem)] overflow-y-auto"
+          >
+            <div className="wrap py-4">
+              <p className="text-sm font-semibold text-muted-foreground pt-2 pb-1">{t('nav.solutions')}</p>
+              {SOLUTIONS_ITEMS.map(({ labelKey, path }) => (
+                <Link
+                  key={path}
+                  to={path}
+                  className={cn(
+                    'block py-2.5 no-underline border-b border-border',
+                    activePage === path ? 'font-bold text-primary' : 'text-foreground'
+                  )}
+                >
+                  {t(labelKey)}
+                </Link>
+              ))}
+
+              <div className="pt-4">
+                {NAV_LINKS.map(({ labelKey, path }) => (
+                  <Link
+                    key={path}
+                    to={path}
+                    className={cn(
+                      'block py-2.5 font-display font-extrabold text-3xl leading-tight no-underline',
+                      activePage === path ? 'text-primary' : 'text-foreground'
+                    )}
+                  >
+                    {t(labelKey)}
+                  </Link>
+                ))}
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setIsDarkMode((dark) => !dark)}
+                className="mt-4 inline-flex items-center gap-2 py-2.5 font-semibold text-foreground"
+              >
+                {isDarkMode ? <Sun size={18} aria-hidden="true" /> : <Moon size={18} aria-hidden="true" />}
+                {themeLabel}
+              </button>
+            </div>
+          </nav>
         )}
-
-        {/* Desktop Controls */}
-        <div className="hidden lg:flex items-center gap-3 lg:gap-4">
-          <div className="flex items-center gap-2 rounded-full px-3 py-2 bg-background/80 border border-border">
-            <Moon size={18} className={cn(isDarkMode ? 'text-primary' : 'text-muted-foreground')} />
-            <Switch checked={!isDarkMode} onCheckedChange={toggleTheme} className="data-[state=checked]:bg-primary" />
-            <Sun size={18} className={cn(!isDarkMode ? 'text-primary' : 'text-muted-foreground')} />
-          </div>
-        </div>
-
-        {/* Tablet Controls */}
-        <div className="hidden md:flex lg:hidden items-center gap-2">
-          <div className="flex items-center gap-1.5 rounded-full px-2 py-1.5 bg-background/80 border border-border">
-            <Moon size={16} className={cn(isDarkMode ? 'text-primary' : 'text-muted-foreground')} />
-            <Switch checked={!isDarkMode} onCheckedChange={toggleTheme} className="data-[state=checked]:bg-primary scale-90" />
-            <Sun size={16} className={cn(!isDarkMode ? 'text-primary' : 'text-muted-foreground')} />
-          </div>
-        </div>
-      </div>
-    </header>
-    <div id="main-content" />
+      </header>
+      <div id="main-content" />
     </>
   );
 };

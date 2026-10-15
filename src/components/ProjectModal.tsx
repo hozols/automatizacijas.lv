@@ -1,35 +1,37 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { X, ExternalLink, Calendar, User, Tag } from 'lucide-react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+import { Link } from 'react-router-dom';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  category: string;
+  image?: string;
+  client: string;
+  year: string;
+  tags: string[];
+  metrics: Array<{
+    /* Accepted for older callers; icons are not rendered. */
+    icon?: unknown;
+    value: string;
+    label: string;
+  }>;
+  gradient?: string;
+  techStack?: string[];
+  longDescription?: string;
+}
 
 interface ProjectModalProps {
-  project: {
-    id: number;
-    title: string;
-    description: string;
-    category: string;
-    image: string;
-    client: string;
-    year: string;
-    tags: string[];
-    metrics: Array<{
-      icon: React.ComponentType<{ className?: string }>;
-      value: string;
-      label: string;
-    }>;
-    gradient: string;
-    techStack?: string[];
-    longDescription?: string;
-  } | null;
+  project: Project | null;
   isOpen: boolean;
   onClose: () => void;
 }
 
+/* Stock photos were filler; only a real local screenshot is shown. */
+const hasScreenshot = (image?: string): image is string => Boolean(image && image.startsWith('/'));
+
 const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
-  const navigate = useNavigate();
   if (!project) return null;
 
   // Default tech stack based on category if not provided
@@ -51,123 +53,62 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-foreground">
-            {project.title}
-          </DialogTitle>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="absolute right-4 top-4 h-8 w-8 p-0"
-            onClick={onClose}
-            aria-label="Aizvērt projekta detaļas"
-          >
-            <X className="h-4 w-4" aria-hidden="true" />
-          </Button>
-        </DialogHeader>
+      <DialogContent className="sheet bg-card max-w-3xl max-h-[90vh] overflow-y-auto gap-0 p-6 sm:p-8 sm:rounded-md">
+        <p className="m-0 pr-8 leading-snug">
+          <span className="font-bold">{project.client}</span>
+          <span className="text-muted-foreground">, {project.year}, {project.category}</span>
+        </p>
+        <DialogTitle className="display-3 m-0 mt-2 pb-5 border-b-2 border-foreground">
+          {project.title}
+        </DialogTitle>
 
-        <div className="space-y-6">
-          {/* Project Image */}
-          <div className="relative rounded-lg overflow-hidden">
-            <img
-              src={project.image}
-              alt={`${project.title} - ${project.client} projekta detaļas`}
-              loading="lazy"
-              width={800}
-              height={256}
-              className="w-full h-64 object-cover"
-            />
-            <div className={`absolute inset-0 bg-gradient-to-t ${project.gradient} opacity-20`} />
+        {hasScreenshot(project.image) && (
+          <img
+            src={project.image}
+            alt={`${project.title} - ${project.client} projekta detaļas`}
+            loading="lazy"
+            decoding="async"
+            className="block mt-6 w-full aspect-[8/5] object-cover object-top rounded-md border border-border"
+          />
+        )}
+
+        <h3 className="m-0 mt-6 text-lg font-bold">Apraksts</h3>
+        <DialogDescription className="mt-2 mb-0 text-base leading-relaxed text-foreground">
+          {longDescription}
+        </DialogDescription>
+
+        <dl className="m-0 mt-6 border-t border-border">
+          <div className="grid gap-x-6 py-3 border-b border-border sm:grid-cols-[12rem_1fr]">
+            <dt className="font-bold">Izmantotā tehnoloģija</dt>
+            <dd className="m-0 text-muted-foreground">{techStack.join(', ')}</dd>
           </div>
+          <div className="grid gap-x-6 py-3 border-b border-border sm:grid-cols-[12rem_1fr]">
+            <dt className="font-bold">Tagi</dt>
+            <dd className="m-0 text-muted-foreground">{project.tags.join(', ')}</dd>
+          </div>
+        </dl>
 
-          {/* Project Info Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <User className="h-4 w-4" />
-              <span>{project.client}</span>
+        <h3 className="m-0 mt-6 text-lg font-bold">Rezultāti</h3>
+        <dl className="m-0 mt-2 border-t border-border">
+          {project.metrics.map((metric) => (
+            <div key={metric.label} className="flex items-baseline gap-3 py-2.5 border-b border-border">
+              <dt className="order-2 text-muted-foreground leading-snug">{metric.label}</dt>
+              <dd className="order-1 m-0 min-w-[4.5rem] shrink-0 font-bold tabular-nums">{metric.value}</dd>
             </div>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Calendar className="h-4 w-4" />
-              <span>{project.year}</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Tag className="h-4 w-4" />
-              <span>{project.category}</span>
-            </div>
-          </div>
+          ))}
+        </dl>
 
-          {/* Description */}
-          <div>
-            <h3 className="text-lg font-semibold text-foreground mb-3">Apraksts</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              {longDescription}
-            </p>
-          </div>
-
-          {/* Tech Stack */}
-          <div>
-            <h3 className="text-lg font-semibold text-foreground mb-3">Izmantotā tehnoloģija</h3>
-            <div className="flex flex-wrap gap-2">
-              {techStack.map((tech, index) => (
-                <Badge key={index} variant="secondary" className="text-xs">
-                  {tech}
-                </Badge>
-              ))}
-            </div>
-          </div>
-
-          {/* Tags */}
-          <div>
-            <h3 className="text-lg font-semibold text-foreground mb-3">Tagi</h3>
-            <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag, index) => (
-                <Badge key={index} variant="outline" className="text-xs">
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-          </div>
-
-          {/* Metrics */}
-          <div>
-            <h3 className="text-lg font-semibold text-foreground mb-3">Rezultāti</h3>
-            <div className="grid grid-cols-3 gap-4">
-              {project.metrics.map((metric, index) => {
-                const MetricIcon = metric.icon;
-                return (
-                  <div key={index} className="text-center p-3 bg-muted/30 rounded-lg">
-                    <div className="flex items-center justify-center mb-2">
-                      <MetricIcon className="h-5 w-5 text-primary" />
-                    </div>
-                    <div className="text-lg font-bold text-foreground">{metric.value}</div>
-                    <div className="text-xs text-muted-foreground">{metric.label}</div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex gap-3 pt-4">
-            <Button 
-              className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90"
-              onClick={() => navigate('/contact')}
-            >
-              <span className="mr-2">Pieteikties konsultācijai</span>
-              <ExternalLink className="h-4 w-4" />
-            </Button>
-            <Button 
-              variant="outline" 
-              onClick={onClose}
-            >
-              Aizvērt
-            </Button>
-          </div>
+        <div className="flex flex-col sm:flex-row gap-3 mt-7">
+          <Link to="/contact" className="btn btn-solid">
+            Pieteikties konsultācijai
+          </Link>
+          <button type="button" onClick={onClose} className="btn btn-line">
+            Aizvērt
+          </button>
         </div>
       </DialogContent>
     </Dialog>
   );
 };
 
-export default ProjectModal; 
+export default ProjectModal;
