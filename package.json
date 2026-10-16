@@ -17,7 +17,8 @@
     "prerender": "node scripts/prerender.mjs",
     "check:hydration": "node scripts/check-hydration.mjs",
     "app:e2e": "node scripts/app-e2e.mjs",
-    "paintings": "node scripts/fetch-paintings.mjs"
+    "objects:build": "node scripts/objects-build.mjs",
+    "objects:render": "node scripts/objects-render.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.3.0",

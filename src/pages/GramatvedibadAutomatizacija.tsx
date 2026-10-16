@@ -94,7 +94,7 @@ const GramatvedibadAutomatizacija = () => {
         />
 
         <PageHero
-          vignette="merchant-hals"
+          vignette="adding-machine"
           title="Grāmatvedības automatizācija ar AI"
           lede={
             <>

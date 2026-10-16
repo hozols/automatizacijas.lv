@@ -90,7 +90,7 @@ const NozareLogistika = () => {
         />
 
         <PageHero
-          vignette="merchant-van-dyck"
+          vignette="stamp"
           title="AI automatizācija loģistikas uzņēmumiem"
           lede={
             <>

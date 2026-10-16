@@ -5,19 +5,10 @@ import Footer from '@/components/Footer';
 import { cn } from '@/lib/utils';
 import Reveal from '@/components/motion/Reveal';
 import Hairline from '@/components/motion/Hairline';
+import ObjectVignette from '@/components/objects/ObjectVignette';
 
 /* Headings reveal word by word when they are plain strings; nodes render as they are. */
 const Heading = ({ text }: { text: React.ReactNode }) => (typeof text === 'string' ? <Reveal text={text} /> : <>{text}</>);
-
-export const PAINTING_ALT: Record<string, string> = {
-  'tax-collector': 'Nodokļu vācējs raksta grāmatā. Jans Sanderss van Hemesens, 17. gs.',
-  'scholar-writing': 'Gijoms Budē raksta ar spalvu. Žans Klueē, ap 1536.',
-  letter: 'Sieviete raksta vēstuli. Gerards ter Borhs, ap 1660.',
-  lavoisier: 'Antuāns Lorāns Lavuazjē pie rakstāmgalda. Žaks Luī Davids, 1788.',
-  'merchant-hals': 'Tirgotājs Pauls Veršūrs. Franss Halss, 1643.',
-  'merchant-van-dyck': 'Tirgotājs Lukass van Ufels. Antonis van Deiks, ap 1622.',
-  'magdalen-letter': 'Marija Magdalēna raksta vēstuli. 16. gs.',
-};
 
 /*
   Building blocks shared by every inner page. They carry the layout rules of
@@ -66,7 +57,7 @@ interface PageHeroProps {
   lede?: React.ReactNode;
   /* Short plain facts shown as one ruled row under the lede. */
   facts?: string[];
-  /* slug of a painting from docs/paintings.json, shown as a desaturated 12px square */
+  /* slug of an object from docs/objects.json, shown as a white line drawing in a 12px square */
   vignette?: string;
   children?: React.ReactNode;
 }
@@ -83,18 +74,7 @@ export const PageHero = ({ title, lede, facts, vignette, children }: PageHeroPro
       </div>
       {vignette && (
         <figure className="m-0 flex justify-center lg:col-span-4 lg:justify-end">
-          <span className="vignette" style={{ width: 'min(100%, 13rem)' }}>
-            <img
-              src={`/paintings/${vignette}-800.webp`}
-              srcSet={`/paintings/${vignette}-400.webp 400w, /paintings/${vignette}-800.webp 800w`}
-              sizes="13rem"
-              alt={PAINTING_ALT[vignette] ?? ''}
-              width={800}
-              height={800}
-              loading="lazy"
-              decoding="async"
-            />
-          </span>
+          <ObjectVignette slug={vignette} sizes="13rem" style={{ width: 'min(100%, 13rem)' }} />
         </figure>
       )}
     </div>

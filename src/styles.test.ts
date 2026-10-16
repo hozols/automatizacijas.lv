@@ -70,8 +70,8 @@ describe('rooms', () => {
     expect(read('src/components/HomeCases.tsx')).not.toContain('italic');
     expect(read('src/components/HomeWhy.tsx')).toContain('panel-sand');
     expect(read('src/components/HomeProcess.tsx')).toContain('bg-forest');
-    expect(read('src/components/HomePainting.tsx')).toContain('case-card');
-    expect(read('src/components/HomePainting.tsx')).not.toMatch(/notched-card|Scroll</);
+    expect(read('src/components/HomeBlueprint.tsx')).toContain('case-card');
+    expect(read('src/components/HomeBlueprint.tsx')).not.toMatch(/notched-card|Scroll</);
     expect(css()).toMatch(/\.band-ink \.sheet \.btn-solid/);
   });
 });
@@ -84,5 +84,21 @@ describe('weights', () => {
       );
     const offenders = [...walk('src/pages'), ...walk('src/components')].filter((f) => /font-(bold|semibold|extrabold|black)\b/.test(read(f)));
     expect(offenders).toEqual([]);
+  });
+});
+
+describe('objects replace the paintings', () => {
+  it('no component references the Met paintings any more', () => {
+    const walk = (d: string): string[] =>
+      readdirSync(d, { withFileTypes: true }).flatMap((e) =>
+        e.isDirectory() ? walk(path.join(d, e.name)) : e.name.endsWith('.tsx') || e.name.endsWith('.ts') ? [path.join(d, e.name)] : [],
+      );
+    const offenders = [...walk('src/pages'), ...walk('src/components')].filter((f) => /\/paintings\/|PAINTING_ALT|Open Access/.test(read(f)));
+    expect(offenders).toEqual([]);
+    expect(existsSync('public/paintings')).toBe(false);
+    expect(read('src/components/HomeServices.tsx')).toContain('ObjectVignette');
+    expect(read('src/components/page/index.tsx')).toContain('ObjectVignette');
+    expect(read('src/pages/Index.tsx')).toContain('HomeBlueprint');
+    expect(css()).not.toMatch(/grayscale|painting-img/);
   });
 });

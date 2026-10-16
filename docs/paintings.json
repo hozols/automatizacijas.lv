@@ -1,9 +1,0 @@
-[
-  { "slug": "tax-collector", "metObjectId": 436643, "focus": { "x": 0.5, "y": 0.45 }, "use": "vignette: Rēķini" },
-  { "slug": "scholar-writing", "metObjectId": 435914, "focus": { "x": 0.5, "y": 0.4 }, "use": "vignette: Līgumi" },
-  { "slug": "letter", "metObjectId": 435714, "focus": { "x": 0.5, "y": 0.45 }, "use": "vignette: Atbildes" },
-  { "slug": "lavoisier", "metObjectId": 436106, "focus": { "x": 0.5, "y": 0.5 }, "use": "full-bleed panel" },
-  { "slug": "merchant-hals", "metObjectId": 436620, "focus": { "x": 0.5, "y": 0.35 }, "use": "vignette: inner pages" },
-  { "slug": "merchant-van-dyck", "metObjectId": 436253, "focus": { "x": 0.5, "y": 0.35 }, "use": "vignette: inner pages" },
-  { "slug": "magdalen-letter", "metObjectId": 904343, "focus": { "x": 0.5, "y": 0.4 }, "use": "vignette: inner pages" }
-]

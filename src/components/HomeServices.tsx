@@ -4,23 +4,23 @@ import { trackCTAClick } from '@/lib/analytics';
 import Reveal from '@/components/motion/Reveal';
 import Hairline from '@/components/motion/Hairline';
 import Hex from '@/components/motion/Hex';
+import ObjectVignette from '@/components/objects/ObjectVignette';
 
 /*
-  The black void. Three desaturated paintings of office work as it was done
-  for five hundred years, and the six things the machine now does instead.
-  Hovering a service puts its painting and name into one of the frames.
+  The black void. Three office objects drawn as white line-work on black
+  (live wireframes on a desktop), and the six things the machine now does
+  instead. Hovering a service puts its object and name into one of the frames.
 */
 
 interface Vignette {
   slug: string;
   caption: string;
-  alt: string;
 }
 
 const DEFAULT_VIGNETTES: Vignette[] = [
-  { slug: 'tax-collector', caption: 'Rēķini', alt: 'Nodokļu vācējs raksta grāmatā, Jans Sanderss van Hemesens, 17. gs.' },
-  { slug: 'scholar-writing', caption: 'Līgumi', alt: 'Gijoms Budē raksta ar spalvu, Žans Klueē, ap 1536' },
-  { slug: 'letter', caption: 'Atbildes', alt: 'Sieviete raksta vēstuli, Gerards ter Borhs, ap 1660' },
+  { slug: 'invoices', caption: 'Rēķini' },
+  { slug: 'contract', caption: 'Līgumi' },
+  { slug: 'telephone', caption: 'Atbildes' },
 ];
 
 const services: { title: string; description: string; link: string; vignette: Vignette }[] = [
@@ -28,37 +28,37 @@ const services: { title: string; description: string; link: string; vignette: Vi
     title: 'AI čatboti',
     description: 'Atbild klientiem latviski 24/7, pieslēdzas CRM un mājaslapai.',
     link: '/chatbotu-izstrade',
-    vignette: { slug: 'letter', caption: 'AI čatboti', alt: 'Sieviete raksta vēstuli, Gerards ter Borhs' },
+    vignette: { slug: 'telephone', caption: 'AI čatboti' },
   },
   {
     title: 'Procesu automatizācija',
     description: 'E-pastu šķirošana, datu pārnešana starp sistēmām, atskaites bez roku darba.',
     link: '/procesu-automatizacija',
-    vignette: { slug: 'merchant-van-dyck', caption: 'Procesi', alt: 'Tirgotājs Lukass van Ufels, Antonis van Deiks' },
+    vignette: { slug: 'stamp', caption: 'Procesi' },
   },
   {
     title: 'Dokumentu automatizācija',
     description: 'Rēķinu, līgumu un pavadzīmju datus AI nolasa, pārbauda un ievada jūsu sistēmā.',
     link: '/dokumentu-automatizacija',
-    vignette: { slug: 'tax-collector', caption: 'Dokumenti', alt: 'Nodokļu vācējs raksta grāmatā, van Hemesens' },
+    vignette: { slug: 'invoices', caption: 'Dokumenti' },
   },
   {
     title: 'Grāmatvedības automatizācija',
     description: 'E-rēķini, bankas izrakstu saskaņošana un ievade grāmatvedības programmā.',
     link: '/gramatvedibas-automatizacija',
-    vignette: { slug: 'merchant-hals', caption: 'Grāmatvedība', alt: 'Tirgotājs Pauls Veršūrs, Franss Halss, 1643' },
+    vignette: { slug: 'adding-machine', caption: 'Grāmatvedība' },
   },
   {
     title: 'Datu analīze',
     description: 'Automātiskas atskaites, tendences un prognozes no datiem, kas jums jau ir.',
     link: '/datu-analize',
-    vignette: { slug: 'scholar-writing', caption: 'Analīze', alt: 'Gijoms Budē raksta, Žans Klueē' },
+    vignette: { slug: 'card-index', caption: 'Analīze' },
   },
   {
     title: 'AI darbinieki',
     description: 'AI darbinieki konkrētiem uzdevumiem, jūsu sistēmās un jūsu noteikumos.',
     link: '/ai-darbinieki',
-    vignette: { slug: 'magdalen-letter', caption: 'AI darbinieki', alt: 'Marija Magdalēna raksta vēstuli, 16. gs.' },
+    vignette: { slug: 'filing-cabinet', caption: 'AI darbinieki' },
   },
 ];
 
@@ -72,7 +72,7 @@ const HomeServices = () => {
     <section className="band band-ink">
       <div className="wrap">
         <div className="flex items-baseline justify-between gap-6">
-          <span className="label text-smoke">Birojs kopš 1514. gada</span>
+          <span className="label text-smoke">Biroja rīki, pārzīmēti</span>
           <span className="label hidden text-smoke sm:inline">Sešas lietas, ko mašīna dara pati</span>
         </div>
         <h2 className="display-2 m-0 mt-8 text-center">
@@ -83,19 +83,7 @@ const HomeServices = () => {
           {vignettes.map((v, i) => (
             <li key={i} className="flex flex-col items-center text-center">
               <span className="label mb-5 block text-smoke">{v.caption}</span>
-              <span className="vignette">
-                <img
-                  key={v.slug}
-                  src={`/paintings/${v.slug}-800.webp`}
-                  srcSet={`/paintings/${v.slug}-400.webp 400w, /paintings/${v.slug}-800.webp 800w`}
-                  sizes="(min-width: 1024px) 15rem, 30vw"
-                  alt={v.alt}
-                  width={800}
-                  height={800}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </span>
+              <ObjectVignette slug={v.slug} live />
               <span className="mt-5 flex gap-2 text-smoke" aria-hidden="true">
                 <Hex filled={i === 0} />
                 <Hex filled={i === 1} />

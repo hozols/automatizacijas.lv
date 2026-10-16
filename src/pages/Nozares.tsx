@@ -80,7 +80,7 @@ const Nozares = () => {
         <Breadcrumbs items={[{ label: 'Sākums', to: '/' }, { label: 'Nozares' }]} />
 
         <PageHero
-          vignette="tax-collector"
+          vignette="invoices"
           title="AI automatizācija pa nozarēm"
           lede={
             <>

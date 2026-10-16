@@ -73,9 +73,11 @@ labels uppercase. No italics.
 6. Buttons: `.btn.btn-solid` (charcoal, one per view; white on ink) and
    `.btn.btn-line` (silhouette outline). Text links: `.link`, underline
    only. No arrows in buttons.
-7. Imagery: Met Open Access paintings only (`docs/paintings.md`), always
-   desaturated: `.vignette` (12px square) or `.painting-img` (full bleed,
-   darkened, the one photograph-like surface per page). Credit every one.
+7. Imagery: the seven Meshy office objects in `docs/objects.json`, drawn as
+   white line-work on black (hidden-line wireframe): `ObjectVignette` (12px
+   square, a live slowly turning wireframe on a desktop with motion) or the
+   full-bleed `.blueprint-img` panel. Rebuild with `npm run objects:build
+   <raw dir>` and `npm run objects:render`. No photography, no paintings.
 8. Icons: mono-stroke only. The chevron in an outlined 40px square
    (`.scroll-prompt-box`), the hex (`Hex`), the menu close. The mark is
    `.logo-mark`: a 24px square with an "a" reversed out.

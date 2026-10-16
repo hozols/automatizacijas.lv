@@ -66,7 +66,7 @@ const Footer = () => {
         <hr className="hairline mt-16" />
         <div className="caption flex flex-col gap-3 pt-6 text-smoke sm:flex-row sm:items-center sm:justify-between">
           <span>
-            {`© ${currentYear} automatizācijas.lv. Gleznas: The Metropolitan Museum of Art, Open Access (CC0).`}
+            {`© ${currentYear} automatizācijas.lv`}
           </span>
           <button type="button" onClick={openModal} className={`${footerLink} cursor-pointer border-0 bg-transparent p-0 text-left`}>
             Sīkdatņu iestatījumi

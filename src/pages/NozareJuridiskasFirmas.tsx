@@ -90,7 +90,7 @@ const NozareJuridiskasFirmas = () => {
         />
 
         <PageHero
-          vignette="scholar-writing"
+          vignette="contract"
           title="AI automatizācija juridiskajām firmām"
           lede={
             <>

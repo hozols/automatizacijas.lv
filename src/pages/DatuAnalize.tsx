@@ -90,7 +90,7 @@ const DatuAnalize = () => {
         />
 
         <PageHero
-          vignette="lavoisier"
+          vignette="filing-cabinet"
           title="Datu analīze un atskaites ar AI"
           lede={
             <>

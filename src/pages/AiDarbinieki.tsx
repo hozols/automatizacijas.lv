@@ -93,7 +93,7 @@ const AiDarbinieki = () => {
         />
 
         <PageHero
-          vignette="magdalen-letter"
+          vignette="card-index"
           title="AI darbinieki un AI aģenti uzņēmumam"
           lede={
             <>

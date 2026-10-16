@@ -36,3 +36,19 @@ slightly soft but acceptable at hero size. Accepted on the first try.
 - Lights: key (-3,5,3) 2.1 warm; fill (3,2,-2) 0.6; rim (0,3,-4) 1.8 bone; amber rim (-4,1.5,-3) 1.1.
 - Palette: PALETTE_OVERRIDE stays false; the Meshy texture (navy, cream keys, carmine spools) reads
   correctly against the night-navy page with the rim light. Fallback WebP: 46,862 bytes.
+
+## Office objects (2026-10-16)
+
+Seven objects for the services room, the blueprint panel and the inner-page
+vignettes, replacing the Met paintings. Route: nano-banana-pro design image
+(9) → image-to-3d meshy-7.1 textured (30) = 39 credits each, 273 in total;
+task ids in `docs/objects.json`. Textures are discarded: the web draws the
+objects as hidden-line wireframes (black fill, white edges at 0.6).
+
+`scripts/objects-build.mjs` strips textures, welds, simplifies towards 9k
+triangles (loosening the error bound stepwise) and meshopt-compresses to
+`public/objects/<slug>.glb`. Thin-sheet models (invoices, card-index,
+filing-cabinet) stop at 42–58k triangles because separate sheets cannot
+collapse further; their files are 0.8–1.1 MB and load lazily after idle on
+desktop only. `scripts/objects-render.mjs` renders each still at its own
+size in headless Chromium so the 1px lines stay crisp.

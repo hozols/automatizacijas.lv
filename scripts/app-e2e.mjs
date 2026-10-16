@@ -128,30 +128,44 @@ const isDark = (page) => page.evaluate(() => document.documentElement.classList.
   await context.close();
 }
 
-// 7. a missing painting leaves an ash circle of the same size
+// 7. a missing object still leaves an ash square of the same size
 {
   const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
   await context.addCookies([{ name: 'cookies-accepted', value: 'true', url: base }]);
-  await context.route('**/paintings/tax-collector-*.webp', (route) => route.fulfill({ status: 404, body: 'gone' }));
+  await context.route('**/objects/invoices-*.webp', (route) => route.fulfill({ status: 404, body: 'gone' }));
   const page = await context.newPage();
   await page.goto(`${base}/`, { waitUntil: 'networkidle' });
   const sizes = await page.evaluate(() => [...document.querySelectorAll('.vignette')].slice(0, 3).map((el) => Math.round(el.getBoundingClientRect().width)));
   const bg = await page.evaluate(() => getComputedStyle(document.querySelector('.vignette')).backgroundColor);
-  check(`missing painting keeps the square size (${sizes.join('/')})`, sizes.length === 3 && sizes.every((w) => w === sizes[0] && w > 100));
-  check(`missing painting shows the ash placeholder (${bg})`, bg === 'rgb(145, 145, 145)');
+  check(`missing object keeps the square size (${sizes.join('/')})`, sizes.length === 3 && sizes.every((w) => w === sizes[0] && w > 100));
+  check(`missing object shows the ash placeholder (${bg})`, bg === 'rgb(145, 145, 145)');
   await context.close();
 }
 
-// 8. paintings are served as WebP
+// 8. object renders are served as WebP and the models as GLB
 {
   const page = await browser.newPage();
   let ok = true;
-  for (const f of ['tax-collector-800.webp', 'lavoisier-1600.webp', 'scholar-writing-400.webp']) {
-    const res = await page.request.get(`${base}/paintings/${f}`);
+  for (const f of ['invoices-800.webp', 'filing-cabinet-wide-1600.webp', 'contract-400.webp']) {
+    const res = await page.request.get(`${base}/objects/${f}`);
     ok = ok && res.status() === 200 && (res.headers()['content-type'] || '').includes('image/webp');
   }
-  check('paintings respond 200 image/webp', ok);
+  const glb = await page.request.get(`${base}/objects/telephone.glb`);
+  check('object renders respond 200 image/webp and the GLB is served', ok && glb.status() === 200);
   await page.close();
+}
+
+// 8b. on a desktop with motion the three service vignettes become live wireframes over their stills
+{
+  const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  await context.addCookies([{ name: 'cookies-accepted', value: 'true', url: base }]);
+  const page = await context.newPage();
+  await page.goto(`${base}/?hero=3d`, { waitUntil: 'networkidle' });
+  await page.evaluate(() => document.querySelector('.vignette')?.scrollIntoView({ block: 'center' }));
+  await page.waitForTimeout(4000);
+  const live = await page.evaluate(() => [...document.querySelectorAll('[data-object-live="1"] canvas')].length);
+  check(`three live object wireframes on desktop (${live})`, live === 3);
+  await context.close();
 }
 
 // 9. the hero room does not change height after hydration (no 100vh jump)
