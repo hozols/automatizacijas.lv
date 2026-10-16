@@ -1,7 +1,8 @@
 // Usage: node scripts/objects-render.mjs
-// Renders every object in docs/objects.json as white line-work on black (hidden-line
-// wireframe, three.js in headless Chromium) into public/objects/<slug>-800.webp,
-// -400.webp and, for wide objects, -wide-1600.webp / -wide-800.webp.
+// Renders every object in docs/objects.json as white line-work on black (feature edges
+// over a faint hidden-line wireframe, three.js in headless Chromium,
+// MSAA) into public/objects/<slug>-800.webp, -400.webp and, for wide objects,
+// -wide-1600.webp / -wide-800.webp. Same look as src/components/objects/ObjectScene.tsx.
 import { createServer } from 'node:http';
 import { readFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
@@ -45,8 +46,8 @@ window.render = async (slug, w, h) => {
   model.traverse((o) => {
     if (!o.isMesh) return;
     o.material = new THREE.MeshBasicMaterial({ color: 0x000000, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
-    const lines = new THREE.LineSegments(new THREE.WireframeGeometry(o.geometry), new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.6 }));
-    o.add(lines);
+    o.add(new THREE.LineSegments(new THREE.WireframeGeometry(o.geometry), new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.2 })));
+    o.add(new THREE.LineSegments(new THREE.EdgesGeometry(o.geometry, 20), new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 1 })));
   });
   const group = new THREE.Group(); group.add(model); group.rotation.y = -0.6; scene.add(group);
   // wide frames put the object in the right third so a card can sit on the left
@@ -62,8 +63,9 @@ const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=sw
 const tab = await browser.newPage({ viewport: { width: 1600, height: 1600 } });
 tab.on('pageerror', (e) => console.error('page error', e.message));
 await tab.goto(base, { waitUntil: 'load' });
-// every size is rendered at its own resolution so the 1px lines stay crisp (downscaling fades them)
+// every size is drawn at its own resolution with MSAA so the 1px edges stay bright (downscaling fades them)
 const shoot = async (slug, w, h, out, quality) => {
+  await tab.setViewportSize({ width: w, height: h });
   await tab.evaluate(([s, ww, hh]) => window.render(s, ww, hh), [slug, w, h]);
   const png = await tab.locator('canvas').screenshot({ type: 'png' });
   await sharp(png).webp({ quality }).toFile(out);

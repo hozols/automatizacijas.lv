@@ -11,7 +11,7 @@ interface Props {
 
 const SPIN = 0.25; // rad/s
 
-/* Hidden-line wireframe: a black fill that occludes, white edges on top. Same look as scripts/objects-render.mjs. */
+/* Line drawing: a black fill that occludes, a faint wireframe for the surface, bright feature edges on top. Same look as scripts/objects-render.mjs. */
 function Blueprint({ slug, onReady }: { slug: string; onReady?: () => void }) {
   const { scene } = useGLTF(`/objects/${slug}.glb`);
   const group = useRef<THREE.Group>(null);
@@ -29,11 +29,8 @@ function Blueprint({ slug, onReady }: { slug: string; onReady?: () => void }) {
       const m = o as THREE.Mesh;
       if (!m.isMesh) return;
       m.material = new THREE.MeshBasicMaterial({ color: 0x000000, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
-      const lines = new THREE.LineSegments(
-        new THREE.WireframeGeometry(m.geometry),
-        new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.6 }),
-      );
-      m.add(lines);
+      m.add(new THREE.LineSegments(new THREE.WireframeGeometry(m.geometry), new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.2 })));
+      m.add(new THREE.LineSegments(new THREE.EdgesGeometry(m.geometry, 20), new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 1 })));
     });
     return clone;
   }, [scene]);
@@ -97,7 +94,7 @@ export default function ObjectScene({ slug, onReady, onContextLost }: Props) {
   return (
     <div ref={wrapper} className="absolute inset-0">
       <Canvas
-        dpr={[1, 1.5]}
+        dpr={[1, 2]}
         camera={{ position: [0, 0.9, 3.1], fov: 26 }}
         frameloop={inView ? 'always' : 'never'}
         gl={{ alpha: false, antialias: true, powerPreference: 'low-power' }}

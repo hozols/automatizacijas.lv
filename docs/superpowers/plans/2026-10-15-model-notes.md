@@ -45,10 +45,11 @@ vignettes, replacing the Met paintings. Route: nano-banana-pro design image
 task ids in `docs/objects.json`. Textures are discarded: the web draws the
 objects as hidden-line wireframes (black fill, white edges at 0.6).
 
-`scripts/objects-build.mjs` strips textures, welds, simplifies towards 9k
-triangles (loosening the error bound stepwise) and meshopt-compresses to
-`public/objects/<slug>.glb`. Thin-sheet models (invoices, card-index,
-filing-cabinet) stop at 42–58k triangles because separate sheets cannot
-collapse further; their files are 0.8–1.1 MB and load lazily after idle on
-desktop only. `scripts/objects-render.mjs` renders each still at its own
-size in headless Chromium so the 1px lines stay crisp.
+`scripts/objects-build.mjs` strips textures, welds, simplifies towards 40k
+triangles (loosening the error bound stepwise; 9k looked faceted) and
+meshopt-compresses to `public/objects/<slug>.glb` (0.5–1.1 MB, loaded
+lazily after idle on desktop only). The line style is feature edges
+(`EdgesGeometry`, 20°) at full white over a wireframe at 0.2, on a black
+occluding fill; a plain wireframe read as low-poly, and downscaling a 2x
+render faded the edges, so `scripts/objects-render.mjs` renders each still
+at its own size with MSAA.
