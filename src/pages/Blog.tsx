@@ -7,6 +7,38 @@ import { PageShell, Breadcrumbs, PageHero, CtaBand } from '@/components/page';
 
 const blogPosts = [
   {
+    slug: 'gemini-latviski',
+    titleKey: 'blog.post26.title',
+    excerptKey: 'blog.post26.excerpt',
+    date: '2026-10-20',
+    readTime: '8 min',
+    category: 'AI',
+  },
+  {
+    slug: 'bezmaksas-maksligais-intelekts-latviski',
+    titleKey: 'blog.post27.title',
+    excerptKey: 'blog.post27.excerpt',
+    date: '2026-10-20',
+    readTime: '9 min',
+    category: 'AI',
+  },
+  {
+    slug: 'maksliga-intelekta-riki',
+    titleKey: 'blog.post28.title',
+    excerptKey: 'blog.post28.excerpt',
+    date: '2026-10-20',
+    readTime: '8 min',
+    category: 'AI',
+  },
+  {
+    slug: 'maksligais-intelekts-telefona',
+    titleKey: 'blog.post29.title',
+    excerptKey: 'blog.post29.excerpt',
+    date: '2026-10-20',
+    readTime: '7 min',
+    category: 'AI',
+  },
+  {
     slug: 'gramatvedibas-programmas-latvija',
     titleKey: 'blog.post23.title',
     excerptKey: 'blog.post23.excerpt',
