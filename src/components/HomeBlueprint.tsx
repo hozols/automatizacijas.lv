@@ -5,7 +5,7 @@ import Counter from '@/components/motion/Counter';
 import { OBJECT_ALT } from '@/components/objects/manifest';
 
 /*
-  A full-bleed blueprint of the filing cabinet, drawn as white lines on
+  A full-bleed blueprint of the desk lamp, drawn as white lines on
   black, with one case in a flat charcoal card on the left.
 */
 const HomeBlueprint = () => {
@@ -13,10 +13,10 @@ const HomeBlueprint = () => {
     <section className="blueprint-panel band-ink relative h-screen min-h-[40rem] overflow-hidden" aria-labelledby="blueprint-case">
       <Parallax factor={0.12} className="absolute inset-0">
         <img
-          src="/objects/filing-cabinet-wide-1600.webp"
-          srcSet="/objects/filing-cabinet-wide-800.webp 800w, /objects/filing-cabinet-wide-1600.webp 1600w"
+          src="/objects/desk-lamp-wide-1600.webp"
+          srcSet="/objects/desk-lamp-wide-800.webp 800w, /objects/desk-lamp-wide-1600.webp 1600w"
           sizes="100vw"
-          alt={OBJECT_ALT['filing-cabinet']}
+          alt={OBJECT_ALT['desk-lamp']}
           width={1600}
           height={1000}
           loading="lazy"
@@ -42,7 +42,7 @@ const HomeBlueprint = () => {
       </div>
 
       <p className="micro absolute bottom-4 right-6 m-0 max-w-[60vw] text-right text-ink-foreground/60">
-        Kartotēkas skapis, 3D modelis
+        Galda lampa, 3D modelis
       </p>
     </section>
   );

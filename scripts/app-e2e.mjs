@@ -146,7 +146,7 @@ const isDark = (page) => page.evaluate(() => document.documentElement.classList.
 {
   const page = await browser.newPage();
   let ok = true;
-  for (const f of ['invoices-800.webp', 'filing-cabinet-wide-1600.webp', 'contract-400.webp']) {
+  for (const f of ['invoices-800.webp', 'desk-lamp-wide-1600.webp', 'contract-400.webp']) {
     const res = await page.request.get(`${base}/objects/${f}`);
     ok = ok && res.status() === 200 && (res.headers()['content-type'] || '').includes('image/webp');
   }

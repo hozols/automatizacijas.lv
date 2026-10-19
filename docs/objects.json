@@ -1,9 +1,52 @@
 [
-  { "slug": "invoices", "title": "Rēķinu kaudze uz adatas", "alt": "Rēķinu kaudze uz misiņa adatas, baltu līniju zīmējums uz melna", "imageTask": "01a14203-7a73-7703-bbde-5acf0b6ac47d", "modelTask": "01a14205-82eb-754d-bb0e-f279ccfce019" },
-  { "slug": "contract", "title": "Spalvaskāts uz līguma", "alt": "Spalvaskāts uz salocīta līguma ar zīmogu, baltu līniju zīmējums uz melna", "imageTask": "01a14203-7f63-7751-ac23-3c1a7327a60e", "modelTask": "01a14205-8648-712c-ad85-fc1e7e424249" },
-  { "slug": "telephone", "title": "Galda telefons", "alt": "Galda telefons ar ciparripu, baltu līniju zīmējums uz melna", "imageTask": "01a14203-86ea-7796-b6f3-3bc1d0585e05", "modelTask": "01a14205-8b0b-7442-848f-5407ee651629" },
-  { "slug": "stamp", "title": "Zīmogs ar tintes spilventiņu", "alt": "Koka zīmogs blakus tintes spilventiņam, baltu līniju zīmējums uz melna", "imageTask": "01a14203-8dfb-703c-831c-884bbdcd66ec", "modelTask": "01a14205-8ff9-75b7-8c83-5f072541cacd" },
-  { "slug": "adding-machine", "title": "Skaitļojamā mašīna", "alt": "Mehāniska skaitļojamā mašīna ar papīra rulli, baltu līniju zīmējums uz melna", "imageTask": "01a14203-94d1-72c3-ad2e-4fc961632b7c", "modelTask": "01a14205-9489-772d-9748-7d2143f885bd" },
-  { "slug": "card-index", "title": "Kartotēkas kaste", "alt": "Atvērta koka kartotēkas kaste ar kartītēm, baltu līniju zīmējums uz melna", "imageTask": "01a14203-9c2e-7535-9cb1-50449c1dee0d", "modelTask": "01a14205-9a1a-760c-8fd6-dd299c403c62" },
-  { "slug": "filing-cabinet", "title": "Kartotēkas skapis", "alt": "Kartotēkas skapis ar atvērtu atvilktni, baltu līniju zīmējums uz melna", "imageTask": "01a14203-a31f-71f9-a30d-1b427c40e9ae", "modelTask": "01a14205-9e36-778b-af2f-25a23bb8fc8b", "wide": true }
+  {
+    "slug": "invoices",
+    "title": "Rēķinu kaudze uz adatas",
+    "alt": "Rēķinu kaudze uz misiņa adatas, baltu līniju zīmējums uz melna",
+    "imageTask": "01a14203-7a73-7703-bbde-5acf0b6ac47d",
+    "modelTask": "01a14205-82eb-754d-bb0e-f279ccfce019"
+  },
+  {
+    "slug": "contract",
+    "title": "Spalvaskāts uz līguma",
+    "alt": "Spalvaskāts uz salocīta līguma ar zīmogu, baltu līniju zīmējums uz melna",
+    "imageTask": "01a14203-7f63-7751-ac23-3c1a7327a60e",
+    "modelTask": "01a14205-8648-712c-ad85-fc1e7e424249"
+  },
+  {
+    "slug": "telephone",
+    "title": "Galda telefons",
+    "alt": "Galda telefons ar ciparripu, baltu līniju zīmējums uz melna",
+    "imageTask": "01a14203-86ea-7796-b6f3-3bc1d0585e05",
+    "modelTask": "01a14205-8b0b-7442-848f-5407ee651629"
+  },
+  {
+    "slug": "stamp",
+    "title": "Zīmogs ar tintes spilventiņu",
+    "alt": "Koka zīmogs blakus tintes spilventiņam, baltu līniju zīmējums uz melna",
+    "imageTask": "01a14203-8dfb-703c-831c-884bbdcd66ec",
+    "modelTask": "01a14205-8ff9-75b7-8c83-5f072541cacd"
+  },
+  {
+    "slug": "adding-machine",
+    "title": "Skaitļojamā mašīna",
+    "alt": "Mehāniska skaitļojamā mašīna ar papīra rulli, baltu līniju zīmējums uz melna",
+    "imageTask": "01a14203-94d1-72c3-ad2e-4fc961632b7c",
+    "modelTask": "01a14205-9489-772d-9748-7d2143f885bd"
+  },
+  {
+    "slug": "card-index",
+    "title": "Kartotēkas kaste",
+    "alt": "Atvērta koka kartotēkas kaste ar kartītēm, baltu līniju zīmējums uz melna",
+    "imageTask": "01a14203-9c2e-7535-9cb1-50449c1dee0d",
+    "modelTask": "01a14205-9a1a-760c-8fd6-dd299c403c62"
+  },
+  {
+    "slug": "desk-lamp",
+    "title": "Galda lampa",
+    "alt": "Bankas galda lampa ar kupolu un ķēdīti, baltu līniju zīmējums uz melna",
+    "imageTask": "01a15616-c938-76e2-ba66-0685410ef614",
+    "modelTask": "01a15617-49d7-76ff-886a-99623510e5e1",
+    "wide": true
+  }
 ]

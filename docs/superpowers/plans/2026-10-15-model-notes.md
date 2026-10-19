@@ -53,3 +53,8 @@ lazily after idle on desktop only). The line style is feature edges
 occluding fill; a plain wireframe read as low-poly, and downscaling a 2x
 render faded the edges, so `scripts/objects-render.mjs` renders each still
 at its own size with MSAA.
+
+2026-10-20: the filing cabinet (thin drawers, 58k triangles, never simplified
+cleanly) is replaced by a banker's desk lamp (image 01a15616-c938…, model
+01a15617-49d7…, 39 credits). Same slot everywhere: the blueprint panel, the
+"AI darbinieki" hover and the inner-page vignettes.

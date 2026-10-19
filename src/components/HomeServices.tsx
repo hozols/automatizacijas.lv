@@ -58,7 +58,7 @@ const services: { title: string; description: string; link: string; vignette: Vi
     title: 'AI darbinieki',
     description: 'AI darbinieki konkrētiem uzdevumiem, jūsu sistēmās un jūsu noteikumos.',
     link: '/ai-darbinieki',
-    vignette: { slug: 'filing-cabinet', caption: 'AI darbinieki' },
+    vignette: { slug: 'desk-lamp', caption: 'AI darbinieki' },
   },
 ];
 
