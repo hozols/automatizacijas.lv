@@ -323,6 +323,17 @@ const blogPostData: Record<string, PostData> = {
     author: 'Māris Ozols',
     authorRole: 'AI automatizācijas eksperts',
   },
+  'n8n-latviski': {
+    titleKey: 'blog.post30.title',
+    metaTitle: 'n8n latviski: kas tas ir un ko ar to automatizē (2026)',
+    contentKey: 'blog.post30.content',
+    excerptKey: 'blog.post30.excerpt',
+    date: '2026-10-20',
+    readTime: '9 min',
+    category: 'Automatizācija',
+    author: 'Māris Ozols',
+    authorRole: 'AI automatizācijas eksperts',
+  },
   'gemini-latviski': {
     titleKey: 'blog.post26.title',
     metaTitle: 'Gemini latviski: kas tas ir, cik maksā un kā lietot (2026)',

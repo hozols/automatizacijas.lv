@@ -7,6 +7,14 @@ import { PageShell, Breadcrumbs, PageHero, CtaBand } from '@/components/page';
 
 const blogPosts = [
   {
+    slug: 'n8n-latviski',
+    titleKey: 'blog.post30.title',
+    excerptKey: 'blog.post30.excerpt',
+    date: '2026-10-20',
+    readTime: '9 min',
+    category: 'Automatizācija',
+  },
+  {
     slug: 'gemini-latviski',
     titleKey: 'blog.post26.title',
     excerptKey: 'blog.post26.excerpt',

@@ -1,9 +1,33 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import PageTransition from '@/components/PageTransition';
 import { useLanguage } from '@/contexts/LanguageContext';
 import TrainingModal, { type TrainingItem } from '@/components/TrainingModal';
-import { PageShell, Breadcrumbs, PageHero, Section, Prose, CheckList } from '@/components/page';
+import { PageShell, Breadcrumbs, PageHero, Section, Prose, CheckList, Steps, Faq } from '@/components/page';
+
+const trainingFaqs = [
+  {
+    question: 'Kam ir domāti mākslīgā intelekta kursi uzņēmumiem?',
+    answer: 'Komandām, kas ikdienā raksta, rēķina un apstrādā dokumentus: biroja darbiniekiem, pārdošanai, grāmatvedībai, klientu apkalpošanai, vadītājiem. Priekšzināšanas nav vajadzīgas; strādājam ar jūsu reālajiem uzdevumiem.',
+  },
+  {
+    question: 'Cik ilga ir apmācība un kur tā notiek?',
+    answer: 'Pamata formāts ir pusdienas apmācība, četras stundas, uz vietas jūsu birojā vai attālināti. Lielākām komandām vai vairākām nodaļām ir vairāku sesiju programma.',
+  },
+  {
+    question: 'Vai apmācība ir latviski?',
+    answer: 'Jā, apmācība notiek latviski, un visi uzdevumi tiek rakstīti latviski. Rīki (ChatGPT, Gemini, Copilot) latviski strādā labi; apmācībā parādām, kur tie kļūdās.',
+  },
+  {
+    question: 'Kas paliek pēc apmācības?',
+    answer: 'Vienas lapas MI lietošanas politika jūsu uzņēmumam, uzdevumu paraugi jūsu darbam, saraksts ar procesiem, ko ir vērts automatizēt, un protokols ar datumu un dalībniekiem, kas sedz ES MI akta prasību par darbinieku MI pratību.',
+  },
+  {
+    question: 'Cik maksā MI apmācība?',
+    answer: 'Cena ir atkarīga no dalībnieku skaita un formāta. Pēc īsas sarunas par komandu un uzdevumiem saņemat fiksētu cenu.',
+  },
+];
 
 const TrainingPage = () => {
   const { t } = useLanguage();
@@ -89,7 +113,12 @@ const TrainingPage = () => {
     <PageTransition>
       <Helmet>
         <title>Mākslīgā intelekta kursi uzņēmumiem | automatizacijas.lv</title>
-        <meta name="description" content="AI apmācības komandām: kā lietot ChatGPT un AI rīkus ikdienas darbā. Praktiski, latviski, jūsu uzņēmuma piemēros."/>
+        <meta name="description" content="Mākslīgā intelekta kursi un apmācības uzņēmumiem: pusdienas apmācība ar jūsu dokumentiem, ChatGPT, Gemini un Copilot darbā, MI lietošanas politika. Latviski, uz vietas vai attālināti."/>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": trainingFaqs.map((f) => ({ "@type": "Question", "name": f.question, "acceptedAnswer": { "@type": "Answer", "text": f.answer } })),
+        })}</script>
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/training" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/training" />
@@ -192,6 +221,39 @@ const TrainingPage = () => {
 
         <PageHero vignette="telephone" title={t('training.title')} lede={t('training.subtitle')} />
 
+        {/* The offer every article links to: half a day at the company, with its own documents */}
+        <Section
+          title="Pusdienas MI apmācība jūsu uzņēmumā"
+          intro="Četras stundas uz vietas vai attālināti, ar jūsu dokumentiem un uzdevumiem. Pēc tās katrs darbinieks zina, ko ChatGPT, Gemini un Copilot drīkst darīt viņa darbā un ko ne."
+        >
+          <Prose>
+            <p>
+              Nevis lekcija par mākslīgo intelektu, bet darbs ar jūsu e-pastiem, rēķiniem, līgumiem un tabulām.
+              Pirms apmācības sarunājam, kādi uzdevumi komandā atkārtojas; apmācībā tos izdarām ar MI rīkiem; pēc
+              apmācības paliek vienas lapas MI lietošanas politika un uzdevumu paraugi, ko komanda var lietot nākamajā
+              dienā. Apmācības protokols ar datumu un dalībniekiem sedz ES MI akta prasību par darbinieku MI pratību.
+            </p>
+          </Prose>
+          <div className="mt-8">
+            <Steps
+              items={[
+                { title: 'Rīki un robežas (60 min)', desc: 'ChatGPT, Gemini, Copilot un Claude: kas ir bez maksas, kas maksas, ko tajos drīkst un ko nedrīkst ievadīt, kā pārbaudīt atbildes.' },
+                { title: 'Uzdevumi latviski (90 min)', desc: 'Kā rakstīt uzdevumu, lai atbilde ir lietojama: konteksts, formāts, piemēri. Praktiski ar jūsu e-pastiem, piedāvājumiem un atskaitēm.' },
+                { title: 'Dokumenti un dati (60 min)', desc: 'PDF, foto un tabulas: nolasīt, apkopot, salīdzināt. NotebookLM saviem dokumentiem. Kur beidzas rīks un sākas automatizācija.' },
+                { title: 'Politika un nākamie soļi (30 min)', desc: 'Vienas lapas MI lietošanas politika jūsu uzņēmumam, saraksts ar uzdevumiem, ko automatizēt, atbildes uz jautājumiem.' },
+              ]}
+            />
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link to="/contact?offer=mi-apmacibas" className="btn btn-solid">
+              Pieteikt apmācību
+            </Link>
+            <button type="button" onClick={() => handleTrainingClick(trainingData.seminars)} className="btn btn-line">
+              Detaļas un tēmas
+            </button>
+          </div>
+        </Section>
+
         {/* Online Courses */}
         <Section title={t('training.courses.title')} intro={t('training.courses.subtitle')} tone="sheet">
           <Prose>
@@ -245,6 +307,10 @@ const TrainingPage = () => {
               </li>
             ))}
           </ul>
+        </Section>
+
+        <Section title="Biežāk uzdotie jautājumi par MI apmācībām" tone="sheet">
+          <Faq items={trainingFaqs} />
         </Section>
 
         {/* CTA: same band as CtaBand, but the actions open the dialog instead of navigating */}
