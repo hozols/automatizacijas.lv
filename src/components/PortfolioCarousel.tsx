@@ -17,6 +17,40 @@ interface Project {
 
 const portfolioItems: Project[] = [
   {
+    id: 18,
+    title: "LogiSales — AI pārdošanas platforma loģistikai",
+    description: "Platforma loģistikas uzņēmumiem, kas atrod jaunus kravu devējus un ved visu pārdošanas procesu vienuviet: leadu meklēšana (Apollo), e-pasta un LinkedIn kampaņas (Instantly, HeyReach), atbilžu inbox, uzdevumi, zvanu ieraksti un transkripti (CloudTalk), satura studija, analītika, AI asistents un autonomais pārdošanas aģents. Organizācijas ar vairākiem lietotājiem, saskarne angliski un latviski.",
+    category: "AI platforma",
+    image: "/portfolio/logisales.webp",
+    imageWidth: 800,
+    imageHeight: 500,
+    client: "Posthaul",
+    year: "2026",
+    tags: ["Pārdošana", "Loģistika", "AI aģents", "CRM"],
+    metrics: [
+      { value: "4", label: "integrācijas: Apollo, Instantly, CloudTalk, HeyReach" },
+      { value: "AI", label: "zvanu kopsavilkumi un aģents" },
+      { value: "EN / LV", label: "saskarne" }
+    ]
+  },
+  {
+    id: 17,
+    title: "Energygarden.lv — e-veikals un SEO saules enerģijai",
+    description: "Mājaslapa un e-veikals saules paneļiem, siltumsūkņiem un EV uzlādei mājām un biznesam, ar kalkulatoru, projektu galeriju un blogu. SEO audits Latvijas tirgum ar rīcības plānu: dublējošo URL struktūru novēršana, kategoriju lapu optimizācija un satura plāns.",
+    category: "Web izstrāde",
+    image: "/portfolio/energygarden.webp",
+    imageWidth: 800,
+    imageHeight: 456,
+    client: "Energygarden",
+    year: "2026",
+    tags: ["Saules paneļi", "E-komercija", "SEO"],
+    metrics: [
+      { value: "98", label: "Lighthouse veiktspēja" },
+      { value: "100", label: "Lighthouse SEO" },
+      { value: "Audits", label: "ar rīcības plānu" }
+    ]
+  },
+  {
     id: 16,
     title: "Kalkulāciju platforma ar AI skiču nolasīšanu",
     description: "Ražošanas izmaksu kalkulāciju un likmju pārvaldības platforma, kas aizstāj Excel: katrai kalkulācijai apstiprināšanas plūsma, centralizēts materiālu un likmju reģistrs, maržu pārskats vadītājiem. Konstruktora PDF skices nolasa AI, tāpēc manuālā ievade atkrīt. Izstrādāta ar LIAA inovāciju vaučeri.",
