@@ -7,6 +7,30 @@ import { PageShell, Breadcrumbs, PageHero, CtaBand } from '@/components/page';
 
 const blogPosts = [
   {
+    slug: 'gramatvedibas-programmas-latvija',
+    titleKey: 'blog.post23.title',
+    excerptKey: 'blog.post23.excerpt',
+    date: '2026-10-20',
+    readTime: '9 min',
+    category: 'Grāmatvedība',
+  },
+  {
+    slug: 'dokumentu-vadibas-sistema',
+    titleKey: 'blog.post24.title',
+    excerptKey: 'blog.post24.excerpt',
+    date: '2026-10-20',
+    readTime: '8 min',
+    category: 'Automatizācija',
+  },
+  {
+    slug: 'mi-akts-uznemumam',
+    titleKey: 'blog.post25.title',
+    excerptKey: 'blog.post25.excerpt',
+    date: '2026-10-20',
+    readTime: '9 min',
+    category: 'AI',
+  },
+  {
     slug: 'e-rekini-latvija',
     titleKey: 'blog.post22.title',
     excerptKey: 'blog.post22.excerpt',
