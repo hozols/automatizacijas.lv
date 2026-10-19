@@ -1,0 +1,4446 @@
+{
+ "ranked": [
+  {
+   "kw": "automatizācija",
+   "vol": 50,
+   "rank": 2,
+   "url": "/",
+   "intent": "informational"
+  },
+  {
+   "kw": "ģeneratīvais mākslīgais intelekts",
+   "vol": 30,
+   "rank": 5,
+   "url": "/kas-ir-maksligais-intelekts",
+   "intent": "informational"
+  },
+  {
+   "kw": "chatgpt latviski",
+   "vol": 9900,
+   "rank": 7,
+   "url": "/blog/chatgpt-latviski-ka-lietot",
+   "intent": "navigational"
+  },
+  {
+   "kw": "mākslīgais intelekts gemini",
+   "vol": 170,
+   "rank": 10,
+   "url": "/kas-ir-maksligais-intelekts",
+   "intent": "informational"
+  },
+  {
+   "kw": "čats latviski",
+   "vol": 70,
+   "rank": 10,
+   "url": "/blog/chatgpt-latviski-ka-lietot",
+   "intent": "informational"
+  },
+  {
+   "kw": "chatgpt latviski online",
+   "vol": 390,
+   "rank": 11,
+   "url": "/blog/chatgpt-latviski-ka-lietot",
+   "intent": "navigational"
+  },
+  {
+   "kw": "čatbots",
+   "vol": 30,
+   "rank": 11,
+   "url": "/chatbotu-izstrade",
+   "intent": "informational"
+  },
+  {
+   "kw": "google mākslīgais intelekts",
+   "vol": 320,
+   "rank": 12,
+   "url": "/kas-ir-maksligais-intelekts",
+   "intent": "informational"
+  },
+  {
+   "kw": "chat gpt latviski atsauksmes",
+   "vol": 50,
+   "rank": 12,
+   "url": "/blog/chatgpt-latviski-ka-lietot",
+   "intent": "informational"
+  },
+  {
+   "kw": "mākslīgais intelekts latviski",
+   "vol": 880,
+   "rank": 13,
+   "url": "/kas-ir-maksligais-intelekts",
+   "intent": "informational"
+  },
+  {
+   "kw": "kas ir mākslīgais intelekts",
+   "vol": 170,
+   "rank": 15,
+   "url": "/kas-ir-maksligais-intelekts",
+   "intent": "informational"
+  },
+  {
+   "kw": "chatgpt latviski online bezmaksas",
+   "vol": 50,
+   "rank": 15,
+   "url": "/blog/chatgpt-latviski-ka-lietot",
+   "intent": "transactional"
+  },
+  {
+   "kw": "chat gpt latviski bezmaksas",
+   "vol": 320,
+   "rank": 17,
+   "url": "/blog/chatgpt-latviski-ka-lietot",
+   "intent": "transactional"
+  },
+  {
+   "kw": "chatgpt latviski bezmaksas",
+   "vol": 260,
+   "rank": 18,
+   "url": "/blog/chatgpt-latviski-ka-lietot",
+   "intent": "navigational"
+  },
+  {
+   "kw": "kas ir ai",
+   "vol": 40,
+   "rank": 18,
+   "url": "/kas-ir-maksligais-intelekts",
+   "intent": "informational"
+  },
+  {
+   "kw": "čats gpt latviski",
+   "vol": 720,
+   "rank": 20,
+   "url": "/blog/chatgpt-latviski-ka-lietot",
+   "intent": "navigational"
+  },
+  {
+   "kw": "mākslīgais intelekts",
+   "vol": 8100,
+   "rank": 22,
+   "url": "/kas-ir-maksligais-intelekts",
+   "intent": "informational"
+  },
+  {
+   "kw": "mākslīgais intelekts programma",
+   "vol": 70,
+   "rank": 23,
+   "url": "/kas-ir-maksligais-intelekts",
+   "intent": "informational"
+  },
+  {
+   "kw": "mākslīgais intelekts online",
+   "vol": 170,
+   "rank": 26,
+   "url": "/kas-ir-maksligais-intelekts",
+   "intent": "informational"
+  },
+  {
+   "kw": "kas ir chatgpt",
+   "vol": 40,
+   "rank": 26,
+   "url": "/blog/chatgpt-latviski-ka-lietot",
+   "intent": "informational"
+  },
+  {
+   "kw": "chatgpt latviešu valodā",
+   "vol": 110,
+   "rank": 27,
+   "url": "/blog/chatgpt-latviski-ka-lietot",
+   "intent": "navigational"
+  },
+  {
+   "kw": "maksligais intelekts",
+   "vol": 390,
+   "rank": 29,
+   "url": "/kas-ir-maksligais-intelekts",
+   "intent": "informational"
+  },
+  {
+   "kw": "mākslīgais intelekts chatgpt latviski",
+   "vol": 320,
+   "rank": 30,
+   "url": "/blog/chatgpt-latviski-ka-lietot",
+   "intent": "informational"
+  },
+  {
+   "kw": "mājas lapas izstrāde cenas",
+   "vol": 90,
+   "rank": 31,
+   "url": "/majaslapu-izstrade",
+   "intent": "commercial"
+  },
+  {
+   "kw": "mājaslapas izveide cena",
+   "vol": 210,
+   "rank": 32,
+   "url": "/majaslapu-izstrade",
+   "intent": "commercial"
+  },
+  {
+   "kw": "mājas lapas izstrāde cena",
+   "vol": 90,
+   "rank": 32,
+   "url": "/majaslapu-izstrade",
+   "intent": "commercial"
+  },
+  {
+   "kw": "mākslīgā intelekta kursi",
+   "vol": 110,
+   "rank": 36,
+   "url": "/training",
+   "intent": "informational"
+  },
+  {
+   "kw": "mi akts",
+   "vol": 70,
+   "rank": 40,
+   "url": "/kas-ir-maksligais-intelekts",
+   "intent": "informational"
+  },
+  {
+   "kw": "mākslīgais intelekts online latviski",
+   "vol": 110,
+   "rank": 42,
+   "url": "/blog/chatgpt-latviski-ka-lietot",
+   "intent": "informational"
+  },
+  {
+   "kw": "mākslīgais intelekts latvijā",
+   "vol": 70,
+   "rank": 44,
+   "url": "/kas-ir-maksligais-intelekts",
+   "intent": "informational"
+  },
+  {
+   "kw": "mākslīgais intelekts gpt",
+   "vol": 210,
+   "rank": 45,
+   "url": "/kas-ir-maksligais-intelekts",
+   "intent": "informational"
+  },
+  {
+   "kw": "mājas lapu optimizācija",
+   "vol": 70,
+   "rank": 47,
+   "url": "/majaslapu-izstrade",
+   "intent": "informational"
+  },
+  {
+   "kw": "gustava zemgala gatve 73",
+   "vol": 110,
+   "rank": 48,
+   "url": "/contact",
+   "intent": "navigational"
+  },
+  {
+   "kw": "mājas lapas izstrādes cenas",
+   "vol": 90,
+   "rank": 53,
+   "url": "/majaslapu-izstrade",
+   "intent": "commercial"
+  },
+  {
+   "kw": "mi rīki",
+   "vol": 90,
+   "rank": 58,
+   "url": "/kas-ir-maksligais-intelekts",
+   "intent": "informational"
+  },
+  {
+   "kw": "mājas lapas audits",
+   "vol": 40,
+   "rank": 63,
+   "url": "/majaslapu-izstrade",
+   "intent": "commercial"
+  },
+  {
+   "kw": "mākslīgais intelekts kursi",
+   "vol": 50,
+   "rank": 67,
+   "url": "/training",
+   "intent": "commercial"
+  },
+  {
+   "kw": "mākslīgais intelekts latviešu valodā",
+   "vol": 140,
+   "rank": 79,
+   "url": "/blog/chatgpt-latviski-ka-lietot",
+   "intent": "informational"
+  }
+ ],
+ "ideas": [
+  {
+   "kw": "e-parvaldnieks",
+   "vol": 33100,
+   "comp": "LOW",
+   "cpc": 2.21,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "e-klase pieslēgties",
+   "vol": 3600,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -46
+  },
+  {
+   "kw": "e-veselība pieslegties",
+   "vol": 3600,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -56
+  },
+  {
+   "kw": "e pārvaldnieks",
+   "vol": 3600,
+   "comp": "LOW",
+   "cpc": 3.15,
+   "intent": "navigational",
+   "trend": 22
+  },
+  {
+   "kw": "e pakalpojumi",
+   "vol": 2400,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "commercial",
+   "trend": null
+  },
+  {
+   "kw": "e-lietas",
+   "vol": 1900,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -16
+  },
+  {
+   "kw": "e veselība gov lv",
+   "vol": 1300,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 125
+  },
+  {
+   "kw": "tet plus add autorizācija",
+   "vol": 880,
+   "comp": "LOW",
+   "cpc": 0.39,
+   "intent": "navigational",
+   "trend": 823
+  },
+  {
+   "kw": "e adrese pieslēgties",
+   "vol": 880,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 39
+  },
+  {
+   "kw": "e nosūtījums",
+   "vol": 880,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 156
+  },
+  {
+   "kw": "datamed lv e veseliba",
+   "vol": 720,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -45
+  },
+  {
+   "kw": "edu riga lv e pastā",
+   "vol": 720,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -80
+  },
+  {
+   "kw": "e-talons",
+   "vol": 720,
+   "comp": "LOW",
+   "cpc": 0.35,
+   "intent": "navigational",
+   "trend": -32
+  },
+  {
+   "kw": "e-elektrum",
+   "vol": 720,
+   "comp": "LOW",
+   "cpc": 0.15,
+   "intent": "transactional",
+   "trend": -18
+  },
+  {
+   "kw": "e veselība nosūtījums",
+   "vol": 590,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 50
+  },
+  {
+   "kw": "clean r kontakti",
+   "vol": 590,
+   "comp": "LOW",
+   "cpc": 0.2,
+   "intent": "navigational",
+   "trend": 22
+  },
+  {
+   "kw": "manas e-receptes",
+   "vol": 590,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -33
+  },
+  {
+   "kw": "e monētas lv",
+   "vol": 590,
+   "comp": "LOW",
+   "cpc": 0.6,
+   "intent": "informational",
+   "trend": 22
+  },
+  {
+   "kw": "dhl kontakti",
+   "vol": 590,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -34
+  },
+  {
+   "kw": "e-pupa",
+   "vol": 480,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "transactional",
+   "trend": -40
+  },
+  {
+   "kw": "e lieta-cases",
+   "vol": 480,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 50
+  },
+  {
+   "kw": "lu programmas",
+   "vol": 390,
+   "comp": "LOW",
+   "cpc": 0.99,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "dhl latvia kontakti",
+   "vol": 390,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -18
+  },
+  {
+   "kw": "e-sigulda",
+   "vol": 390,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -19
+  },
+  {
+   "kw": "citybee kontakti",
+   "vol": 390,
+   "comp": "LOW",
+   "cpc": 2.84,
+   "intent": "navigational",
+   "trend": 50
+  },
+  {
+   "kw": "smartposti kontakti",
+   "vol": 390,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 433
+  },
+  {
+   "kw": "smartpost kontakti",
+   "vol": 390,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -46
+  },
+  {
+   "kw": "e nosūtījumi",
+   "vol": 390,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 436
+  },
+  {
+   "kw": "bite.lv kontakti",
+   "vol": 320,
+   "comp": "LOW",
+   "cpc": 0.36,
+   "intent": "navigational",
+   "trend": -64
+  },
+  {
+   "kw": "draugiem lv kontakti",
+   "vol": 320,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": null,
+   "trend": -19
+  },
+  {
+   "kw": "e klase lv kontakti",
+   "vol": 320,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -56
+  },
+  {
+   "kw": "e adreses",
+   "vol": 320,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -96
+  },
+  {
+   "kw": "outlook e pasts",
+   "vol": 320,
+   "comp": "LOW",
+   "cpc": 3.44,
+   "intent": "navigational",
+   "trend": -46
+  },
+  {
+   "kw": "e-rekins",
+   "vol": 320,
+   "comp": "MEDIUM",
+   "cpc": 1.95,
+   "intent": "informational",
+   "trend": -33
+  },
+  {
+   "kw": "e-lats zelts",
+   "vol": 320,
+   "comp": "LOW",
+   "cpc": 0.95,
+   "intent": "transactional",
+   "trend": -56
+  },
+  {
+   "kw": "vid eds kontakti",
+   "vol": 320,
+   "comp": "LOW",
+   "cpc": 3.37,
+   "intent": "navigational",
+   "trend": -19
+  },
+  {
+   "kw": "adaptols atsauksmes",
+   "vol": 260,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 24
+  },
+  {
+   "kw": "e adrese lv",
+   "vol": 260,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -64
+  },
+  {
+   "kw": "inbox kontakti",
+   "vol": 260,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 321
+  },
+  {
+   "kw": "fedex kontakti",
+   "vol": 260,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "bigbox atsauksmes",
+   "vol": 260,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "commercial",
+   "trend": -35
+  },
+  {
+   "kw": "bite programma",
+   "vol": 260,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 24
+  },
+  {
+   "kw": "e lietas lv",
+   "vol": 260,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 255
+  },
+  {
+   "kw": "lad kontakti",
+   "vol": 210,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 53
+  },
+  {
+   "kw": "mākslīgais pavadonis",
+   "vol": 210,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "transactional",
+   "trend": 4700
+  },
+  {
+   "kw": "apvienotais saraksts programma",
+   "vol": 210,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 18900
+  },
+  {
+   "kw": "bino lv kontakti",
+   "vol": 210,
+   "comp": "LOW",
+   "cpc": 2.05,
+   "intent": "navigational",
+   "trend": -77
+  },
+  {
+   "kw": "e zurnali",
+   "vol": 210,
+   "comp": "LOW",
+   "cpc": 0.37,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "vrs e pasts",
+   "vol": 210,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -65
+  },
+  {
+   "kw": "e pakalpojumi jurmala",
+   "vol": 210,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "commercial",
+   "trend": -19
+  },
+  {
+   "kw": "e-baltstor",
+   "vol": 210,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -19
+  },
+  {
+   "kw": "aboutyou kontakti",
+   "vol": 210,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -56
+  },
+  {
+   "kw": "smart-id kontakti",
+   "vol": 210,
+   "comp": "LOW",
+   "cpc": 2.4,
+   "intent": null,
+   "trend": -35
+  },
+  {
+   "kw": "ultracod atsauksmes",
+   "vol": 210,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 50
+  },
+  {
+   "kw": "bino.lv kontakti",
+   "vol": 210,
+   "comp": "LOW",
+   "cpc": 2.05,
+   "intent": "navigational",
+   "trend": -77
+  },
+  {
+   "kw": "smart id kontakti",
+   "vol": 210,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "e case",
+   "vol": 210,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 24
+  },
+  {
+   "kw": "ups kontakti",
+   "vol": 210,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "about you kontakti",
+   "vol": 210,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -19
+  },
+  {
+   "kw": "ventspils e-pasts",
+   "vol": 170,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "stradini.lv e pieraksts",
+   "vol": 170,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "e eugesta",
+   "vol": 170,
+   "comp": "LOW",
+   "cpc": 0.05,
+   "intent": "informational",
+   "trend": -58
+  },
+  {
+   "kw": "e poliklīnika pieraksts",
+   "vol": 170,
+   "comp": "LOW",
+   "cpc": 0.59,
+   "intent": "navigational",
+   "trend": 89
+  },
+  {
+   "kw": "stradini lv e pieraksts",
+   "vol": 170,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "e iesniegums policijai",
+   "vol": 170,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -67
+  },
+  {
+   "kw": "e-rekini",
+   "vol": 170,
+   "comp": "MEDIUM",
+   "cpc": 1.94,
+   "intent": "informational",
+   "trend": 50
+  },
+  {
+   "kw": "e katalog",
+   "vol": 170,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -47
+  },
+  {
+   "kw": "bis kontakti",
+   "vol": 170,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": null,
+   "trend": null
+  },
+  {
+   "kw": "newsletter latviski",
+   "vol": 170,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -57
+  },
+  {
+   "kw": "ikvd kontakti",
+   "vol": 170,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "e klase parole",
+   "vol": 170,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "citadele kontakti diennakts",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "kadastrs.lv kontakti",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "viron lv atsauksmes",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -55
+  },
+  {
+   "kw": "e-klase hack",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 7100
+  },
+  {
+   "kw": "e-st.lv mani pieteikumi",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "betaserc atsauksmes",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -18
+  },
+  {
+   "kw": "mily.lv kontakti",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 83
+  },
+  {
+   "kw": "atd kontakti",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 56
+  },
+  {
+   "kw": "discover lv atsauksmes",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "pārbaudīt e-parakstu",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": 2.79,
+   "intent": "transactional",
+   "trend": null
+  },
+  {
+   "kw": "dizains un tehnoloģijas programma",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 23
+  },
+  {
+   "kw": "eds vid gov lv kontakti",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -59
+  },
+  {
+   "kw": "e klase hack",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 7100
+  },
+  {
+   "kw": "lkpp.lv atsauksmes",
+   "vol": 140,
+   "comp": "MEDIUM",
+   "cpc": 3.39,
+   "intent": "informational",
+   "trend": -57
+  },
+  {
+   "kw": "anete lv atsauksmes",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -33
+  },
+  {
+   "kw": "discover.lv atsauksmes",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -35
+  },
+  {
+   "kw": "anete.lv atsauksmes",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -19
+  },
+  {
+   "kw": "e-lats darba laiks",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -21
+  },
+  {
+   "kw": "vmd e pakalpojumi",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "commercial",
+   "trend": 600
+  },
+  {
+   "kw": "dkn kontakti",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -21
+  },
+  {
+   "kw": "rd electronics kontakti",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": 1.17,
+   "intent": "navigational",
+   "trend": -36
+  },
+  {
+   "kw": "www e veseliba lv pieslegties",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "red3 atsauksmes",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": 0.19,
+   "intent": "informational",
+   "trend": -36
+  },
+  {
+   "kw": "epasts vai e-pasts",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 143
+  },
+  {
+   "kw": "e jurmala",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 22
+  },
+  {
+   "kw": "e gāze lv",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": 1.23,
+   "intent": "navigational",
+   "trend": 250
+  },
+  {
+   "kw": "e dokuments atvērt",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": 0.51,
+   "intent": "navigational",
+   "trend": 56
+  },
+  {
+   "kw": "optibet kontakti",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 33
+  },
+  {
+   "kw": "bolt drive kontakti",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": 4.62,
+   "intent": "navigational",
+   "trend": -18
+  },
+  {
+   "kw": "bis gov lv kontakti",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "leti24 com atsauksmes",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "prof.lv atsauksmes",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 175
+  },
+  {
+   "kw": "mākslīgā intelekta akts",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -22
+  },
+  {
+   "kw": "airtal tabletes atsauksmes",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "commercial",
+   "trend": 120
+  },
+  {
+   "kw": "e dokumentu atvēršana",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": 0.54,
+   "intent": "informational",
+   "trend": 22
+  },
+  {
+   "kw": "mākslīgā intelekta kursi",
+   "vol": 110,
+   "comp": "HIGH",
+   "cpc": 1.11,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "open lv kursi",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "transactional",
+   "trend": 21
+  },
+  {
+   "kw": "tavex.lv kursi",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": 1.06,
+   "intent": "informational",
+   "trend": -22
+  },
+  {
+   "kw": "mily lv kontakti",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 129
+  },
+  {
+   "kw": "e paraksta atjaunošana",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -21
+  },
+  {
+   "kw": "bite bizness kontakti",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -18
+  },
+  {
+   "kw": "e pakalpojumi latvijas gaze",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -76
+  },
+  {
+   "kw": "ss com kontakti",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -22
+  },
+  {
+   "kw": "ddzksu kontakti",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 120
+  },
+  {
+   "kw": "skudexa atsauksmes",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 267
+  },
+  {
+   "kw": "e-csdd sodi",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -64
+  },
+  {
+   "kw": "zimbra e pasts",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "ss.com kontakti",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 40
+  },
+  {
+   "kw": "e csdd aplikācija",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 240
+  },
+  {
+   "kw": "elektrum lv kontakti",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": 1.17,
+   "intent": "navigational",
+   "trend": -18
+  },
+  {
+   "kw": "bite tehniskais atbalsts",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "prof lv atsauksmes",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 600
+  },
+  {
+   "kw": "e-pakalpojums mani dati vdeāvk",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 143
+  },
+  {
+   "kw": "elektrum.lv kontakti",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": 1.17,
+   "intent": "navigational",
+   "trend": -18
+  },
+  {
+   "kw": "bezmaksas e pasts",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": 0.32,
+   "intent": "informational",
+   "trend": -44
+  },
+  {
+   "kw": "kpi latviski",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 25
+  },
+  {
+   "kw": "vvd kontakti",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "pepco kontakti",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 29
+  },
+  {
+   "kw": "inserv lv atsauksmes",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 120
+  },
+  {
+   "kw": "percunbrauc.lv atsauksmes",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": 1.23,
+   "intent": "informational",
+   "trend": 100
+  },
+  {
+   "kw": "e veselības pieraksts",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -29
+  },
+  {
+   "kw": "tet lv kontakti",
+   "vol": 90,
+   "comp": "LOW",
+   "cpc": 0.2,
+   "intent": "navigational",
+   "trend": 56
+  },
+  {
+   "kw": "ferratum lv kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 0.47,
+   "intent": "navigational",
+   "trend": 80
+  },
+  {
+   "kw": "datorika programma",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 21
+  },
+  {
+   "kw": "pasts lv kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -56
+  },
+  {
+   "kw": "e lido",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 0.02,
+   "intent": "informational",
+   "trend": -44
+  },
+  {
+   "kw": "jobbi lv atsauksmes",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "serveris lv e pasts",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "fortrans atsauksmes",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -29
+  },
+  {
+   "kw": "inserv kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -44
+  },
+  {
+   "kw": "ondo lv kontakti",
+   "vol": 70,
+   "comp": "MEDIUM",
+   "cpc": 0.75,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "e kiosks",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "gogetfit atsauksmes",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -22
+  },
+  {
+   "kw": "e pieraksts jēkabpils",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -44
+  },
+  {
+   "kw": "esto.lv kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 2.44,
+   "intent": "navigational",
+   "trend": 180
+  },
+  {
+   "kw": "e plastena",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 40
+  },
+  {
+   "kw": "1a.lv kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 0.43,
+   "intent": "navigational",
+   "trend": -22
+  },
+  {
+   "kw": "prp injekcijas atsauksmes",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -57
+  },
+  {
+   "kw": "salidzini.lv kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -29
+  },
+  {
+   "kw": "jobbi.lv atsauksmes",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 29
+  },
+  {
+   "kw": "www e parvaldnieks",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 250
+  },
+  {
+   "kw": "e lats kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 1.83,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "vdd kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 80
+  },
+  {
+   "kw": "pasts.lv kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -57
+  },
+  {
+   "kw": "atd e pakalpojumi",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 40
+  },
+  {
+   "kw": "e-lats kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 1.83,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "vid gov lv kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "lmt kontakti diennakts",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -82
+  },
+  {
+   "kw": "seb.lv kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 1.4,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "edu e pasts",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "tsc kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -44
+  },
+  {
+   "kw": "paypal latvia kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -20
+  },
+  {
+   "kw": "longo lv atsauksmes",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 0.29,
+   "intent": "informational",
+   "trend": 125
+  },
+  {
+   "kw": "riga lv e pakalpojumi",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "e klase app",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -50
+  },
+  {
+   "kw": "google atsauksmes",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 40
+  },
+  {
+   "kw": "eparvaldnieks kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 1000
+  },
+  {
+   "kw": "salidzini lv kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -29
+  },
+  {
+   "kw": "e 3a",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "rd electronics atsauksmes",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "commercial",
+   "trend": null
+  },
+  {
+   "kw": "ferratum.lv kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 0.47,
+   "intent": "navigational",
+   "trend": 80
+  },
+  {
+   "kw": "bvk atsauksmes",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 1.35,
+   "intent": "informational",
+   "trend": 29
+  },
+  {
+   "kw": "omniva bizness kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 0.02,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "google kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 0.27,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "kolonna e-veikals",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 1.1,
+   "intent": "navigational",
+   "trend": 40
+  },
+  {
+   "kw": "oreol.eu atsauksmes",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -71
+  },
+  {
+   "kw": "seb lv kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 1.4,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "llkc kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "ondo.lv kontakti",
+   "vol": 70,
+   "comp": "MEDIUM",
+   "cpc": 0.75,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "eltek atsauksmes",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -22
+  },
+  {
+   "kw": "pats.lv atsauksmes",
+   "vol": 70,
+   "comp": "MEDIUM",
+   "cpc": 1.39,
+   "intent": "informational",
+   "trend": 25
+  },
+  {
+   "kw": "la.lv kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 0.05,
+   "intent": "navigational",
+   "trend": -55
+  },
+  {
+   "kw": "klix kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 133
+  },
+  {
+   "kw": "datorikas programma",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -43
+  },
+  {
+   "kw": "eparakstītājs download",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 0.43,
+   "intent": "transactional",
+   "trend": 80
+  },
+  {
+   "kw": "līderu programma",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 29
+  },
+  {
+   "kw": "e iesniegums vsaa pakalpojumiem",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "transactional",
+   "trend": null
+  },
+  {
+   "kw": "testeris com atsauksmes",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 0.62,
+   "intent": "informational",
+   "trend": -40
+  },
+  {
+   "kw": "serveris.lv e pasts",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "brintellix atsauksmes",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "commercial",
+   "trend": -71
+  },
+  {
+   "kw": "e platforma",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 200
+  },
+  {
+   "kw": "esto lv kontakti",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 2.44,
+   "intent": "navigational",
+   "trend": 180
+  },
+  {
+   "kw": "čats latviski",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 0.23,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "bite klientu atbalsts",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 80
+  },
+  {
+   "kw": "e lietas gov lv",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "e biļetes",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "transactional",
+   "trend": -78
+  },
+  {
+   "kw": "subtitri download",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "transactional",
+   "trend": 67
+  },
+  {
+   "kw": "forxiga atsauksmes",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 25
+  },
+  {
+   "kw": "failiem lv kontakti",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -73
+  },
+  {
+   "kw": "omniva lv kontakti",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": 0.02,
+   "intent": "navigational",
+   "trend": -57
+  },
+  {
+   "kw": "bestsecret atsauksmes",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "commercial",
+   "trend": -20
+  },
+  {
+   "kw": "vivus lv kontakti",
+   "vol": 50,
+   "comp": "MEDIUM",
+   "cpc": 3.8,
+   "intent": "navigational",
+   "trend": 67
+  },
+  {
+   "kw": "euronics kontakti",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": 0.84,
+   "intent": "navigational",
+   "trend": -29
+  },
+  {
+   "kw": "citadele.lv kontakti",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 29
+  },
+  {
+   "kw": "karm lv atsauksmes",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "commercial",
+   "trend": 25
+  },
+  {
+   "kw": "mogo.lv kontakti",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": 6.63,
+   "intent": "navigational",
+   "trend": -29
+  },
+  {
+   "kw": "vivus.lv kontakti",
+   "vol": 50,
+   "comp": "MEDIUM",
+   "cpc": 3.8,
+   "intent": "navigational",
+   "trend": 67
+  },
+  {
+   "kw": "minesotas programma atsauksmes",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -20
+  },
+  {
+   "kw": "mogo lv kontakti",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": 2.1,
+   "intent": "navigational",
+   "trend": -20
+  },
+  {
+   "kw": "betsafe atsauksmes",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "commercial",
+   "trend": -33
+  },
+  {
+   "kw": "kas ir e-adrese",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -20
+  },
+  {
+   "kw": "e serviss",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -43
+  },
+  {
+   "kw": "dpd lv kontakti",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 75
+  },
+  {
+   "kw": "e biletes",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "transactional",
+   "trend": -78
+  },
+  {
+   "kw": "ss.lv kontakti",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": 2.81,
+   "intent": "navigational",
+   "trend": -44
+  },
+  {
+   "kw": "rcb e katalogs",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "betsafe kontakti",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 100
+  },
+  {
+   "kw": "e iesniegums",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "picoprep atsauksmes",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 67
+  },
+  {
+   "kw": "e park",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -20
+  },
+  {
+   "kw": "compensa life e birojs",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 67
+  },
+  {
+   "kw": "booking.com kontakti",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": 0.6,
+   "intent": "navigational",
+   "trend": -56
+  },
+  {
+   "kw": "e kartes",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -18
+  },
+  {
+   "kw": "e iesniegumi",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "betac atsauksmes",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 150
+  },
+  {
+   "kw": "monton e-veikals",
+   "vol": 50,
+   "comp": "MEDIUM",
+   "cpc": 0.32,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "gs core kontakti",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -57
+  },
+  {
+   "kw": "kas ir e-pasts",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 33
+  },
+  {
+   "kw": "betamaks atsauksmes",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 133
+  },
+  {
+   "kw": "sedatif pc atsauksmes",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -20
+  },
+  {
+   "kw": "māsu reģistrs kontakti",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 300
+  },
+  {
+   "kw": "lu e resursi",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "fn serviss kontakti",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": 0.71,
+   "intent": "navigational",
+   "trend": -60
+  },
+  {
+   "kw": "www nva gov lv kursi",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": 2.83,
+   "intent": "navigational",
+   "trend": -82
+  },
+  {
+   "kw": "citadele lv kontakti",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 80
+  },
+  {
+   "kw": "failiem.lv kontakti",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -73
+  },
+  {
+   "kw": "e-menessaptieka atlaižu kods",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": 0.39,
+   "intent": "informational",
+   "trend": -20
+  },
+  {
+   "kw": "dpd.lv kontakti",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 75
+  },
+  {
+   "kw": "mans tet.lv kontakti",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": 0.12,
+   "intent": "navigational",
+   "trend": -86
+  },
+  {
+   "kw": "lmt atsauksmes",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "e pasta izveide",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -75
+  },
+  {
+   "kw": "delfingroup kontakti",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -50
+  },
+  {
+   "kw": "enefit lv kontakti",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": 1.19,
+   "intent": "navigational",
+   "trend": 50
+  },
+  {
+   "kw": "ventspils.lv e-pasts",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -29
+  },
+  {
+   "kw": "jauns.lv kontakti",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": 0.02,
+   "intent": "navigational",
+   "trend": -67
+  },
+  {
+   "kw": "attelsr kontakti",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": 0.39,
+   "intent": "navigational",
+   "trend": -71
+  },
+  {
+   "kw": "iub kontakti",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 33
+  },
+  {
+   "kw": "ltab kontakti",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -20
+  },
+  {
+   "kw": "adazu namsaimnieks e-serviss",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -40
+  },
+  {
+   "kw": "e arhīvs",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -57
+  },
+  {
+   "kw": "e residentsus",
+   "vol": 40,
+   "comp": "MEDIUM",
+   "cpc": 6.99,
+   "intent": "navigational",
+   "trend": 33
+  },
+  {
+   "kw": "11.lv kontakti",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 800
+  },
+  {
+   "kw": "optibet atsauksmes",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "commercial",
+   "trend": -75
+  },
+  {
+   "kw": "cfla kontakti",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -57
+  },
+  {
+   "kw": "e caa",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -20
+  },
+  {
+   "kw": "nipt tests atsauksmes",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -57
+  },
+  {
+   "kw": "bezmaksas datorkursi senioriem",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "esto lv atsauksmes",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": 0.37,
+   "intent": "informational",
+   "trend": -71
+  },
+  {
+   "kw": "darbs pepco atsauksmes",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "prf injekcijas atsauksmes",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -50
+  },
+  {
+   "kw": "e-elpis",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -33
+  },
+  {
+   "kw": "buki lv atsauksmes",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "gemoss kontakti",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -25
+  },
+  {
+   "kw": "valdis sapats atsauksmes",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 200
+  },
+  {
+   "kw": "acute accent e",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "e adreses likums",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -40
+  },
+  {
+   "kw": "depo e",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 33
+  },
+  {
+   "kw": "eternl lv atsauksmes",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -91
+  },
+  {
+   "kw": "mākslīgā intelekta programmas",
+   "vol": 40,
+   "comp": "MEDIUM",
+   "cpc": 0.83,
+   "intent": "commercial",
+   "trend": -33
+  },
+  {
+   "kw": "e st lv kontakti",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": 1.32,
+   "intent": "navigational",
+   "trend": -33
+  },
+  {
+   "kw": "klix citadele kontakti",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -25
+  },
+  {
+   "kw": "lnb kontakti",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 25
+  },
+  {
+   "kw": "cyclebalance atsauksmes",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "commercial",
+   "trend": -20
+  },
+  {
+   "kw": "e accent aigu",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "fiteg2 atsauksmes",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -86
+  },
+  {
+   "kw": "lg kontakti",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -20
+  },
+  {
+   "kw": "attēls r kontakti",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": 0.39,
+   "intent": "navigational",
+   "trend": -71
+  },
+  {
+   "kw": "balticom tehniskais atbalsts",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": 1.28,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "jauns lv kontakti",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": 0.02,
+   "intent": "navigational",
+   "trend": -67
+  },
+  {
+   "kw": "e pastu",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -56
+  },
+  {
+   "kw": "nebilet atsauksmes",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 50
+  },
+  {
+   "kw": "udv e pasts",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -67
+  },
+  {
+   "kw": "e pārskats",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -20
+  },
+  {
+   "kw": "vr lv atsauksmes",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -67
+  },
+  {
+   "kw": "datamed kontakti",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -67
+  },
+  {
+   "kw": "esto.lv atsauksmes",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": 0.37,
+   "intent": "informational",
+   "trend": -71
+  },
+  {
+   "kw": "apollo.lv e pasts",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": 33
+  },
+  {
+   "kw": "e adrese uzņēmumiem",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -60
+  },
+  {
+   "kw": "e-parskats statistika",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "rtu e pasts",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -36
+  },
+  {
+   "kw": "atsauksmes lv",
+   "vol": 30,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 600
+  },
+  {
+   "kw": "minesotas programma bezmaksas",
+   "vol": 30,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -50
+  },
+  {
+   "kw": "rrr lt kontakti",
+   "vol": 30,
+   "comp": "LOW",
+   "cpc": 0.05,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "amplipulss atsauksmes",
+   "vol": 30,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "commercial",
+   "trend": -60
+  },
+  {
+   "kw": "go3 lv kontakti",
+   "vol": 30,
+   "comp": "LOW",
+   "cpc": 0.47,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "ic e katalogs",
+   "vol": 30,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "absolvents lv atsauksmes",
+   "vol": 30,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "csp kontakti",
+   "vol": 30,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "navigational",
+   "trend": -33
+  },
+  {
+   "kw": "e veselība kontakti",
+   "vol": 30,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 150
+  }
+ ],
+ "sug_ai": [
+  {
+   "kw": "g ai",
+   "vol": 368000,
+   "comp": "LOW",
+   "cpc": 1.41,
+   "intent": "informational",
+   "trend": -18
+  },
+  {
+   "kw": "character ai",
+   "vol": 27100,
+   "comp": "LOW",
+   "cpc": 0.03,
+   "intent": "informational",
+   "trend": -18
+  },
+  {
+   "kw": "gemini ai",
+   "vol": 27100,
+   "comp": "LOW",
+   "cpc": 0.75,
+   "intent": "informational",
+   "trend": 235
+  },
+  {
+   "kw": "janitor ai",
+   "vol": 22200,
+   "comp": "LOW",
+   "cpc": 0.56,
+   "intent": "informational",
+   "trend": 50
+  },
+  {
+   "kw": "clade ai",
+   "vol": 14800,
+   "comp": "LOW",
+   "cpc": 1.45,
+   "intent": "informational",
+   "trend": 517
+  },
+  {
+   "kw": "claid ai",
+   "vol": 14800,
+   "comp": "LOW",
+   "cpc": 1.45,
+   "intent": "informational",
+   "trend": 221900
+  },
+  {
+   "kw": "claude ai",
+   "vol": 14800,
+   "comp": "LOW",
+   "cpc": 1.45,
+   "intent": "informational",
+   "trend": 517
+  },
+  {
+   "kw": "ai",
+   "vol": 12100,
+   "comp": "LOW",
+   "cpc": 0.68,
+   "intent": "informational",
+   "trend": 124
+  },
+  {
+   "kw": "ai detectors",
+   "vol": 8100,
+   "comp": "MEDIUM",
+   "cpc": 0.64,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "ai detector",
+   "vol": 8100,
+   "comp": "MEDIUM",
+   "cpc": 0.64,
+   "intent": "transactional",
+   "trend": null
+  },
+  {
+   "kw": "c ai",
+   "vol": 6600,
+   "comp": "LOW",
+   "cpc": 0.03,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "google ai studio",
+   "vol": 6600,
+   "comp": "LOW",
+   "cpc": 0.16,
+   "intent": "informational",
+   "trend": 24
+  },
+  {
+   "kw": "gork ai",
+   "vol": 5400,
+   "comp": "LOW",
+   "cpc": 0.9,
+   "intent": "informational",
+   "trend": 125
+  },
+  {
+   "kw": "google ai",
+   "vol": 5400,
+   "comp": "LOW",
+   "cpc": 0.62,
+   "intent": "informational",
+   "trend": 315
+  },
+  {
+   "kw": "google-ai",
+   "vol": 5400,
+   "comp": "LOW",
+   "cpc": 0.59,
+   "intent": "informational",
+   "trend": 238
+  },
+  {
+   "kw": "grok's ai",
+   "vol": 5400,
+   "comp": "LOW",
+   "cpc": 1,
+   "intent": "informational",
+   "trend": 81
+  },
+  {
+   "kw": "grok ai",
+   "vol": 5400,
+   "comp": "LOW",
+   "cpc": 0.9,
+   "intent": "informational",
+   "trend": 125
+  },
+  {
+   "kw": "suno ai",
+   "vol": 3600,
+   "comp": "MEDIUM",
+   "cpc": 0.43,
+   "intent": "informational",
+   "trend": 53
+  },
+  {
+   "kw": "astra ai",
+   "vol": 3600,
+   "comp": "LOW",
+   "cpc": 1.31,
+   "intent": "informational",
+   "trend": 53900
+  },
+  {
+   "kw": "ai checker",
+   "vol": 2900,
+   "comp": "MEDIUM",
+   "cpc": 0.55,
+   "intent": "informational",
+   "trend": 21
+  },
+  {
+   "kw": "cloud's ai",
+   "vol": 2400,
+   "comp": "MEDIUM",
+   "cpc": 2.18,
+   "intent": "informational",
+   "trend": 823
+  },
+  {
+   "kw": "crushon ai",
+   "vol": 2400,
+   "comp": "LOW",
+   "cpc": 0.67,
+   "intent": "informational",
+   "trend": -17
+  },
+  {
+   "kw": "kling ai",
+   "vol": 2400,
+   "comp": "MEDIUM",
+   "cpc": 2.56,
+   "intent": "informational",
+   "trend": 19
+  },
+  {
+   "kw": "crush on ai",
+   "vol": 2400,
+   "comp": "LOW",
+   "cpc": 0.67,
+   "intent": "informational",
+   "trend": -17
+  },
+  {
+   "kw": "cloud ai",
+   "vol": 2400,
+   "comp": "MEDIUM",
+   "cpc": 2.18,
+   "intent": "commercial",
+   "trend": 823
+  },
+  {
+   "kw": "gamma ai",
+   "vol": 2400,
+   "comp": "MEDIUM",
+   "cpc": 0.56,
+   "intent": "informational",
+   "trend": -19
+  },
+  {
+   "kw": "gammai ai",
+   "vol": 2400,
+   "comp": "MEDIUM",
+   "cpc": 0.57,
+   "intent": "informational",
+   "trend": 19
+  },
+  {
+   "kw": "ai mode",
+   "vol": 1900,
+   "comp": "LOW",
+   "cpc": 1.35,
+   "intent": "informational",
+   "trend": 8900
+  },
+  {
+   "kw": "meta ai",
+   "vol": 1900,
+   "comp": "LOW",
+   "cpc": 0.59,
+   "intent": "informational",
+   "trend": 303
+  },
+  {
+   "kw": "humanizer ai",
+   "vol": 1900,
+   "comp": "HIGH",
+   "cpc": 0.73,
+   "intent": "informational",
+   "trend": -47
+  },
+  {
+   "kw": "leonardo ai",
+   "vol": 1900,
+   "comp": "MEDIUM",
+   "cpc": 1.32,
+   "intent": "informational",
+   "trend": -47
+  },
+  {
+   "kw": "perplexed ai",
+   "vol": 1900,
+   "comp": "LOW",
+   "cpc": 0.91,
+   "intent": "informational",
+   "trend": 23
+  },
+  {
+   "kw": "perplexity ai",
+   "vol": 1900,
+   "comp": "LOW",
+   "cpc": 0.91,
+   "intent": "informational",
+   "trend": 23
+  },
+  {
+   "kw": "humanize ai",
+   "vol": 1900,
+   "comp": "HIGH",
+   "cpc": 0.73,
+   "intent": "informational",
+   "trend": -47
+  },
+  {
+   "kw": "ai image generator",
+   "vol": 1600,
+   "comp": "MEDIUM",
+   "cpc": 1.01,
+   "intent": "transactional",
+   "trend": -45
+  },
+  {
+   "kw": "ai studio",
+   "vol": 1600,
+   "comp": "LOW",
+   "cpc": 0.19,
+   "intent": "informational",
+   "trend": -19
+  },
+  {
+   "kw": "ai chat",
+   "vol": 1300,
+   "comp": "LOW",
+   "cpc": 0.77,
+   "intent": "informational",
+   "trend": -23
+  },
+  {
+   "kw": "ai chats",
+   "vol": 1300,
+   "comp": "LOW",
+   "cpc": 0.61,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "ai chatbot",
+   "vol": 1300,
+   "comp": "LOW",
+   "cpc": 0.61,
+   "intent": "commercial",
+   "trend": null
+  },
+  {
+   "kw": "ai chatting",
+   "vol": 1300,
+   "comp": "LOW",
+   "cpc": 0.77,
+   "intent": "informational",
+   "trend": -23
+  },
+  {
+   "kw": "ch ai",
+   "vol": 1300,
+   "comp": "LOW",
+   "cpc": 0.48,
+   "intent": "informational",
+   "trend": -41
+  },
+  {
+   "kw": "copilot ai",
+   "vol": 1000,
+   "comp": "LOW",
+   "cpc": 1.34,
+   "intent": "transactional",
+   "trend": 69
+  },
+  {
+   "kw": "ai video generator",
+   "vol": 1000,
+   "comp": "HIGH",
+   "cpc": 2.75,
+   "intent": "transactional",
+   "trend": null
+  },
+  {
+   "kw": "candy ai",
+   "vol": 1000,
+   "comp": "LOW",
+   "cpc": 0.65,
+   "intent": "transactional",
+   "trend": 39
+  },
+  {
+   "kw": "higgsfield ai",
+   "vol": 1000,
+   "comp": "MEDIUM",
+   "cpc": 1.6,
+   "intent": "informational",
+   "trend": 171
+  },
+  {
+   "kw": "syntx ai",
+   "vol": 1000,
+   "comp": "MEDIUM",
+   "cpc": 0.44,
+   "intent": "informational",
+   "trend": 233
+  },
+  {
+   "kw": "higgs field ai",
+   "vol": 1000,
+   "comp": "MEDIUM",
+   "cpc": 1.6,
+   "intent": "informational",
+   "trend": 171
+  },
+  {
+   "kw": "spicy ai",
+   "vol": 1000,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -38
+  },
+  {
+   "kw": "deep ai",
+   "vol": 880,
+   "comp": "LOW",
+   "cpc": 1.46,
+   "intent": "informational",
+   "trend": -55
+  },
+  {
+   "kw": "ai humanizer",
+   "vol": 880,
+   "comp": "MEDIUM",
+   "cpc": 0.74,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "ai dungeon",
+   "vol": 880,
+   "comp": "LOW",
+   "cpc": 0.56,
+   "intent": "informational",
+   "trend": -28
+  },
+  {
+   "kw": "venice ai",
+   "vol": 880,
+   "comp": "LOW",
+   "cpc": 0.69,
+   "intent": "informational",
+   "trend": 212
+  },
+  {
+   "kw": "datorium ai",
+   "vol": 720,
+   "comp": "LOW",
+   "cpc": 5.74,
+   "intent": "informational",
+   "trend": 233
+  },
+  {
+   "kw": "talkie ai",
+   "vol": 720,
+   "comp": "LOW",
+   "cpc": 0.47,
+   "intent": "transactional",
+   "trend": 171
+  },
+  {
+   "kw": "lexu ai",
+   "vol": 720,
+   "comp": "LOW",
+   "cpc": 7.59,
+   "intent": "informational",
+   "trend": 108
+  },
+  {
+   "kw": "chub ai",
+   "vol": 720,
+   "comp": "LOW",
+   "cpc": 1,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "perchance ai",
+   "vol": 720,
+   "comp": "LOW",
+   "cpc": 0.66,
+   "intent": "informational",
+   "trend": 212
+  },
+  {
+   "kw": "giggle ai",
+   "vol": 590,
+   "comp": "LOW",
+   "cpc": 0.72,
+   "intent": "transactional",
+   "trend": 4700
+  },
+  {
+   "kw": "spicy chat ai",
+   "vol": 590,
+   "comp": "LOW",
+   "cpc": 0.51,
+   "intent": "informational",
+   "trend": 22
+  },
+  {
+   "kw": "canvas ai",
+   "vol": 590,
+   "comp": "MEDIUM",
+   "cpc": 1.24,
+   "intent": "transactional",
+   "trend": 23
+  },
+  {
+   "kw": "viggle ai",
+   "vol": 590,
+   "comp": "LOW",
+   "cpc": 0.72,
+   "intent": "transactional",
+   "trend": -33
+  },
+  {
+   "kw": "ai detector latvian",
+   "vol": 590,
+   "comp": "HIGH",
+   "cpc": 0.93,
+   "intent": "informational",
+   "trend": -19
+  },
+  {
+   "kw": "canvass ai",
+   "vol": 590,
+   "comp": "MEDIUM",
+   "cpc": 1.54,
+   "intent": "commercial",
+   "trend": 84
+  },
+  {
+   "kw": "ai girlfriend",
+   "vol": 590,
+   "comp": "LOW",
+   "cpc": 0.91,
+   "intent": "informational",
+   "trend": 22
+  },
+  {
+   "kw": "canva ai",
+   "vol": 590,
+   "comp": "MEDIUM",
+   "cpc": 1.24,
+   "intent": "informational",
+   "trend": 23
+  },
+  {
+   "kw": "hailuo ai",
+   "vol": 590,
+   "comp": "MEDIUM",
+   "cpc": 1.58,
+   "intent": "informational",
+   "trend": -45
+  },
+  {
+   "kw": "our dream ai",
+   "vol": 590,
+   "comp": "LOW",
+   "cpc": 2.12,
+   "intent": "informational",
+   "trend": 182
+  },
+  {
+   "kw": "h i ai",
+   "vol": 590,
+   "comp": "LOW",
+   "cpc": 0.4,
+   "intent": "informational",
+   "trend": -85
+  },
+  {
+   "kw": "pixverse ai",
+   "vol": 590,
+   "comp": "MEDIUM",
+   "cpc": 0.97,
+   "intent": "informational",
+   "trend": -56
+  },
+  {
+   "kw": "ai gemini",
+   "vol": 480,
+   "comp": "LOW",
+   "cpc": 0.41,
+   "intent": "informational",
+   "trend": 324
+  },
+  {
+   "kw": "krea ai",
+   "vol": 480,
+   "comp": "MEDIUM",
+   "cpc": 1.56,
+   "intent": "informational",
+   "trend": -46
+  },
+  {
+   "kw": "ai image editor",
+   "vol": 480,
+   "comp": "MEDIUM",
+   "cpc": 1.24,
+   "intent": "transactional",
+   "trend": 86
+  },
+  {
+   "kw": "chat ai",
+   "vol": 480,
+   "comp": "MEDIUM",
+   "cpc": 0.62,
+   "intent": "informational",
+   "trend": -56
+  },
+  {
+   "kw": "ai chat online",
+   "vol": 480,
+   "comp": "MEDIUM",
+   "cpc": 0.62,
+   "intent": "informational",
+   "trend": -56
+  },
+  {
+   "kw": "google gemini ai",
+   "vol": 480,
+   "comp": "LOW",
+   "cpc": 0.87,
+   "intent": "informational",
+   "trend": 182
+  },
+  {
+   "kw": "chat with ai",
+   "vol": 480,
+   "comp": "MEDIUM",
+   "cpc": 0.9,
+   "intent": "informational",
+   "trend": -34
+  },
+  {
+   "kw": "deepseek ai",
+   "vol": 480,
+   "comp": "LOW",
+   "cpc": 1.01,
+   "intent": "informational",
+   "trend": -56
+  },
+  {
+   "kw": "chatbot ai",
+   "vol": 480,
+   "comp": "MEDIUM",
+   "cpc": 0.9,
+   "intent": "commercial",
+   "trend": -34
+  },
+  {
+   "kw": "ai photo editor",
+   "vol": 480,
+   "comp": "MEDIUM",
+   "cpc": 1.29,
+   "intent": "transactional",
+   "trend": 22
+  },
+  {
+   "kw": "ai photo generator",
+   "vol": 480,
+   "comp": "HIGH",
+   "cpc": 1.02,
+   "intent": "transactional",
+   "trend": -19
+  },
+  {
+   "kw": "polybuzz ai",
+   "vol": 480,
+   "comp": "LOW",
+   "cpc": 0.53,
+   "intent": "informational",
+   "trend": 1011
+  },
+  {
+   "kw": "free ai video generator",
+   "vol": 480,
+   "comp": "HIGH",
+   "cpc": 1.52,
+   "intent": "transactional",
+   "trend": 50
+  },
+  {
+   "kw": "ai chatbot online",
+   "vol": 480,
+   "comp": "MEDIUM",
+   "cpc": 0.62,
+   "intent": "commercial",
+   "trend": -56
+  },
+  {
+   "kw": "kimi ai",
+   "vol": 480,
+   "comp": "LOW",
+   "cpc": 1.09,
+   "intent": "informational",
+   "trend": 179
+  },
+  {
+   "kw": "ai text detector",
+   "vol": 390,
+   "comp": "MEDIUM",
+   "cpc": 0.51,
+   "intent": "informational",
+   "trend": 22
+  },
+  {
+   "kw": "ai pictures generator",
+   "vol": 390,
+   "comp": "HIGH",
+   "cpc": 1.19,
+   "intent": "transactional",
+   "trend": -47
+  },
+  {
+   "kw": "math ai",
+   "vol": 390,
+   "comp": "LOW",
+   "cpc": 0.22,
+   "intent": "informational",
+   "trend": -50
+  },
+  {
+   "kw": "free ai image generator",
+   "vol": 390,
+   "comp": "MEDIUM",
+   "cpc": 0.79,
+   "intent": "transactional",
+   "trend": -19
+  },
+  {
+   "kw": "use ai",
+   "vol": 390,
+   "comp": "MEDIUM",
+   "cpc": 0.39,
+   "intent": "informational",
+   "trend": 2000
+  },
+  {
+   "kw": "flow ai",
+   "vol": 390,
+   "comp": "LOW",
+   "cpc": 1.5,
+   "intent": "commercial",
+   "trend": 457
+  },
+  {
+   "kw": "poly ai",
+   "vol": 390,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -85
+  },
+  {
+   "kw": "napkin ai",
+   "vol": 390,
+   "comp": "LOW",
+   "cpc": 1.02,
+   "intent": "informational",
+   "trend": -33
+  },
+  {
+   "kw": "midjourney ai",
+   "vol": 390,
+   "comp": "MEDIUM",
+   "cpc": 1.3,
+   "intent": "informational",
+   "trend": -34
+  },
+  {
+   "kw": "ai photo editing",
+   "vol": 390,
+   "comp": "MEDIUM",
+   "cpc": 0.71,
+   "intent": "commercial",
+   "trend": 52
+  },
+  {
+   "kw": "mistral ai",
+   "vol": 390,
+   "comp": "LOW",
+   "cpc": 0.67,
+   "intent": "informational",
+   "trend": 23
+  },
+  {
+   "kw": "bing ai",
+   "vol": 390,
+   "comp": "LOW",
+   "cpc": 0.59,
+   "intent": "informational",
+   "trend": -71
+  },
+  {
+   "kw": "ai text detectors",
+   "vol": 390,
+   "comp": "MEDIUM",
+   "cpc": 0.51,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "ai picture generator",
+   "vol": 390,
+   "comp": "HIGH",
+   "cpc": 1.19,
+   "intent": "transactional",
+   "trend": -47
+  },
+  {
+   "kw": "invideo ai",
+   "vol": 390,
+   "comp": "HIGH",
+   "cpc": 1.7,
+   "intent": "informational",
+   "trend": -18
+  },
+  {
+   "kw": "presentation ai",
+   "vol": 320,
+   "comp": "HIGH",
+   "cpc": 0.7,
+   "intent": "commercial",
+   "trend": -19
+  },
+  {
+   "kw": "google ai mode",
+   "vol": 320,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 2850
+  },
+  {
+   "kw": "duckduckgo ai",
+   "vol": 320,
+   "comp": "LOW",
+   "cpc": 0.48,
+   "intent": "informational",
+   "trend": 85
+  },
+  {
+   "kw": "luma ai",
+   "vol": 320,
+   "comp": "MEDIUM",
+   "cpc": 1.41,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "seaart ai",
+   "vol": 320,
+   "comp": "MEDIUM",
+   "cpc": 0.46,
+   "intent": "informational",
+   "trend": 86
+  },
+  {
+   "kw": "ai face swap",
+   "vol": 320,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -35
+  },
+  {
+   "kw": "suno ai music",
+   "vol": 320,
+   "comp": "MEDIUM",
+   "cpc": 0.59,
+   "intent": "informational",
+   "trend": 143
+  },
+  {
+   "kw": "meshy ai",
+   "vol": 320,
+   "comp": "MEDIUM",
+   "cpc": 1.6,
+   "intent": "informational",
+   "trend": 336
+  },
+  {
+   "kw": "duck duck go ai",
+   "vol": 320,
+   "comp": "LOW",
+   "cpc": 0.48,
+   "intent": "informational",
+   "trend": 85
+  },
+  {
+   "kw": "presentations ai",
+   "vol": 320,
+   "comp": "HIGH",
+   "cpc": 0.7,
+   "intent": "informational",
+   "trend": -19
+  },
+  {
+   "kw": "free ai",
+   "vol": 320,
+   "comp": "MEDIUM",
+   "cpc": 1.45,
+   "intent": "informational",
+   "trend": -33
+  },
+  {
+   "kw": "ai detector free",
+   "vol": 320,
+   "comp": "HIGH",
+   "cpc": 0.85,
+   "intent": "informational",
+   "trend": 129
+  },
+  {
+   "kw": "ai video generator free",
+   "vol": 320,
+   "comp": "HIGH",
+   "cpc": 1.94,
+   "intent": "transactional",
+   "trend": 129
+  },
+  {
+   "kw": "face swap ai",
+   "vol": 320,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "transactional",
+   "trend": -35
+  },
+  {
+   "kw": "ai music generator",
+   "vol": 320,
+   "comp": "HIGH",
+   "cpc": 1.14,
+   "intent": "transactional",
+   "trend": null
+  },
+  {
+   "kw": "ai studio google",
+   "vol": 320,
+   "comp": "LOW",
+   "cpc": 0.12,
+   "intent": "navigational",
+   "trend": -34
+  },
+  {
+   "kw": "faceswap ai",
+   "vol": 320,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -35
+  },
+  {
+   "kw": "runway ai",
+   "vol": 260,
+   "comp": "HIGH",
+   "cpc": 3.27,
+   "intent": "navigational",
+   "trend": -56
+  },
+  {
+   "kw": "gemini ai studio",
+   "vol": 260,
+   "comp": "LOW",
+   "cpc": 0.1,
+   "intent": "informational",
+   "trend": -19
+  },
+  {
+   "kw": "ai tester",
+   "vol": 260,
+   "comp": "MEDIUM",
+   "cpc": 0.35,
+   "intent": "informational",
+   "trend": -34
+  },
+  {
+   "kw": "ai generate images",
+   "vol": 260,
+   "comp": "MEDIUM",
+   "cpc": 1.15,
+   "intent": "informational",
+   "trend": -57
+  },
+  {
+   "kw": "scopus ai",
+   "vol": 260,
+   "comp": "LOW",
+   "cpc": 0.97,
+   "intent": "informational",
+   "trend": 86
+  },
+  {
+   "kw": "ai testing",
+   "vol": 260,
+   "comp": "MEDIUM",
+   "cpc": 0.49,
+   "intent": "informational",
+   "trend": -22
+  },
+  {
+   "kw": "ai presentation maker",
+   "vol": 260,
+   "comp": "HIGH",
+   "cpc": 1.9,
+   "intent": "commercial",
+   "trend": -29
+  },
+  {
+   "kw": "microsoft ai",
+   "vol": 260,
+   "comp": "LOW",
+   "cpc": 0.81,
+   "intent": "commercial",
+   "trend": 50
+  },
+  {
+   "kw": "ai image generator free",
+   "vol": 260,
+   "comp": "MEDIUM",
+   "cpc": 0.69,
+   "intent": "transactional",
+   "trend": -46
+  },
+  {
+   "kw": "perchance ai image generator",
+   "vol": 260,
+   "comp": "LOW",
+   "cpc": 1.65,
+   "intent": "transactional",
+   "trend": null
+  },
+  {
+   "kw": "ai google",
+   "vol": 260,
+   "comp": "LOW",
+   "cpc": 0.35,
+   "intent": "navigational",
+   "trend": 200
+  },
+  {
+   "kw": "ai jel manu vieglu prātu",
+   "vol": 260,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -35
+  },
+  {
+   "kw": "blackbox ai",
+   "vol": 260,
+   "comp": "LOW",
+   "cpc": 0.42,
+   "intent": "informational",
+   "trend": -71
+  },
+  {
+   "kw": "ai generatorimage",
+   "vol": 260,
+   "comp": "MEDIUM",
+   "cpc": 1.15,
+   "intent": "informational",
+   "trend": -57
+  },
+  {
+   "kw": "ai generated images",
+   "vol": 260,
+   "comp": "MEDIUM",
+   "cpc": 1.15,
+   "intent": "informational",
+   "trend": -57
+  },
+  {
+   "kw": "ai song generator",
+   "vol": 260,
+   "comp": "MEDIUM",
+   "cpc": 0.95,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "ai character",
+   "vol": 260,
+   "comp": "LOW",
+   "cpc": 0.28,
+   "intent": "informational",
+   "trend": -47
+  },
+  {
+   "kw": "blackbox: ai",
+   "vol": 260,
+   "comp": "LOW",
+   "cpc": 0.98,
+   "intent": "informational",
+   "trend": -85
+  },
+  {
+   "kw": "black box ai",
+   "vol": 260,
+   "comp": "LOW",
+   "cpc": 0.42,
+   "intent": "informational",
+   "trend": -71
+  },
+  {
+   "kw": "z ai",
+   "vol": 260,
+   "comp": "LOW",
+   "cpc": 0.33,
+   "intent": "informational",
+   "trend": 320
+  },
+  {
+   "kw": "syntax ai",
+   "vol": 210,
+   "comp": "MEDIUM",
+   "cpc": 0.28,
+   "intent": "informational",
+   "trend": 256
+  },
+  {
+   "kw": "ai generator",
+   "vol": 210,
+   "comp": "HIGH",
+   "cpc": 1,
+   "intent": "informational",
+   "trend": 21
+  },
+  {
+   "kw": "ask ai",
+   "vol": 210,
+   "comp": "LOW",
+   "cpc": 0.41,
+   "intent": "informational",
+   "trend": -34
+  },
+  {
+   "kw": "ai agency",
+   "vol": 210,
+   "comp": "MEDIUM",
+   "cpc": 3.24,
+   "intent": "navigational",
+   "trend": 21
+  },
+  {
+   "kw": "study ai",
+   "vol": 210,
+   "comp": "MEDIUM",
+   "cpc": 0.75,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "ai voice generator",
+   "vol": 210,
+   "comp": "MEDIUM",
+   "cpc": 1.02,
+   "intent": "informational",
+   "trend": -33
+  },
+  {
+   "kw": "emochi ai",
+   "vol": 210,
+   "comp": "LOW",
+   "cpc": 0.33,
+   "intent": "informational",
+   "trend": 333
+  },
+  {
+   "kw": "ai translators",
+   "vol": 210,
+   "comp": "MEDIUM",
+   "cpc": 0.83,
+   "intent": "commercial",
+   "trend": -35
+  },
+  {
+   "kw": "ai upscaler",
+   "vol": 210,
+   "comp": "MEDIUM",
+   "cpc": 1.44,
+   "intent": "transactional",
+   "trend": -46
+  },
+  {
+   "kw": "ai-generated images",
+   "vol": 210,
+   "comp": "MEDIUM",
+   "cpc": 1.37,
+   "intent": "informational",
+   "trend": -58
+  },
+  {
+   "kw": "ai video maker",
+   "vol": 210,
+   "comp": "HIGH",
+   "cpc": 3.1,
+   "intent": "transactional",
+   "trend": 55
+  },
+  {
+   "kw": "ai detection",
+   "vol": 210,
+   "comp": "MEDIUM",
+   "cpc": 1.04,
+   "intent": "informational",
+   "trend": 25
+  },
+  {
+   "kw": "ai for translation",
+   "vol": 210,
+   "comp": "MEDIUM",
+   "cpc": 0.83,
+   "intent": "commercial",
+   "trend": -35
+  },
+  {
+   "kw": "google ai pro",
+   "vol": 210,
+   "comp": "LOW",
+   "cpc": 2.18,
+   "intent": "informational",
+   "trend": 21
+  }
+ ],
+ "sug_mi": [
+  {
+   "kw": "mākslīgais intelekts",
+   "vol": 8100,
+   "comp": "LOW",
+   "cpc": 0.99,
+   "intent": "informational",
+   "trend": 83
+  },
+  {
+   "kw": "mākslīgais intelekts latviski bezmaksas",
+   "vol": 1600,
+   "comp": "LOW",
+   "cpc": 0.53,
+   "intent": "informational",
+   "trend": 392
+  },
+  {
+   "kw": "mākslīgais intelekts latviski",
+   "vol": 880,
+   "comp": "LOW",
+   "cpc": 0.8,
+   "intent": "informational",
+   "trend": 30
+  },
+  {
+   "kw": "bezmaksas mākslīgais intelekts",
+   "vol": 720,
+   "comp": "LOW",
+   "cpc": 0.51,
+   "intent": "informational",
+   "trend": 50
+  },
+  {
+   "kw": "mākslīgais intelekts chatgpt",
+   "vol": 590,
+   "comp": "LOW",
+   "cpc": 0.65,
+   "intent": "informational",
+   "trend": 129
+  },
+  {
+   "kw": "mākslīgais intelekts chatgpt latviski",
+   "vol": 320,
+   "comp": "LOW",
+   "cpc": 0.32,
+   "intent": "informational",
+   "trend": 24
+  },
+  {
+   "kw": "google mākslīgais intelekts",
+   "vol": 320,
+   "comp": "LOW",
+   "cpc": 0.47,
+   "intent": "informational",
+   "trend": 88
+  },
+  {
+   "kw": "mākslīgais intelekts bezmaksas",
+   "vol": 260,
+   "comp": "LOW",
+   "cpc": 0.85,
+   "intent": "informational",
+   "trend": 88
+  },
+  {
+   "kw": "mākslīgais intelekts aplikācija",
+   "vol": 210,
+   "comp": "MEDIUM",
+   "cpc": 0.56,
+   "intent": "informational",
+   "trend": 24
+  },
+  {
+   "kw": "mākslīgais intelekts gpt",
+   "vol": 210,
+   "comp": "LOW",
+   "cpc": 0.08,
+   "intent": "informational",
+   "trend": -47
+  },
+  {
+   "kw": "mākslīgais intelekts latviešu valodā",
+   "vol": 170,
+   "comp": "LOW",
+   "cpc": 0.74,
+   "intent": "informational",
+   "trend": 50
+  },
+  {
+   "kw": "kas ir mākslīgais intelekts",
+   "vol": 170,
+   "comp": "LOW",
+   "cpc": 0.7,
+   "intent": "informational",
+   "trend": -18
+  },
+  {
+   "kw": "mākslīgais intelekts online",
+   "vol": 170,
+   "comp": "LOW",
+   "cpc": 1.01,
+   "intent": "informational",
+   "trend": -35
+  },
+  {
+   "kw": "mākslīgais intelekts gemini",
+   "vol": 170,
+   "comp": "LOW",
+   "cpc": 0.66,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "mākslīgais intelekts telefonā",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": 0.29,
+   "intent": "informational",
+   "trend": 25
+  },
+  {
+   "kw": "mākslīgais intelekts online bezmaksas",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": 1.19,
+   "intent": "informational",
+   "trend": -36
+  },
+  {
+   "kw": "mākslīgais intelekts online latviski",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": 0.66,
+   "intent": "informational",
+   "trend": 100
+  },
+  {
+   "kw": "mākslīgais intelekts programma bezmaksas",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 0.24,
+   "intent": "informational",
+   "trend": -86
+  },
+  {
+   "kw": "mākslīgais intelekts programma",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": 0.27,
+   "intent": "informational",
+   "trend": -79
+  },
+  {
+   "kw": "mākslīgais intelekts latvijā",
+   "vol": 50,
+   "comp": "MEDIUM",
+   "cpc": 0.75,
+   "intent": "informational",
+   "trend": -94
+  },
+  {
+   "kw": "mākslīgais intelekts čats",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": 0.77,
+   "intent": "informational",
+   "trend": 350
+  },
+  {
+   "kw": "gemini mākslīgais intelekts",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": 0.68,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "mākslīgais intelekts bildes",
+   "vol": 40,
+   "comp": "MEDIUM",
+   "cpc": 0.27,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "intelekts mākslīgais",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": 1.06,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "mākslīgais intelekts kursi",
+   "vol": 40,
+   "comp": "HIGH",
+   "cpc": 1.19,
+   "intent": "commercial",
+   "trend": -71
+  },
+  {
+   "kw": "ģeneratīvais mākslīgais intelekts",
+   "vol": 30,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -50
+  },
+  {
+   "kw": "mākslīgais intelekts mācības",
+   "vol": 20,
+   "comp": "MEDIUM",
+   "cpc": 0.54,
+   "intent": "commercial",
+   "trend": null
+  },
+  {
+   "kw": "mākslīgais intelekts chat",
+   "vol": 20,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 100
+  },
+  {
+   "kw": "groks mākslīgais intelekts",
+   "vol": 20,
+   "comp": "LOW",
+   "cpc": 0.58,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "mākslīgais intelekts attēlu ģenerēšana",
+   "vol": 20,
+   "comp": "HIGH",
+   "cpc": 0.32,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "mākslīgais intelekts filma",
+   "vol": 20,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": 200
+  },
+  {
+   "kw": "lu mākslīgais intelekts",
+   "vol": 20,
+   "comp": "LOW",
+   "cpc": 0.37,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "labākais mākslīgais intelekts",
+   "vol": 20,
+   "comp": "MEDIUM",
+   "cpc": 1.8,
+   "intent": "commercial",
+   "trend": null
+  },
+  {
+   "kw": "mākslīgais intelekts online free",
+   "vol": 20,
+   "comp": "LOW",
+   "cpc": 0.84,
+   "intent": "informational",
+   "trend": -75
+  },
+  {
+   "kw": "bezmaksas mākslīgais intelekts latviešu valodā",
+   "vol": 10,
+   "comp": "LOW",
+   "cpc": 0.5,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "rtu mākslīgais intelekts",
+   "vol": 10,
+   "comp": "LOW",
+   "cpc": 0.82,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "mākslīgais intelekts seriāls",
+   "vol": 10,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "programmēšanas valodas mākslīgais intelekts",
+   "vol": 10,
+   "comp": null,
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "mākslīgais intelekts medicīnā",
+   "vol": 10,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "aizliegtais paņēmiens mākslīgais intelekts",
+   "vol": 10,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "artūrs mednis mākslīgais intelekts",
+   "vol": 10,
+   "comp": "LOW",
+   "cpc": 4.97,
+   "intent": "informational",
+   "trend": -50
+  },
+  {
+   "kw": "tilde mākslīgais intelekts",
+   "vol": 10,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": -86
+  },
+  {
+   "kw": "mākslīgais intelekts definīcija",
+   "vol": 10,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "mākslīgais intelekts izglītībā",
+   "vol": 10,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "mākslīgais intelekts benita",
+   "vol": 10,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  }
+ ],
+ "rel_chatgpt": [
+  {
+   "kw": "chatgpt latviski",
+   "vol": 9900,
+   "comp": "LOW",
+   "cpc": 0.47,
+   "intent": "navigational",
+   "trend": 124
+  },
+  {
+   "kw": "mākslīgais intelekts latviski bezmaksas",
+   "vol": 1600,
+   "comp": "LOW",
+   "cpc": 0.53,
+   "intent": "informational",
+   "trend": 392
+  },
+  {
+   "kw": "čats gpt latviski",
+   "vol": 880,
+   "comp": "LOW",
+   "cpc": 0.31,
+   "intent": "navigational",
+   "trend": 1257
+  },
+  {
+   "kw": "bezmaksas mākslīgais intelekts",
+   "vol": 720,
+   "comp": "LOW",
+   "cpc": 0.51,
+   "intent": "informational",
+   "trend": 50
+  },
+  {
+   "kw": "mākslīgais intelekts chatgpt",
+   "vol": 590,
+   "comp": "LOW",
+   "cpc": 0.65,
+   "intent": "informational",
+   "trend": 129
+  },
+  {
+   "kw": "chat gpt latviski bezmaksas",
+   "vol": 480,
+   "comp": "LOW",
+   "cpc": 0.58,
+   "intent": "transactional",
+   "trend": 15900
+  },
+  {
+   "kw": "chatgpt latviski online",
+   "vol": 480,
+   "comp": "LOW",
+   "cpc": 0.36,
+   "intent": "navigational",
+   "trend": 51
+  },
+  {
+   "kw": "google mākslīgais intelekts",
+   "vol": 320,
+   "comp": "LOW",
+   "cpc": 0.47,
+   "intent": "informational",
+   "trend": 88
+  },
+  {
+   "kw": "mākslīgais intelekts chatgpt latviski",
+   "vol": 320,
+   "comp": "LOW",
+   "cpc": 0.32,
+   "intent": "informational",
+   "trend": 24
+  },
+  {
+   "kw": "mākslīgais intelekts aplikācija",
+   "vol": 210,
+   "comp": "MEDIUM",
+   "cpc": 0.56,
+   "intent": "informational",
+   "trend": 24
+  },
+  {
+   "kw": "mākslīgais intelekts latviešu valodā",
+   "vol": 170,
+   "comp": "LOW",
+   "cpc": 0.74,
+   "intent": "informational",
+   "trend": 50
+  },
+  {
+   "kw": "mākslīgais intelekts online",
+   "vol": 170,
+   "comp": "LOW",
+   "cpc": 1.01,
+   "intent": "informational",
+   "trend": -35
+  },
+  {
+   "kw": "mākslīgais intelekts gemini",
+   "vol": 170,
+   "comp": "LOW",
+   "cpc": 0.66,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "mākslīgais intelekts telefonā",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": 0.29,
+   "intent": "informational",
+   "trend": 25
+  },
+  {
+   "kw": "mākslīgais intelekts online bezmaksas",
+   "vol": 140,
+   "comp": "LOW",
+   "cpc": 1.19,
+   "intent": "informational",
+   "trend": -36
+  },
+  {
+   "kw": "mākslīgais intelekts online latviski",
+   "vol": 110,
+   "comp": "LOW",
+   "cpc": 0.66,
+   "intent": "informational",
+   "trend": 100
+  },
+  {
+   "kw": "čats latviski",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 0.23,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "mākslīgais intelekts programma bezmaksas",
+   "vol": 70,
+   "comp": "LOW",
+   "cpc": 0.24,
+   "intent": "informational",
+   "trend": -86
+  },
+  {
+   "kw": "chatgpt latviski online bezmaksas",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": 0.43,
+   "intent": "transactional",
+   "trend": null
+  },
+  {
+   "kw": "chat gpt latviski atsauksmes",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": 0.21,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "mākslīgais intelekts čats",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": 0.77,
+   "intent": "informational",
+   "trend": 350
+  },
+  {
+   "kw": "mākslīgais intelekts programma",
+   "vol": 50,
+   "comp": "LOW",
+   "cpc": 0.27,
+   "intent": "informational",
+   "trend": -79
+  },
+  {
+   "kw": "chat gpt free latviski",
+   "vol": 40,
+   "comp": "LOW",
+   "cpc": 0.2,
+   "intent": "informational",
+   "trend": 29
+  },
+  {
+   "kw": "chatgpt maksas versija",
+   "vol": 30,
+   "comp": "MEDIUM",
+   "cpc": 2.92,
+   "intent": "navigational",
+   "trend": null
+  },
+  {
+   "kw": "online čats latviski",
+   "vol": 10,
+   "comp": "LOW",
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  },
+  {
+   "kw": "maksligais intelekts latviski",
+   "vol": null,
+   "comp": null,
+   "cpc": null,
+   "intent": "informational",
+   "trend": null
+  }
+ ]
+}
