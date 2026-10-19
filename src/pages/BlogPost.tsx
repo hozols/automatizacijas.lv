@@ -322,6 +322,17 @@ const blogPostData: Record<string, PostData> = {
     author: 'Māris Ozols',
     authorRole: 'AI automatizācijas eksperts',
   },
+  'e-rekini-latvija': {
+    titleKey: 'blog.post22.title',
+    metaTitle: 'E-rēķini Latvijā: termiņi 2026 un 2028 un kā automatizēt',
+    contentKey: 'blog.post22.content',
+    excerptKey: 'blog.post22.excerpt',
+    date: '2026-10-20',
+    readTime: '9 min',
+    category: 'Grāmatvedība',
+    author: 'Māris Ozols',
+    authorRole: 'AI automatizācijas eksperts',
+  },
   'digitalizacija-uznemumam-ar-ko-sakt': {
     titleKey: 'blog.post21.title',
     contentKey: 'blog.post21.content',

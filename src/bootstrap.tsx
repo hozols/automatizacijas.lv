@@ -1,7 +1,15 @@
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 import App, { preloadRoute } from './App.tsx';
+import { rememberLanding } from './lib/attribution';
 import './index.css';
+
+// the first page of the session and its referrer, for form attribution
+try {
+  rememberLanding(window.sessionStorage, window.location.href, document.referrer);
+} catch {
+  /* storage blocked */
+}
 
 const container = document.getElementById('root')!;
 const app = (

@@ -241,5 +241,29 @@ const isDark = (page) => page.evaluate(() => document.documentElement.classList.
   await context.close();
 }
 
+// 13. a submission from an offer page carries the offer and the session's landing page (intercepted, never sent)
+{
+  const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  await context.addCookies([{ name: 'cookies-accepted', value: 'true', url: base }]);
+  const page = await context.newPage();
+  let body = '';
+  await context.route('**/formspree.io/**', async (route) => {
+    body = route.request().postData() ?? '';
+    await route.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true}' });
+  });
+  await page.goto(`${base}/blog/e-rekini-latvija/`, { waitUntil: 'networkidle' });
+  await page.click('a[href="/contact?offer=e-rekini"]');
+  await page.waitForSelector('#name');
+  await page.fill('#name', 'E2E tests');
+  await page.fill('#email', 'e2e@example.com');
+  await page.selectOption('#service', 'workers');
+  await page.fill('#message', 'Testa ziņa no app-e2e, nekur netiek sūtīta.');
+  await page.check('#gdprConsent');
+  await page.click('form button[type="submit"]');
+  await page.waitForTimeout(1500);
+  check(`offer page submission carries offer and landing page (${body.includes('name="offer"') && body.includes('e-rekini')}/${body.includes('/blog/e-rekini-latvija')})`, body.includes('name="offer"') && body.includes('e-rekini') && body.includes('/blog/e-rekini-latvija'));
+  await context.close();
+}
+
 await browser.close();
 if (failures) { console.error(`${failures} failure(s)`); process.exit(1); }

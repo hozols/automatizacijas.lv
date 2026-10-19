@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -8,6 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { usePricing } from "@/contexts/PricingContext";
 import { trackFormSubmission } from "@/lib/analytics";
+import { browserAttribution, offerFromSearch } from "@/lib/attribution";
 import PageTransition from "@/components/PageTransition";
 import { PageShell, Breadcrumbs, PageHero } from "@/components/page";
 
@@ -31,6 +32,8 @@ const Contact = () => {
   const { t } = useLanguage();
   const { toast } = useToast();
   const { pricingData, clearPricingData } = usePricing();
+  const location = useLocation();
+  const offer = offerFromSearch(location.search);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -68,6 +71,13 @@ const Contact = () => {
       // Add user agent and referrer for analytics
       formData.append("user_agent", navigator.userAgent);
       formData.append("referrer", document.referrer || "Direct");
+
+      // where this lead came from: the session's first page, its source, and the offer that sent them here
+      const attribution = browserAttribution();
+      formData.append("landing_page", attribution.landing_page);
+      formData.append("traffic_source", `${attribution.source} / ${attribution.medium}`);
+      if (attribution.campaign) formData.append("campaign", attribution.campaign);
+      if (offer) formData.append("offer", offer);
       
       // Add pricing data if available
       if (pricingData) {
@@ -90,7 +100,7 @@ const Contact = () => {
 
       if (response.ok) {
         console.log("Form submitted successfully:", data);
-        trackFormSubmission('contact_form');
+        trackFormSubmission('contact_form', offer ? { offer } : {});
         setIsSubmitted(true);
         reset();
         clearPricingData(); // Clear pricing data after successful submission

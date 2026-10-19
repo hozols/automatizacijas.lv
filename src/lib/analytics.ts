@@ -1,5 +1,6 @@
 // Analytics utility for GA4 custom events and Microsoft Clarity
 // Respects cookie consent preferences
+import { browserAttribution } from './attribution';
 
 declare global {
   interface Window {
@@ -40,9 +41,17 @@ export function trackCTAClick(ctaName: string, location: string): void {
   });
 }
 
-export function trackFormSubmission(formName: string): void {
+/* A submission carries the session's landing page and source, plus the offer the page made, so GA can say which page earned it. */
+export function trackFormSubmission(formName: string, extra: Record<string, string> = {}): void {
+  const a = browserAttribution();
   trackEvent('form_submission', {
     form_name: formName,
+    landing_page: a.landing_page,
+    traffic_source: a.source,
+    traffic_medium: a.medium,
+    campaign: a.campaign,
+    page_path: typeof window === 'undefined' ? '' : window.location.pathname,
+    ...extra,
   });
 }
 

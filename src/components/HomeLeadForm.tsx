@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { trackFormSubmission } from '@/lib/analytics';
+import { browserAttribution } from '@/lib/attribution';
 
 const FORM_ENDPOINT = 'https://formspree.io/f/xjgnzaoa';
 
@@ -34,6 +35,9 @@ const HomeLeadForm = () => {
     body.append('_subject', 'Konsultācijas pieteikums no sākumlapas');
     body.append('form_source', 'Sākumlapas forma');
     body.append('page_url', window.location.href);
+    const attribution = browserAttribution();
+    body.append('landing_page', attribution.landing_page);
+    body.append('traffic_source', `${attribution.source} / ${attribution.medium}`);
 
     try {
       const response = await fetch(FORM_ENDPOINT, {

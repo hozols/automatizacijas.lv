@@ -216,6 +216,30 @@ const DokumentuAutomatizacija = () => {
             />
           </Section>
 
+          <Section
+            title="E-rēķini bez pārrakstīšanas"
+            tone="sheet"
+            intro="No 2028. gada 1. janvāra strukturētie e-rēķini ir obligāti visiem uzņēmumiem; ar valsts iestādēm jau tagad, un no 2026. gada to dati jānodod VID."
+          >
+            <Prose>
+              <p>
+                Ienākošie e-rēķini (PEPPOL XML no e-adreses vai operatora) un PDF rēķini no e-pasta nonāk vienā plūsmā:
+                datus nolasa, pārbauda pret pasūtījumu un iegrāmato jūsu programmā, oriģināls paliek pievienots. Izejošie
+                rēķini aiziet pareizajā formātā, dati VID caur EDS API piecu darbdienu laikā.
+              </p>
+              <p>
+                Ko prasa VID un kā to iekļaut esošajā grāmatvedībā:{' '}
+                <Link to="/blog/e-rekini-latvija" className="link">
+                  E-rēķini Latvijā: termiņi 2026 un 2028
+                </Link>
+                .
+              </p>
+            </Prose>
+            <Link to="/contact?offer=e-rekini" className="btn btn-solid mt-8">
+              Pieteikt e-rēķinu pieslēgšanu
+            </Link>
+          </Section>
+
           <Section title="Rezultāti skaitļos">
             <Prose>
               <p>

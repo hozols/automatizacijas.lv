@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import PageTransition from '@/components/PageTransition';
 import { PageShell, Breadcrumbs, PageHero, Section, Prose, CheckList, RuledList, Steps, Faq, CtaBand } from '@/components/page';
 
@@ -223,6 +224,30 @@ const GramatvedibadAutomatizacija = () => {
                 jūsu specifiskajām vajadzībām. Mūsu komandai ir pieredze ar desmitiem dažādu grāmatvedības platformu un ERP sistēmu.
               </p>
             </Prose>
+          </Section>
+
+          <Section
+            title="E-rēķini: VID no 2026. gada, visiem uzņēmumiem no 2028. gada"
+            intro="Strukturētie e-rēķini ir obligāti darījumos ar valsts iestādēm kopš 2025. gada, no 2026. gada 1. janvāra to dati jānodod VID piecu darbdienu laikā, no 2028. gada 1. janvāra tie ir obligāti visiem."
+          >
+            <Prose>
+              <p>
+                Grāmatvedības programmu mainīt nevajag. Mēs pieslēdzam e-rēķinu plūsmu tai, kas jums jau ir: ienākošos
+                PEPPOL XML rēķinus nolasa un iegrāmato automātiski, izejošie rēķini aiziet partnera e-adresē vai PEPPOL
+                tīklā pareizajā formātā, dati VID nonāk caur EDS API ar termiņa kontroli, un viss saskaņojas ar bankas
+                izrakstu.
+              </p>
+              <p>
+                Termiņi, kanāli un VID prasības ir aprakstītas rakstā{' '}
+                <Link to="/blog/e-rekini-latvija" className="link">
+                  E-rēķini Latvijā: termiņi 2026 un 2028
+                </Link>
+                . Darbs sākas ar pusstundas sarunu par jūsu programmu un rēķinu apjomu, pēc tās saņemat fiksētu cenu.
+              </p>
+            </Prose>
+            <Link to="/contact?offer=e-rekini" className="btn btn-solid mt-8">
+              Pieteikt e-rēķinu pieslēgšanu
+            </Link>
           </Section>
 
           <Section title="Kā norit ieviešana" tone="sheet">
