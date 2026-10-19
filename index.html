@@ -34,6 +34,33 @@
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
           })(window, document, "clarity", "script", "vpmenzgdsw");
+          loadPixels();
+        }
+        // Retargeting pixels for the blog readers. Fill in the ids to switch them on; empty means off.
+        // They load only with marketing consent (prefs.marketing), never on analytics consent alone.
+        var PIXELS = { meta: '', linkedin: '' };
+        function loadPixels() {
+          var prefs = readPrefs();
+          if (!prefs || !prefs.marketing) return;
+          if (PIXELS.meta) {
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+            s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', PIXELS.meta); fbq('track', 'PageView');
+          }
+          if (PIXELS.linkedin) {
+            window._linkedin_partner_id = PIXELS.linkedin;
+            window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+            window._linkedin_data_partner_ids.push(PIXELS.linkedin);
+            var li = document.createElement('script'); li.async = true; li.src = 'https://snap.licdn.com/li.lms-analytics/insight.min.js';
+            document.head.appendChild(li);
+          }
+        }
+        function readPrefs() {
+          try {
+            var m = document.cookie.match(/(?:^|; )cookie-preferences=([^;]*)/);
+            return m ? JSON.parse(decodeURIComponent(m[1])) : null;
+          } catch (e) { return null; }
         }
         function idle() {
           if ('requestIdleCallback' in window) requestIdleCallback(load, { timeout: 6000 });
@@ -46,11 +73,8 @@
         // Loads only with analytics consent: either stored from an earlier visit, or granted now
         // (CookieContext calls window.loadAnalytics when the visitor accepts).
         window.loadAnalytics = function () { afterLoad(idle); };
-        try {
-          var m = document.cookie.match(/(?:^|; )cookie-preferences=([^;]*)/);
-          var prefs = m ? JSON.parse(decodeURIComponent(m[1])) : null;
-          if (prefs && prefs.analytics) window.loadAnalytics();
-        } catch (e) {}
+        var prefs = readPrefs();
+        if (prefs && prefs.analytics) window.loadAnalytics();
       })();
     </script>
 
