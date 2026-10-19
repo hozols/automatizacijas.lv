@@ -1,7 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import PageTransition from '@/components/PageTransition';
-import { PageShell, Breadcrumbs, PageHero, Section, RuledList, Steps, Faq, CtaBand } from '@/components/page';
+import { PageShell, Breadcrumbs, PageHero, Section, Prose, RuledList, Steps, Faq, CtaBand } from '@/components/page';
 
 const faqs = [
   {
@@ -111,6 +112,31 @@ const ProcesuAutomatizacija = () => {
                 { title: 'CRM un pārdošanas automatizācija', desc: 'Automātiska līdu kvalificēšana, follow-up e-pasti, tikšanās plānošana un pārdošanas piltuves pārvaldība. AI palīdz pārdošanas komandai fokusēties uz perspektīvākajiem klientiem.' },
               ]}
             />
+          </Section>
+
+          <Section
+            title="CRM un pārdošanas automatizācija"
+            tone="sheet"
+            intro="CRM dod atdevi tad, kad dati tajā nonāk paši: pieteikumi no mājaslapas, e-pasts, zvanu kopsavilkumi, rēķini pēc darījuma statusa."
+          >
+            <Prose>
+              <p>
+                Ieviešam CRM (Pipedrive, HubSpot, Zoho, Odoo, monday vai to, kas jums jau ir) un pieslēdzam plūsmas:
+                mājaslapas formas un ienākošie e-pasti kļūst par darījumiem, piedāvājums un rēķins top no veidnes,
+                zvans tiek transkribēts un apkopots darījuma kartītē, pārdevējs saņem uzdevumu, kad darījums stāv.
+                Posthaul LogiSales platformā tā strādā ar Apollo, Instantly un CloudTalk.
+              </p>
+              <p>
+                Sistēmu salīdzinājums ar 2026. gada cenām un izvēles kritēriji:{' '}
+                <Link to="/blog/crm-sistema-ka-izveleties" className="link">
+                  CRM sistēmas Latvijā 2026
+                </Link>
+                .
+              </p>
+            </Prose>
+            <Link to="/contact?offer=crm" className="btn btn-solid mt-8">
+              Pieteikt CRM ieviešanu
+            </Link>
           </Section>
 
           <Section title="Kā mēs strādājam" tone="sheet">

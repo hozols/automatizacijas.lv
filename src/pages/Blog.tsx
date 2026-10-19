@@ -26,8 +26,8 @@ const blogPosts = [
     slug: 'crm-sistema-ka-izveleties',
     titleKey: 'blog.post20.title',
     excerptKey: 'blog.post20.excerpt',
-    date: '2026-07-30',
-    readTime: '11 min',
+    date: '2026-10-20',
+    readTime: '10 min',
     category: 'Automatizācija',
   },
   {

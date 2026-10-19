@@ -314,10 +314,11 @@ const blogPostData: Record<string, PostData> = {
   },
   'crm-sistema-ka-izveleties': {
     titleKey: 'blog.post20.title',
+    metaTitle: 'CRM sistēmas Latvijā 2026: salīdzinājums un cenas',
     contentKey: 'blog.post20.content',
     excerptKey: 'blog.post20.excerpt',
-    date: '2026-07-30',
-    readTime: '11 min',
+    date: '2026-10-20',
+    readTime: '10 min',
     category: 'Automatizācija',
     author: 'Māris Ozols',
     authorRole: 'AI automatizācijas eksperts',

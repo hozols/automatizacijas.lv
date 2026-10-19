@@ -6,6 +6,18 @@ import { PageShell, Breadcrumbs, PageHero, Section, Prose, CheckList, RuledList,
 
 const faqs = [
   {
+    question: 'Kurš mākslīgais intelekts ir bez maksas latviski?',
+    answer: 'ChatGPT, Google Gemini, Microsoft Copilot un Claude visi saprot un raksta latviski un visiem ir bezmaksas līmenis. Gemini ir vienīgais ar saskarni latviešu valodā; pārējiem saskarne ir angliski, atbildes latviski. Bezmaksas plānos ir dienas limiti un vienkāršāki modeļi.',
+  },
+  {
+    question: 'Kā lietot mākslīgo intelektu telefonā?',
+    answer: 'Lejupielādējiet ChatGPT, Gemini vai Copilot aplikāciju no App Store vai Google Play; visas ir bez maksas. Telefonā noder kamera (nofotografēt dokumentu un jautāt) un balss saruna. Android telefonos Gemini var iestatīt kā noklusējuma asistentu.',
+  },
+  {
+    question: 'Kas ir Google Gemini?',
+    answer: 'Google mākslīgā intelekta asistents, pieejams vietnē gemini.google.com, aplikācijā un Google produktos. Pamata versija ir bez maksas un pilnībā latviski; Google AI Pro un Ultra ir maksas abonementi ar jaudīgākiem modeļiem.',
+  },
+  {
     question: 'Vai mākslīgais intelekts var aizstāt cilvēkus darbā?',
     answer: 'MI neaizstāj cilvēkus — tas papildina viņu darbu. MI pārņem atkārtojošos, rutīnas uzdevumus, ļaujot darbiniekiem fokusēties uz radošāku, stratēģiskāku darbu. Piemēram, MI var apstrādāt rēķinus un e-pastus, bet biznesa lēmumus joprojām pieņem cilvēki.',
   },
@@ -81,6 +93,9 @@ const toc = [
   { href: '#mi-biznesam', label: 'Mākslīgais intelekts biznesā: praktiski piemēri' },
   { href: '#mi-latvija', label: 'Mākslīgais intelekts Latvijā' },
   { href: '#mi-riki', label: 'Populārākie MI rīki 2026. gadā' },
+  { href: '#mi-bezmaksas', label: 'Mākslīgais intelekts bez maksas latviski' },
+  { href: '#mi-telefona', label: 'Mākslīgais intelekts telefonā: aplikācijas' },
+  { href: '#gemini', label: 'Google Gemini un AI režīms meklēšanā' },
   { href: '#nakotne', label: 'MI nākotne un tendences' },
   { href: '#buj', label: 'Biežāk uzdotie jautājumi' },
 ];
@@ -91,7 +106,7 @@ const KasIrMaksligaisIntelekts = () => {
     <PageTransition>
       <Helmet>
         <title>Kas ir mākslīgais intelekts? Ceļvedis latviski 2026</title>
-        <meta name="description" content="Mākslīgais intelekts vienkārši latviski: kas tas ir, kā strādā ChatGPT un līdzīgi rīki, un kur to izmanto Latvijas uzņēmumi." />
+        <meta name="description" content="Mākslīgais intelekts vienkārši latviski: kas tas ir, kā strādā ChatGPT un Gemini, kuri rīki ir bez maksas, kā lietot telefonā un kur to izmanto Latvijas uzņēmumi." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://automatizacijas.lv/kas-ir-maksligais-intelekts" />
         <link rel="alternate" hreflang="lv" href="https://automatizacijas.lv/kas-ir-maksligais-intelekts" />
@@ -325,6 +340,62 @@ const KasIrMaksligaisIntelekts = () => {
             </div>
           </Section>
 
+          <Section id="mi-bezmaksas" title="Mākslīgais intelekts bez maksas latviski">
+            <Prose>
+              <p>
+                Visi lielie sarunu modeļi saprot un raksta latviski, un katram ir bezmaksas līmenis. Atšķiras tas, cik
+                daudz var paprasīt dienā un cik labs ir modelis bezmaksas versijā.
+              </p>
+            </Prose>
+            <div className="mt-8">
+              <RuledList
+                items={[
+                  { title: 'ChatGPT (chatgpt.com)', desc: 'Bez maksas ar ierobežotu skaitu ziņu jaudīgākajam modelim, pēc tam pārslēdzas uz vienkāršāku. Konts nav obligāts, lai sāktu. Latviski raksta labi, garās sarunās var atgriezties angļu valodā; palūdziet turpināt latviski.' },
+                  { title: 'Google Gemini (gemini.google.com)', desc: 'Bez maksas ar Google kontu, saskarne pilnībā latviski, saprot attēlus un dokumentus. Ir arī Gemini Live balss saruna latviski.' },
+                  { title: 'Microsoft Copilot (copilot.microsoft.com)', desc: 'Bez maksas ar Microsoft kontu, iebūvēts Windows un Edge. Der, ja strādājat Office vidē.' },
+                  { title: 'Claude (claude.ai)', desc: 'Bez maksas ar dienas limitu, spēcīgs garos tekstos un dokumentu analīzē. Saskarne angliski, atbildes latviski.' },
+                  { title: 'Ko nozīmē "bezmaksas"', desc: 'Bezmaksas plānos jūsu ievadītais teksts var tikt izmantots modeļu apmācībai, ja to neatslēdzat iestatījumos. Uzņēmuma datus (līgumus, klientu sarakstus) bezmaksas čatos nelieciet; tam ir maksas plāni ar datu aizsardzību vai pašu uzbūvēta sistēma.' },
+                ]}
+              />
+            </div>
+          </Section>
+
+          <Section id="mi-telefona" title="Mākslīgais intelekts telefonā: aplikācijas latviski" tone="sheet">
+            <Prose>
+              <p>
+                Telefonā MI ir ērtāks nekā datorā tur, kur vajag kameru un balsi: nofotografēt rēķinu vai ceļazīmi un
+                paprasīt, kas tur rakstīts, ierunāt tekstu, tulkot sarunu. Visas lielās aplikācijas ir bez maksas App
+                Store un Google Play.
+              </p>
+            </Prose>
+            <div className="mt-8">
+              <RuledList
+                items={[
+                  { title: 'ChatGPT aplikācija', desc: 'Balss saruna, kamera, foto analīze. Latviski saprot un runā.' },
+                  { title: 'Google Gemini aplikācija', desc: 'Android telefonos var aizstāt Google asistentu; valodu maina iestatījumos. Gemini Live ļauj sarunāties latviski.' },
+                  { title: 'Microsoft Copilot aplikācija', desc: 'Vienkāršākā saskarne, bez konta var sākt uzreiz.' },
+                  { title: 'Iebūvētais MI', desc: 'Jaunākajos Samsung un Pixel telefonos tulkošana sarunas laikā un teksta kopsavilkumi ir iebūvēti; iPhone to pakāpeniski pievieno Apple Intelligence.' },
+                ]}
+              />
+            </div>
+          </Section>
+
+          <Section id="gemini" title="Google Gemini un AI režīms meklēšanā">
+            <Prose>
+              <p>
+                Gemini ir Google mākslīgā intelekta asistents (agrāk Bard). Tas ir pieejams vietnē gemini.google.com,
+                aplikācijā un iebūvēts Google produktos: Gmail, Docs, Chrome adrešu joslā un Android. Pamata versija ir
+                bez maksas, Google AI Pro un Ultra abonementi dod jaudīgākus modeļus un vairāk resursu.
+              </p>
+              <p>
+                Google meklēšanā MI parādās divos veidos: kā AI pārskats (AI Overview) virs rezultātiem un kā atsevišķs
+                MI režīms (AI Mode), kurā var uzdot garus jautājumus un turpināt sarunu. Latvijā AI pārskati parādās
+                arī latviešu vaicājumiem, tāpēc daļa atbilžu vairs nenonāk līdz mājaslapām. Uzņēmumam tas nozīmē, ka
+                lapās jābūt skaidrām, citējamām atbildēm, nevis tikai pārdošanas tekstam.
+              </p>
+            </Prose>
+          </Section>
+
           <Section id="nakotne" title="MI nākotne un tendences">
             <Prose>
               <p>Mākslīgais intelekts attīstās ātrāk nekā jebkad iepriekš. Galvenās tendences 2026. gadā un tālāk:</p>
@@ -347,10 +418,10 @@ const KasIrMaksligaisIntelekts = () => {
         </article>
 
         <CtaBand
-          title="Gatavi ieviest MI savā biznesā?"
-          text="Mēs palīdzēsim izvēlēties piemērotāko MI risinājumu jūsu uzņēmumam, no čatbotiem līdz pilnai procesu automatizācijai."
-          primary={{ to: '/contact', label: 'Bezmaksas konsultācija' }}
-          secondary={{ to: '/services', label: 'Mūsu pakalpojumi' }}
+          title="Iemāciet komandai lietot MI darbā"
+          text="Pusdienas apmācība jūsu uzņēmumā: ChatGPT, Gemini un Copilot ikdienas darbam, ar jūsu dokumentiem un uzdevumiem. Pēc tās katrs zina, ko MI drīkst un ko nedrīkst uzticēt."
+          primary={{ to: '/training', label: 'MI apmācības uzņēmumiem' }}
+          secondary={{ to: '/contact?offer=mi-apmacibas', label: 'Pieteikt apmācību' }}
         />
       </PageShell>
     </PageTransition>
