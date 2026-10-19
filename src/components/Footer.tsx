@@ -31,7 +31,7 @@ const Footer = () => {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-4">
             <Link to="/" className="display block text-[clamp(1.5rem,2.5vw,2rem)] text-current no-underline">
-              automatizācijas.lv
+              automatizacijas.lv
             </Link>
             <p className="m-0 mt-5 max-w-[24em] text-ink-muted">
               AI automatizācija uzņēmumiem Latvijā. Rīga.
@@ -66,7 +66,7 @@ const Footer = () => {
         <hr className="hairline mt-16" />
         <div className="caption flex flex-col gap-3 pt-6 text-smoke sm:flex-row sm:items-center sm:justify-between">
           <span>
-            {`© ${currentYear} automatizācijas.lv`}
+            {`© ${currentYear} automatizacijas.lv`}
           </span>
           <button type="button" onClick={openModal} className={`${footerLink} cursor-pointer border-0 bg-transparent p-0 text-left`}>
             Sīkdatņu iestatījumi

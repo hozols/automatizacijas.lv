@@ -12,7 +12,7 @@ const Logo = ({ className = '' }: { className?: string }) => {
       <span className="logo-mark" aria-hidden="true">
         <span>a</span>
       </span>
-      <span className="hidden text-[1rem] font-medium tracking-tight sm:inline">automatizācijas.lv</span>
+      <span className="hidden text-[1rem] font-medium tracking-tight sm:inline">automatizacijas.lv</span>
     </Link>
   );
 };
