@@ -365,7 +365,8 @@ const renderContent = (content: string) => {
   let key = 0;
 
   const renderInlineFormatting = (text: string): React.ReactNode[] => {
-    const parts = text.split(/(\*\*[^*]+\*\*|\[([^\]]+)\]\(([^)]+)\))/g);
+    // one capturing group only: inner groups would leak the link text and URL into the output as extra parts
+    const parts = text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g);
     return parts.map((part, i) => {
       if (!part) return null;
       if (part.startsWith('**') && part.endsWith('**')) {
@@ -377,9 +378,17 @@ const renderContent = (content: string) => {
       }
       const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
       if (linkMatch) {
+        const [, label, href] = linkMatch;
+        if (/^https?:\/\//.test(href)) {
+          return (
+            <a key={i} href={href} className="link" target="_blank" rel="noopener noreferrer">
+              {label}
+            </a>
+          );
+        }
         return (
-          <Link key={i} to={linkMatch[2]} className="link">
-            {linkMatch[1]}
+          <Link key={i} to={href} className="link">
+            {label}
           </Link>
         );
       }
