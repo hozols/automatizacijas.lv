@@ -80,7 +80,7 @@ const Contact = () => {
         formData.append("pricing_source", "Pricing Calculator");
       }
 
-      const response = await fetch("https://formspree.io/f/mqalbdra", {
+      const response = await fetch("https://formspree.io/f/xjgnzaoa", {
         method: "POST",
         body: formData,
         headers: {

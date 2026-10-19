@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { trackFormSubmission } from '@/lib/analytics';
 
-const FORM_ENDPOINT = 'https://formspree.io/f/mqalbdra';
+const FORM_ENDPOINT = 'https://formspree.io/f/xjgnzaoa';
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 
