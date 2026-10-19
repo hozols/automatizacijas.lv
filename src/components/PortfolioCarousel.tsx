@@ -51,54 +51,6 @@ const portfolioItems: Project[] = [
     ]
   },
   {
-    id: 14,
-    title: "„Kur ir mana mamma?” — izziņas spēle muzejam",
-    description: "Mobilā tīmekļa spēle Latvijas Nacionālajam dabas muzejam: bērns ar telefonu iet pa muzeju, 19 pieturās salīdzina zīmējumu ar īsto vitrīnu, „atdzīvina” dzīvniekus ar WebGL animācijām un finālā atrod lūsēna mammu. Statiska vietne bez datubāzes un kontiem, progress saglabājas ierīcē.",
-    category: "Web izstrāde",
-    image: "/portfolio/mamma.webp",
-    imageWidth: 800,
-    imageHeight: 923,
-    client: "Latvijas Nacionālais dabas muzejs",
-    year: "2026",
-    tags: ["Interaktīva spēle", "Mobilā tīmekļa lietotne", "WebGL"],
-    metrics: [
-      { value: "19", label: "pieturas muzejā" },
-      { value: "0", label: "datubāzes, konti, izsekošana" },
-      { value: "WebGL", label: "dzīvnieku animācijas" }
-    ]
-  },
-  {
-    id: 13,
-    title: "AI asistents tehnisko standartu dokumentiem",
-    description: "Čats, kas atbild uz jautājumiem tikai no indeksētiem LVS un EN standartu PDF dokumentiem un katrai atbildei pievieno citātu ar saiti uz konkrēto lapu. Hibrīdā meklēšana (vektoru un pilnteksta), atteikums minēt, ja pārliecība ir zema, admin panelis dokumentu augšupielādei un pārindeksēšanai.",
-    category: "AI čatbots",
-    image: "/portfolio/lvschat.webp",
-    imageWidth: 800,
-    imageHeight: 500,
-    client: "LVS Chat",
-    year: "2026",
-    tags: ["RAG", "Dokumentu meklēšana", "Citāti"],
-    metrics: [
-      { value: "PDF", label: "citāts līdz lapai" },
-      { value: "Hibrīdā", label: "vektoru + pilnteksta meklēšana" },
-      { value: "Admin", label: "dokumentu pārvaldība" }
-    ]
-  },
-  {
-    id: 12,
-    title: "Cipariņš — rēķinu izrakstīšanas platforma",
-    description: "Rēķinu izrakstīšanas platforma maziem uzņēmumiem: rēķini, klienti, PDF ģenerēšana un masu eksports ZIP arhīvā ar atsevišķu PDF katram rēķinam.",
-    category: "Platformas izstrāde",
-    client: "Cipariņš",
-    year: "2026",
-    tags: ["Rēķini", "PDF", "Grāmatvedība"],
-    metrics: [
-      { value: "PDF", label: "rēķini un masu eksports" },
-      { value: "ZIP", label: "viens arhīvs, visi rēķini" },
-      { value: "Web", label: "bez instalācijas" }
-    ]
-  },
-  {
     id: 11,
     title: "Grāmatvedības biroja mājaslapa",
     description: "Vienas lapas mājaslapa grāmatvedības uzņēmumam Rīgā: pakalpojumi, cenas, komanda, kontakti un pieteikuma forma, ar SEO metadatiem un strukturētajiem datiem.",
@@ -249,6 +201,9 @@ const portfolioItems: Project[] = [
     title: "Autoremonts.com - Autoservisa vizītkartes mājaslapa",
     description: "Moderna vizītkartes mājaslapa autoservisa uzņēmumam ar SEO optimizāciju. Lapa palīdz klientiem atrast servisu, uzzināt par pakalpojumiem un sazināties ar uzņēmumu.",
     category: "Web izstrāde",
+    image: "/portfolio/autoremonts.webp",
+    imageWidth: 800,
+    imageHeight: 500,
     client: "Autoremonts.com",
     year: "2025",
     tags: ["Autoserviss", "SEO", "Vizītkarte"],

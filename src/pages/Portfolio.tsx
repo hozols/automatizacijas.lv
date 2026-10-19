@@ -52,7 +52,7 @@ const PortfolioPage = () => {
           <Prose className="text-muted-foreground">
             <p>
               Mūsu <strong className="text-foreground">AI automatizācijas portfelis</strong> ietver projektus dažādās nozarēs: ražošana,
-              enerģētika, muzeji, grāmatvedība, nekustamie īpašumi, mārketings un klientu apkalpošana. Katrs projekts ir izstrādāts
+              enerģētika, grāmatvedība, nekustamie īpašumi, mārketings un klientu apkalpošana. Katrs projekts ir izstrādāts
               individuāli, ņemot vērā klienta specifiskās vajadzības un biznesa mērķus.
             </p>
             <p>
