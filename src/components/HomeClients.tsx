@@ -1,7 +1,7 @@
 import React from 'react';
 import Marquee from '@/components/motion/Marquee';
 
-const clients = ['Kleen1', 'Signingclients.com', 'The Artisan Agency', 'Rigami', 'BN Darbi', 'Autoremonts.com', 'Dalton Nekustamie Īpašumi'];
+const clients = ['Rīga Prints', 'Latvijas Nacionālais dabas muzejs', 'BN Darbi', 'Balance up', 'SIA Meži', 'Dezgo.lv', 'Kleen1', 'Signingclients.com', 'The Artisan Agency', 'Rigami', 'Autoremonts.com', 'Dalton Nekustamie Īpašumi'];
 
 /* A slow ticker of the people we have worked with. */
 const HomeClients = () => {

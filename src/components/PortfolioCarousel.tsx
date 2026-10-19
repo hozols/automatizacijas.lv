@@ -17,6 +17,139 @@ interface Project {
 
 const portfolioItems: Project[] = [
   {
+    id: 16,
+    title: "Kalkulāciju platforma ar AI skiču nolasīšanu",
+    description: "Ražošanas izmaksu kalkulāciju un likmju pārvaldības platforma, kas aizstāj Excel: katrai kalkulācijai apstiprināšanas plūsma, centralizēts materiālu un likmju reģistrs, maržu pārskats vadītājiem. Konstruktora PDF skices nolasa AI, tāpēc manuālā ievade atkrīt. Izstrādāta ar LIAA inovāciju vaučeri.",
+    category: "AI platforma",
+    image: "/portfolio/rigaprints.webp",
+    imageWidth: 800,
+    imageHeight: 465,
+    client: "Rīga Prints",
+    year: "2026",
+    tags: ["Kalkulācijas", "AI dokumentu nolasīšana", "Iekšējā sistēma"],
+    metrics: [
+      { value: "AI", label: "PDF skiču nolasīšana" },
+      { value: "LIAA", label: "inovāciju vaučeris" },
+      { value: "3 soļi", label: "apstiprināšanas plūsma" }
+    ]
+  },
+  {
+    id: 15,
+    title: "Saules elektrostaciju reāllaika displejs un API",
+    description: "Publisks displejs Babītes vidusskolai un diviem bērnudārziem: sienas TV rāda saražoto, objektā patērēto un tīklā nodoto elektroenerģiju no Solinteg stacijām. Dati ievācas katru stundu, glabājas Postgres un ir pieejami kā JSON caur REST API ar piekļuves atslēgu. Papildus 3D landing lapa ar trim ēkām un dzīvām enerģijas plūsmām.",
+    category: "Datu analīze",
+    image: "/portfolio/solinteg.webp",
+    imageWidth: 800,
+    imageHeight: 500,
+    client: "BN Darbi",
+    year: "2026",
+    tags: ["Saules enerģija", "Reāllaika dati", "REST API", "3D"],
+    metrics: [
+      { value: "3", label: "objekti vienā sistēmā" },
+      { value: "24 mēn.", label: "datu vēsture API" },
+      { value: "1×/h", label: "datu atjaunošana" }
+    ]
+  },
+  {
+    id: 14,
+    title: "„Kur ir mana mamma?” — izziņas spēle muzejam",
+    description: "Mobilā tīmekļa spēle Latvijas Nacionālajam dabas muzejam: bērns ar telefonu iet pa muzeju, 19 pieturās salīdzina zīmējumu ar īsto vitrīnu, „atdzīvina” dzīvniekus ar WebGL animācijām un finālā atrod lūsēna mammu. Statiska vietne bez datubāzes un kontiem, progress saglabājas ierīcē.",
+    category: "Web izstrāde",
+    image: "/portfolio/mamma.webp",
+    imageWidth: 800,
+    imageHeight: 923,
+    client: "Latvijas Nacionālais dabas muzejs",
+    year: "2026",
+    tags: ["Interaktīva spēle", "Mobilā tīmekļa lietotne", "WebGL"],
+    metrics: [
+      { value: "19", label: "pieturas muzejā" },
+      { value: "0", label: "datubāzes, konti, izsekošana" },
+      { value: "WebGL", label: "dzīvnieku animācijas" }
+    ]
+  },
+  {
+    id: 13,
+    title: "AI asistents tehnisko standartu dokumentiem",
+    description: "Čats, kas atbild uz jautājumiem tikai no indeksētiem LVS un EN standartu PDF dokumentiem un katrai atbildei pievieno citātu ar saiti uz konkrēto lapu. Hibrīdā meklēšana (vektoru un pilnteksta), atteikums minēt, ja pārliecība ir zema, admin panelis dokumentu augšupielādei un pārindeksēšanai.",
+    category: "AI čatbots",
+    image: "/portfolio/lvschat.webp",
+    imageWidth: 800,
+    imageHeight: 500,
+    client: "LVS Chat",
+    year: "2026",
+    tags: ["RAG", "Dokumentu meklēšana", "Citāti"],
+    metrics: [
+      { value: "PDF", label: "citāts līdz lapai" },
+      { value: "Hibrīdā", label: "vektoru + pilnteksta meklēšana" },
+      { value: "Admin", label: "dokumentu pārvaldība" }
+    ]
+  },
+  {
+    id: 12,
+    title: "Cipariņš — rēķinu izrakstīšanas platforma",
+    description: "Rēķinu izrakstīšanas platforma maziem uzņēmumiem: rēķini, klienti, PDF ģenerēšana un masu eksports ZIP arhīvā ar atsevišķu PDF katram rēķinam.",
+    category: "Platformas izstrāde",
+    client: "Cipariņš",
+    year: "2026",
+    tags: ["Rēķini", "PDF", "Grāmatvedība"],
+    metrics: [
+      { value: "PDF", label: "rēķini un masu eksports" },
+      { value: "ZIP", label: "viens arhīvs, visi rēķini" },
+      { value: "Web", label: "bez instalācijas" }
+    ]
+  },
+  {
+    id: 11,
+    title: "Grāmatvedības biroja mājaslapa",
+    description: "Vienas lapas mājaslapa grāmatvedības uzņēmumam Rīgā: pakalpojumi, cenas, komanda, kontakti un pieteikuma forma, ar SEO metadatiem un strukturētajiem datiem.",
+    category: "Web izstrāde",
+    image: "/portfolio/balanceup.webp",
+    imageWidth: 800,
+    imageHeight: 500,
+    client: "SIA Balance up",
+    year: "2026",
+    tags: ["Grāmatvedība", "Vizītkarte", "SEO"],
+    metrics: [
+      { value: "1 lapa", label: "viss būtiskais" },
+      { value: "SEO", label: "metadati un shēma" },
+      { value: "Forma", label: "pieteikumi uz e-pastu" }
+    ]
+  },
+  {
+    id: 10,
+    title: "Meža apsaimniekošanas konsultāciju mājaslapa",
+    description: "Mājaslapa SIA Meži: meža apsaimniekošanas konsultācijas un meža darbu organizēšana, pakalpojumi, cenas, kontakti un WhatsApp saziņa.",
+    category: "Web izstrāde",
+    image: "/portfolio/mezos.webp",
+    imageWidth: 800,
+    imageHeight: 500,
+    client: "SIA Meži",
+    year: "2026",
+    tags: ["Mežsaimniecība", "Vizītkarte"],
+    metrics: [
+      { value: "WhatsApp", label: "saziņa vienā klikšķī" },
+      { value: "SEO", label: "metadati un karte" },
+      { value: "Mobilā", label: "pirmā versija" }
+    ]
+  },
+  {
+    id: 9,
+    title: "Dezgo.lv — mājaslapa un SEO kaitēkļu iznīcināšanai",
+    description: "Mājaslapa kaitēkļu iznīcināšanas uzņēmumam ar atsevišķām dezinsekcijas un dezinfekcijas lapām, blogu un WhatsApp pieteikumiem. SEO darbi: lapu struktūra, virsraksti, īsie URL un raksti par biežākajiem meklējumiem.",
+    category: "Web izstrāde",
+    image: "/portfolio/dezgo.webp",
+    imageWidth: 800,
+    imageHeight: 500,
+    client: "Dezgo.lv",
+    year: "2026",
+    tags: ["SEO", "Blogs", "WhatsApp"],
+    metrics: [
+      { value: "2", label: "pakalpojumu lapas" },
+      { value: "3", label: "blog raksti" },
+      { value: "WhatsApp", label: "cena 30 sekundēs" }
+    ]
+  },
+  {
     id: 1,
     title: "Automatizēta līgumu ģenerēšnas un izsūtīšanas sistēma",
     description: "Automatizēta sistēma, kas izveido jaunu un pielāgotu līgumu katram klientam balstoties no komentāriem sapulces laikā, Līgums tiek izveidots, izsūtīts un ielikts jaunā google drive folderī bez cilvēka iesaistes. Samazina 20 minūšu procesu uz 3 minūtēm palielinot efektivitāti.",
